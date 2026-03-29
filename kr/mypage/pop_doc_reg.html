@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>증빙서류 등록/변경</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="notice_list">
+				<li>증빙서류는 개별 1개씩 팩스로 발송해주시고, 발송 완료 후 담당자에게 확인 부탁 드립니다.<br>(FAX : 02-1234-5678)</li>
+				<li>주말 및 공휴일은 확인 및 처리가 불가할 수 있으며, 요청건은 평일 업무시간(09:00~17:00)에 처리됩니다.</li>
+			</ul>
+			<div class="booker_info">
+				<h2>탑승자 1</h2>
+				<table class="tbl_type3">
+					<colgroup>
+						<col style="width:110px;">
+						<col style="width:auto;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">한글이름</th>
+							<td>김신라</td>
+						</tr>
+						<tr>
+							<th scope="row">영문이름</th>
+							<td>KIM SHILLA</td>
+						</tr>
+						<tr>
+							<th scope="row">생년월일</th>
+							<td>1983.04.12</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="info_inp_reg">
+				<h2>복지카드(시/군/구청장 발행)</h2>
+				<!-- 2019-10-14 파일첨부 추가 -->
+				<div class="inp_btn">
+					<input type="text" name="" placeholder="최대 100MB 이내 첨부 가능" value="">
+					<label class="btn_file_add" for="file_add">파일첨부<input type="file" id="file_add" name=""></label>
+				</div>
+				<ul class="file_list"><!-- 첨부된 파일이 없을 때 비노출 -->
+					<li>
+						<span class="name">복지카드 이미지.jpg</span>
+						<button type="button" name="button" class="ico btn_del6">삭제</button>
+					</li>
+					<li>
+						<span class="name">복지카드 이미지(구청장).pdf</span>
+						<button type="button" name="button" class="ico btn_del6">삭제</button>
+					</li>
+				</ul>
+				<!-- //2019-10-14 파일첨부 추가 -->
+
+				<h2>상이등급 표기된 국가유공자증</h2>
+				<div class="inp_btn">
+					<input type="text" name="" placeholder="최대 100MB 이내 첨부 가능" value="">
+					<label class="btn_file_add" for="file_add">파일첨부<input type="file" id="file_add" name=""></label>
+				</div>
+				<ul class="file_list"><!-- 첨부된 파일이 없을 때 비노출 -->
+					<li>
+						<span class="name">국가유공자증 이미지.jpg</span>
+						<button type="button" name="button" class="ico btn_del6">삭제</button>
+					</li>
+				</ul>
+
+				<h2>여권사본</h2>
+				<div class="inp_btn">
+					<input type="text" name="" placeholder="최대 100MB 이내 첨부 가능" value="">
+					<label class="btn_file_add" for="file_add">파일첨부<input type="file" id="file_add" name=""></label>
+				</div>
+				<ul class="file_list"><!-- 첨부된 파일이 없을 때 비노출 -->
+					<li>
+						<span class="name">여권사본 이미지.jpg</span>
+						<button type="button" name="button" class="ico btn_del6">삭제</button>
+					</li>
+				</ul>
+
+				<h2>장애인증명서 원본</h2>
+				<div class="inp_btn">
+					<input type="text" name="" placeholder="최대 100MB 이내 첨부 가능" value="">
+					<label class="btn_file_add" for="file_add">파일첨부<input type="file" id="file_add" name=""></label>
+				</div>
+				<ul class="file_list"><!-- 첨부된 파일이 없을 때 비노출 -->
+					<li>
+						<span class="name">장애인증명서 이미지.jpg</span>
+						<button type="button" name="button" class="ico btn_del6">삭제</button>
+					</li>
+				</ul>
+			</div>
+
+			<div class="note_list">
+			<strong>유의사항</strong>
+			<ul class="notice_list">
+				<li>증빙서류는 본인 이외에는 사용할 수 없습니다.</li>
+				<li>잘못된 서류로 인해서 예약/결제가 취소될 수 있습니다.</li>
+			</ul>
+		</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">등록하기</button>
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

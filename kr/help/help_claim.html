@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/help.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<!-- Header : S -->
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			분쟁해결센터
+		</h2>
+	</header>
+	<!-- Header : E -->
+
+    <!-- 콘텐츠 : S -->
+    <div class="content">
+		<div class="center_wrap">
+			<div class="cont_box">
+				<p>판매자와의 커뮤니케이션 특화 서비스 입니다. 판매자와 분쟁 발생시 이곳에서 문제를 신고하시면 더욱 원활히 분쟁을 해결할 수 있습니다.</p>
+
+				<div class="fold_area type1 open"><!-- D : 열린상태일때 open클래스 추가 -->
+					<div class="fold_button">
+						<span class="tit">이용가이드</span>
+						<button type="button" name="button" class="btn_ico unfold">펼치기</button>
+						<button type="button" name="button" class="btn_ico fold">접기</button>
+					</div>
+					<!--  fold-height :접혔을때의 높이 px-->
+					<div class="fold_target">
+						<div class="img_area">
+							<div class="inner">
+								<img src="../../resource/img/img_center_guide.jpg" alt="이용가이드">
+								<span class="txt01"><strong>1.</strong> 문제신고</span>
+								<span class="txt02"><strong>2.</strong> 문제내용 검토</span>
+								<span class="txt03"><strong>3.</strong> 판매자 답변</span>
+								<span class="txt04"><strong>4.</strong> 문제해결</span>
+								<span class="txt05"><strong>이의 신청</strong></span>
+							</div>
+						</div>
+						<ol class="num_list">
+							<li>문제를 신고합니다.</li>
+							<li>신고한 문제 내용을 신라트립에서 검토합니다.</li>
+							<li>최대 영업일 7일내에 신라트립이 고객님께 답변합니다.</li>
+							<li>답변이 만족스럽다면 문제는 해결 완료처리 됩니다.</li>
+							<li>판매자의 답변(해결방안)이 불만족스럽다면 이의신청을 합니다. 고객님의 이의신청이 접수되면 다시 검토 후 답변을 드립니다.</li>
+							<li>상품 사용 완료 후 30일 이내 신고 가능합니다.</li>
+						</ol>
+					</div>
+				</div>
+				<button type="button" name="button" class="btn primary border">문제신고</button>
+			</div>
+
+			<!-- 진행/종료된 분쟁 : S -->
+			<div class="tab_wrap">
+				<div class="tab_menu tscroll">
+					<ul class="ul_size">
+						<li><a href="#" class="on">진행중인 분쟁 <span class="num">2</span></a></li>
+						<li><a href="#">종료된 분쟁 <span class="num">0</span></a></li>
+					</ul>
+				</div>
+				<!-- 진행중인 분쟁 탭 : S -->
+				<div class="tab_cont active">
+					<div class="claim_cont">
+						<!-- 데이터없음 : S -->
+						<div class="no_data type2" style="display:none">
+							<em>내역이 없습니다.</em>
+						</div>
+						<!-- 데이터없음 : E -->
+
+						<div class="claim_list">
+							<div class="list_style">
+								<ul>
+									<!-- D : loop -->
+									<li>
+										<a href="#">
+											<div class="lst_item">
+												<div class="info">
+													<span class="name">모두투어</span>
+													<span class="date">2019.01.21</span>
+												</div>
+												<div class="tit"><strong class="state">[접수완료]</strong>호주 패키지B</div>
+											</div>
+										</a>
+									</li>
+									<!-- //D : loop -->
+									<li>
+										<a href="#">
+											<div class="lst_item">
+												<div class="info">
+													<span class="name">모두투어</span>
+													<span class="date">2019.01.21</span>
+												</div>
+												<div class="tit"><strong class="state">[이의신청]</strong>시드니 시티 투어 패키지</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="lst_item">
+												<div class="info">
+													<span class="name">모두투어</span>
+													<span class="date">2019.01.21</span>
+												</div>
+												<div class="tit"><strong class="state">[답변완료]</strong>시드니 시티 투어 패키지 시드니 시티 투어 패키지 시드니 시티 투어 패키지 시드니 시티 투어 패키지</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 진행중인 분쟁 탭 : E -->
+				<!-- 종료된 분쟁 탭 : S -->
+				<div class="tab_cont">
+					<div class="claim_cont">
+						<!-- 데이터없음 : S -->
+						<div class="no_data type2">
+							<em>내역이 없습니다.</em>
+						</div>
+						<!-- 데이터없음 : E -->
+
+						<div class="claim_list" style="display:none">
+							<div class="list_style">
+								<ul>
+									<!-- D : loop -->
+									<li>
+										<a href="#">
+											<div class="lst_item">
+												<div class="info">
+													<span class="name">모두투어</span>
+													<span class="date">2019.01.21</span>
+												</div>
+												<div class="tit"><strong class="state">[접수완료]</strong>호주 패키지B</div>
+											</div>
+										</a>
+									</li>
+									<!-- //D : loop -->
+									<li>
+										<a href="#">
+											<div class="lst_item">
+												<div class="info">
+													<span class="name">모두투어</span>
+													<span class="date">2019.01.21</span>
+												</div>
+												<div class="tit"><strong class="state">[이의신청]</strong>시드니 시티 투어 패키지</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="lst_item">
+												<div class="info">
+													<span class="name">모두투어</span>
+													<span class="date">2019.01.21</span>
+												</div>
+												<div class="tit"><strong class="state">[답변완료]</strong>시드니 시티 투어 패키지 시드니 시티 투어 패키지 시드니 시티 투어 패키지 시드니 시티 투어 패키지</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 종료된 분쟁 탭 : E -->
+			</div>
+			<!-- 진행/종료된 분쟁 : E -->
+		</div>
+    </div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+	<!-- 이전, top -->
+	<div class="quik_btn">
+		<!-- <a href="#none" class="ico btn_back2">이전</a> -->
+		<a href="#top" class="ico btn_top">맨처음로</a>
+	</div>
+	<!-- //이전, top -->
+
+    <!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+#promotion_wrap {}
+/*#promotion_wrap .event_img {margin:0; padding:0}*/
+#promotion_wrap .event_img img { width:100%; height:auto; }
+#promotion_wrap .ev_tit { font-size:15px; font-weight:bold; margin-bottom:10px}
+#promotion_wrap .ir_indent {font-size:0; text-indent:-9999px; overflow:hidden; width:0; height:0}
+
+#promotion_wrap .ev_sns_share .event_radio { position:absolute; top:10vw; left:0; padding:0 0 0 5vw;}
+#promotion_wrap .ev_sns_share .event_radio ul:after {display:block; clear:both; content:"";}
+#promotion_wrap .ev_sns_share .event_radio ul li {float:left; width:14vw; margin-left:5vw; text-align:center; padding-top:18vw }
+#promotion_wrap .ev_sns_share .event_radio ul li:first-child {margin-left:0;}
+
+
+#promotion_wrap .ev_sns_share { margin-top:20px; position:relative}
+#promotion_wrap .ev_sns_share { padding:10px 20px 50px 20px; margin-left:-20px; background:#f0f0f0 }
+#promotion_wrap .ev_sns_share .ev_sns_bg { }
+#promotion_wrap .ev_sns_share .ev_sns_bg img { width:100% }
+
+
+#promotion_wrap .ev_btn_area { margin-right:20px}
+#promotion_wrap .ev_btn_type01 { background:#000; font-size:15px; font-weight:bold; color:#fff;  width:100%; height:50px; line-height:50px; display:inline-block; margin:13.9vw auto 0; text-align:center}
+
+#promotion_wrap .ev_quiz_type01 { margin-top:50px }
+#promotion_wrap .ev_quiz_type01 dt { margin:20px 0 5px 0}
+#promotion_wrap .ev_quiz_type01 dd { margin:0px 0 5px 0}
+
+#roulette_wrap{position:relative;-webkit-text-size-adjust:none}
+#roulette_wrap img{width:100%}
+#roulette_wrap .ir_blind{position:absolute;width:0;height:0;left:0;top:0;font-size:0;line-height:0;overflow:hidden}
+#roulette_wrap .ir_indent{font-size:0;text-indent:-9999px;overflow:hidden}
+#roulette_wrap .ir_wa{z-index:-1;position:relative}
+
+#roulette_wrap div.rouletteArea {position:relative;}
+#roulette_wrap div.rouletteArea > img { width: 100%; }
+#roulette_wrap div.rouletteArea .motion, #roulette_wrap div.rouletteArea .stop {position:absolute; left:0; top:0;}
+#roulette_wrap div.rouletteArea .stop{width:100%;}
+
+#roulette_wrap div.bubble{position:absolute;left:75.9%;top:-7%;width:25%}
+#roulette_wrap div.bubble p.count{position:absolute;left:48.8%;top:30.1%;width:20%;font-size:3vw;color:#fff;text-align:center;}
+
+#roulette_wrap div.rouletteArea .eventBtn1 {position:absolute; left:37%; top:33%; width: 25.32%; height: 25.32%; z-index:90;}
+#roulette_wrap div.rouletteArea .eventBtn1 img {}
+#roulette_wrap .popLayerArea {position:absolute;top:0;left:0;width:100%;height:100%;background:#000;opacity:.5;filter:alpha(opacity=50)}
+#roulette_wrap .eventPopArea {position:absolute;top:0;left:0;width: 85.31%; margin-left: 7%; margin-top: 55%; z-index:90}
+#roulette_wrap .eventPopArea .title {position:relative;}
+#roulette_wrap .eventPopArea .close {position:absolute; right:18%; top:38%; width: 3.43%; z-index:120;}
+#roulette_wrap .print_coupon { position: absolute; top: 4%; left: 18.75%; width: 65.31%; }
+
+
+#roulette_wrap .footer{position:relative;padding:5%;background:#fff; width:auto}
+#roulette_wrap .footer ol.notices{padding-left:3%;font-size:2.4vw;line-height:3.5vw;color:#686868}
+#roulette_wrap .footer ol.notices li{padding:0.5%;list-style-type:disc}
+
+#roulette_wrap .eventPopArea img{width:100%	}
+
+#roulette_wrap .eventPopArea .bottom{position: relative;}
+#roulette_wrap .eventPopArea .bottom img{width:100%}
+#roulette_wrap .eventPopArea .event-btn1{position: absolute; left:32.5% ;top: 28.4%; width:16.7%; height:44.4%;}
+#roulette_wrap .eventPopArea .event-btn2{position: absolute; left:50.7% ;top: 28.4%; width:16.7%; height:44.4%;}
+
+
+
+#promotion_wrap .ev-give-list{width:88.9vw; height:116.4vw; background:url('http://media.shilladfs.com/files/attach/ckeditor/2019/09/23/1569222966056_20190923_1_kr_pc_friend_cont_01_give.jpg') 0 0 no-repeat; background-size:100%; margin:0 auto;}
+#promotion_wrap .ev-give-list:after{content:""; display:block; clear:both}
+#promotion_wrap .ev-give-list li{position:relative; float:left; width:28.9vw; margin-left:1.1vw; margin-bottom:2.8vw;}
+#promotion_wrap .ev-give-list li:before{display:block; height:36.4vw; content:"";}
+#promotion_wrap .ev-give-list li:nth-child(3n+1){margin-left:0;}
+#promotion_wrap .give-cp{display:none; position:absolute; top:-1.1vw; left:0; z-index:20;}
+#promotion_wrap .ev-give-list li.on .give-cp{display:block;}
+
+#promotion_wrap .ev-state-box{position:relative; width:88.9vw; margin:0 auto;}
+#promotion_wrap .ev-state-box.type02 {width:auto; margin:0 auto;}
+
+#promotion_wrap .ev-input{ border:1px solid #dedede;background-color:#ddd; text-align:center; padding:6.3vw 0;}
+#promotion_wrap .ipt-tit{font-size:4.2vw; color:#333; line-height:1.3; margin-bottom:4.9vw;}
+#promotion_wrap .ipt-tit span{display:block; font-weight:bold;}
+#promotion_wrap .ev-input fieldset{width:60vw; margin:0 auto;}
+#promotion_wrap .ev-input fieldset label{display:block; margin-bottom:1.4vw;}
+#promotion_wrap .ev-input fieldset input{width:100%; height:9.7vw; border:0; background-color:#fff; box-sizing:border-box; font-size:3.1vw; color:#333; line-height:9.7vw; padding:1.4vw;}
+#promotion_wrap .ipt-btn{padding-top:1.4vw;}
+#promotion_wrap .ipt-btn:first-of-type{padding-top:4.2vw;}
+
+#promotion_wrap .ev-input.type2{background-color:#f7689b;}
+
+#promotion_wrap .mem-btn{display:block; height:9.7vw; font-size:3.6vw; color:#fff; text-align:center; line-height:9.7vw;}
+#promotion_wrap .mem-btn.type1{background-color:#222;}
+
+#promotion_wrap .ev-total{border-top:2px solid #f881ac; background-color:#e84e85; text-align:center; padding:2.8vw 0;}
+#promotion_wrap .total-area{font-size:4.4vw; color:#fff; font-weight:600; line-height:9.2vw; vertical-align:middle;}
+#promotion_wrap .total-box{display:inline-block; min-width:31.1vw; height:9.2vw; background-color:#de3571; border-radius:4.4vw; box-sizing:border-box; font-size:5.8vw; line-height:9.2vw; padding:0 4.2vw; margin-left:5.6vw;}
+
+
+/* Board > 댓글  */
+#promotion_wrap .evtBoard { margin-top:3.6vw; padding:2.6vw 2vw 5.6vw; background-color: #009df7; background-image: linear-gradient(#fff,#009df7); }
+#promotion_wrap .evtBoard .evtWrite {overflow:hidden;}
+#promotion_wrap .evtBoard .evtWrite input[type="text"] {float:left; width:70vw; height:8.5vw; border:0; border-bottom:2px solid #cfcfcf; background-color:transparent; color:#33; font-size:4.2vw;}
+#promotion_wrap .evtBoard .evtWrite input[type="text"]::-webkit-input-placeholder {color:#dedede;}
+#promotion_wrap .evtBoard .evtWrite input[type="text"]::-moz-placeholder {color:#dedede;}
+#promotion_wrap .evtBoard .evtWrite input[type="text"]:-ms-input-placeholder {color:#dedede;}
+#promotion_wrap .evtBoard .evtWrite input[type="text"]:-moz-placeholder {color:#dedede;}
+#promotion_wrap .evtBoard .ev-board-save{float:left; display:inline-block; width:18.6vw; height:8.9vw; margin-left:2vw; background-color:#2349da; color:#fff; font-size:4.2vw; text-align:center; border-radius:4.5vw; line-height:7.9vw;}
+#promotion_wrap .t_tit{padding-top:8.3vw; font-size:4.4vw; color:#2349da; line-height:1; text-align:center; font-weight:bold;}
+
+
+#promotion_wrap .evtTable{margin-top:4.2vw;}
+#promotion_wrap .evtTable ul{width:100%;}
+#promotion_wrap .evtTable ul li{height:5.8vw; margin-top:1.4vw; background:#fff; border-radius:2.8vw; font-size:2.9vw;}
+#promotion_wrap .evtTable ul li:first-child{margin-top:0;}
+#promotion_wrap .evtTable ul li div{float:left; width:66.7vw;}
+#promotion_wrap .evtTable ul li span{display:inline-block; width:90%; padding-left:3.9vw; line-height:5.8vw; word-break:break-all; color:#333; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}		
+#promotion_wrap .evtTable ul li a{display:inline-block; color:#999; line-height:5.8vw;}
+
+#promotion_wrap .pagination{position:relative; margin-top:5.6vw; font-size:0; text-align:center;}
+#promotion_wrap .pagination li{display:inline-block; width:4.4vw; height:4.4vw; margin:0 0.7vw;}
+#promotion_wrap .pagination li:first-child{margin-top:0;}
+#promotion_wrap .pagination li a {display:block; width:100%; height:4.4vw; font-size:2.6vw; color:#fff; line-height:4.4vw;}
+#promotion_wrap .pagination li a.on {width:4.4vw; height:4.4vw; background-color:#2349da; border-radius:50%;} 
+
+@media screen and (min-width: 320px) {
+	#promotion_wrap .evtBoard .evtWrite input[type="text"] {width:68vw;}
+}
+
+
+@media screen and (min-width: 768px) {
+	#promotion_wrap .ev-give-list { width:640px; background-size:auto; font-size:15px;overflow:hidden}
+	#promotion_wrap .ev-state-box {width:640px; clear:both; overflow:hidden}
+}

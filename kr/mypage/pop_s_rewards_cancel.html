@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="s_rewards">
+                <p class="tit"><em>지급받은 S.Rewards를 충전하면</em>실시간 항공 예약 취소가 완료됩니다.</p>
+                <div class="inner_bx">
+                    <p class="txt">고객님의 실시간 항공 예약을 통해 지급된 S.Rewards 잔액이 부족하여, 해당 금액만큼 충전한 이후 취소가 진행 됩니다.</p>
+                    <div class="process"> <!-- 2019-10-29 수정 -->
+                        <ol class="step_4"> <!-- 2019-10-29 수정 -->
+                            <li>
+                                <span class="circle">S.Rewards<br />충전 금액<br />확인</span>
+                                <span class="arrow right"></span>
+                            </li>
+                            <li> <!-- 2019-10-29 수정 -->
+                                <span class="circle">S.Rewards<br />결제/충전</span>
+                                <span class="arrow down"></span>
+                            </li>
+                            <li>
+                                <span class="circle last2">S.Rewards<br />차감</span>
+                                <span class="arrow left"></span>
+                            </li>
+                            <li>
+                                <span class="circle last">항공<br />취소진행</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="saving_rewards">
+                    <span class="txt">현재 잔액</span>
+                    <span class="point">1,000P(1,000원)</span><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+                </div>
+                <div class="saving_rewards">
+                    <span class="txt b">필요 충전 금액</span>
+                    <span class="point em"><em>4,000</em>P(4,000원)</span><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+                </div>
+
+                <p class="txt_ok">4,000P(4,000원) 결제 후 취소 진행 하시겠습니까?</p>
+			</div>			
+		</div>
+		<div class="btn_box both">
+			<button type="button" name="button" class="btn primary2">아니오</button>
+			<button type="button" name="button" class="btn primary">예</button>
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

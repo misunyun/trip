@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/deadline.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<!-- Header : S -->
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			<span class="t_option" option-call="deadline_option">오늘마감</span><!-- 2019-11-20 타이틀 셀렉트 추가 -->
+		</h2>
+	</header>
+	<!-- Header : E -->
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<!-- 2019-11-20 탭 영역 수정 -->
+		<div class="tab_wrap">
+			<div class="tab_menu tscroll">
+				<ul class="ul_size">
+					<li><a href="#" class="on">아시아</a></li>
+					<li><a href="#">동남아</a></li>
+					<li><a href="#">미주</a></li>
+					<li><a href="#">유럽</a></li>
+					<li><a href="#">대양주</a></li>
+				</ul>
+			</div>
+			
+			<!-- 아시아 탭 -->
+			<div class="tab_cont active">
+				<div class="tab_wrap">
+					<div class="tab_menu type2 mt10 tscroll">
+						<ul class="ul_size">
+							<li><a href="#" class="on">일본</a></li>
+							<li><a href="#">중국</a></li>
+							<li><a href="#">싱가폴</a></li>
+							<li><a href="#">베트남</a></li>
+							<li><a href="#">필리핀</a></li>
+							<li><a href="#">타이완</a></li>
+							<li><a href="#">몽골</a></li>
+						</ul>
+					</div>
+					<!-- 일본 -->
+					<div class="tab_cont active">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 중국 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">중국 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 싱가폴 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">싱가폴 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 베트남 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">베트남 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 필리핀 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">필리핀 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 타이완 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">타이완 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 몽골 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">몽골 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+				</div>
+			</div>
+
+			<!-- 동남아 탭 -->
+			<div class="tab_cont">
+				<div class="tab_wrap">
+					<div class="tab_menu type2 mt10 tscroll">
+						<ul class="ul_size">
+							<li><a href="#" class="on">다낭</a></li>
+							<li><a href="#">방콕</a></li>
+							<li><a href="#">타이베이</a></li>
+						</ul>
+					</div>
+					<!-- 다낭 -->
+					<div class="tab_cont active">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">다낭 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 방콕 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">방콕 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 타이베이 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">타이베이 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+				</div>
+			</div>
+
+			<!-- 미주 탭 -->
+			<div class="tab_cont">
+				<div class="tab_wrap">
+					<div class="tab_menu type2 mt10 tscroll">
+						<ul class="ul_size">
+							<li><a href="#" class="on">하와이</a></li>
+							<li><a href="#">뉴욕</a></li>
+							<li><a href="#">샌프란시스코</a></li>
+						</ul>
+					</div>
+					<!-- 하와이 -->
+					<div class="tab_cont active">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd03.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">하와이 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd03.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd03.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd03.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 뉴욕 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd03.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">뉴욕 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd03.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd03.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd03.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 샌프란시스코 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd03.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">샌프란시스코 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd03.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+				</div>
+			</div>
+
+			<!-- 유럽 탭 -->
+			<div class="tab_cont">
+				<div class="tab_wrap">
+					<div class="tab_menu type2 mt10 tscroll">
+						<ul class="ul_size">
+							<li><a href="#" class="on">파리</a></li>
+							<li><a href="#">런던</a></li>
+							<li><a href="#">프라하</a></li>
+						</ul>
+					</div>
+					<!-- 파리 -->
+					<div class="tab_cont active">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">파리 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 런던 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">런던 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 프라하 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">프라하 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+				</div>
+			</div>
+
+			<!-- 대양주 탭 -->
+			<div class="tab_cont">
+				<div class="tab_wrap">
+					<div class="tab_menu type2 mt10 tscroll">
+						<ul class="ul_size">
+							<li><a href="#" class="on">괌</a></li>
+							<li><a href="#">사이판</a></li>
+							<li><a href="#">시드니</a></li>
+						</ul>
+					</div>
+					<!-- 괌 -->
+					<div class="tab_cont active">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">괌 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 사이판 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">사이판 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카유니버셜 스튜디오</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+
+					<!-- 시드니 -->
+					<div class="tab_cont">
+						<div class="total_box">
+							<span class="total">총 <b>121</b>개</span>
+							<div class="sorting">
+								<button type="button" name="button" class="btn_ico filter">필터</button>
+								<button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">빠른출발순</button>
+							</div>
+						</div>
+
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<ul class="goods_list3">
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="badge_area">
+										<span class="badge">TOP 1</span>
+										<span class="badge type3">신라트립가</span>
+										<span class="badge type2">모아랑</span>
+										<span class="badge type4">쿠폰</span>
+									</span>
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">시드니 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 3일</span>
+									<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+									<span class="box">
+										<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+									<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+									<span class="tit">오사카(KIX) 아파 호텔 히가시</span>
+									<span class="box">
+										<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+										<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //2019-11-20 탭 영역 수정 -->
+
+		<!-- 하단고정버튼 : S -->
+		<div class="r_btn_box">
+			<span><button type="button" name="button" class="btn_ico filter" popup-call="filter">필터</button></span>
+			<span><button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">정렬</button></span>
+		</div>
+		<!-- 하단고정버튼 : E -->
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+	<!-- 이전, top -->
+	<div class="quik_btn">
+		<!-- <a href="#none" class="ico btn_back2">이전</a> -->
+		<a href="#top" class="ico btn_top">맨처음로</a>
+	</div>
+	<!-- //이전, top -->
+    
+	<!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+
+	<div class="option_select" option-receive="fix_b_btn">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#" class="on">빠른출발순</a></li>
+				<li><a href="#">판매 높은 순</a></li>
+				<li><a href="#">평점 높은 순</a></li>
+				<li><a href="#">관심 높은 순</a></li>
+				<li><a href="#">낮은 가격 순</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- 2019-11-20 타이틀 셀렉트 추가 -->
+	<div class="option_select" option-receive="deadline_option">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#">숙박</a></li>
+				<li><a href="#">액티비티</a></li>
+				<li><a href="#">에어텔/패키지</a></li><!-- 2020-01-13 명칭변경 -->
+			</ul>
+		</div>
+	</div>
+	<!-- //2019-11-20 타이틀 셀렉트 추가 -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+
+</body>
+</html>

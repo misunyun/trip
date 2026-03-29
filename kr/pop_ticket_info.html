@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../resource/css/desktop.css" rel="stylesheet" />
+	<link type="text/css" href="../resource/css/mypage.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>E-티켓 보기</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="doc_etc">
+				<div class="group_info info_box">
+					<div class="passenger">
+						<div class="reg_info type2">    
+							<span class="tit_box">탑승자1</span>
+							<div class="opt_box">
+								<p class="opt">성인</p>
+							</div>
+						</div>
+						<table class="tbl_type3">
+							<colgroup>
+								<col style="width:110px;">
+								<col style="width:auto;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">한글이름</th>
+									<td>김신라</td>
+								</tr>
+								<tr>
+									<th scope="row">영문성</th>
+									<td>KIM</td>
+								</tr>
+								<tr>
+									<th scope="row">영문이름</th>
+									<td>SHILLA</td>
+								</tr>
+								<tr>
+									<th scope="row">생년월일</th>
+									<td>2019.06.14</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="btn_detail">
+							<button type="button" name="button" class="btn_txt type3" popup-call="pop_ticket">E-티켓보기</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="group_info info_box">
+					<div class="passenger">
+						<div class="reg_info type2">    
+							<span class="tit_box">탑승자2</span>
+							<div class="opt_box">
+								<p class="opt">성인</p>
+							</div>
+						</div>
+						<table class="tbl_type3">
+							<colgroup>
+								<col style="width:110px;">
+								<col style="width:auto;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">한글이름</th>
+									<td>김라라</td>
+								</tr>
+								<tr>
+									<th scope="row">영문성</th>
+									<td>KIM</td>
+								</tr>
+								<tr>
+									<th scope="row">영문이름</th>
+									<td>LALA</td>
+								</tr>
+								<tr>
+									<th scope="row">생년월일</th>
+									<td>2019.06.14</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="btn_detail">
+							<button type="button" name="button" class="btn_txt type3" popup-call="pop_ticket">E-티켓보기</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+	<!-- 팝업 : E -->
+</div>
+<script type="text/javascript" src="../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../resource/js/lalang.js"></script>
+</body>
+</html>

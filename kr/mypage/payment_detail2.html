@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap fixed"><!-- 2019-11-06 fixed 클래스 추가, fnb영역 삭제(예약 및 결제하기 공통수정) -->
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			결제상품
+		</h2>
+	 </header>
+
+	 <!-- 콘텐츠 : S -->
+	 <div class="content">
+
+		<section class="prd_item">
+ 			<div class="thumb_info">
+ 				<div class="img">
+ 					<img src="../../resource/img/tmp_prd05.jpg" alt="">
+ 				</div>
+ 				<div class="info">
+ 					<span class="cate">5성급</span>
+ 					<div class="name">아파호텔 오사카-히고바시 에키마에</div>
+ 				</div>
+ 			</div>
+ 	
+			<!-- 숙박 -->
+			<table class="tbl_type3">
+				<caption class="hide">호텔 예약정보</caption>
+				<colgroup>
+					<col style="width:120px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">룸타입(1개)</th>
+						<td>디럭스 트윈</td>
+					</tr>
+					<tr>
+						<th scope="row">체크인</th>
+						<td>2019년 2월 5일</td>
+					</tr>
+					<tr>
+						<th scope="row">체크아웃</th>
+						<td>2019년 2월 5일</td>
+					</tr>
+					<tr>
+						<th scope="row">인원</th>
+						<td>성인2명, 유아1명</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="tbl_type3" style="display:none">
+				<caption class="hide">패키지 예약정보</caption>
+				<colgroup>
+					<col style="width:120px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">출국일</th>
+						<td>2019년 2월 5일</td>
+					</tr>
+					<tr>
+						<th scope="row">귀국일</th>
+						<td>2019년 2월 5일</td>
+					</tr>
+					<tr>
+						<th scope="row">인원</th>
+						<td>성인2명, 유아1명</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<!-- 액티비티 -->
+			<table class="tbl_type3" style="display:none">
+				<caption class="hide">액티비티 예약정보</caption>
+				<colgroup>
+					<col style="width:120px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">사용일</th>
+						<td>2019-05-05(일)~2019-05-08(수)</td>
+					</tr>
+					<tr>
+						<th scope="row">옵션</th>
+						<td>버스투어(오후) 성인 2<br>버스투어(오후) 성인 2</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<div class="pay_info">
+			<h3>결제금액</h3>
+			<dl class="fare_detail ">
+				<dt>객실요금</dt>
+				<dd>287,000원 × 2</dd>
+
+				<dt>조식</dt>
+				<dd>79480원 × 2</dd>
+
+				<dt>세금</dt>
+				<dd>7,320원 × 2</dd>
+
+				<dt>도시세</dt>
+				<dd>10,000원 × 2</dd>
+			</dl>
+
+			<dl class="sub_total">
+				<dt>합계금액</dt>
+				<dd>110,000원</dd>
+			</dl>
+		</div>
+
+		<section class="section total_pay">
+			<dl>
+				<dt>쿠폰할인</dt>
+				<dd>1,400,000원</dd>
+
+				<dt>제휴사 할인</dt>
+				<dd>-3,480원</dd>
+
+				<dt>총 할인금액</dt>
+				<dd>-3,480원</dd>
+			</dl>
+			<dl class="total">
+				<dt>총 결제금액</dt>
+				<dd><strong>1,400,000</strong>원</dd>
+			</dl>
+		</section>
+
+		<section class="section booker_info">
+			<h3>결제정보</h3>
+			<table class="tbl_type3">
+				<colgroup>
+					<col style="width:110px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">결제번호</th>
+						<td>shilla12345(KDPAWK)</td>
+					</tr>
+					<tr>
+						<th scope="row">결제상태</th>
+						<td>결제완료</td>
+					</tr>
+					<tr>
+						<th scope="row">결제일</th>
+						<td>2019.04.02 15:30</td>
+					</tr>
+					<tr>
+						<th scope="row">결제방법</th>
+						<td>신용카드(KB국민카드)</td>
+					</tr>
+					<tr>
+						<th scope="row">결제금액</th>
+						<td>1,149,400원</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section class="section booker_info">
+			<h3>결제방법</h3>
+			<table class="tbl_type3">
+				<colgroup>
+					<col style="width:110px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">결제방법</th>
+						<td>신용카드(국민카드/3개월)</td>
+					</tr>
+					<tr>
+						<th scope="row">카드종류</th>
+						<td>국민카드(****-****-****-****)</td>
+					</tr>
+					<tr>
+						<th scope="row">소유주</th>
+						<td>김신라</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="btn_detail"><button type="button" name="button" class="btn_txt type3">바우처보기</button></div><!-- 2019-09-27 버튼 추가 -->
+		</section>
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<div class="btn_wrap">
+		<button type="button" name="button" class="btn primary2">결제취소</button>
+	</div>
+	
+	<!-- 삭제 
+	<div class="tooltip" tooltip-receive="1">
+		<strong>요금상세</strong>
+		<dl class="fare_detail">
+			<dt>항공요금</dt>
+			<dd>287,000원 × 2</dd>
+
+			<dt>유류할증료</dt>
+			<dd>79480원 × 2</dd>
+
+			<dt>제세공과금</dt>
+			<dd>7,320원 × 2</dd>
+
+			<dt>발권대행수수료</dt>
+			<dd>10,000원 × 2</dd>
+		</dl>
+		<dl class="fare_detail total">
+			<dt>총 예상요금</dt>
+			<dd>767,600원</dd>
+		</dl>
+		<button type="button" name="button" class="btn_txt type4">항공 요금규정 안내</button>
+	</div>
+	-->
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

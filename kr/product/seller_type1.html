@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<!-- Header : S -->
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			셀러샵
+			<button type="button" class="ico btn_like">관심상품</button>
+			<button type="button" class="ico btn_sns">공유</button>
+		</h2>
+	</header>
+	<!-- Header : E -->
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+
+		<!-- 셀러정보 : S -->
+		<div class="seller_info big">
+			<div class="seller_detail">
+				<div class="tit">
+					<span class="seller_logo" style="display:none"><img src="../../resource/img/tmp_logo.png" alt="셀러샵 로고"></span><!-- BI이미지 등록시 -->
+					<span class="seller_logo"><em class="tit">인</em></span><!-- D : BI이미지 미등록시 셀러이름 첫 글자만 노출 -->
+					<strong class="seller_tit">인터파크 투어</strong>
+					<button type="button" name="button" class="btn_ico type2 talk"><span>셀러톡</span></button>
+				</div>
+				<div class="txt">싸니까 믿으니까 인터파크니까<br>어떤 여행이든 인터파크와 함께 하세요!</div>
+				<div class="bottom_box">
+					<p class="average_area">
+						평점 <span class="review_point"><span class="score" style="width:80%">4.0</span></span>
+						<b>4.0</b>
+					</p>
+					<button type="button" name="button" class="btn_grade"><span class="b_txt">나의 등급</span><span class="i_grade small silver">S</span></button>
+					<!-- D : 등급별
+					<button type="button" name="button" class="btn_grade"><span class="b_txt">나의 등급</span><span class="i_grade small basic">B</span></button>
+					<button type="button" name="button" class="btn_grade"><span class="b_txt">나의 등급</span><span class="i_grade small bronze">B</span></button>
+					<button type="button" name="button" class="btn_grade"><span class="b_txt">나의 등급</span><span class="i_grade small gold">G</span></button>
+					-->
+				</div>
+			</div>
+		</div>
+
+		<div class="seller_info mini fixed_step2" data-native="status">	<!-- data-native 추가  2019-11-13 -->
+			<a href="#" class="gotop"><!-- 2019-10-18 a태그 추가 후 gotop 클래스 추가 -->
+				<div class="seller_detail">
+					<div class="tit">
+						<strong class="seller_tit">인터파크 투어</strong>
+					</div>
+				</div>
+			</a>
+		</div>
+		<!-- 셀러정보 : E -->
+
+		<!-- D : 2019-07-12 데이터없음 추가 -->
+		<div class="no_data type4 d_mt">
+			<em>등록된 상품이 없습니다.</em>
+		</div>
+		<!-- //D : 2019-07-12 데이터없음 추가 -->
+
+		<!-- 셀러쿠폰 : S -->
+		<div class="coupon_banner slider_wrap" slider-option="banner fullsize autoplay">
+			<!-- D : loop -->
+			<div class="slider_item">
+				<a href="#" dimalert-call="coupon_down">
+					<div class="txt">
+						<p class="add">인터파크투어 상품에 한하여 할인</p>
+						<p class="name orange">셀러 즐겨찾기 등록시 10% 쿠폰!</p><!-- D : 쿠폰 등록시 컬러명 적용(색상 클래스 추가) -->
+						<!--
+						<p class="name red">셀러 즐겨찾기 등록시 10% 쿠폰!</p>
+						<p class="name yellow">셀러 즐겨찾기 등록시 10% 쿠폰!</p>
+						<p class="name pink">셀러 즐겨찾기 등록시 10% 쿠폰!</p>
+						<p class="name mint">셀러 즐겨찾기 등록시 10% 쿠폰!</p>
+						<p class="name green">셀러 즐겨찾기 등록시 10% 쿠폰!</p>
+						<p class="name blue">셀러 즐겨찾기 등록시 10% 쿠폰!</p>
+						<p class="name purple">셀러 즐겨찾기 등록시 10% 쿠폰!</p>
+						<p class="name black">셀러 즐겨찾기 등록시 10% 쿠폰!</p>
+						-->
+						<p class="date">2019.07.31 까지</p>
+					</div>
+					<div class="down_area"><i class="ico download">다운로드</i></div>
+				</a>
+			</div>
+			<!-- //D : loop -->
+			<div class="slider_item">
+				<a href="#" dimalert-call="coupon_down">
+					<div class="txt">
+						<p class="add">인터파크투어 상품에 한하여 할인</p>
+						<p class="name orange">셀러 즐겨찾기 등록시 20% 쿠폰!</p><!-- D : 쿠폰 등록시 컬러명 적용 -->
+						<p class="date">2019.07.31 까지</p>
+					</div>
+					<div class="down_area"><i class="ico download">다운로드</i></div>
+				</a>
+			</div>
+			<div class="slider_item">
+				<a href="#" dimalert-call="coupon_down">
+					<div class="txt">
+						<p class="add">인터파크투어 상품에 한하여 할인</p>
+						<p class="name orange">셀러 즐겨찾기 등록시 30% 쿠폰!</p><!-- D : 쿠폰 등록시 컬러명 적용 -->
+						<p class="date">2019.07.31 까지</p>
+					</div>
+					<div class="down_area"><i class="ico download">다운로드</i></div>
+				</a>
+			</div>
+		</div>
+		<!-- 셀러쿠폰 : E -->
+
+
+		<h3><a href="#" class="btn_more">베스트후기</a></h3><!-- 2019-11-21 타이틀 더보기 영역 수정 -->
+		<!-- 베스트후기 리스트 : S -->
+		<div class="best_review tscroll">
+			<ul class="ul_size">
+				<!-- D : loop -->
+				<li>
+					<a href="#">
+						<div class="review_item">
+							<div class="user_info">
+								<span class="info">
+									<span class="name">ppo****</span>
+									<span class="date">2019.01.21</span>
+								</span>
+								<span class="review_point"><span class="score" style="width:80%">4</span></span>
+							</div>
+							<div class="cont">
+								<div class="prd_name">후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소</div>
+								<div class="img">
+									<img class="ajax_lazy" data-src="../../resource/img/tmp_photo02.jpg" src="../../resource/img/img_blank.png" alt="리뷰 이미지"><!-- 2019-11-13 lazyload 적용 --><!-- D : 이미지리뷰, 동영상리뷰 모두 이미지만 노출(dim_box와 개수노출안됨) -->
+								</div>
+								<div class="txt_area">
+									<div class="txt">역시 제주도 가는게 제일 싸고 좋은 듯 해요 ㅎㅎ 좋은 가격에 재밌게 잘 놀다 왔네요~! 역시 제주도 가는게 제일 싸고 좋은 듯 해요 ㅎㅎ 좋은 가격에 재밌게 잘 놀다 왔네요~!</div>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<!-- //D : loop -->
+				<li>
+					<a href="#">
+						<div class="review_item">
+							<div class="user_info">
+								<span class="info">
+									<span class="name">ppo****</span>
+									<span class="date">2019.01.21</span>
+								</span>
+								<span class="review_point"><span class="score" style="width:80%">4</span></span>
+							</div>
+							<div class="cont">
+								<div class="prd_name">후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소</div>
+								<div class="txt_area">
+									<div class="txt">역시 제주도 가는게 제일 싸고 좋은 듯 해요 ㅎㅎ 좋은 가격에 재밌게 잘 놀다 왔네요~! 역시 제주도 가는게 제일 싸고 좋은 듯 해요 ㅎㅎ 좋은 가격에 재밌게 잘 놀다 왔네요~! 역시 제주도 가는게 제일 싸고 좋은 듯 해요 ㅎㅎ 좋은 가격에 재밌게 잘 놀다 왔네요~! 역시 제주도 가는게 제일 싸고 좋은 듯 해요 ㅎㅎ 좋은 가격에 재밌게 잘 놀다 왔네요~!</div>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="review_item">
+							<div class="user_info">
+								<span class="info">
+									<span class="name">ppo****</span>
+									<span class="date">2019.01.21</span>
+								</span>
+								<span class="review_point"><span class="score" style="width:80%">4</span></span>
+							</div>
+							<div class="cont">
+								<div class="prd_name">후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소 후쿠오카 출발 가능/북큐슈 일주 쿠로가와아소</div>
+								<div class="txt_area">
+									<div class="txt">역시 제주도 가는게 제일 싸고 좋은 듯 해요 ㅎㅎ</div>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 베스트후기 리스트 : E -->
+
+		<!-- 기획전 이벤트 배너 : S -->
+		<!-- 2019-08-12 배너영역 마크업 수정 -->
+		<div class="promo_list slider_wrap" slider-option="banner">
+			<!-- D : loop -->
+			<div class="slider_item">
+				<a href="#">
+					<img src="../../resource/img/tmp_event02.jpg" alt="">
+					<div class="mask"></div>
+					<span class="badge ad">AD</span><!-- 2019-11-14 AD 라벨 클래스 추가 -->
+					<div class="txt">
+						<span class="badge etc">후쿠오카</span><!-- D : 2019-06-20 수정 : 뱃지 클래스 변경 -->
+						<!-- 2019-11-14 J와 동일하게 텍스트 2줄처리 -->
+						<em class="txt1">후쿠오카로 떠나는</em>
+						<em class="txt2">3일 특급 온천 여행</em>
+						<!-- //2019-11-14 J와 동일하게 텍스트 2줄처리 -->
+						<span class="date">2019.09.01 까지</span>
+					</div>
+				</a>
+			</div>
+			<!-- //D : loop -->
+			<div class="slider_item">
+				<a href="#">
+					<img src="../../resource/img/tmp_event02.jpg" alt="">
+					<div class="mask"></div>
+					<span class="badge ad">AD</span><!-- 2019-11-14 AD 라벨 클래스 추가 -->
+					<div class="txt">
+						<span class="badge etc">후쿠오카</span><!-- D : 2019-06-20 수정 : 뱃지 클래스 변경 -->
+						<!-- 2019-11-14 J와 동일하게 텍스트 2줄처리 -->
+						<em class="txt1">후쿠오카로 떠나는</em>
+						<em class="txt2">3일 특급 온천 여행</em>
+						<!-- //2019-11-14 J와 동일하게 텍스트 2줄처리 -->
+						<span class="date">2019.09.01 까지</span>
+					</div>
+				</a>
+			</div>
+			<div class="slider_item">
+				<a href="#">
+					<img data-lazy="../../resource/img/tmp_event02.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2020-02-04 data-lazy 추가 -->
+					<div class="mask"></div>
+					<span class="badge ad">AD</span><!-- 2019-11-14 AD 라벨 클래스 추가 -->
+					<div class="txt">
+						<span class="badge etc">후쿠오카</span><!-- D : 2019-06-20 수정 : 뱃지 클래스 변경 -->
+						<!-- 2019-11-14 J와 동일하게 텍스트 2줄처리 -->
+						<em class="txt1">후쿠오카로 떠나는</em>
+						<em class="txt2">3일 특급 온천 여행</em>
+						<!-- //2019-11-14 J와 동일하게 텍스트 2줄처리 -->
+						<span class="date">2019.09.01 까지</span>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- //2019-08-12 배너영역 마크업 수정 -->
+		<!-- 기획전 이벤트 배너 : E -->
+
+		<h3><a href="#" class="btn_more">항공권</a></h3><!-- 2019-11-21 타이틀 더보기 영역 수정 -->
+		<!-- 항공권 리스트 : S -->
+		<div class="ticket_list tscroll">
+			<ul class="ul_size">
+				<li>
+					<a href="#">
+						<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+						<span class="route">
+							<strong class="from">크로아티아</strong>
+							<img src="../../resource/img/bg_route.png" alt="">
+							<strong class="to">크로아티아</strong>
+						</span>
+						<span class="period">03.02 출발 ~ 03.31 도착</span>
+						<span class="price"><strong>1,440,000</strong>원</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+						<span class="route">
+							<strong class="from">서울</strong>
+							<img src="../../resource/img/bg_route.png" alt="">
+							<strong class="to">크로아티아</strong>
+						</span>
+						<span class="period">03.02 출발 ~ 03.31 도착</span>
+						<span class="price"><strong>1,440,000</strong>원</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 항공권 리스트 : E -->
+
+		<h3><a href="#" class="btn_more">숙박</a></h3><!-- 2019-11-21 타이틀 더보기 영역 수정 -->
+		<!-- 숙박 리스트 : S -->
+		<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+		<div class="goods_list tscroll">
+			<ul class="ul_size">
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd01.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="badge_area">
+							<span class="badge type3">신라트립가</span>
+						</span>
+						<span class="cate">입장권/티켓</span>
+						<span class="name">[오늘마감]오사카 유니버셜 스튜디오 오사카</span>
+						<span class="sale_area">
+							<span class="per">20%</span><span class="cost">10,000,000원</span>
+						</span>
+						<span class="price"><strong>8,000,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd01.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">유심/와이파이</span>
+						<span class="name">[오늘마감]오사카 유니버셜 스튜디오</span>
+						<span class="price"><strong>440,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd01.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">여행자편의</span>
+						<span class="name">[오늘마감]오사카 유니버셜 스튜디오 오사카</span>
+						<span class="price"><strong>440,000</strong>원~</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+		<!-- 숙박 리스트 : E -->
+
+		<h3><a href="#" class="btn_more">에어텔/패키지</a></h3><!-- 2020-01-13 명칭변경 --><!-- 2019-11-21 타이틀 더보기 영역 수정 -->
+		<!-- 패키지 리스트 : S -->
+		<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+		<div class="goods_list tscroll">
+			<ul class="ul_size">
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd02.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="badge_area">
+							<span class="badge type3">신라트립가</span>
+						</span>
+						<span class="cate">입장권/티켓</span>
+						<span class="name">[오늘마감]오사카 유니버셜 스튜디오 오사카</span>
+						<span class="sale_area">
+							<span class="per">20%</span><span class="cost">10,000,000원</span>
+						</span>
+						<span class="price"><strong>8,000,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd02.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">유심/와이파이</span>
+						<span class="name">[오늘마감]오사카 유니버셜 스튜디오</span>
+						<span class="price"><strong>440,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd02.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">여행자편의</span>
+						<span class="name">[오늘마감]오사카 유니버셜 스튜디오 오사카</span>
+						<span class="price"><strong>440,000</strong>원~</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+		<!-- 패키지 리스트 : E -->
+
+		<h3><a href="#" class="btn_more">액티비티</a></h3><!-- 2019-11-21 타이틀 더보기 영역 수정 -->
+		<!-- 액티비티 리스트 : S -->
+		<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+		<div class="goods_list tscroll">
+			<ul class="ul_size">
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="badge_area">
+							<span class="badge type3">신라트립가</span>
+						</span>
+						<span class="cate">입장권/티켓</span>
+						<span class="name">[오늘마감]오사카 유니버셜 스튜디오 오사카</span>
+						<span class="sale_area">
+							<span class="per">20%</span><span class="cost">10,000,000원</span>
+						</span>
+						<span class="price"><strong>8,000,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">유심/와이파이</span>
+						<span class="name">[오늘마감]오사카 유니버셜 스튜디오</span>
+						<span class="price"><strong>440,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">여행자편의</span>
+						<span class="name">[오늘마감]오사카 유니버셜 스튜디오 오사카</span>
+						<span class="price"><strong>440,000</strong>원~</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+		<!-- 액티비티 리스트 : E -->
+
+		<!-- 2019-10-08 셀러톡추가 -->
+		<div class="r_btn_box sellertalk"><!-- 2019-10-18 .sellertalk 추가 -->
+			<span><button type="button" name="button" class="btn_ico talk_b">셀러톡</button></span>
+		</div>
+		<!-- //2019-10-08 셀러톡추가 -->
+	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+    <!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+
+	<!-- dim alert : S -->
+	<div class="dim_alert" dimalert-receive="coupon_down">
+		<p>다운로드가 완료되었습니다.</p>
+	</div>
+	<!-- dim alert : E -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

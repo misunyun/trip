@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephoe=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/moalang.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<!-- Header : S -->
+	<header>
+		<h1><a href="#">SHILLATRIP</a></h1>
+		<button type="button" name="button" class="ico search">검색</button>
+		<button type="button" name="button" class="ico my">마이페이지</button>
+		<!-- 2019-10-14 GNB 공통SB v2.6현행화 -->
+		<nav class="gnb tscroll">
+			<ul class="ul_size">
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">마감임박</a></li>
+				<li><a href="#">라랑팩</a></li>
+				<li><a href="#">랭킹</a></li>
+				<li><a href="#">고객센터</a></li>
+			</ul>
+		</nav>
+		<!-- //2019-10-14 GNB 공통SB v2.6현행화 -->
+	</header>
+	<!-- Header : E -->
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<h3>기본 상품 스크롤형</h3>
+		<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+		<div class="goods_list tscroll">
+			<ul class="ul_size">
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="badge_area">
+							<span class="badge type3">신라트립가</span>
+						</span>
+						<span class="cate">티켓/패스</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="sale_area">
+							<span class="per">20%</span><span class="cost">10,000,000원</span>
+						</span>
+						<span class="price"><strong>8,000,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/img_blank.png" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><!-- 등록된 상품이 없을 경우 대체 이미지-->						
+						<span class="cate">입장권/티켓</span>
+						<span class="name">와이파이 도시락 할인 대여</span>
+						<span class="price"><strong>440,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/img_adult.png" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><!-- 19세 이상 이미지-->
+						
+						<!-- <span class="cate">유심/와이파이</span> -->
+						<span class="tit">하와이 천원의 행복</span>
+						<span class="price"><strong>440,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">여행자편의</span>
+						<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="sale_area">
+							<span class="per">20%</span><span class="cost">8,000,000원</span>
+						</span>
+						<span class="price"><strong>6,400,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">여행자편의</span>
+						<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="sale_area">
+							<span class="per">20%</span><span class="cost">8,000,000원</span>
+						</span>
+						<span class="price"><strong>6,400,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">여행자편의</span>
+						<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="sale_area">
+							<span class="per">20%</span><span class="cost">8,000,000원</span>
+						</span>
+						<span class="price"><strong>440,000</strong>원~</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+
+		<h3>상품2 고정형</h3>
+        <!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+		<ul class="goods_list2">
+			<li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/img_blank.png" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+					<span class="badge_area">
+						<span class="badge">TOP 1</span>
+					</span>
+					<span class="tit">[부산출발] 대만 완전일주 4박 5일</span>
+					<span class="cost">10,000,000원</span>
+					<span class="price"><span class="per">20%</span><strong>10,000,000</strong>원~</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/tmp_prd02.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+					<span class="badge_area">
+						<span class="badge type3">4</span><!-- D : 2019-06-20 수정 : 뱃지 클래스 변경 -->
+					</span>
+					<span class="tit">대만 완전일주 4일</span>
+					<span class="cost">10,000,000원</span>
+					<span class="price"><span class="per">20%</span><strong>10,000,000</strong>원~</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/img_adult.png" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><!-- 19세 이상 이미지-->
+					<span class="tit">대만 완전일주 4일</span>
+					<span class="price"><strong>10,000,000</strong>원~</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/tmp_prd02.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+					<span class="tit">대만 완전일주 4일</span>
+					<span class="cost">10,000,000원</span>
+					<span class="price"><span class="per">20%</span><strong>10,000,000</strong>원~</span>
+				</a>
+			</li>
+		</ul>
+		<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+
+		<h3>상품3 큰 썸네일형</h3>
+		<!-- 2019-11-05 상품모듈 수정(뱃지추가 및 순서변경, desc삭제, box 추가 - 신라페이, 임직원가 등 추가) -->
+		<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+		<ul class="goods_list3">
+			<li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/img_blank.png" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+					<span class="badge_area">
+						<span class="badge">TOP 1</span>
+						<span class="badge type3">신라트립가</span>
+						<span class="badge type2">모아랑</span>
+						<span class="badge type4">쿠폰</span>
+					</span>
+					<span class="cate">입장권/티켓</span>
+					<span class="tit">대만 완전일주 4일</span>
+					<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+					<span class="box">
+						<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+						<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+					</span>
+				</a>
+				<div class="user_info">
+					<span class="info">
+						<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span><!-- 이미지 없을 때 -->
+						<span class="name creator">나만따라와</span>
+					</span>
+				</div>
+			</li>
+			<li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/tmp_prd03.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+					<span class="cate">입장권/티켓</span>
+					<span class="tit">대만 완전일주 4일</span>
+					<span class="cost">10,000,000원</span>
+					<span class="box">
+						<span class="price"><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+						<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/img_adult.png" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><!-- 19세 이상 이미지-->
+					<span class="cate">입장권/티켓</span>
+					<span class="tit">대만 완전일주 4일</span>
+					<span class="cost">10,000,000원</span>
+					<span class="box">
+						<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+						<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+					</span>
+				</a>
+			</li>
+		</ul>
+		<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+		<!-- //2019-11-05 상품모듈 수정(뱃지추가 및 순서변경, desc삭제, box 추가 - 신라페이, 임직원가 등 추가) -->
+
+		<h3>상품3 큰 썸네일형 - 공유하기</h3>
+		<ul class="goods_list3 add_bt"><!-- 공유/삭제 버튼이 있을때 add_bt 클래스 추가 -->
+			<li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/img_blank.png" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+					<span class="badge_area">
+						<span class="badge">TOP 1</span>
+						<span class="badge type2">모아랑</span>
+						<span class="badge type3">신라트립가</span>
+					</span>
+					<span class="cate">입장권/티켓</span>
+					<span class="tit">대만 완전일주 4일</span>
+					<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+					<span class="box">
+						<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+						<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+					</span>
+				</a>
+				<button type="button" name="button" class="ico btn_tooltip menu" tooltip-call="1">공유/삭제</button>
+			</li>
+            <li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/tmp_prd03.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+					<span class="tit">대만 완전일주 4일</span>
+					<span class="box">
+						<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+						<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+					</span>
+				</a>
+				<button type="button" name="button" class="ico btn_tooltip menu" tooltip-call="1">공유/삭제</button>
+            </li>
+		</ul>
+
+		<h3>가로형 </h3>
+		<!-- 2019-10-14 상품모듈 수정(할인율,원가추가) -->
+		<ul class="goods_horiz">
+			<li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/img_blank.png" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><!-- 등록된 상품이 없을 경우 대체 이미지-->
+					<span class="badge_area">
+						<span class="badge type3">신라트립가</span>
+					</span>
+					<span class="tit">더 파크뷰(제주 신라호텔) 더 파크뷰(제주 신라호텔)</span>
+					<p class="class">
+						<span class="score"><b>1</b>성급</span>
+						<span class="review_point"><span class="score" style="width:57%">3</span></span>
+						<!-- <span>(35)</span> -->
+					</p>
+					<span class="cost">10,000,000원</span>
+					<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/img_adult.png" src="../../resource/img/img_blank.png" alt=""><!-- 19세 이상 이미지-->					
+					<span class="tit">이탈리아 베니스</span>
+					<span class="cost">10,000,000원</span>
+					<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt="">
+					<span class="tit">반얀트리 마카오</span>
+					<span class="price"><strong>8,000,000</strong>원~</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt="">
+					<span class="cate">숙박</span>
+					<span class="tit">뉴질랜드 남북섬 9일 인솔자 동행, 4성 호텔</span>
+					<p class="class">
+						<!-- <span class="score"><b>1</b>성급</span> -->
+						<span class="review_point"><span class="score" style="width:57%">3</span></span>
+						<span>(35)</span>
+					</p>
+					<span class="cost">10,000,000원</span>
+					<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt="">
+					<span class="cate">숙박</span>
+					<span class="tit">반얀트리 마카오</span>
+					<!-- <span class="eng">Banyan Tree Macau</span> -->
+					<p class="class">
+						<!-- <span class="score"><b>1</b>성급</span> -->
+						<span class="review_point"><span class="score" style="width:57%">3</span></span>
+						<span>(35)</span>
+					</p>
+					<span class="cost">10,000,000원</span>
+					<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+				</a>
+			</li>			
+			<li class="soldout">
+				<a href="#">
+					<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt="">
+					<span class="tit">타이틀 두줄 이상 말줄임 뉴질랜드 남북섬 9일 인솔자 동행, 4성 호텔</span>
+					<span class="price soldout">판매종료</span>
+				</a>
+			</li>
+		</ul>
+		<!-- //2019-10-14 상품모듈 수정(할인율,원가추가) -->
+
+		<h3>항공권 검색전</h3>
+		<div class="tscroll">
+            <!-- 검색전 -->
+            <div class="ticket_list" style="display:block">
+                <ul class="ul_size">
+					<li>
+                        <a href="#">
+                            <span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span>
+                            <span class="route">
+                                <strong class="from">ICN</strong>
+                                <img src="../../resource/img/bg_route.png" alt="">
+                                <strong class="to">KIX</strong>
+                            </span>
+                            <span class="period">03.02 출발 ~ 03.31 도착</span>
+                            <span class="price"><strong>1,440,000</strong>원</span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="#">
+                            <span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span>
+                            <span class="route">
+                                <strong class="from">인천</strong>
+                                <img src="../../resource/img/bg_route.png" alt="">
+                                <strong class="to">도쿄</strong>
+                            </span>
+                            <span class="period">03.02 출발 ~ 03.31 도착</span>
+                            <span class="price"><strong>1,440,000</strong>원</span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="#">
+                            <span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span>
+                            <span class="route">
+                                <strong class="from">프랑크푸르트</strong>
+                                <img src="../../resource/img/bg_route.png" alt="">
+                                <strong class="to">상트페테르부르크</strong>
+                            </span>
+                            <span class="period">03.02 출발 ~ 03.31 도착</span>
+                            <span class="price"><strong>1,440,000</strong>원</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span>
+                            <span class="route">
+                                <strong class="from">서울</strong>
+                                <img src="../../resource/img/bg_route.png" alt="">
+                                <strong class="to">상트페테르부르크</strong>
+                            </span>
+                            <span class="period">03.02 출발 ~ 03.31 도착</span>
+                            <span class="price"><strong>1,440,000</strong>원</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+		</div>
+		<h3>항공권 검색후</h3>
+		<div class="tscroll">
+			<div class="ticket_list2" style="display:block">
+                <ul class="ul_size">
+                    <li>
+                        <a href="#">
+                            <p class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="KE"> 대한항공</p>
+                            <p class="flight_plan">
+                                <span class="depart">
+                                    <strong>오전 <b>00:00</b></strong>ICN
+                                </span>
+                                <span class="time">직항 01시간 55분</span>
+                                <span class="arrival">
+                                    <strong>오후 <b>07:15</b></strong>ICN <span class="em">＋1</em>
+                                </span>
+                            </p>
+                            <p class="flight_plan">
+                                <span class="depart">
+                                    <strong>오전 <b>88:99</b></strong>ICN
+                                </span>
+                                <span class="time">직항 01시간 55분</span>
+                                <span class="arrival">
+                                    <strong>오후 <b>07:15</b></strong>ICN <span class="em">＋1</em>
+                                </span>
+                            </p>
+                            <p class="price"><strong>1,431,000</strong>원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="KE"> 대한항공</p>
+                            <p class="flight_plan">
+                                <span class="depart">
+                                    <strong>오전 <b>00:00</b></strong>ICN
+                                </span>
+                                <span class="time">직항 01시간 55분</span>
+                                <span class="arrival">
+                                    <strong>오후 <b>07:15</b></strong>ICN <span class="em">＋1</em>
+                                </span>
+                            </p>
+                            <p class="flight_plan">
+                                <span class="depart">
+                                    <strong>오전 <b>88:99</b></strong>ICN
+                                </span>
+                                <span class="time">직항 01시간 55분</span>
+                                <span class="arrival">
+                                    <strong>오후 <b>07:15</b></strong>ICN <span class="em">＋1</em>
+                                </span>
+                            </p>
+                            <p class="price"><strong>1,431,000</strong>원</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+		</div>
+
+		<h3>항공권 리스트형</h3>
+		<div class="ticket_list vertical add_bt"><!-- 공유/삭제 버튼이 있을때 add_bt 클래스 추가 -->
+			<ul>
+				<li>
+					<a href="#">
+						<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl"> 대한항공</span>
+						<span class="route">
+							<strong class="from">크로아티아</strong>
+							<img src="../../resource/img/bg_route2.png">
+							<strong class="to">크로아티아</strong>
+						</span>
+						<span class="period">03.02 출발 ~ 04.11 도착</span>
+						<p class="price"></p>
+					</a>
+					<button type="button" name="button" class="ico btn_tooltip menu" tooltip-call="1">공유/삭제</button>
+					<button type="button" name="button" class="btn_txt type4">실시간 가격 조회</button>
+				</li>
+				<li class="end"><!-- D: 구매불가 일때 end 클래스 추가 -->
+					<a href="#">
+						<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl"> 대한항공</span>
+						<span class="route">
+							<strong class="from">서울</strong>
+							<img src="../../resource/img/bg_route2.png">
+							<strong class="to">크로아티아</strong>
+						</span>
+						<span class="period">03.02 출발 ~ 04.11 도착</span>
+						<p class="price"></p>
+					</a>
+					<button type="button" name="button" class="ico btn_tooltip menu" tooltip-call="1">공유/삭제</button>
+					<button type="button" name="button" class="btn_txt type4">실시간 가격 조회</button>
+					<!-- 판매 중지 dim : S -->
+					<div class="mask">
+						<p>판매 중지</p>
+						<button type="button" name="button" class="ico btn_close5">삭제</button>
+					</div>
+					<!-- 판매 중지 dim : E -->
+				</li>
+				<li class="end"><!-- D: 구매불가 일때 end 클래스 추가 -->
+					<a href="#">
+						<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl"> 대한항공</span>
+						<span class="route">
+							<strong class="from">서울</strong>
+							<img src="../../resource/img/bg_route2.png">
+							<strong class="to">크로아티아</strong>
+						</span>
+						<span class="period">03.02 출발 ~ 04.11 도착</span>
+						<p class="price"></p>
+					</a>
+					<button type="button" name="button" class="ico btn_tooltip menu" tooltip-call="1">공유/삭제</button>
+					<button type="button" name="button" class="btn_txt type4">실시간 가격 조회</button>
+					<!-- 기간 만료 dim : S -->
+					<div class="mask">
+						<p>기간 만료</p>
+						<button type="button" name="button" class="ico btn_close5">삭제</button>
+					</div>
+					<!-- 기간 만료 dim : S -->
+				</li>
+				<li>
+					<a href="#">
+						<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl"> 대한항공</span>
+						<span class="route">
+							<strong class="from">서울</strong>
+							<img src="../../resource/img/bg_route2.png">
+							<strong class="to">크로아티아</strong>
+						</span>
+						<span class="period">03.02 출발 ~ 04.11 도착</span>
+						<p class="price">
+							<span class="terms">삼성카드 결제조건</span>
+							<span class="money"><strong>1,440,000</strong>원</span>
+						</p>
+					</a>
+					<button type="button" name="button" class="ico btn_tooltip menu" tooltip-call="1">공유/삭제</button>
+				</li>
+			</ul>
+		</div>
+
+		<h3>썸네일 상품형</h3>
+		<div class="thumb_list tscroll">
+			<ol class="ul_size">
+				<li><a href="#"><span class="txt_area"><em class="tit">일본</em><span class="txt">후쿠오카</span></span><img class="ajax_lazy" data-src="../../resource/img/tmp_prd12.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><span class="badge_area"><span class="badge">TOP 1</span></span></a></li>
+				<li><a href="#"><span class="txt_area"><em class="tit">일본</em><span class="txt">후쿠오카</span></span><img class="ajax_lazy" data-src="../../resource/img/tmp_prd12.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><span class="badge_area"><span class="badge">TOP 2</span></span></a></li>
+				<li><a href="#"><span class="txt_area"><em class="tit">일본</em><span class="txt">후쿠오카</span></span><img class="ajax_lazy" data-src="../../resource/img/tmp_prd12.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><span class="badge_area"><span class="badge">TOP 3</span></span></a></li>
+				<li><a href="#"><span class="txt_area"><em class="tit">일본</em><span class="txt">후쿠오카</span></span><img class="ajax_lazy" data-src="../../resource/img/tmp_prd12.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><span class="badge_area"><span class="badge type3">4</span></span></a></li>
+				<li><a href="#"><span class="txt_area"><em class="tit">일본</em><span class="txt">후쿠오카</span></span><img class="ajax_lazy" data-src="../../resource/img/tmp_prd12.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><span class="badge_area"><span class="badge type3">5</span></span></a></li>
+			</ol>
+		</div>
+ 	</div>
+	<!-- 콘텐츠 : E -->
+	<div class="tooltip tap_menu" tooltip-receive="1">
+		<a href="#">공유</a>
+		<a href="#">삭제</a>
+	</div>
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+	<!-- 이전, top -->
+	<div class="quik_btn">
+		<a href="#none" class="ico btn_back2">이전</a>
+		<a href="#top" class="ico btn_top">맨처음로</a>
+	</div>
+	<!-- //이전, top -->
+    <!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

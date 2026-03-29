@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+body{font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro',Meiryo,"メイリオ","MS P Gothic","ＭＳ Ｐゴシック",arial,sans-serif!important}
+input[type=text],input[type=search],input[type=password],input[type=tel]{line-height:37px;}
+.badge,.label{line-height:20px;}
+
+
+.trip_search .to strong{line-height:1.35}
+.popup.filter .filter.box_type1 .checkbox{font-size: 12px}
+
+/* 여행자정보, 결제정보 */
+.input_info .tourist{padding-bottom:0;height:25px;}
+.input_info h3{padding-bottom:15px;}
+.input_info div > label:first-child{margin-top:0;}
+.input_info div > label{display: block;width: 100%;margin:9px 0 0 0}
+.input_info input[type=text],.input_info input[type=tel],.input_info .btn_option,.input_info .t_box,.input_info .schbox,.input_info .btn_date,.input_info .form,.input_info .text_box{width: 100%}
+.input_info .t_box{min-height:inherit;padding-top:0;}
+.input_info .gender{width:100%;}
+.passenger+.noti{margin-top: 15px}
+
+.schedule.pay .input_info div > label{width:100%;}
+.schedule.pay .input_info input[type=text],.schedule.pay .input_info input[type=tel],.schedule.pay .input_info .btn_option,.schedule.pay .input_info .t_box,.schedule.pay .input_info .schbox,.schedule.pay .input_info .btn_date,.schedule.pay 
+.schedule.pay .input_info .gender{width:100%;}
+.input_info .form,.schedule.pay .input_info .text_box{width:100%;}
+
+.seller_detail .link{width: calc(100% - 100px)}
+.seller_detail .seller_tit{padding:8px 105px 7px 63px}
+
+/* 분쟁해결센터 */
+.fold_area.type1 .img_area .txt01{left:-10px}
+.fold_area.type1 .img_area .txt02{right:-10px}
+.fold_area.type1 .img_area .txt03{right:0px}
+.fold_area.type1 .img_area .txt04{left:-5px}
+.fold_area.type1 .img_area .txt05{left:-18px}
+
+
+/* 모아랑 */
+.btn_moalang button{line-height:1.2;}
+.moa_detail dt{display: block;width: 100%;padding-top:5px}
+.moa_detail dt:first-child{padding-top:0}
+.moa_detail dd{width:calc(100% - 20px)}
+.moa_benefit .now{min-width:36px;}
+
+
+.deadline_banner .slider_item .time{font-size:3.0vw}

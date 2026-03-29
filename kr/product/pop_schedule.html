@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-13 -->
+			<h1>일정</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="schedule_wrap2"><!-- 2019-11-20 클래스 추가 -->
+				<section class="prd_item">
+					<div class="thumb_info">
+						<div class="img">
+							<img src="../../resource/img/tmp_prd05.jpg" alt="">
+						</div>
+						<div class="info">
+							<div class="name">[오사카]유니버셜 스튜디오 입장권 <span class="desc">로우시즌/미들시즌/하이시즌</span></div>
+						</div>
+					</div>
+				</section>
+				<!-- 2019-11-20 일정순서변경으로 수정 -->
+				<!-- 1일차 -->
+				<div class="schedule_item">
+					<div class="schedule">
+						<h3>1일차</h3>
+						<ol class="schedule_list nested-sortable"><!-- 순서변경일 때 nested-sortable 클래스 추가 -->
+							<li>
+								<div class="box">
+									<strong class="tit">인천공항</strong>
+								</div>
+								<i class="ico btn_drag">이동</i>
+							</li>
+							<li>
+								<div class="box">
+									<strong class="tit">바츨라프 하벨 국제공항</strong>
+									<ul class="sel_list">
+										<li><em class="em">필수상품</em><span class="txt">프라하 시내 공항 픽업 서비스</span></li>
+										<li><em class="em">선택상품</em><span class="txt">유럽 3G 유심</span></li>
+									</ul>
+								</div>
+								<i class="ico btn_drag">이동</i>
+							</li>
+							<li>
+								<div class="box">
+									<strong class="tit">프라하 숙소</strong>
+									<ul class="sel_list">
+										<li><em class="em">선택상품</em><span class="txt">비엔나 하우스 안델스 프라하</span></li>
+									</ul>
+								</div>
+								<i class="ico btn_drag">이동</i>
+							</li>
+							<li>
+								<div class="box">
+									<strong class="tit">야경</strong>
+								</div>
+								<i class="ico btn_drag">이동</i>
+							</li>
+						</ol>
+					</div>
+				</div>
+
+				<!-- 2일차 -->
+				<div class="schedule_item">
+					<div class="schedule">
+						<h3>2일차</h3>
+						<ol class="schedule_list nested-sortable"><!-- 순서변경일 때 nested-sortable 클래스 추가 -->
+							<li>
+								<div class="box">
+									<strong class="tit">장미젤라또</strong>
+								</div>
+								<i class="ico btn_drag">이동</i>
+							</li>
+							<li>
+								<div class="box">
+									<strong class="tit">뮤지엄</strong>
+									<ul class="sel_list">
+										<li><em class="em">필수상품</em><span class="txt">뮤지엄 워킹투어(오디오 가이드 포함)</span></li>
+									</ul>
+								</div>
+								<i class="ico btn_drag">이동</i>
+							</li>
+							<li>
+								<div class="box">
+									<strong class="tit">야경</strong>
+								</div>
+								<i class="ico btn_drag">이동</i>
+							</li>
+						</ol>						
+					</div>
+				</div>
+
+				<!-- 3일차 -->
+				<div class="schedule_item">
+					<div class="schedule">
+						<h3>3일차</h3>
+						<ol class="schedule_list nested-sortable"><!-- 순서변경일 때 nested-sortable 클래스 추가 -->
+							<li>
+								<div class="box">
+									<strong class="tit">공원</strong>
+								</div>
+								<i class="ico btn_drag">이동</i>
+							</li>
+							<li>
+								<div class="box">
+									<strong class="tit">박물관</strong>
+								</div>
+								<i class="ico btn_drag">이동</i>
+							</li>
+							<li>
+								<div class="box">
+									<strong class="tit">숙소</strong>
+								</div>
+								<i class="ico btn_drag">이동</i>
+							</li>
+						</ol>
+					</div>
+				</div>
+				<!-- //2019-11-20 일정순서변경으로 수정 -->
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">라랑팩 만들기</button>
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/Sortable.js"></script><!-- 2019-11-20 Sotable.js 추가 -->
+<script type="text/javascript" src="../../resource/js/jquery-sortable.js"></script><!-- 2019-11-20 jquery-sortable.js 추가 -->
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+
+<!-- 2019-11-20 순서변경 관련 js추가 -->
+<script type="text/javascript">
+	$(function(){
+	  $('.schedule_wrap2 .nested-sortable').each(function(i){
+		  sortable.module($(this),'.btn_drag', {group:{name : 'day'+i}});
+	  });
+	});
+</script>
+</body>
+</html>

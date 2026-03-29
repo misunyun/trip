@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>제휴사 할인혜택</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="accordion alliance" data-js="accordion">
+				<button type="button" name="button" data-js="acc_anchor">OK 캐쉬백</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="inp_btn">
+						<input type="text" name="" placeholder="OK 캐쉬백 조회 후 등록 가능합니다." value="">
+						<button type="button" name="button" class="btn primary">조회</button>
+					</div>
+					<div class="note_list">
+						<ul>
+							<li>OK캐쉬백은 최종 결제금액 기준으로 적립됩니다.<br>(쿠폰, 적립금, 상품권전환 적립금, 제휴할인 적용후 금액)</li>
+						</ul>
+					</div>
+					<button type="button" name="button" class="btn_txt type4">동의철회</button>
+				</div>
+				
+				<button type="button" name="button" data-js="acc_anchor">문화상품권/해피머니</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="inp_btn">
+						<input type="text" name="" placeholder="해피머니 조회 후 사용 가능합니다." value="">
+						<button type="button" name="button" class="btn primary">조회</button>
+					</div>
+					<div class="note_list">
+						<ul>
+							<li>해피머니(모바일팝)은 월 최대 100,000원 까지 사용 가능합니다.</li>
+						</ul>
+					</div>
+					<button type="button" name="button" class="btn_txt type4">동의철회</button>
+				</div>
+
+				<button type="button" name="button" data-js="acc_anchor">OH! Point</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="inp_btn">
+						<input type="text" name="" placeholder="OH! Poin 조회 후 사용 가능합니다." value="">
+						<button type="button" name="button" class="btn primary">조회</button>
+					</div>
+					<div class="note_list">
+						<ul>
+							<li>결제금액의 10% (최대5,000원)만 사용 가능합니다.</li>
+							<li>T멤버십과 중복으로 적용 할 수 없습니다. <br>(쿠폰, 적립금 및 상품권전환 적립금 금액 제외)</li>
+						</ul>
+					</div>
+					<button type="button" name="button" class="btn_txt type4">동의철회</button>
+				</div>
+
+				<button type="button" name="button" data-js="acc_anchor">T멤버십</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="inp_btn">
+						<input type="text" name="" placeholder="T멤버십 조회 후 등록 가능합니다." value="">
+						<button type="button" name="button" class="btn primary">조회</button>
+					</div>
+					<div class="note_list">
+						<ul>
+							<li>상품 별로 2개 이상 구매 시 인정됩니다.</li>
+							<li>출국 정보를 입력해야 S.Rewards 추가적립이 가능합니다.</li>
+							<li>최종결제금액 기준으로  할인율 적용되며, 일부 브랜드는 할인금액에서 제외됩니다.<br>(쿠폰, 적립금, 제휴할인 및 상품권전환 적립금 제외)</li>
+							<li>타 제휴사 특정일 할인, BC Oh! Point와 중복할인 불가</li>
+						</ul>
+					</div>
+					<button type="button" name="button" class="btn_txt type4">동의철회</button>
+				</div>
+			</div>
+
+			<div class="pay_info">
+				<dl class="total">
+					<dt>총 할인금액</dt>
+					<dd><strong>1,700,000</strong>원</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">적용하기</button>
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap fixed">
+	 <header class="sticky_step1">
+		 <h2>
+			 <a href="#" class="ico btn_back">이전 페이지</a>
+			 옵션선택
+		 </h2>
+	 </header>
+	 <!-- 콘텐츠 : S -->
+	 <div class="content">
+		<div class="option_wrap">
+			<h3 class="sub">옵션선택</h3>
+			<!-- <p>선택한 날짜에 가능한 옵션이 나타납니다.</p> -->
+			<button type="button" name="button" class="btn_option" option-call="1">옵션선택</button>
+
+			<div class="option_select plus" option-receive="1">
+				<div class="pop_option">
+					<ul>
+						<li class="none_click"><a href="#" class="on">선택 없음</a></li>
+						<li>
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">스탠다드, 시티뷰</span>
+									<span class="option_stock">재고 9999</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">77,000원</strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">스탠다드, 시티뷰</span>
+									<span class="option_stock">재고 9999</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">8,888,888,888원</strong>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- 2019-08-12 날짜 선택과 옵션 선택 위치 변경 -->
+			<h3 class="sub">날짜선택</h3>
+			<button type="button" name="button" class="btn_date ">체크인날짜를 선택해주세요.</button><!-- 2019-08-12 텍스트 변경 --><!-- D : 날짜 선택시 ex)2019.01.27로 표현 -->
+			
+			<!-- 최종 옵션값 -->
+			<!-- 2019-10-29 최종 옵션값 위치 수정 -->
+			<ul class="option_list" option-plus="1">
+				<li>
+                    <button type="button" name="button" class="ico btn_del">close</button>
+                    <span class="tit">스탠다드, 시티뷰<span class="date">2019.01.25 ~ 2019.01.26</span></span><!-- 2019-12-02 날짜 추가 -->
+                    <span class="ctrl">
+                        <button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+                        <input type="text" name="" value="1">
+                        <button type="button" name="button" class="ico btn_plus">추가</button>
+                    </span>
+                    <strong class="price"><strong>8,888,888,888</strong>원</strong><!-- 2019-07-23 금액부분에 strong태그 추가 -->
+                </li>
+				<!-- 아이템 갯수만큼 추가 -->
+				<!-- <li>
+                    <button type="button" name="button" class="ico btn_del">close</button>
+                    <span class="tit">스탠다드, 시티뷰</span>
+                    <span class="ctrl">
+                        <button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+                        <input type="text" name="" value="1">
+                        <button type="button" name="button" class="ico btn_plus">추가</button>
+                    </span>
+                    <strong class="price"><strong>8,888,888,888</strong>원</strong>
+                </li> -->
+			</ul><!-- D : 2019-06-12 수정 (div 태그를 ul태그로 변경) -->
+			<!-- //2019-10-29 최종 옵션값 위치 수정 -->
+
+			<!-- D : 옵션 선택시 총 금액 노출 -->
+			<div class="total_price">
+				<!-- 2019-10-29 텍스트 수정 -->
+				<!-- 2019-10-02 캐시적립혜택 영역 추가 -->
+				<div class="sale_info">
+					<!-- 2019-12-06 도움말 버튼 추가, box_w 추가, S.Rewards 표기 법 수정 -->
+					<dl>
+						<dt class="box_w">S.Rewards 적립 혜택 <button type="button" name="button" class="ico btn_help menu2" modal-call="modal_benefit">도움말</button></dt>
+						<dd class="box_w">1,100P(1,200원)</dd>
+
+						<dt>S.Rewards</dt>
+						<dd>단품 3매 구매 시 4.5% 적립</dd>
+					</dl>
+					<!-- //2019-12-06 도움말 버튼 추가, box_w 추가, S.Rewards 표기 법 수정 -->
+				</div>
+				<!-- //2019-10-02 캐시적립혜택 영역 추가 -->
+				<!-- //2019-10-29 텍스트 수정 -->
+				<span class="tit">총 금액</span>
+				<span class="price"><strong>8,888,888,888</strong>원</span>
+			</div>
+			<!-- //D : 옵션 선택시 총 금액 노출 -->
+			<!-- //2019-08-12 날짜 선택과 옵션 선택 위치 변경 -->
+		</div>
+ 	</div>
+ 	<!-- 콘텐츠 : E -->
+	<div class="btn_wrap both">
+		<button type="button" name="button" class="btn primary2">장바구니</button><!-- D : 비활성화 시 disabled -->
+		<button type="button" name="button" class="btn primary">예약하기</button><!-- D : 비활성화 시 disabled -->
+	</div>
+
+	<!-- 2019-12-05 S.Rewards 적립 혜택 모달팝업 추가 -->
+	<div class="modal" modal-receive="modal_benefit">
+		<button type="button" class="ico btn_close2">close</button>
+		<div class="modal_content">
+			<h1>S.Rewards 적립 혜택</h1>
+			<p class="txt_alert">해당 적립금은 쿠폰할인, 신라페이 즉시할인, S.Rewards 적립금이 포함된 최대 혜택가 기준입니다. 실제 결제 시, S.Rewards는 선택옵션에 따라 변경 될 수 있습니다.</p>
+		</div>
+	</div>
+	<!-- //2019-12-05 S.Rewards 적립 혜택 모달팝업 추가 -->
+</div>
+
+<script type="text/javascript" src="../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../resource/js/lalang.js"></script>
+</body>
+</html>

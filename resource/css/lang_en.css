@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+body{word-break:break-word;font-family:'AppleSDGothicNeo',Helvetica,sans-serif;}
+input[type=text],input[type=search],input[type=password],input[type=tel]{line-height:37px;}
+.badge,.label{line-height:19px;}
+
+.btn_option{word-break:break-all;}
+
+/* 여행자정보, 결제정보 */
+.input_info .tourist{padding-bottom:0;height:25px;}
+.input_info h3{padding-bottom:15px;}
+.input_info div > label:first-child{margin-top:0;}
+.input_info div > label{display: block;width: 100%;margin:9px 0 0 0}
+.input_info input[type=text],.input_info input[type=tel],.input_info .btn_option,.input_info .t_box,.input_info .schbox,.input_info .btn_date,.input_info .form,.input_info .text_box{width: 100%}
+.input_info .t_box{min-height:inherit;padding-top:0;}
+.input_info .gender{width:100%;}
+.passenger+.noti{margin-top: 15px}
+
+.schedule.pay .input_info div > label{width:100%;}
+.schedule.pay .input_info input[type=text],.schedule.pay .input_info input[type=tel],.schedule.pay .input_info .btn_option,.schedule.pay .input_info .t_box,.schedule.pay .input_info .schbox,.schedule.pay .input_info .btn_date,.schedule.pay 
+.schedule.pay .input_info .gender{width:100%;}
+.input_info .form,.schedule.pay .input_info .text_box{width:100%;}
+
+
+/* 분쟁해결센터 */
+.fold_area.type1 .img_area{padding-bottom:15px;}
+.fold_area.type1 .img_area .txt01{left:-2px;}
+.fold_area.type1 .img_area .txt02{right:-10px;width:140px;line-height:1.4;}
+.fold_area.type1 .img_area .txt03{right:0;bottom:5px;width:100px;line-height:1.4;}
+.fold_area.type1 .img_area .txt04{left:-2px;bottom:5px;width:100px;line-height:1.4;}
+.fold_area.type1 .img_area .txt05{left:-5px;}
+
+/* 모아랑 */
+.moa_detail dt{display: block;width: 100%;padding-top:5px}
+.moa_detail dt:first-child{padding-top:0}
+.moa_detail dd{width:calc(100% - 20px)}
+.moa_total_pay dt{width:40%;}
+.moa_total_pay dd{width:60%;}
+
+.product_info .desc{margin-top: 0}
+.info_reg li span{width:calc(100% - 80px)}

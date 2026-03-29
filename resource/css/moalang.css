@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+/* 모아랑 */
+.btn.primary.border{color:#ff9a3a;border-color:#ff9a3a }
+.moa .em{color:#ff9a3a}
+.moa .tab_menu li a.on{color:#ff9a3a;}
+.moa .tab_menu li a.on::after{border-color:#ff9a3a; }
+h3 .ico.noti_gif{float: right;margin:3px 20px 0 -23px}
+h3 .btn_tooltip{float: right;margin:10px 14px 0 0}
+
+.moa_my_info{margin:-5px 0 35px 0}
+.moa_my_info .em{color:#ff9a3a}
+.moa_my_info p{padding-right: 20px}
+
+.tab_wrap.moa .no_data{margin-top:20px;margin-left:-20px;padding:0 20px;}
+.moa_total_pay{margin:0 20px 20px 0;padding-bottom: 20px;font-size: 16px;border-bottom: 1px solid #f2f2f2}
+.moa_total_pay:after{content:"";display:block;clear:both;}
+.moa_total_pay dt{clear: both;float:left;width: 27%}
+.moa_total_pay dd{float:left;text-align: right;width:73%}
+
+.moa_nodata{color:#828282}
+.moa_list+h3{margin-top: -20px}
+.moa_list{margin-bottom:-20px;}
+.accordion .moa_list{margin-bottom:0;}
+.moa_list li{position: relative;margin-bottom: 22px;border-bottom:1px solid #f2f2f2}
+.moa_list li:last-child{margin-bottom: 0;border-bottom:0;}
+.moa_list .prd,
+.moa_list a{position:relative;display:block;margin:0 0 0 82px;padding:0 0 19px 0;border-bottom:1px solid #f2f2f2;}
+.moa_list li .prd a + a{border:none;margin-bottom: 0}
+.moa_list li > a+a{margin-top: 19px}
+.moa_list .prd a{margin-left: 0;padding: 0}
+.moa_list a:after{content:"";display:block;clear:both;}
+.moa_list li .btn_ico{position: absolute;z-index:1;right:20px;top:6px;margin: 0;padding: 0;border:none}
+.moa_list .prd,
+.moa_list a:last-child,
+.moa_list .prd:last-child{border:none;margin-bottom: 0}
+.moa_list .prd {margin-bottom: 20px;border-bottom:1px solid #f2f2f2;}
+.moa_list .date{float: left;display: block;font-size:13px;color:#828282;}
+.moa_list .state{clear: both;display: block;padding: 3px 0 2px 0;font-size:14px;}
+.moa_list .product{padding-bottom: 9px;width: calc(100% - 90px);font-weight: bold;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.moa_list .btn_detail{margin:3px 0 1px 0;}
+.moa_list .btn_detail .btn_txt{margin-right:12px;}
+.moa_list .btn_detail .btn_txt + .btn_txt{margin-top:5px;}
+
+.moa_detail {font-size:14px}
+.moa_detail dt{clear: both;float:left;width: 68px;min-height:19px;margin-bottom:4px;color:#828282;line-height:18px;}
+.moa_detail dd{float:left;width: calc(100% - 68px);min-height:19px;margin-bottom:4px;line-height:18px;}
+
+.moa_past_list .btn_option{width: calc(100% - 20px)}
+.moa_past_list .accordion{margin-top: 20px;}
+.moa_past_list .accordion .panel{border-bottom: none}
+.moa_past_list .accordion button {display: block;height: 76px;font-size:16px;line-height:1}
+.moa_past_list .accordion button .tit{position: absolute;left:0;top:20px;font-size:16px;}
+.moa_past_list .accordion button .date{position: absolute;left:0;bottom:20px;color:#828282;font-size:12px;font-weight: normal;}
+.moa_past_list .accordion button .save{position: absolute;right:50px;top:30px;font-size:16px;font-weight: normal;}
+
+.pop_moalang {margin:-30px 0 30px;z-index: 3020;background:#fff}
+.pop_moalang .tit{display: inline-block;width: 100%;margin:0 0 4px 0;color:#ff9a3a;font-size:19px;text-align: center;}
+.pop_moalang .txt{text-align: center;}
+.pop_moalang .moa_benefit{margin-right:0;margin-bottom:0;}
+.pop_moalang .btn_detail{margin-top:12px;}
+.pop_moalang .note_list strong{padding-top:40px;}
+.btn_moalang.delta_scroll{transition: transform 0.5s ease}
+.btn_moalang.delta_scroll_up{transform: translate3d(0,0,0);}
+.btn_moalang.delta_scroll_down{transform: translate3d(0,calc(100% - -30px),0);}
+.btn_moalang{position:fixed;bottom:76px;left:0;z-index:10;width: 100%;text-align: center;}
+.btn_moalang button{margin:0 auto;width:237px;font-size:14px;background:#ff9a3a;border-radius:5px;box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);}
+
+.travel_reg{padding-right: 20px}
+.travel_reg .travel_date input:first-child{margin-bottom: 10px}
+.travel_reg .flight_info{padding:25px 0 24px 0}
+.travel_reg .noti{padding:0 0 5px 16px}
+.travel_reg .noti span{margin-left: -16px}
+
+.flight_sort{margin-top:60px}
+.flight_sort h3{clear: both;padding: 26px 0 12px 0;font-size:15px;color:#fe583e}
+.flight_sort .sort{margin-top: -6px;white-space:nowrap;overflow: auto;}
+.flight_sort .sort a{display: inline-block;padding: 0 7px;font-size:14px}
+.flight_sort .sort a.on{font-weight: bold;}
+.flight_list:after{clear:both;display:block;content:"";}
+.flight_list li{float:left;width:50%;padding-bottom: 9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+/* 안드로이드 대응 */
+.wrap.app:not(.ios) .btn_moalang{bottom:21px;}
+/* IOS X 대응 */
+.wrap.ios .btn_moalang {bottom:calc(constant(safe-area-inset-bottom) - -76px);bottom:calc(env(safe-area-inset-bottom) - -76px)}

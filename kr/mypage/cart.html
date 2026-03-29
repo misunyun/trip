@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<div class="wrap fixed">
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			장바구니
+		</h2>
+	</header>
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<div class="cart_wrap">
+			<!-- 데이터없움 : S -->
+			<div class="no_data type4" style="display:none">
+				<em>장바구니에 담긴 상품이 없습니다.</em>
+			</div>
+			<!-- 데이터없움 : E -->
+
+			<div class="cart_area">
+				<div class="sel_area">
+					<div class="fleft">
+						<label class="checkbox" for="chk_all"><input type="checkbox" id="chk_all" name="chk"><span></span>전체선택</label>
+					</div>
+					<div class="fright">
+						<button type="button" name="button" class="btn_ico type2 delete"><span>선택삭제</span></button>
+					</div>
+				</div>
+
+				<div class="cart_prod">
+					<ul>
+						<li>
+							<div class="cart_sel">
+								<label class="checkbox" for="cart_sel01"><input type="checkbox" id="cart_sel01" name="cart_sel"><span></span></label>
+							</div>
+							<div class="prod_area">
+								<section class="prd_item">
+									<div class="thumb_info">
+										<a href="#">
+											<div class="img">
+												<img src="../../resource/img/tmp_prd05.jpg" alt="">
+											</div>
+											<div class="info">
+												<div class="name">[오사카]유니버셜 스튜디오 입장권 <span class="desc">로우시즌/미들시즌/하이시즌 즉시입장</span></div>
+											</div>
+										</a>
+									</div>
+								</section>
+								<!-- option_list : S -->
+								<ul class="option_list type2">
+									<li>
+										<button type="button" name="button" class="ico btn_del">close</button>
+										<span class="tit">2019.05.27 로우시즌 성인</span>
+										<span class="ctrl">
+											<button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+											<input type="text" name="" value="1">
+											<button type="button" name="button" class="ico btn_plus">추가</button>
+										</span>
+										<strong class="price"><strong>77,000</strong>원</strong><!-- 2019-07-23 금액부분에 strong태그 추가 -->
+									</li>
+									<li>
+										<button type="button" name="button" class="ico btn_del">close</button>
+										<span class="tit">2019.05.27 로우시즌 아동</span>
+										<span class="ctrl">
+											<button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+											<input type="text" name="" value="1">
+											<button type="button" name="button" class="ico btn_plus">추가</button>
+										</span>
+										<strong class="price"><strong>1,000,000,000</strong>원</strong><!-- 2019-07-23 금액부분에 strong태그 추가 -->
+									</li>
+								</ul>
+								<!-- option_list : E -->
+								<div class="sum_area">
+									<div class="fleft">
+										<span class="tit">합계</span>
+										<span class="price"><strong>8,000,000,000</strong>원</span>
+									</div>
+									<div class="fright">
+										<button type="button" name="button" class="btn primary small">바로구매</button>
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- D : 옵션 판매불가인 경우 -->
+						<li>
+							<div class="cart_sel">
+								<label class="checkbox" for="cart_sel03"><input type="checkbox" id="cart_sel03" name="cart_sel"><span></span></label>
+							</div>
+							<div class="prod_area">
+								<section class="prd_item">
+									<div class="thumb_info">
+										<a href="#">
+											<div class="img">
+												<img src="../../resource/img/tmp_prd05.jpg" alt="">
+											</div>
+											<div class="info">
+												<div class="name">세부 날루수안+힐루뚱안 호핑투어</div>
+											</div>
+										</a>
+									</div>
+								</section>
+								<!-- option_list : S -->
+								<ul class="option_list type2">
+									<li class="opt_disabled"><!-- D : 옵션 판매불가인 경우 옵션리스트 li에 opt_disabled 클래스 추가 -->
+										<button type="button" name="button" class="ico btn_del">close</button>
+										<span class="tit">2019.05.27 로우시즌 성인</span>
+										<span class="ctrl">
+											<button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+											<input type="text" name="" value="1">
+											<button type="button" name="button" class="ico btn_plus">추가</button>
+										</span>
+										<strong class="price">재고없음</strong><!-- D : 텍스트 변경(재고없음/판매중지/기간만료) -->
+									</li>
+									<li>
+										<button type="button" name="button" class="ico btn_del">close</button>
+										<span class="tit">2019.05.27 로우시즌 아동</span>
+										<span class="ctrl">
+											<button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+											<input type="text" name="" value="1">
+											<button type="button" name="button" class="ico btn_plus">추가</button>
+										</span>
+										<strong class="price"><strong>1,000,000,000</strong>원</strong><!-- 2019-07-23 금액부분에 strong태그 추가 -->
+									</li>
+								</ul>
+								<!-- option_list : E -->
+								<div class="sum_area">
+									<div class="fleft">
+										<span class="tit">합계</span>
+										<span class="price"><strong>77,000</strong>원</span>
+									</div>
+									<div class="fright">
+										<button type="button" name="button" class="btn primary small">바로구매</button>
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- //D : 옵션 판매불가인 경우 -->
+						<!-- D : 상품 판매불가인 경우 -->
+						<li class="prd_disabled"><!-- D : 상품 판매불가인 경우 li에 prd_disabled 클래스 추가 -->
+							<div class="cart_sel">
+								<label class="checkbox" for="cart_sel02"><input type="checkbox" id="cart_sel02" name="cart_sel"><span></span></label>
+							</div>
+							<div class="prod_area">
+								<section class="prd_item">
+									<div class="thumb_info">
+										<a href="#">
+											<div class="img">
+												<img src="../../resource/img/tmp_prd05.jpg" alt="">
+											</div>
+											<div class="info">
+												<div class="name">[오사카]유니버셜 스튜디오 입장권 <span class="desc">로우시즌/미들시즌/하이시즌 즉시입장</span></div>
+											</div>
+										</a>
+									</div>
+								</section>
+								<!-- option_list : S -->
+								<ul class="option_list type2">
+									<li class="opt_disabled">
+										<button type="button" name="button" class="ico btn_del">close</button>
+										<span class="tit">2019.05.27 로우시즌 성인</span>
+										<span class="ctrl">
+											<button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+											<input type="text" name="" value="1">
+											<button type="button" name="button" class="ico btn_plus">추가</button>
+										</span>
+										<strong class="price">판매중지</strong><!-- D : 텍스트 변경(재고없음/판매중지/기간만료) -->
+									</li>
+								</ul>
+								<!-- option_list : E -->
+								<div class="sum_area">
+									<div class="fleft">
+										<span class="tit">합계</span>
+										<span class="price"><strong>77,000</strong>원</span>
+									</div>
+									<div class="fright">
+										<button type="button" name="button" class="btn primary small">바로구매</button>
+									</div>
+								</div>
+							</div>
+							<div class="dim"><button type="button" name="button" class="ico btn_del5">삭제</button></div><!-- D : dim 영역 추가 -->
+						</li>
+						<!-- //D : 상품 판매불가인 경우 -->
+					</ul>
+				</div>
+
+				<div class="total_price type2"><!-- type2 클래스 추가 -->
+					<span class="tit"><span class="select_prod">선택상품 1개</span>결제금액</span>
+					<span class="price"><strong>8,000,000,000</strong>원</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 콘텐츠 : E -->
+	<div class="btn_wrap">
+		<button type="button" name="button" class="btn primary">구매하기</button><!-- D : 비활성화 시 disabled -->
+	</div>
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

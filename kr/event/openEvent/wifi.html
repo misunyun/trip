@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../../resource/css/event.css" rel="stylesheet" />
+	<link type="text/css" href="../../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<!-- Header : S -->
+	<header>
+		 <h1><a href="#">SHILLATRIP</a></h1>
+		<button type="button" name="button" class="ico search">검색</button>
+		<button type="button" name="button" class="ico my">마이페이지</button>
+		<!-- 2019-10-14 GNB 공통SB v2.6현행화 -->
+		<nav class="gnb tscroll">
+			<ul class="ul_size">
+				<li><a href="#" class="on">이벤트</a></li>
+				<li><a href="#">마감임박</a></li>
+				<li><a href="#">라랑팩</a></li>
+				<li><a href="#">랭킹</a></li>
+				<li><a href="#">고객센터</a></li>
+			</ul>
+		</nav>
+		<!-- //2019-10-14 GNB 공통SB v2.6현행화 -->
+		 <h2>
+			 <a href="#" class="ico btn_back">이전 페이지</a>
+			 이벤트 상세
+			 <button type="button" class="ico btn_sns">공유</button>
+		 </h2>
+	 </header>
+	 <!-- Header : E -->
+
+
+	 <div class="content">
+		<!-- 이벤트 html 영역 -->
+		<div class="event_detail">
+			<style>
+				#promotion_wrap.free_st .ev_bg { background-image:url('http://media.shilladfs.com/files/attach/ckeditor/2019/12/12/1576150816221_20191212_1_open03.png'); background-repeat:no-repeat; background-position:left bottom; background-size: 100% 100%; margin-left:-20px; }
+				#promotion_wrap.free_st .event_img {position:relative} 
+				#promotion_wrap.free_st .event_img img  { height:auto} 
+				#promotion_wrap.free_st .event_img .ev_date {  position:absolute; z-index:1; left:26px; bottom:21px; display:inline-block; letter-spacing:-0.4px;  font-size:4.2vw; line-height:5.8vw; color:#fff; opacity:.5 } 
+				#promotion_wrap.free_st .ev_cont { margin-left:20px } 
+				#promotion_wrap.free_st .event_desc { border-bottom:0; padding-bottom:0; word-wrap:break-word; word-break:keep-all }
+				#promotion_wrap.free_st .event_desc dd .desc { color:#a5a5a5; font-size:13px }
+				#promotion_wrap.free_st .note_list { border-top:0; word-wrap:break-word; word-break:keep-all}
+				#promotion_wrap.free_st .note_list li .desc {color:#3e69a2;}
+				#promotion_wrap.free_st .ev_cont02 { margin:0 0  0 -20px;  padding:61px 20px 0px 0;  }
+				#promotion_wrap.free_st .ev_top_tx { margin-left:20px}
+				#promotion_wrap.free_st .ev_top_tx dt { font-size:25px; line-height:35px; font-weight:bold; letter-spacing:-0.4px}
+				#promotion_wrap.free_st .ev_top_tx dd { font-size:15px; line-height:23px; margin-top:12px; letter-spacing:-0.4px }
+				#promotion_wrap.free_st .ev_top_tx dd.img { margin-top:46px;}
+				#promotion_wrap.free_st .ev_cont02 .event_desc { margin-left:20px; word-wrap:break-word; word-break:keep-all}
+				#promotion_wrap.free_st .ev_cont02 .btn_box { margin:40px 0px 0 20px }
+				#promotion_wrap.free_st .ev_cont02 .note_list { margin-left:20px}
+				#promotion_wrap.free_st .ev_cont02 + .ev_cont { margin-top:70px}
+				#promotion_wrap.free_st .ev_cont .event_img + .event_img { margin-top:70px}
+				#promotion_wrap.free_st .event_img02 { text-align:center; margin:30px 20px 0 20px}
+				#promotion_wrap.free_st .ir_blind { text-indent:-1000px; width:0; height:0; overflow:hidden; line-height:0; font-size:0 }
+
+				#promotion_wrap.free_st .tab_wrap {position:relative;  margin:70px 0 0 -20px}
+				#promotion_wrap.free_st .tab_wrap:after {content:''; position:absolute; z-index:100; width:50px; height:40px; right:0px; top:0px;  background:linear-gradient(to right, rgba(255,255,255,0) 30%, rgba(255,255,255,.5) 70%); }
+				#promotion_wrap.free_st .tab_wrap .tab_menu { clear:both; margin-left:0;width:auto; height:40px; overflow-y:hidden;}
+				#promotion_wrap.free_st .tab_wrap .tab_menu::after { border-bottom:0; bottom:0; left:0; top:auto; width:100%; background:#fff }
+				#promotion_wrap.free_st .ul_size { white-space:nowrap; padding-right:20px; height:80px; }
+				#promotion_wrap.free_st .ul_size li {display:inline-block; border-bottom:0; padding:0; height:auto;}
+				#promotion_wrap.free_st .ul_size li:first-child { margin-left:0}
+				#promotion_wrap.free_st .ul_size li a { display:inline-block; white-space:nowrap; height:auto; font-size:14px; color:#828282; font-weight:bold; padding:0 20px; line-height:40px;  border-radius:40px 40px}
+				#promotion_wrap.free_st .ul_size li a.on { color:#fff; background:#1c2128 }
+				#promotion_wrap.free_st .ul_size li a.on::after {display:none}
+
+
+				@media screen and (min-width:768px) {
+					#promotion_wrap.free_st .event_img .ev_date { font-size:30px; line-height:40px}
+					#promotion_wrap.free_st .tab_wrap .tab_menu { height:60px}
+					#promotion_wrap.free_st .ev_top_tx dd.img { text-align:center}
+					#promotion_wrap.free_st .ul_size { padding-right:0}
+				}
+
+			</style>
+			<div id="promotion_wrap" class="free_st">
+				
+				<!-- 이벤트 이미지 START -->
+				<div class="event_img">
+					<img alt="SHILLA TRIP * 와이파이 도시락 / 신라트립 오픈기념 와이파이도시락 최대 40%할인, 신라면세점 적립금 10만원까지!" title="" src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/16/1576476815938_20191216_1_wifi01.png" />
+					<p class="ev_date">2019.12.16 ~<br />2020.01.00</p>
+				</div>
+				<!-- 이벤트 이미지 END -->
+	
+				<div class="ev_cont02">
+					<dl class="ev_top_tx">
+						<dt>
+							어디서도 볼 수 없었던<br>
+							특별한 할인!
+						</dt>
+						<dd>오직 신라트립에서만</dd>
+						<dd  class="img"><a href="#ev_product_list"><img alt="일본 40% 할인 / 베트남, 태국 등 그 외 국가 20% 할인" title="" src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/16/1576476840760_20191216_1_wifi02.png" /></a></dd>
+					</dl>
+				</div>
+
+				<div class="ev_cont"id="ev_product_list">
+					<div class="event_img">
+						<a href="#"><img alt="모든 고객님께 적립금 10만원 즉시 증정/와이파이도시락 예약 시 6만원 추가 증정!" title="" src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/16/1576476868641_20191216_1_wifi03.png" /></a>
+					</div>
+					<div class="tab_wrap" >
+						<div class="tab_menu ">
+							<ul class="ul_size">
+								<li><a href="#none" class="on">일본</a></li>
+								<li><a href="#none">베트남</a></li>
+								<li><a href="#none">태국</a></li>
+								<li><a href="#none">대만</a></li>
+								<li><a href="#none">그 외 국가</a></li>
+							</ul>
+						</div>
+
+						<div class="tab_cont active">
+							<ul class="goods_horiz">
+								<li>
+									<a href="#none">
+										<img class="" data-src="../../../resource/img/tmp_prd04.jpg" src="../../../resource/img/tmp_prd04.jpg" alt=""><!-- 2019-11-13 lazyload 적용 -->
+										<span class="badge_area">
+											<span class="badge type3">신라트립가</span>
+										</span>
+										<span class="tit">더 파크뷰(제주 신라호텔) 더 파크뷰(제주 신라호텔)</span>
+										<p class="class">
+											<span class="score"><b>1</b>성급</span>
+											<span class="review_point"><span class="score" style="width:57%">3</span></span>
+											<!-- <span>(35)</span> -->
+										</p>
+										<span class="cost">10,000,000원</span>
+										<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none">
+										<img class="" data-src="../../../resource/img/tmp_prd04.jpg" src="../../../resource/img/tmp_prd04.jpg" alt=""><!-- 2019-11-13 lazyload 적용 -->
+										<span class="tit">시저 메트로 타이페이</span>
+										<p class="class">
+											<span class="score"><b>1</b>성급</span>
+											<span class="review_point"><span class="score" style="width:57%">3</span></span>
+											<!-- <span>(35)</span> -->
+										</p>
+										<span class="price"><strong>8,000,000</strong>원~</span>
+									</a>
+								</li>
+								<li>
+									<a href="#none">
+										<img class="" data-src="../../../resource/img/tmp_prd04.jpg" src="../../../resource/img/tmp_prd04.jpg" alt=""><!-- 2019-11-13 lazyload 적용 -->
+										<span class="badge_area">
+											<span class="badge type3">신라트립가</span>
+										</span>
+										<span class="tit">괌 리프 앤 올리브 스파 리조트</span>
+										<p class="class">
+											<span class="score"><b>1</b>성급</span>
+											<span class="review_point"><span class="score" style="width:57%">3</span></span>
+											<!-- <span>(35)</span> -->
+										</p>
+										<span class="cost">10,000,000원</span>
+										<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="tab_cont">
+							베트남
+						</div>
+
+						<div class="tab_cont">
+							태국
+						</div>
+
+						<div class="tab_cont">
+							대만
+						</div>
+
+						<div class="tab_cont">
+							그 외 국가
+						</div>
+
+
+					</div>
+					
+
+
+				</div>
+	
+				
+					
+			</div>
+			
+		</div>
+		<!-- 이벤트 html 영역 END-->
+
+
+	 </div>
+
+
+
+
+
+
+	<nav class="fnb">
+		<a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+		<a href="#"><i class="ico cart"></i>장바구니</a>
+		<a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" option-call="fnb"><i class="ico cate"></i>카테고리</a>
+	</nav>
+	<div class="option_select " option-receive="fnb">
+		<div class="pop_option">
+			<ul class="fnb_opt">
+				<li><a href="#"><i class="ico flight"></i>항공</a></li>
+				<li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+				<li><a href="#"><i class="ico pack"></i>패키지</a></li>
+				<li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript" src="../../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../../resource/js/lalang.js"></script>
+
+</body>
+</html>

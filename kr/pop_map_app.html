@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap app">
+
+	<!-- 팝업 : S -->
+	<div class="popup map_search show">
+		<!-- Modal content -->
+		<div class="head add__status" style="top:44px">
+			<h1>필터</h1>
+			<button type="button" name="button" class="btn_txt type5 reset">초기화</button>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="map_wrap open"><!-- 가격 클릭시 'open' 클래스 추가 -->
+				<div class="mask"></div>
+				<!-- 지도 영역 -->
+				<div class="map_area" style="background:url('../resource/img/tmp_map02.jpg')"><!-- 지도 api 삽입시 style 삭제 -->
+
+					<!-- 지도위 가격표시 라벨 -->
+					<div class="marker active" style="left:100px;top:100px"><b>319,257</b>원</div><!-- 클릭시 'active' 클래스 추가 -->
+					<div class="marker" style="left:120px;top:120px"><b>319,257</b>원</div>
+					<div class="marker" style="left:130px;top:120px"><b>319,257</b>원</div>
+					<div class="marker" style="left:140px;top:120px"><b>319,257</b>원</div>
+					<div class="marker" style="left:150px;top:140px"><b>319,257</b>원</div>
+				</div>
+				<!-- 하단고정버튼 : S -->
+				<div class="r_btn_box">
+					<span><button type="button" name="button" class="btn_ico filter">필터</button></span>
+				</div>
+				<!-- 하단고정버튼 : E -->
+				<!-- 관련상품 -->
+				<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+				<div class="goods_list tscroll">
+					<ul class="ul_size">
+						<li>
+							<a href="#">
+								<img class="ajax_lazy" data-src="../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+								<span class="badge_area">
+									<span class="badge type3">신라트립가</span>
+								</span>
+								<span class="cate">티켓/패스</span>
+								<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+								<span class="sale_area">
+									<span class="per">20%</span><span class="cost">10,000,000원</span>
+								</span>
+								<span class="price"><strong>8,000,000</strong>원~</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="ajax_lazy" data-src="../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+								<span class="cate">유심/와이파이</span>
+								<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+								<span class="price"><strong>8,000,000</strong>원~</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="ajax_lazy" data-src="../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+								<span class="cate">여행자보험</span>
+								<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+								<span class="sale_area">
+									<span class="cost">10,000,000원</span>
+								</span>
+								<span class="price"><strong>8,000,000</strong>원~</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="ajax_lazy" data-src="../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+								<span class="badge_area">
+									<span class="badge type3">신라트립가</span>
+								</span>
+								<span class="cate">티켓/패스</span>
+								<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+								<span class="sale_area">
+									<span class="per">20%</span><span class="cost">10,000,000원</span>
+								</span>
+								<span class="price"><strong>8,000,000</strong>원~</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="ajax_lazy" data-src="../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+								<span class="badge_area">
+									<span class="badge type3">신라트립가</span>
+								</span>
+								<span class="cate">티켓/패스</span>
+								<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+								<span class="sale_area">
+									<span class="per">20%</span><span class="cost">10,000,000원</span>
+								</span>
+								<span class="price"><strong>8,000,000</strong>원~</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img class="ajax_lazy" data-src="../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+								<span class="badge_area">
+									<span class="badge type3">신라트립가</span>
+								</span>
+								<span class="cate">티켓/패스</span>
+								<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+								<span class="sale_area">
+									<span class="per">20%</span><span class="cost">10,000,000원</span>
+								</span>
+								<span class="price"><strong>8,000,000</strong>원~</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+			</div>
+		</div>
+	</div>
+	<!-- 팝업 : E -->
+</div>
+
+<script type="text/javascript" src="../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../resource/js/lalang.js"></script>
+<script>
+    mapToggleFn.init();
+</script>
+</body>
+</html>

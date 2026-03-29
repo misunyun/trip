@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category show" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb level2">
+		<a href="#"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+		<a href="#"><i class="ico cart"></i>장바구니</a>
+		<a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" class="on" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+	</nav>
+
+</div>
+</body>
+<script type="text/javascript" src="../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../resource/js/lalang.js"></script>
+</html>

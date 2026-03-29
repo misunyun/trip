@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+
+/* 랭킹 */
+.keyword_list{margin:3px 16px 5px 0;/*height:25px;*/}
+.keyword_list:after{content:"";display:block;clear:both;}
+.keyword_list h3{float: left;padding-top: 0;padding-right:0;margin-left:-137px;line-height: 1.4}
+.keyword_list .now_view{position: relative;padding:0 32px 0 137px;}
+.keyword_list .now_view:after{content:"";display:block;clear:both;position: absolute;right:21px;top:1px; height: 13px;margin:5px 10px 0 0px;border-left:1px solid #ebebeb;}
+.keyword_list .ico.new{font-size:12px;color:#fe583e;text-indent:0;font-style: normal;background: none}
+.keyword_list .ico.same{content: '';right: 8px;top:4px;display:inline-block;width:9px;height:1px;background-color: #a5a5a5;background-image: none}
+.keyword_list .txt_roll{display: inline-block;overflow: hidden;width:100%; height:25px;padding:0 13px 0 0;box-sizing: border-box;}
+.keyword_list .txt_roll ol{width: 100%;display: block!important}
+.keyword_list .txt_roll ol li a{position: relative;display: block;padding:1px 28px 0 20px;width: 100%;box-sizing: border-box;}
+.keyword_list .txt_roll ol .num{display:inline-block;width:20px;margin-left: -20px;vertical-align: middle;}
+.keyword_list .txt_roll ol .kwd{display:inline-block;width: 100%;vertical-align: middle;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.keyword_list .txt_roll .ico{position: absolute;right:0;top:50%}
+.keyword_list .txt_roll .ico.up,.keyword_list .txt_roll .ico.dn{margin-top: -2px}
+.keyword_list .txt_roll .ico.new{margin-top: -9px}
+.keyword_list .txt_type2{display: none;font-size:13px;color:#a5a5a5}
+.keyword_list button.ico{position: absolute;right:0;top:2px;overflow: visible;}
+.keyword_list button.btn_fold{background-position: -396px -153px}
+/* .keyword_list button.ico::before{content:'';display: inline-block;float: left;height: 13px;margin:5px 10px 0 0px;border-left:1px solid #ebebeb;background: red} */
+.keyword_list.flight{margin-top:66px;}
+.keyword_list.flight .txt_roll ol li a{padding-right:0;}
+.keyword_list.flight .rank li a{padding-right:0;}
+
+.keyword_list .rank{display: none;float: left;width:42%;}
+.keyword_list .rank:nth-of-type(1){clear: both}
+.keyword_list .rank:nth-of-type(2){float: right;padding-left:40px;}
+.keyword_list .rank li{padding-bottom: 10px}
+.keyword_list .rank li a{position: relative;display:inline-block;width:100%;padding:0 25px 0 23px;line-height:1.09;box-sizing: border-box;}
+.keyword_list .rank li .num{display:inline-block;width: 23px;margin-left:-23px;}
+.keyword_list .rank li .kwd{display:inline-block;width: 100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.keyword_list .rank li .ico{position: absolute;right:8px;top:4px}
+.keyword_list .rank li .ico.new{right: 0;top:1px;}
+.keyword_list .rank li .ico.same{top:7px;}
+
+.keyword_list.open{height: auto;margin-bottom:3px;}
+.keyword_list.flight.open{margin-bottom:-10px;}
+.keyword_list.open .txt_roll{display:none;}
+.keyword_list.open .txt_type2{clear:both;display: block;padding-top: 3px}
+
+.keyword_list + h3 {padding-top:39px}
+.keyword_list.open + h3 {padding-top:56px}
+
+.seller_top10{margin-bottom: 10px;height: 105px;overflow-y: hidden;}
+.seller_top10 ol{height: 115px;font-size:0}
+.seller_top10 li{display: inline-block;margin-right: 20px;box-sizing: border-box;}
+.seller_top10 li a{display:block;width:84px;box-sizing: border-box;}
+.seller_top10 li span{display:block;}
+.seller_top10 li .rank{font-size:14px;font-weight: bold;text-align:center;line-height:1}
+.seller_top10 li .thum{width: 55px;height: 55px;margin:0 auto 14px auto;border-radius:50%;background:#f9f9f9;overflow:hidden;}
+.seller_top10 li .thum img{width:100%;height:100%;object-fit:contain;}
+.seller_top10 li .tit{display:block;text-align:center;color:#a5a5a5;font-size:17px;font-weight:bold;line-height:55px;}
+.seller_top10 li .name{width:100%;margin:1px 0 -2px 0;text-align:center;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+
+.top_seller{position: relative;padding:21px 20px 16px 20px;margin:11px 20px 0 0;background:#f9f9f9}
+.top_seller .badge_area{position:absolute;top:-10px;left:20px;}
+.top_seller .average_area{float:left;margin-bottom: 12px;}
+.top_seller .average_area .btn_txt{display: block;font-size:17px;}
+.top_seller .average_area .btn_txt::after{margin-bottom: 1px}
+.top_seller .average_area::after{font-size:18px}
+.top_seller .average_area .review_point{margin-bottom:1px}
+.top_seller .logo{float:right;width:55px;height:55px;margin-top: -1px;border-radius:50%;overflow:hidden;}
+.top_seller .logo img{width:55px;height:55px;object-fit:contain;}
+.top_seller .logo .tit{display:block;text-align:center;color:#a5a5a5;font-size:17px;font-weight:bold;line-height:55px;}
+.top_seller .review_txt{clear:both;padding:15px 0 6px 0;font-size:14px;color:#828282;line-height: 1.65;border-top: 1px solid #f2f2f2}
+.top_seller .user_info{font-size:13px;color:#828282}
+.top_seller .user_info span:first-child::after{content:'';display: inline-block;width: 1px;height:10px;margin:0 5px 3px 8px;vertical-align:middle;background:#ebebeb}
+.top_seller .no_data{clear:both;padding-top: 20px;border-top: 1px solid #f2f2f2}
+
+.slide_banner.city_img{position: relative; height:78.4vw; overflow-y:hidden}
+.slide_banner.city_img .slider_item img{width:100%;}
+.slide_banner.city_img .slider_item .name{display: block;line-height:1.6;padding-top: 30px;font-size:17px;color:#fe583e}
+.slide_banner.city_img .slider_item .name span{display: block;margin-top:-5px; color:#828282;font-size:14px;font-weight:normal;}
+.slide_banner.city_img .slick-dots{position:absolute;bottom:60px;left:0}
+
+.goods_horiz.ranking{margin-top:40px;}
+.goods_horiz.ranking li:last-child{margin-bottom:0;}
+/*.goods_horiz.ranking li a{min-height:119px;}*/
+.goods_horiz.ranking li .badge_area{position:absolute;top:100px;left:0;}
+.goods_horiz.ranking li .badge_area:after{clear:both;display:block;content:"";}
+.goods_horiz.ranking li .badge_area .badge{float:left;margin:0;}
+
+.rank_categ .ticket_list.vertical li{margin-top:40px;}
+.rank_categ .ticket_list.vertical li:first-child{margin-top:0;}
+.rank_categ .badge_area .badge.type3, .thumb_list li .badge_area .badge.type3{width:19px;padding:0;text-align:center;}

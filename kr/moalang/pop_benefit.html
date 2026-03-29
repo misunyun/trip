@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/moalang.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<div class="head" data-native="status">
+			<h1></h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont full">
+			<!-- 2019-10-08 모아랑 팝업 내용 수정 -->
+			<div class="pop_moalang">
+				<strong class="tit">살 때마다 쌓이는 모아랑 혜택!</strong>
+				<p class="txt">기본적립액의 최대 20% 추가 적립</p><!-- 2019-12-20 문구수정 -->
+				<div class="moa_benefit">
+					<div class="moa_info">
+						<div class="txt_box">
+							<!-- <p class="no_cmt">아직 구매한 모아랑 상품이 없습니다.</p> -->
+							<p class="cmt">두 카테고리 이상 구매 시,<br>기본적립액의 최대 20% 추가 적립</p><!-- 2019-12-20 문구수정 -->
+						</div>
+						<div class="moa_stamp">
+							<ul>
+								<li>
+									<div class="ico_moa flight on"><!-- 구매한 모아랑 상품이 있는 경우 on 클래스 추가 / 아닌경우 off 클래스 추가 -->
+										<span class="coin front"></span>
+									</div>
+									<span class="txt">항공</span>
+								</li>
+								<li>
+									<span class="ico_moa hotel on">
+										<span class="coin front"></span>
+									</span>
+									<span class="txt">숙박</span>
+								</li>
+								<li>
+									<span class="ico_moa activity off">
+										<span class="coin front"></span>
+									</span>
+									<span class="txt">액티비티</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="btn_detail"><button type="button" name="button" class="btn_txt type4">리워즈 혜택보기</button></div>
+				</div>
+				<div class="note_list">
+					<strong>유의사항</strong>
+					<!-- 2019-12-20 문구수정 -->
+					<ul>
+						<li><em class="txt_em">모아랑 혜택을 받은 이후, 해당 상품 중 1개라도 취소하는 경우, 추가적립 된 S.Rewards 전체가 회수 됩니다.</em></li>
+						<li>항공, 숙박, 액티비티 카테고리 별로 1개 이상 상품 구매시, 스탬프가 찍힙니다.</li>
+						<li>모아랑 혜택 스탬프가 2개 이상인 경우, 혜택 받기 버튼을 누르면 S.Rewards가 추가 적립 됩니다.</li>
+						<li>이미 모아랑 혜택을 받은 상품은 지난 모아랑 혜택 내역에서 확인 가능하며, 모아랑 혜택 대상에서 제외 됩니다.</li>
+						<li>구매 후 1년이 지난 상품은 모아랑 혜택 대상에서 제외 됩니다.</li>
+					</ul>
+					<!-- //2019-12-20 문구수정 -->
+				</div>
+			</div>
+			<!-- //2019-10-08 모아랑 팝업 내용 수정 -->
+		</div>
+	</div>
+	<!-- 팝업 : E -->
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

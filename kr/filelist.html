@@ -1,0 +1,2511 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>[R]신라트립파일리스트</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<script type="text/javascript" src="../resource/js/jquery-1.11.2.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&subset=korean');
+body{margin:0;padding:0;background-color: #fcfcfc;color:#333; font-size:12px; font-family:'Noto Sans KR', "맑은 고딕", "돋움", Dotum, AppleSDGothicNeo ,Droid Sans, arial, sans-serif;overflow-x:hidden;}
+a:hover {color:#e60012;text-decoration:underline;}
+a, img {border:none;}
+.header {position:relative;overflow:hidden;background-color:#fff;}
+.header h1 {display:inline-block;margin:0;padding:10px; font-size:30px;vertical-align:middle;}
+.header h1 strong {color:#e53433;}
+.header h1 > p {margin-top:2px; font-weight:normal !important; font-size:14px; color:#666; text-align:center;}
+.header h1 > p span {color:red;}
+.header #information {display:inline-block;color:#333; font-size:14px; font-weight:bold;text-align: left;vertical-align:middle;}
+.header #information>span {margin: 0 14px; color:#ddd; font-weight: normal;}
+.header #information>strong {color:#e60012;}
+.header .lang_link {display:inline-block;margin-left:20px;vertical-align:middle;}
+.header .lang_link select{height:30px;}
+/*.header .lang_link a{color:#252525}*/
+table {width:100%; border-collapse:collapse; border-spacing:0; background-color: #fff;border-bottom:1px solid #ccc;box-sizing:border-box;}
+caption {display: none;}
+th {padding:5px 0; color:#fff; font-weight: normal;background:#444; border-top:1px solid #666; border-left:1px solid #666;}
+td {position:relative; padding:7px 5px; border-top:1px solid #e1e1e1; border-left:1px solid #e1e1e1; line-height:16px;}
+tr:first-child td {border-top:1px solid #e1e1e1}
+th:first-child, td:first-child {border-left:0;}
+td:first-child {font-weight:bold;}
+td > ul {margin:0; padding-left:20px;}
+td a {color:#333; text-decoration:underline;}
+table tbody tr.on td a {color:#e60012; }
+table tbody tr.on th,
+table tbody tr.on td {background:rgba(0,0,0,0.15) !important;}
+table tbody tr td.crossed::after
+{
+  position: absolute;
+  content: "";
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  background-image: linear-gradient(to bottom right,  transparent calc(50% - 1px), #ddd, transparent calc(50% + 1px));
+}
+.end{background:#f5f5db !important;}
+.del{background:#999; pointer-events: none;}
+
+.guide td {border-bottom:3px double #d1d1d1;}
+.sec td {border-top:3px double #000;}
+.del td {background-color:#bbb; text-decoration:line-through;}
+.skip td,
+.skip td a{background-color:#f1f1f1; color:#999;}
+.skip td:first-child{color:#333;}
+.hold td, .hold {background-color:#fef3fd;}
+.ing td, .ing {background-color:#fff6d1;}
+.search td, .search {background-color:#fef3fd;}
+.btn_fixed td, .btn_fixed {background-color:#effff1;}
+.alignC {text-align:center;}
+.red {color:#e60012 !important;}
+.bd_dash{border-top:1px dashed #000;}
+
+.dNotice {overflow:hidden; width:100%; color:#666;}
+.dNotice > p {font-weight:bold; color:#11387f;}
+.dNotice > ul li {margin-bottom:5px;}
+
+.btnTop {position:relative; z-index:50; overflow:hidden; width:100%; height:20px; margin:20px 0;}
+.btnTop a {position:absolute; right:10px; display:block; width:46px; height:20px; background:url("../images/btn/btn_top.gif") no-repeat 0 0; text-indent:-9999em;}
+
+ul,  li, dl, dt, dd {padding:0;margin:0;list-style:none}
+.add_list {margin:30px 20px;padding-bottom:10px}
+.add_list p.top {font-size:14px;font-weight:bold;margin-bottom:10px;color:#fff;padding:7px 10px 5px 10px;background-color:#00a4b3;font-family:'맑은 고딕','Malgun Gothic'}
+.add_list p.top.red{background-color:#ec1f60;color:#fff !important}
+.add_list ul li {margin-bottom:10px;border-top:1px dashed #ccc;padding-top:10px;font-family:'verdana'}
+.add_list ul li:first-child {border-top:none;padding-top:0}
+.add_list ul li strong {color:#00a4b3;font-size:12px;display:block;margin-bottom:5px;cursor:pointer;background:url('./blt.gif') no-repeat 100% 0}
+.add_list ul li strong.on {color:#00599d;background-position:100% -19px}
+.add_list ul li span {font-size:12px;color:#333;color:#ec1f60}
+.add_list ul li dl dt {font-weight:bold;color:#000;margin:8px 0 3px 0}
+.add_list ul li dl dd {line-height:16px}
+.add_list ul li dl dd em {font-weight:bold}
+.add_list ul li dl dd em span {color:#ec1f60}
+.add_list ul li div {overflow:hidden;display:none}
+.add_list ul li div ul li {float:left;margin-right:70px;border-top:none;padding:0}
+.box {border:1px solid #ccc;padding:15px;line-height:18px;font-size:12px;margin:-5px 0 10px 0;background-color:#f7f7f7}
+.box strong {color:#ec1f60}
+xmp {font-family:'맑은 고딕','Malgun Gothic';margin:0;padding:0;color:#555}
+xmp.change {font-weight:bold;color:#000}
+</style>
+<script type="text/javascript">
+	$(function(){
+// 	var total =$('.sum tr').size();
+//	var ok = $('.sum td.end span').size()
+//	var persent = parseInt((ok/total)*100);
+// 	$('#total-page').text(total);
+//	$('#ok-page').text(ok);
+// 	$('#persent').text(+persent+'%')
+	});
+function popOpen(url, name, width, height){
+	var toolbar_str = 'no';
+	var menubar_str = 'no';
+	var statusbar_str = 'no';
+	var scrollbar_str = 'yes';
+	var resizable_str = 'no';
+	window.open(url, name, 'width='+width+',height='+height+',toolbar='+toolbar_str+',menubar='+menubar_str+',status='+statusbar_str+',scrollbars='+scrollbar_str+',resizable='+resizable_str);
+}
+
+</script>
+</head>
+<body>
+
+<div>
+
+	<div class="header">
+		<h1>신라트립 <strong>KR</strong></h1>
+		<div id="information">
+			총 <strong id="total-page"></strong>페이지<span>|</span>
+			완료 : <strong id="ok-page"></strong>페이지 <span>|</span>
+			진행률 : <strong id="persent" class="red"></strong>%
+		</div>
+		<div class="lang_link">
+			<select onchange="if(this.value) location.href=(this.value);">
+				<option selected value="../kr/filelist.html">국문파일리스트</option>
+				<option value="../en/filelist.html">영문파일리스트</option>
+				<option value="../cn/filelist.html">중문파일리스트</option>
+				<option value="../jp/filelist.html">일문파일리스트</option>
+			</select>
+		</div>
+        <p style="margin: -10px 0 10px 10px;font-size:14px"><a href="http://72.2.30.150:8080/test/lalang/admin/filelist.html" target="_blank">셀러BO 파일리스트 &gt;</a></p>
+	</div>
+
+	<div>
+		<table>
+			<caption>신라트립</caption>
+			<colgroup>
+				<col style="width:10px">
+				<col style="width:100px">
+				<col style="width:180px">
+				<col style="width:180px">
+				<col style="width:200px">
+				<col style="width:200px">
+				<col style="width:100px">
+				<col style="width:100px">
+				<col style="width:*">
+			</colgroup>
+			<thead>
+				<tr>
+					<th rowspan="2">No.</th>
+					<th colspan="4">경로</th>
+					<th rowspan="2">URL(파일명)</th>
+					<th rowspan="2">기획<br />검수</th>
+					<th rowspan="2">디자인<br />검수</th>
+					<th rowspan="2" colspan="2">비고</th>
+				</tr>
+				<tr>
+					<th>1Depth</th>
+					<th>2Depth</th>
+					<th>3Depth</th>
+					<th>4Depth</th>
+				</tr>
+			</thead>
+			<tbody class="sum">
+				<tr class="sec">
+					<td class="alignC"></td>
+					<td>Guide</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><a href="guide/guide.html" target="_blank">guide.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="alignC"></td>
+					<td>layout</td>
+					<td>서브메인</td>
+					<td></td>
+					<td></td>
+					<td><a href="guide/layout.html" target="_blank">layout.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td>항공,액티비티,패키지,숙,도시랭,기획전 상,이벤트상세</td>
+				</tr>
+				<tr class="btn_fixed">
+					<td class="alignC"></td>
+					<td>서브레이아웃</td>
+					<td>하단버튼 고정有, fnb 無</td>
+					<td></td>
+					<td></td>
+					<td><a href="guide/layout_btn.html" target="_blank">layout_btn.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="alignC"></td>
+					<td></td>
+					<td>하단버튼 고정無, fnb 有</td>
+					<td></td>
+					<td></td>
+					<td><a href="guide/layout_full.html" target="_blank">layout_full.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+				<!-- <tr>
+					<td class="alignC"></td>
+					<td></td>
+					<td>하단버튼 고정無, fnb 無</td>
+					<td></td>
+					<td></td>
+					<td><a href="guide/layout_no.html" target="_blank">layout_no.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr> -->
+				<tr>
+					<td class="alignC"></td>
+					<td></td>
+					<td>배너가이드</td>
+					<td></td>
+					<td></td>
+					<td><a href="guide/banner.html" target="_blank">banner.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+				<!-- <tr>
+					<td class="alignC"></td>
+					<td></td>
+					<td>팝업</td>
+					<td></td>
+					<td></td>
+					<td><a href="guide/pop_full.html" target="_blank">popup.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+                <tr>
+					<td class="alignC"></td>
+					<td></td>
+					<td></td>
+					<td>하단버튼 x</td>
+					<td></td>
+					<td><a href="guide/pop_full.html" target="_blank">pop_full.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr> -->
+                <!-- <tr class="end">
+					<td class="alignC"></td>
+					<td>공통</td>
+					<td>공유팝업</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/flight_sns.html" target="_blank">flight_sns.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td>2019-07-16 디자인 변경 </td>
+				</tr> -->
+				<tr class="btn_fixed">
+					<td class="alignC"></td>
+					<td>공통</td>
+					<td>SNS공유팝업(라이브리)</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/flight_sns_livere.html" target="_blank">flight_sns_livere.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+                <tr class="btn_fixed">
+                    <td class="alignC"></td>
+					<td></td>
+					<td>옵션선택</td>
+					<td></td>
+					<td></td>
+					<td><a href="option_select.html" target="_blank">option_select.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td>2019-06-12 div 태그를 ul태그로 변경<br>2019-07-23 버튼이 한개 케이스 추가, 금액부분에 strong태그 추가</td>
+				</tr>
+                <tr class="btn_fixed">
+					<td class="alignC"></td>
+					<td></td>
+					<td>팝업_여행일정검색</td>
+					<td></td>
+					<td></td>
+					<td><a href="pop_search_trip.html" target="_blank">pop_search_trip.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+				<tr class="btn_fixed">
+					<td class="alignC"></td>
+					<td></td>
+					<td>팝업_여행일정검색_자동완성</td>
+					<td></td>
+					<td></td>
+					<td><a href="pop_search_trip2.html" target="_blank">pop_search_trip2.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+				<tr class="btn_fixed">
+					<td class="alignC"></td>
+					<td></td>
+					<td>팝업_여행일정검색(숙박/액티비티/패키지)_자동완성포함</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/pop_search_trip_prd.html" target="_blank">pop_search_trip_prd.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>				
+				<tr class="btn_fixed">
+					<td class="alignC"></td>
+					<td></td>
+					<td>약관팝업</td>
+					<td></td>
+					<td></td>
+					<td><a href="pop_terms.html" target="_blank">pop_terms.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td>2019-07-16 추가</td>
+				</tr>
+				<tr class="btn_fixed">
+					<td class="alignC"></td>
+					<td></td>
+					<td>약관_개인정보 판매자 제공에 대한 동의</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/pop_terms_agree1.html" target="_blank">pop_terms_agree1.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+				<tr class="btn_fixed">
+					<td class="alignC"></td>
+					<td></td>
+					<td>약관_개인정보 수집 및 이용동의1</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/pop_terms_agree2.html" target="_blank">pop_terms_agree2.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+				<tr class="btn_fixed">
+					<td class="alignC"></td>
+					<td></td>
+					<td>약관_개인정보 수집 및 이용동의2</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/pop_terms_agree3.html" target="_blank">pop_terms_agree3.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+				<tr class="btn_fixed">
+					<td class="alignC"></td>
+					<td></td>
+					<td>약관_고유식별정보 수집 및 이용동의</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/pop_terms_agree4.html" target="_blank">pop_terms_agree4.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+                <tr class="btn_fixed">
+					<td class="alignC"></td>
+					<td></td>
+					<td>달력팝업</td>
+					<td></td>
+					<td></td>
+					<td><a href="pop_calendar.html" target="_blank">pop_calendar.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+				<tr class="btn_fixed">
+					<td class="alignC"></td>
+					<td></td>
+					<td>달력팝업2 - 년월선택</td>
+					<td></td>
+					<td></td>
+					<td><a href="pop_calendar2.html" target="_blank">pop_calendar2.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+                <tr>
+					<td class="alignC"></td>
+					<td></td>
+					<td>상품모듈 모음</td>
+					<td></td>
+					<td></td>
+					<td><a href="guide/module.html" target="_blank">module.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="alignC"></td>
+					<td></td>
+					<td>로딩바 (리스트하단/페이지 전체)</td>
+					<td></td>
+					<td></td>
+					<td><a href="guide/loader.html" target="_blank">loader.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+                <tr>
+					<td class="alignC"></td>
+					<td></td>
+					<td>이미지 크게보기</td>
+					<td></td>
+					<td></td>
+					<td><a href="pop_img_detail.html" target="_blank">pop_img_detail.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td>셀러톡 이미지크게보기 / 분쟁상세 이미지 상세 / 마이페이지 1:1문의 - 동일한 팝업 사용</td>
+				</tr>
+				<tr>
+					<td class="alignC"></td>
+					<td></td>
+					<td>바우처보기 / E-티켓보기 팝업</td>
+					<td></td>
+					<td></td>
+					<td>
+						<a href="pop_voucher.html" target="_blank">pop_voucher.html</a><br>
+						<a href="pop_ticket.html" target="_blank">pop_ticket.html</a>
+						<a href="pop_ticket_info.html" target="_blank" class="btn_fixed">pop_ticket_info.html</a>
+					</td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+                <tr>
+                    <td class="alignC"></td>
+					<td></td>
+					<td>alert 모음</td>
+					<td></td>
+					<td></td>
+					<td><a href="guide/pop_modal.html" target="_blank">pop_modal.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+                <tr>
+                    <td class="alignC"></td>
+					<td></td>
+					<td>팝업 호출 모음</td>
+					<td></td>
+					<td></td>
+					<td><a href="guide/popup_example.html" target="_blank">popup_example.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+                    <td class="crossed">팝업 화면 전체 모음</td>
+				</tr>
+                <tr class="btn_fixed">
+                    <td class="alignC"></td>
+					<td></td>
+					<td>판매 중지</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/stop_sale.html" target="_blank">stop_sale.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+                    <td class="crossed"></td>
+				</tr>
+				<tr class="btn_fixed">
+                    <td class="alignC"></td>
+					<td></td>
+					<td>에러페이지</td>
+					<td></td>
+					<td></td>
+					<td><a href="error.html" target="_blank">error.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+                    <td class="crossed"></td>
+				</tr>
+				<tr class="btn_fixed">
+                    <td class="alignC"></td>
+					<td></td>
+					<td>앱_팝업</td>
+					<td></td>
+					<td></td>
+					<td><a href="pop_app.html" target="_blank">pop_app.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+                    <td class="crossed">앱용 팝업가이드 - 디바이스에서 테스트</td>
+				</tr>
+				<tr>
+                    <td class="alignC"></td>
+					<td></td>
+					<td>앱_지도검색</td>
+					<td></td>
+					<td></td>
+					<td><a href="pop_map_app.html" target="_blank">pop_map_app.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+                    <td class="crossed">앱용 지도검색 - 디바이스에서 테스트</td>
+				</tr>
+				<tr class="btn_fixed">
+                    <td class="alignC"></td>
+					<td></td>
+					<td>Ajax용 레이어팝업</td>
+					<td></td>
+					<td></td>
+					<td><a href="ajax_layer.html" target="_blank">ajax_layer.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+                    <td class="crossed"></td>
+				</tr>
+				<tr class="ing">
+                    <td class="alignC"></td>
+					<td></td>
+					<td>오픈전 페이지</td>
+					<td></td>
+					<td></td>
+					<td><a href="open_before.html" target="_blank">open_before.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+                    <td class="crossed"></td>
+				</tr>
+				<tr class="ing">
+                    <td class="alignC"></td>
+					<td></td>
+					<td>오픈전 페이지 - 커밍순</td>
+					<td></td>
+					<td></td>
+					<td><a href="open_before2.html" target="_blank">open_before2.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+                    <td class="crossed"></td>
+				</tr>
+				<tr class="ing">
+                    <td class="alignC"></td>
+					<td></td>
+					<td>서비스이용약관 동의 - 최초진입시</td>
+					<td></td>
+					<td></td>
+					<td><a href="pop_agree_first.html" target="_blank">pop_agree_first.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+                    <td class="crossed"></td>
+				</tr>
+				<tr class="ing">
+                    <td class="alignC"></td>
+					<td></td>
+					<td>넷퍼넬 페이지</td>
+					<td></td>
+					<td></td>
+					<td><a href="waiting.html" target="_blank">waiting.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+                    <td class="crossed"></td>
+				</tr>
+				<tr class="btn_fixed">
+                    <td class="alignC"></td>
+					<td></td>
+					<td>Iframe용 팝업</td>
+					<td></td>
+					<td></td>
+					<td><a href="iframe_pop.html" target="_blank">iframe_pop.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+                    <td class="crossed"></td>
+				</tr>
+				<!-- 핫키 : S -->
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td>핫키</td>
+					<td>바로가기 설정</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/hotkey_set.html" target="_blank">hotkey_set.html</a></td>
+					<td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업</td>
+					<td></td>
+					<td></td>
+					<td><a href="hotkey.html" target="_blank">hotkey.html</a></td>
+					<td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<!-- 핫키 : E -->
+				
+				<!-- 통합검색 : S -->
+				<tr class="count search">
+					<td class="alignC numbering"></td>
+					<td>통합검색</td>
+					<td>메인</td>
+					<td></td>
+					<td></td>
+					<td><a href="search/total_search.html" target="_blank">total_search.html</a></td>
+					<td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<tr class="count search">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>최근검색어</td>
+					<td></td>
+					<td></td>
+					<td><a href="search/total_search_recent.html" target="_blank">total_search_recent.html</a></td>
+					<td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<tr class="count search">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>자동완성</td>
+					<td></td>
+					<td></td>
+					<td><a href="search/total_search_auto.html" target="_blank">total_search_auto.html</a></td>
+					<td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<tr class="count search">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>검색결과有</td>
+					<td></td>
+					<td></td>
+					<td><a href="search/total_search_result.html" target="_blank">total_search_result.html</a></td>
+					<td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<tr class="count search">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>검색결과無</td>
+					<td></td>
+					<td></td>
+					<td><a href="search/total_search_null.html" target="_blank">total_search_null.html</a></td>
+					<td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<tr class="count search">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>검색결과 상세 - 액티비티</td>
+					<td></td>
+					<td></td>
+					<td><a href="search/sch_result_act.html" target="_blank">sch_result_act.html</a></td>
+					<td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<tr class="count search">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>검색결과 상세 - 라랑팩</td>
+					<td></td>
+					<td></td>
+					<td><a href="search/sch_result_pack.html" target="_blank">sch_result_pack.html</a></td>
+					<td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<tr class="count search">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>검색결과 상세 - MD추천</td>
+					<td></td>
+					<td></td>
+					<td><a href="search/sch_result_md.html" target="_blank">sch_result_md.html</a></td>
+                    <td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<tr class="count search">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>검색결과 상세 - 이벤트</td>
+					<td></td>
+					<td></td>
+					<td><a href="search/sch_result_event.html" target="_blank">sch_result_event.html</a></td>
+					<td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<tr class="count search">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>검색결과 상세 - 프로모션</td>
+					<td></td>
+					<td></td>
+					<td><a href="search/sch_result_promo.html" target="_blank">sch_result_promo.html</a></td>
+					<td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<tr class="count search">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>검색결과 상세 - 에세이</td>
+					<td></td>
+					<td></td>
+					<td><a href="search/sch_result_essay.html" target="_blank">sch_result_essay.html</a></td>
+					<td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<tr class="count search btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업(실시간 항공,숙박)도시,항공 검색</td>
+					<td></td>
+					<td></td>
+					<td><a href="search/pop_search_city.html" target="_blank">pop_search_city.html</a></td>
+					<td class="alignC"></td>
+					<td class="alignC"></td>
+					<td></td>
+				</tr>
+				<!-- 통합검색 : E -->
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>메인</td>
+					<td>검색전</td>
+					<td></td>
+					<td></td>
+					<td><a href="main_before.html" target="_blank">main_before.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-31 최하위 모듈 1단으로 수정</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC"></td>
+					<td></td>
+					<td>검색 후</td>
+					<td></td>
+					<td></td>
+					<td><a href="main_after.html" target="_blank">main_after.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-31 최하위 모듈 1단으로 수정</td>
+				</tr>
+				 <tr class="count end">
+					<td class="alignC"></td>
+					<td></td>
+					<td>팝업_이벤트</td>
+					<td></td>
+					<td></td>
+					<td><a href="pop_event.html" target="_blank">pop_event.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end">
+                    <td class="alignC"></td>
+					<td></td>
+					<td>앱 유도 팝업</td>
+					<td></td>
+					<td></td>
+					<td><a href="pop_app_install.html" target="_blank">pop_app_install.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+                    <td class="crossed"></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC"></td>
+					<td>카테고리(팝업)</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><a href="ajax_category.html" target="_blank">ajax_category.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC"></td>
+					<td>카테고리(페이지)</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><a href="category.html" target="_blank">category.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>항공</td>
+					<td>메인_검색전</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/flight_before.html" target="_blank">flight_before.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-12-06 검색전 화면 추가</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>메인</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/flight.html" target="_blank">flight.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-27 gate 클래스 추가<br>2019-07-23 금액부분에 strong태그 추가</td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>상세</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/flight_detail.html" target="_blank">flight_detail.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>SNS공유팝업(라이브리)</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/flight_sns_livere.html" target="_blank">flight_sns_livere.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-16 디자인 변경 </td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>예약</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/flight_reserve.html" target="_blank">flight_reserve.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-31 수정 - UI 통일 및 카드 추가</td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업_탑승객정보 입력 주의사항</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/pop_passenger_noti.html" target="_blank">pop_passenger_noti.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업_항공규정안내</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/pop_flight_rule.html" target="_blank">pop_flight_rule.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>필터팝업</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/pop_filter_flight.html" target="_blank">pop_filter_flight.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-25 수정</td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>예약완료(요금상세 팝업 - 삭제)</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/flight_reserve_end.html" target="_blank">flight_reserve_end.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-26 수정 DA광고, 추천상품 </td>
+				</tr>				
+                <tr class="count end">
+					<td class="alignC"></td>
+					<td></td>
+					<td>로딩(게이트 페이지)</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/loading.html" target="_blank">loading.html</a></td>
+					<td class="crossed"></td>
+					<td class="crossed"></td>
+					<td></td>
+				</tr>
+                <!-- <tr class="skip">
+					<td class="alignC"></td>
+					<td></td>
+					<td>라랑팩담기완료</td>
+					<td></td>
+					<td></td>
+					<td><a href="lalang_pack_put.html" target="_blank">lalang_pack_put.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr> -->
+
+				<!-- 액티비티 : S -->
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>액티비티</td>
+					<td>메인 - 검색전</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/activity_before.html" target="_blank">activity_before.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>sticky 속성 검색창의 검색 전 상태<br>2019-06-27 gate 클래스 추가</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC"></td>
+					<td></td>
+					<td>메인 - 검색후</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/activity_after.html" target="_blank">activity_after.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+                    <td>sticky 속성 검색창의 검색 후 상태<br>2019-06-27 gate 클래스 추가</td>
+                </tr>
+                    <tr class="count end btn_fixed">
+                    <td class="alignC numbering"></td>
+                    <td></td>
+                    <td>필터팝업</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="product/pop_filter_activity.html" target="_blank">pop_filter_activity.html</a></td>
+                    <td class="alignC">O</td>
+                    <td class="alignC">O</td>
+                    <td>2019-06-17 카테고리 추가</td>
+                </tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>상품상세</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/activity_review.html" target="_blank">activity_review.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-17 상품정보고시, 쿠폰영역 추가<br>2019-06-20 흥정하기 추가, br태그 추가<br>2019-06-27 상품정보고시 div class="sec_cont" 추가, 클래스명 변경, 일정탭 추가<br>2019-07-23 라랑팩 상품 표시, 상품상세 내 tab_wrap을 product_wrap 안으로 이동</td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td>리뷰없음</td>
+					<td></td>
+					<td><a href="product/activity_review_null.html" target="_blank">activity_review_null.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-27 상품정보고시 div class="sec_cont" 추가, 클래스명 변경, 일정탭 추가<br>2019-07-23 상품상세 내 tab_wrap을 product_wrap 안으로 이동</td>
+				</tr>
+				<!-- <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>상품리뷰 더보기</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/review_more.html" target="_blank">review_more.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>패키지에서도 동일하게 사용</td>
+				</tr> -->
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>상품리뷰 상세보기</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/pop_review_detail.html" target="_blank">pop_review_detail.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>디자인/기획수정으로 인한 지연</td>
+				</tr>
+				<!-- <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>결제하기</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/activity_payment.html" target="_blank">activity_payment.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-31 수정</td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>결제완료</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/activity_reserve_end.html" target="_blank">activity_reserve_end.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-25 수정</td>
+				</tr> -->
+				<!-- 액티비티 : E -->
+
+				<!-- 패키지 : S -->
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>패키지</td>
+					<td>메인 - 검색전</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/package_before.html" target="_blank">package_before.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>sticky 속성 검색창의 검색 전 상태<br>2019-06-20 수정 : 뱃지 순서 변경<br>2019-06-27 gate 클래스 추가</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC"></td>
+					<td></td>
+                    <td>메인 - 검색후</td>
+					<td></td>
+					<td></td>
+                    <td><a href="product/package_after.html" target="_blank">package_after.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>sticky 속성 검색창의 검색 후 상태<br>2019-06-20 수정 : 뱃지 순서 변경<br>2019-06-27 gate 클래스 추가</td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>필터팝업</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/pop_filter_package.html" target="_blank">pop_filter_package.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-17 카테고리 추가</td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>상품상세</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/package_review.html" target="_blank">package_review.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-17 상품정보고시, 쿠폰영역 추가<br>2019-06-20 흥정하기 추가, 가이드아이콘 추가, br태그 추가<br>2019-06-27 상품정보고시 div class="sec_cont" 추가, 클래스명 변경, 일정탭 추가<br>2019-07-23 상품상세 내 tab_wrap을 product_wrap 안으로 이동</td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td>리뷰없음</td>
+					<td></td>
+					<td><a href="product/package_review_null.html" target="_blank">package_review_null.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-20 가이드아이콘 추가, br태그 추가<br>2019-06-27 상품정보고시 div class="sec_cont" 추가, 클래스명 변경, 일정탭 추가<br>2019-07-23 상품상세 내 tab_wrap을 product_wrap 안으로 이동</td>
+				</tr>
+				<!-- <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>결제하기</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/package_payment.html" target="_blank">package_payment.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-31 수정</td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>결제완료</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/package_reserve_end.html" target="_blank">package_reserve_end.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-25 수정</td>
+				</tr> -->
+				<!-- 패키지 : E -->
+                <!-- 숙박 : S -->
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>숙박</td>
+					<td>메인 - 검색전</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/hotel_before.html" target="_blank">hotel_before.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>sticky 속성 검색창의 검색 전 상태<br>2019-06-27 gate 클래스 추가</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC"></td>
+					<td></td>
+                    <td>메인 - 검색후</td>
+					<td></td>
+					<td></td>
+                    <td><a href="product/hotel_after.html" target="_blank">hotel_after.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>sticky 속성 검색창의 검색 후 상태<br>2019-06-27 gate 클래스 추가</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+                    <td>메인 - 실시간</td>
+					<td></td>
+					<td></td>
+                    <td><a href="product/hotel_realtime.html" target="_blank">hotel_realtime.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>sticky 속성 검색창의 검색 후 상태<br>2019-06-27 gate 클래스 추가</td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>필터팝업</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/pop_filter_hotel.html" target="_blank">pop_filter_hotel.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-23 금액부분에 strong태그 추가</td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>상품상세</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/hotel_review.html" target="_blank">hotel_review.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-24 마크업 수정<br> 가격비교/리뷰(리뷰없음 액티비티,패키지 동일)<br>2019-06-20 수정 : 뱃지 순서 변경<br>2019-06-27 img에 width 삭제, a태그에 logo 클래스 추가<br>2019-07-23 상품상세 내 tab_wrap을 product_wrap 안으로 이동</td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td>딜상품</td>
+					<td></td>
+					<td><a href="product/hotel_review_deal.html" target="_blank">hotel_review_deal.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-20 흥정하기 추가<br>2019-07-23 상품상세 내 tab_wrap을 product_wrap 안으로 이동</td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>팝업_인원선택</td>
+					<td></td>
+					<td><a href="product/pop_select_per.html" target="_blank">pop_select_per.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>옵션선택</td>
+					<td></td>
+					<td></td>
+					<td><a href="option_select_hotel.html" target="_blank">option_select_hotel.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-12 div 태그를 ul태그로 변경</td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>예약하기</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/hotel_reserve.html" target="_blank">hotel_reserve.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-31 수정 - UI 통일 및 카드결제 추가</td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>예약완료</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/hotel_reserve_end.html" target="_blank">hotel_reserve_end.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-25 수정</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업_지도검색</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/pop_hotel_map.html" target="_blank">pop_hotel_map.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<!-- 숙박 : E -->
+
+				<!-- 셀러샵 : S -->
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>셀러샵</td>
+					<td>셀러샵메인 - 상품전시형</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/seller_type1.html" target="_blank">seller_type1.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-20 수정 : 뱃지 클래스 변경<br>2019-07-12 데이터없음 추가</td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>셀러샵메인 - 기획전형</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/seller_type2.html" target="_blank">seller_type2.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-20 수정 : 뱃지 클래스 변경<br>2019-07-12 데이터없음 추가</td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>셀러별 등급 혜택 안내 팝업</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/pop_seller_grade.html" target="_blank">pop_seller_grade.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<!-- <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>셀러항공권(검색전)</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/seller_flight_before.html" target="_blank">seller_flight_before.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-23 금액부분에 strong태그 추가</td>
+				</tr> -->
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>셀러항공권(검색후)</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/seller_flight_after.html" target="_blank">seller_flight_after.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-23 금액부분에 strong태그 추가</td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>셀러숙박/패키지/액티비티</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/seller_product.html" target="_blank">seller_product.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>셀러전체후기</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/seller_review.html" target="_blank">seller_review.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-20 리뷰 상품명에 a태그 추가</td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>베스트후기상세</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/pop_review_detail2.html" target="_blank">pop_review_detail2.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-20 리뷰 상품명에 a태그 추가</td>
+				</tr>
+				<!-- 셀러샵 : E -->
+
+				<!-- 랭킹 : S -->
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>랭킹</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><a href="ranking/ranking.html" target="_blank">ranking.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-12 클래스명 수정(호텔영문명 간격차이로 클래스 분리)<br>2019-06-20 수정 : 뱃지 클래스 변경<br>2019-06-27 gate 클래스 추가</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>도시랭킹</td>
+					<td></td>
+					<td></td>
+					<td><a href="ranking/rank_city.html" target="_blank">rank_city.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-20 수정 : 뱃지 클래스 변경<br>2019-06-27 gate 클래스 추가</td>
+				</tr>
+                <tr class="count end">
+				<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td>상세페이지</td>
+					<td></td>
+					<td><a href="ranking/rank_city_detail.html" target="_blank">rank_city_detail.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>셀러랭킹</td>
+					<td></td>
+					<td></td>
+					<td><a href="ranking/rank_seller.html" target="_blank">rank_seller.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-27 gate 클래스 추가</td>
+				</tr>
+				<!-- 랭킹 : E -->
+
+				<!-- 마감임박 : S -->
+                <tr class="count ing">
+					<td class="alignC numbering"></td>
+					<td>마감임박</td>
+					<td>메인</td>
+					<td></td>
+					<td></td>
+					<td><a href="deadline/deadline.html" target="_blank">deadline.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-27 gate 클래스 추가</td>
+				</tr>
+				<tr class="count ing">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>땡처리 항공권</td>
+					<td></td>
+					<td></td>
+					<td><a href="deadline/dead_ticket.html" target="_blank">dead_ticket.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-31 header 수정, 플로팅 정렬 버튼 추가</td>
+				</tr>
+				<tr class="count ing btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>필터팝업(마감항공)</td>
+					<td></td>
+					<td></td>
+					<td><a href="deadline/pop_filter_flight2.html" target="_blank">pop_filter_flight2.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count ing">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>패키지(오늘마감/긴급모객)</td>
+					<td></td>
+					<td></td>
+					<td><a href="deadline/dead_pack.html" target="_blank">dead_pack.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-31 header 수정, 플로팅 정렬 버튼 추가</td>
+				</tr>
+				<tr class="count ing btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>필터팝업(마감)</td>
+					<td></td>
+					<td></td>
+					<td><a href="deadline/pop_filter_deadline.html" target="_blank">pop_filter_deadline.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>                
+                <!-- <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td>tab형태</td>
+					<td></td>
+					<td><a href="deadline/dead_ticket_tab.html" target="_blank">dead_ticket_tab.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-31 header 수정, 플로팅 정렬 버튼 추가</td>
+				</tr> -->				
+				<!-- 마감임박 : E -->
+
+				<!-- 마케팅 : S -->
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>마케팅</td>
+					<td>기획/이벤트</td>
+					<td></td>
+					<td></td>
+					<td><a href="event/event.html" target="_blank">event.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-27 gate 클래스 추가</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>기획상세</td>
+					<td></td>
+					<td></td>
+					<td><a href="event/promo_detail.html" target="_blank">promo_detail.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <!-- <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>기획상세2(항공)</td>
+					<td></td>
+					<td></td>
+					<td><a href="event/promo_detail2.html" target="_blank">promo_detail2.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr> -->
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>이벤트 상세</td>
+					<td></td>
+					<td></td>
+					<td><a href="event/event_detail.html" target="_blank">event_detail.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>이벤트 설문</td>
+					<td></td>
+					<td></td>
+					<td><a href="event/event_poll.html" target="_blank">event_poll.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<!-- 마케팅 : E -->
+
+				<!-- 통합검색 : S
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>통합검색</td>
+					<td>통합검색 - 인기검색어</td>
+					<td></td>
+					<td></td>
+					<td><a href="total_search_hotkeyword.html" target="_blank">total_search_hotkeyword.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>통합검색 - 검색결과없음</td>
+					<td></td>
+					<td></td>
+					<td><a href="total_search_null.html" target="_blank">total_search_null.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>통합검색 - 검색결과있음</td>
+					<td></td>
+					<td></td>
+					<td><a href="total_search.html" target="_blank">total_search.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-20 수정 : 뱃지 클래스 변경</td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>통합검색 - 상세페이지</td>
+					<td></td>
+					<td></td>
+					<td><a href="total_search_view.html" target="_blank">total_search_view.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<!-- 통합검색 : E -->
+
+				<!-- 분쟁해결센터 : S -->
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>분쟁해결센터</td>
+					<td>고객센터 메인</td>
+					<td></td>
+					<td></td>
+					<td><a href="help/help_main.html" target="_blank">help_main.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-27 gate 클래스 추가</td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>FAQ</td>
+					<td></td>
+					<td></td>
+					<td><a href="help/help_faq.html" target="_blank">help_faq.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>공지사항</td>
+					<td></td>
+					<td></td>
+					<td><a href="help/help_notice.html" target="_blank">help_notice.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2017-07-17 파일첨부 추가</td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>1:1문의 - 입력전</td>
+					<td></td>
+					<td></td>
+					<td><a href="help/help_question_default.html" target="_blank">help_question_default.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>1:1문의 - 입력후</td>
+					<td></td>
+					<td></td>
+					<td><a href="help/help_question.html" target="_blank">help_question.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>1:1문의 - 완료</td>
+					<td></td>
+					<td></td>
+					<td><a href="help/help_question_complete.html" target="_blank">help_question_complete.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>분쟁해결센터 메인</td>
+					<td></td>
+					<td></td>
+					<td><a href="help/help_claim.html" target="_blank">help_claim.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>문제신고 - 입력전</td>
+					<td></td>
+					<td></td>
+					<td><a href="help/help_report_default.html" target="_blank">help_report_default.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-20 이의신청시 disabled (거래내역 input,button)</td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업_거래선택</td>
+					<td></td>
+					<td></td>
+					<td><a href="help/pop_report.html" target="_blank">pop_report.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-20 이의신청시 disabled (거래내역 input,button)</td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>문제신고 - 입력후</td>
+					<td></td>
+					<td></td>
+					<td><a href="help/help_report.html" target="_blank">help_report.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>문제신고 - 완료</td>
+					<td></td>
+					<td></td>
+					<td><a href="help/help_report_complete.html" target="_blank">help_report_complete.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>분쟁상세</td>
+					<td></td>
+					<td></td>
+					<td><a href="help/help_claim_view.html" target="_blank">help_claim_view.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-27 마크업수정(디자인변경)</td>
+				</tr>
+				<!-- 분쟁해결센터 : E -->
+
+				<!-- 모아랑 : S -->
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>모아랑</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><a href="moalang/moalang.html" target="_blank">moalang.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-12 팝업 형태 변경,<br>2019-06-17 출국정보삭제, 수정예정</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>모아랑 혜택보기</td>
+					<td></td>
+					<td></td>
+					<td><a href="moalang/pop_benefit.html" target="_blank">pop_benefit.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-12 팝업추가</td>
+				</tr>
+                <!-- <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>모아랑 혜택보기-상품별</td>
+					<td></td>
+					<td></td>
+					<td><a href="moalang/pop_benefit_prd.html" target="_blank">pop_benefit_prd.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-12 팝업추가</td>
+				</tr> -->
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>등록,구매정보없음</td>
+					<td></td>
+					<td></td>
+					<td><a href="moalang/moalang_null.html" target="_blank">moalang_null.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-06-12 구매 없을시 혜택부분 삭제</td>
+				</tr>
+                <!-- <tr class="skip">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>출국정보 등록</td>
+					<td></td>
+					<td></td>
+					<td><a href="moalang/travel_info.html" target="_blank">travel_info.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="skip">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업_항공편 입력</td>
+					<td></td>
+					<td></td>
+					<td><a href="moalang/pop_flight_inp.html" target="_blank">pop_flight_inp.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="skip">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업_출국 정보 선택</td>
+					<td></td>
+					<td></td>
+					<td><a href="moalang/pop_travel_day.html" target="_blank">pop_travel_day.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr> -->
+				<!-- 모아랑 : E -->
+
+				<!-- 셀러톡 : S -->
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>셀러톡</td>
+					<td>초기 화면</td>
+					<td></td>
+					<td></td>
+					<td><a href="talk/talk_default.html" target="_blank">talk_default.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>관심상품 장바구니</td>
+					<td></td>
+					<td></td>
+					<td><a href="talk/talk_product.html" target="_blank">talk_product.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>주문상품</td>
+					<td></td>
+					<td></td>
+					<td><a href="talk/talk_order.html" target="_blank">talk_order.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end">
+                    <td class="alignC numbering"></td>
+                    <td></td>
+                    <td>쿠폰혜택</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="talk/talk_coupon.html" target="_blank">talk_coupon.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+                    <td></td>
+                </tr>
+                <tr class="count end">
+                    <td class="alignC numbering"></td>
+                    <td></td>
+                    <td>이벤트 기획전</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="talk/talk_event.html" target="_blank">talk_event.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+                    <td>2019-06-20 수정 : 뱃지 클래스 변경</td>
+                </tr>
+                <tr class="count end">
+                    <td class="alignC numbering"></td>
+                    <td></td>
+                    <td>사진첨부시</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="talk/talk_photo.html" target="_blank">talk_photo.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+                    <td></td>
+                </tr>
+                <tr class="count end">
+                    <td class="alignC numbering"></td>
+                    <td></td>
+                    <td>문의내역-상품문의</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="talk/talk_ask.html" target="_blank">talk_ask.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+                    <td></td>
+                </tr>
+				<!-- 셀러톡 : E -->
+
+				<!-- 흥정하기 : S -->
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>흥정하기</td>
+					<td>리스트</td>
+					<td></td>
+					<td></td>
+					<td><a href="talk/talk_bargain.html" target="_blank">talk_bargain.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<!-- 흥정하기 : E -->
+
+				<!-- 라랑팩 : S -->
+                <tr class="count ing">
+					<td class="alignC numbering"></td>
+					<td>라랑팩</td>
+					<td>리스트</td>
+					<td></td>
+					<td></td>
+					<td><a href="product/pack_main.html" target="_blank">pack_main.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end">
+                    <td class="alignC numbering"></td>
+                    <td></td>
+                    <td>추천상세<br>해시태그상세</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="product/pack_prd_hash.html" target="_blank">pack_prd_hash.html</a></td>
+                    <td class="alignC">O</td>
+                    <td class="alignC">O</td>
+                    <td></td>
+                </tr>
+				<tr class="count end btn_fixed">
+                    <td class="alignC numbering"></td>
+                    <td></td>
+                    <td>필터팝업</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="product/pop_filter_pack.html" target="_blank">pop_filter_pack.html</a></td>
+                    <td class="alignC">O</td>
+                    <td class="alignC">O</td>
+                    <td></td>
+                </tr>
+				<tr class="count ing btn_fixed">
+                    <td class="alignC numbering"></td>
+                    <td></td>
+                    <td>일정팝업(라랑팩만들기)</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="product/pop_schedule.html" target="_blank">pop_schedule.html</a></td>
+                    <td class="alignC">O</td>
+                    <td class="alignC">O</td>
+                    <td></td>
+                </tr>
+				<tr class="count ing btn_fixed">
+                    <td class="alignC numbering"></td>
+                    <td></td>
+                    <td>라랑팩 상세</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="product/pack_review.html" target="_blank">pack_review.html</a></td>
+                    <td class="alignC">O</td>
+                    <td class="alignC">O</td>
+                    <td></td>
+                </tr>
+				<tr class="count end btn_fixed">
+                    <td class="alignC numbering"></td>
+                    <td></td>
+                    <td>결제하기</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="product/pack_reserve.html" target="_blank">pack_reserve.html</a></td>
+                    <td class="alignC">O</td>
+                    <td class="alignC">O</td>
+                    <td></td>
+                </tr>
+				<tr class="count ing btn_fixed">
+                    <td class="alignC numbering"></td>
+                    <td></td>
+                    <td>일정팝업(일정보기)</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="product/pop_schedule_view.html" target="_blank">pop_schedule_view.html</a></td>
+                    <td class="alignC">O</td>
+                    <td class="alignC">O</td>
+                    <td></td>
+                </tr>
+				<!-- 라랑팩 : E -->
+
+				<!-- 마이페이지 : S -->
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td>마이페이지</td>
+					<td>팝업_이용동의</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/pop_agree.html" target="_blank">pop_agree.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>마이페이지 메인</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/my_main.html" target="_blank">my_main.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-16 완료</td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td>팝업_선적립금 받기</td>
+					<td></td>
+					<td><a href="mypage/pop_s_rewards2.html" target="_blank">pop_s_rewards2.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>신라트립 지급내역</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/point_detail.html" target="_blank">point_detail.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업_신라트립 적립 유형</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/pop_point_type.html" target="_blank">pop_point_type.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+                    <td>장바구니</td>
+                    <td>리스트</td>
+					<td></td>
+					<td><a href="mypage/cart.html" target="_blank">cart.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-23 금액부분에 strong태그 추가</td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>결제하기</td>
+					<td></td>
+					<td><a href="mypage/payment_cart.html" target="_blank">payment_cart.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-31 UI 통일 카드결제 추가</td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>결제하기(액티비티_클룩)</td>
+					<td></td>
+					<td><a href="mypage/payment_cart_klook.html" target="_blank">payment_cart_klook.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>팝업 - 추가정보 입력</td>
+					<td></td>
+					<td><a href="mypage/pop_add_info.html" target="_blank">pop_add_info.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="skip">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>나의 알림</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/alarm.html" target="_blank">alarm.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>APP</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>등급별혜택</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/grade_benefit.html" target="_blank">grade_benefit.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-16 완료</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>할인쿠폰</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/coupon.html" target="_blank">coupon.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>할인쿠폰_데이터없음</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/coupon_null.html" target="_blank">coupon_null.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>관심상품</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/interest.html" target="_blank">interest.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>문의내역</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/qna.html" target="_blank">qna.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>나의 리뷰</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/review.html" target="_blank">review.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-16 완료</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>관심셀러</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/seller.html" target="_blank">seller.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>예약내역(예약/결제/최소)</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/reserve_list.html" target="_blank">reserve_list.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>팝업_리워즈 안내</td>
+                    <td></td>
+					<td><a href="mypage/pop_s_rewards.html" target="_blank">pop_s_rewards.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>결제상품 상세</td>
+                    <td>항공</td>
+					<td><a href="mypage/payment_detail.html" target="_blank">payment_detail.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td></td>
+                    <td>숙박/패키지/액티비티</td>
+					<td><a href="mypage/payment_detail2.html" target="_blank">payment_detail2.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>숙박외 주석처리</td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>예약상품 상세</td>
+                    <td>항공</td>
+					<td><a href="mypage/reserve_flight.html" target="_blank">reserve_flight.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>팝업_항공 1:1 문의 - 리스트</td>
+					<td><a href="mypage/pop_flight_question_list.html" target="_blank">pop_flight_question_list.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>팝업_항공 1:1 문의 - 상세</td>
+					<td><a href="mypage/pop_flight_question_view.html" target="_blank">pop_flight_question_view.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>팝업_항공 1:1 문의 - 등록</td>
+					<td><a href="mypage/pop_flight_question_write.html" target="_blank">pop_flight_question_write.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>팝업_상세일정</td>
+					<td><a href="mypage/pop_plan_detail.html" target="_blank">pop_plan_detail.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td></td>
+                    <td>숙박/패키지/액티비티</td>
+					<td><a href="mypage/reserve_hotel.html" target="_blank">reserve_hotel.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>숙박외 주석처리</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>취소환불 상세</td>
+					<td></td>
+					<td><a href="mypage/cancel_detail.html" target="_blank">cancel_detail.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td></td>
+					<td>숙박/패키지/액티비티</td>
+					<td><a href="mypage/cancel_detail2.html" target="_blank">cancel_detail2.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>증빙서류/기타</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/doc_etc_reg.html" target="_blank">doc_etc_reg.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업_증빙서류 등록/변경</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/pop_doc_reg.html" target="_blank">pop_doc_reg.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-07-23 placeholder 텍스트 수정, class="placehide" 삭제</td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업_항공사 마일리지 등록</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/pop_mile_reg.html" target="_blank">pop_mile_reg.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count skip btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업_좌석업그레이드</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/pop_seat_up.html" target="_blank">pop_seat_up.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업_여권/기타정보 등록/변경</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/pop_doc_etc.html" target="_blank">pop_doc_etc.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>결제하기</td>
+					<td>항공</td>
+					<td></td>
+					<td><a href="mypage/payment_flight.html" target="_blank">payment_flight.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>팝업_요금상세</td>
+					<td></td>
+					<td><a href="mypage/pop_fare_detail.html" target="_blank">pop_fare_detail.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>팝업_탑승자정보</td>
+					<td></td>
+					<td><a href="mypage/pop_pa_info.html" target="_blank">pop_pa_info.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>팝업_쿠폰받기</td>
+					<td></td>
+					<td><a href="mypage/pop_coupon.html" target="_blank">pop_coupon.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>팝업_쿠폰선택</td>
+					<td></td>
+					<td><a href="mypage/pop_coupon_selcet.html" target="_blank">pop_coupon_selcet.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>2019-08-06 체크박스로 변경</td>
+				</tr>
+                <tr class="skip btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>팝업_제휴사 할인혜택</td>
+					<td></td>
+					<td><a href="mypage/pop_alliance.html" target="_blank">pop_alliance.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>기획미확정</td>
+				</tr>
+                <tr class="skip btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+                    <td>팝업_멤버쉽 조회</td>
+					<td></td>
+					<td><a href="mypage/pop_mem_t.html" target="_blank">pop_mem_t.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>기획미확정</td>
+				</tr>
+                <tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>결제완료</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/payment_end.html" target="_blank">payment_end.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>결제완료_실패</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/payment_end_fail.html" target="_blank">payment_end_fail.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>예약완료_실패</td>
+					<td></td>
+					<td></td>
+					<td><a href="mypage/reserve_end_fail.html" target="_blank">reserve_end_fail.html</a></td>
+					<td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>팝업_예약/결제취소</td>
+					<td>항공</td>
+					<td></td>
+					<td><a href="mypage/pop_cancel_flight.html" target="_blank">pop_cancel_flight.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td>팝업_리워즈안내</td>
+					<td></td>
+					<td><a href="mypage/pop_s_rewards_cancel.html" target="_blank">pop_s_rewards_cancel.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td>숙박</td>
+					<td></td>
+					<td><a href="mypage/pop_cancel_hotel.html" target="_blank">pop_cancel_hotel.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td>패키지/액티비티</td>
+					<td></td>
+					<td><a href="mypage/pop_cancel_prd.html" target="_blank">pop_cancel_prd.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+				<tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td></td>
+					<td>예약취소 - 항공/숙박/패키지/액티비티</td>
+					<td></td>
+					<td><a href="mypage/pop_cancel_reserve.html" target="_blank">pop_cancel_reserve.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td></td>
+				</tr>
+                <tr class="count end btn_fixed">
+					<td class="alignC numbering"></td>
+					<td></td>
+					<td>리뷰작성</td>
+					<td></td>
+					<td></td>
+					<!-- <td><a href="mypage/my_review.html" target="_blank">my_review.html</a></td> -->
+					<td><a href="http://72.2.30.150:8080/test/lalatrip/front/html/common/my_review.html" target="_blank">my_review.html</a></td>
+                    <td class="alignC">O</td>
+					<td class="alignC">O</td>
+					<td>J프로젝트로 J쪽 리뷰작성으로 이동(J쪽개발)</td>
+				</tr>
+				<!-- 마이페이지 : E -->
+
+			</tbody>
+		</table>
+	</div>
+
+</div>
+<script type="text/javascript">
+	$('table tr').bind('mouseover',function(){$(this).addClass('on')});
+	$('table tr').bind('mouseout',function(){$(this).removeClass('on')});
+
+	$( 'table' ).each( function() {
+		var all = $('tbody tr.count').length;
+		var end = $('tbody tr.count.end').length;
+		var nati = $('tbody tr.nati').length;
+		$('#total-page').text(all);
+		$('#native').text(nati);
+		$('#ok-page').text(end);
+		$('#persent').text(Math.round((end+nati)/all*100));
+  } );
+
+
+let numberList = document.getElementsByClassName('numbering');
+for(let i = 0; i < numberList.length;++i){
+    numberList[i].innerText = i + 1;
+};
+
+</script>
+</body>
+</html>

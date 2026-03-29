@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		<meta name="format-detection" content="telephone=no">
+		<title>SHILLATRIP</title>
+		<link type="text/css" href="http://72.2.30.150:8080/test/lalatrip/front/resource/css/common.css" rel="stylesheet" />
+		<link type="text/css" href="http://72.2.30.150:8080/test/lalatrip/front/resource/css/qna.css" rel="stylesheet" />
+		<link type="text/css" href="http://72.2.30.150:8080/test/lalatrip/front/resource/css/desktop.css" rel="stylesheet" />
+	</head>
+<body>
+	<div class="wrap">
+		<header class="sticky_step1">
+			<h2>
+				<a href="#none" class="ico btn_back">이전 페이지</a> POLL
+			</h2>
+		</header>
+
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<div class="total_box">
+				<span class="total">총 <b>121</b>개</span>
+				<div class="sorting">
+					<button type="button" name="button" class="btn_ico sort" option-call="1"><span>최신순</span></button>
+				</div>
+			</div>
+			<ul class="poll_list">
+				<li>
+					<div class="profile_area">
+						<span class="pic"><img src="../../resource/img/tmp_user01.jpg" alt=""></span>
+						<p class="info_box">
+							<span class="nick_name">신라면세조아</span>
+							<span class="date">8시간 전</span>
+						</p>
+						<div class="btn_box">
+							<button type="button" name="button" class="btn_txt box t2"><span>팔로우</span></button>
+							<button type="button" name="button" class="ico btn_tooltip menu" tooltip-call="5">수정/삭제</button>
+							<!-- 미니햄버거버튼 클릭시 뜨는 메뉴 -->
+							<div class="tooltip tap_menu right" tooltip-receive="5">
+								<a href="#none">수정</a>
+								<a href="#none">공개</a>
+								<a href="#none">삭제</a>
+							</div>
+							<!-- //미니햄버거버튼 클릭시 뜨는 메뉴 -->
+						</div>
+					</div>
+					<!-- 투표목록 : 복수선택 가능 -->
+					<div class="poll_section">
+						<a href="#" class="poll_tit">1졸업여행을 갈건데 친구 네명이서 가기에 더 효율적인 라랑팩은 어떤걸까요?졸업여행을 갈건데 친구 네명이서 가기에 더 효율적인 라랑팩은 어떤걸까요?</a>
+						<div class="join_cnt">150명 참여중<span class="fright">복수선택 가능</span></div>
+						<div class="vote_list">
+							<label class="checkbox checked" for="poll01">
+								<input type="checkbox" name="poll_01" id="poll01" checked="checked"><span></span>
+								<span class="thum"><img src="../../resource/img/tmp_user03.jpg"></span>
+								<span class="text">제가 올린 사진은 어떤가요? 제가 올린 사진은 어떤가요?제가 올린 사진은 어떤가요?</span>
+							</label>
+
+							<label class="checkbox" for="poll02">
+								<input type="checkbox" name="poll_01" id="poll02"><span></span>
+								<span class="thum"><img src="../../resource/img/tmp_user03.jpg"></span>
+								<span class="text">제가 올린 사진은 어떤가요? 제가 올린 사진은 어떤가요?제가 올린 사진은 어떤가요?</span>
+							</label>
+
+							<label class="checkbox" for="poll3">
+								<input type="checkbox" name="poll_01" id="poll3"><span></span>
+								<span class="thum"><img src="../../resource/img/tmp_user03.jpg"></span>
+								<span class="text">제가 올린 사진은 어떤가요? 제가 올린 사진은 어떤가요?제가 올린 사진은 어떤가요?</span>
+							</label>
+						</div>
+						<div class="btn_box both">
+							<button type="button" name="button" class="btn primary border">투표참여하기</button>
+							<button type="button" name="button" class="btn primary2 border">결과미리보기</button>
+						</div>
+					</div>
+					<div class="util_area">
+						<button class="ico btn_like" type="button"><span>좋아요</span></button>
+						<em class="num_count">1</em>
+
+						<button class="ico btn_reply" type="button"><span>댓글</span></button>
+						<em class="num_count">888</em>
+
+						<div class="right_util">
+							<button class="ico btn_sns" type="button"><span>공유하기</span></button>
+							<button class="ico btn_scrap" type="button" dimalert-call="1"><span>스크랩</span></button>
+						</div>
+					</div>
+				</li>
+
+				<!-- 결과미리보기 -->
+				<li>
+					<div class="profile_area">
+						<span class="pic"><img class="ajax_lazy" data-src="../../resource/img/tmp_user01.jpg" src="../../resource/img/img_blank.png" alt=""></span>
+						<p class="info_box">
+							<span class="nick_name">신라면세조아</span>
+							<span class="date">8시간 전</span>
+						</p>
+						<div class="btn_box">
+							<button type="button" name="button" class="btn_txt box t2"><span>팔로우</span></button>
+							<button type="button" name="button" class="ico btn_tooltip menu" tooltip-call="6">수정/삭제</button>
+							<!-- 미니햄버거버튼 클릭시 뜨는 메뉴 -->
+							<div class="tooltip tap_menu right" tooltip-receive="6">
+								<a href="#none">수정</a>
+								<a href="#none">공개</a>
+								<a href="#none">삭제</a>
+							</div>
+							<!-- //미니햄버거버튼 클릭시 뜨는 메뉴 -->
+						</div>
+					</div>
+
+					<div class="poll_section preview"><!-- 결과미리보기 -->
+						<a href="#" class="poll_tit">결과미리보기 친구 네명이서 가기에 더 효율적인 라랑팩은 어떤걸까요?졸업여행을 갈건데 친구 네명이서 가기에 더 효율적인 라랑팩은 어떤걸까요?</a>
+						<div class="join_cnt">150명 참여중<span class="fright">복수선택 불가</span></div>
+						<div class="vote_list">
+							<label class="checkbox" for="poll03">
+								<input type="radio" name="poll2" id="poll03" checked=""><span></span>
+								<span class="percent hit">62.9%</span>
+								<span class="thum"><img class="ajax_lazy" data-src="../../resource/img/tmp_photo_qna04.jpg" src="../../resource/img/img_blank.png" alt=""></span>
+								<input type="radio" name="poll2" id="poll21" checked=""><span></span>
+								<!-- 숙박 -->
+								<div class="type_thumb">
+									<a href="#none">
+										<img class="" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="tit">제주도 여행 대한항공 특가로 </span>
+										<p class="class">
+											<span class="seller">
+												<span>하나투어</span>
+												<i class="dot"></i>
+											</span>
+											<span class="review_point"><span class="score" style="width:57%">3</span></span>
+											<span>(35)</span>
+										</p>
+									</a>
+								</div>
+							</label>
+
+							<label class="checkbox" for="poll04">
+								<input type="radio" name="poll2" id="poll04"><span></span>
+								<span class="thum"><img class="ajax_lazy" data-src="../../resource/img/tmp_photo_qna04.jpg" src="../../resource/img/img_blank.png" alt=""></span>
+								<span class="percent">37.1%</span>
+								<!-- R상품 -->
+								<div class="type_thumb">
+									<a href="#none">
+										<img class="" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="tit">제주도 여행 대한항공 특가로 </span>
+										<p class="class">
+											<span class="seller">
+												<span>하나투어</span>
+												<i class="dot"></i>
+											</span>
+											<span class="review_point"><span class="score" style="width:57%">3</span></span>
+											<span>(35)</span>
+										</p>
+										<span class="price"><strong>440,000</strong>원~</span>
+									</a>
+								</div>
+							</label>
+						</div>
+
+						<div class="btn_box both">
+							<button type="button" name="button" class="btn primary border">투표참여하기</button>
+							<button type="button" name="button" class="btn primary2 border">결과미리보기</button>
+						</div>
+					</div>
+					<div class="util_area">
+						<button class="ico btn_like" type="button"><span>좋아요</span></button>
+						<em class="num_count">1</em>
+
+						<button class="ico btn_reply" type="button"><span>댓글</span></button>
+						<em class="num_count">888</em>
+
+						<div class="right_util">
+							<button class="ico btn_sns" type="button"><span>공유하기</span></button>
+							<button class="ico btn_scrap" type="button" dimalert-call="1"><span>스크랩</span></button>
+						</div>
+					</div>
+				</li>
+				<!-- 투표 참여 시-->
+				<li>
+					<div class="profile_area">
+						<span class="pic"><img class="ajax_lazy" data-src="../../resource/img/tmp_user01.jpg" src="../../resource/img/img_blank.png" alt=""></span>
+						<p class="info_box">
+							<span class="nick_name">신라면세조아</span>
+							<span class="date">8시간 전</span>
+						</p>
+						<div class="btn_box">
+							<button type="button" name="button" class="btn_txt box t2"><span>팔로우</span></button>
+							<button type="button" name="button" class="ico btn_tooltip menu" tooltip-call="6">수정/삭제</button>
+							<!-- 미니햄버거버튼 클릭시 뜨는 메뉴 -->
+							<div class="tooltip tap_menu right" tooltip-receive="6">
+								<a href="#none">수정</a>
+								<a href="#none">공개</a>
+								<a href="#none">삭제</a>
+							</div>
+							<!-- //미니햄버거버튼 클릭시 뜨는 메뉴 -->
+						</div>
+					</div>
+					<!-- 투표목록 : 복수선택 불가 -->
+					<div class="poll_section my_vote"><!-- 나의 참여표시 -->
+						<a href="#" class="poll_tit">2졸업여행을 갈건데 친구 네명이서 가기에 더 효율적인 라랑팩은 어떤걸까요?졸업여행을 갈건데 친구 네명이서 가기에 더 효율적인 라랑팩은 어떤걸까요?</a>
+						<div class="join_cnt">150명 참여중<span class="fright">복수선택 불가</span></div>
+						<div class="vote_list">
+							<label class="checkbox" for="poll21">
+								<input type="radio" name="poll2" id="poll21" checked=""><span></span>
+								<!-- 숙박 -->
+								<div class="type_thumb">
+									<a href="#none">
+										<img class="" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="tit">제주도 여행 대한항공 특가로 </span>
+										<p class="class">
+											<span class="seller">
+												<span>하나투어</span>
+												<i class="dot"></i>
+											</span>
+											<span class="review_point"><span class="score" style="width:57%">3</span></span>
+											<span>(35)</span>
+										</p>
+									</a>
+								</div>
+							</label>
+
+							<label class="checkbox" for="poll22">
+								<input type="radio" name="poll2" id="poll22"><span></span>
+								<span class="thum"><img class="ajax_lazy" data-src="../../resource/img/tmp_photo_qna04.jpg" src="../../resource/img/img_blank.png" alt=""></span>
+								<!-- 구글 -->
+								<div class="type_thumb">
+									<a href="#none">
+										<img class="" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="tit">제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴</span>
+										<p class="class">
+											<span class="review_point"><span class="score" style="width:57%">3</span></span>
+											<span>(35)</span>
+										</p>
+										<div class="desc">
+											Andrássy út 60, 1062 헝가리
+										</div>
+									</a>
+								</div>
+							</label>
+						</div>
+
+						<div class="btn_box both">
+							<button type="button" name="button" class="btn primary border">투표참여하기</button>
+							<button type="button" name="button" class="btn primary2 border">결과미리보기</button>
+						</div>
+					</div>
+					<div class="util_area">
+						<button class="ico btn_like" type="button"><span>좋아요</span></button>
+						<em class="num_count">1</em>
+
+						<button class="ico btn_reply" type="button"><span>댓글</span></button>
+						<em class="num_count">888</em>
+
+						<div class="right_util">
+							<button class="ico btn_sns" type="button"><span>공유하기</span></button>
+							<button class="ico btn_scrap" type="button" dimalert-call="1"><span>스크랩</span></button>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+			<!-- 하단고정버튼 : S -->
+			<div class="r_btn_box ">
+				<span><button type="button" name="button" class="btn_ico sort" option-call="1"><span>정렬</span></button></span><!-- 2019-09-26 버튼 클래스 변경 -->
+			</div>
+			<!-- 하단고정버튼 : E -->
+		</div>
+		<!-- 콘텐츠 : E -->
+		<div class="option_select" option-receive="1">
+			<div class="pop_option">
+				<ul>
+					<li><a href="#none" class="on">최신순</a></li>
+					<li><a href="#none">조회순</a></li>
+					<li><a href="#none">참여많은순</a></li>
+					<li><a href="#none">참여적은순</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- sns팝업 -->
+		<div class="pop_sns">
+			<div class="sns_items">
+				<button type="button" name="button" class="ico sns_twt active"><span>TWITTER</span></button>
+				<button type="button" name="button" class="ico sns_face active"><span>FACEBOOK</span></button>
+				<button type="button" name="button" class="ico sns_kakao active"><span>KAKAO</span></button>
+				<button type="button" name="button" class="ico sns_blog active"><span>NAVER</span></button>
+			</div>
+			<button type="button" name="button" class="ico btn_close4"><span>창닫기</span></button>
+		</div>
+		<!-- //sns팝업 -->
+
+		<!-- 이전, top  -->
+		<div class="quik_btn on">
+			<a href="#top" class="ico btn_top">맨처음로</a>
+		</div>
+		<!-- //이전, top  -->
+
+		<nav class="fnb">
+	        <a href="#none" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+	        <a href="#none"><i class="ico feed"></i>피드</a>
+	        <a href="#none" class="toggle"><i class="ico shop"></i>여행샵 </a>
+	        <a href="#none"><i class="ico trip"></i>나의여행</a>
+	        <a href="#none" class="btn_post"><i class="ico post"></i>포스팅</a>
+	    </nav>
+
+		<!-- 포스팅 팝업 -->
+		<div class="pop_post">
+			<div class="post_items">
+				<button type="button" name="button" class="ico post_posting"><span>포스팅</span></button>
+				<button type="button" name="button" class="ico post_review"><span>간단리뷰</span></button>
+				<button type="button" name="button" class="ico post_snap"><span>스냅 작성</span></button>
+				<button type="button" name="button" class="ico post_qna"><span>질문 작성</span></button>
+				<button type="button" name="button" class="ico post_poll"><span>투표 작성</span></button>
+			</div>
+			<button type="button" name="button" class="ico btn_close4"><span>창닫기</span></button>
+		</div>
+		<!-- //포스팅 팝업 -->
+	</div>
+
+
+<script type="text/javascript" src="http://72.2.30.150:8080/test/lalatrip/front/resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="http://72.2.30.150:8080/test/lalatrip/front/resource/js/common.js"></script>
+<script type="text/javascript" src="http://72.2.30.150:8080/test/lalatrip/front/resource/js/slick.min_v2.js"></script>
+
+
+</body>
+</html>

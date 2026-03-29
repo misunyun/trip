@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>항공사 마일리지 등록</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="notice_list">
+				<li>항공사 마일리지는 출국일 하루 전까지 등록해 주시기 바랍니다.</li>
+			</ul>
+			<div class="booker_info">
+				<h2>탑승자 1</h2>
+				<table class="tbl_type3">
+					<colgroup>
+						<col style="width:110px;">
+						<col style="width:auto;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">한글이름</th>
+							<td>김신라</td>
+						</tr>
+						<tr>
+							<th scope="row">영문이름</th>
+							<td>KIM SHILLA</td>
+						</tr>
+						<tr>
+							<th scope="row">생년월일</th>
+							<td>1983.04.12</td>
+						</tr>
+						<tr>
+							<th scope="row">탑승항공사</th>
+							<td>대한항공</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="info_inp_reg">
+				<h2>항공사선택</h2>
+				<button type="button" name="button" class="btn_option" option-call="1">대한항공</button>
+
+				<h2 class="sub">마일리지번호</h2>
+				<input type="text" placeholder="마일리지 번호">
+			</div>
+
+			<div class="note_list">
+			<strong>유의사항</strong>
+			<ul class="notice_list">
+				<li>마일리지 적립은 탑승자 본인만 가능하며, 실제 탑승 완료 후 적립됩니다.</li>
+				<li>입력한 마일리지 번호가 잘못되었을 경우에는 발권한 티켓번호가 전송되지 않아 예약이 자동으로 취소될 수 있습니다.</li>
+				<li>탑승 클래스에 따라 마일리지 적립이 불가능할 수 도 있습니다.</li>
+			</ul>
+		</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">등록하기</button>
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+
+	<!-- 상이등급 표기된 국가요공자증 선택 옵션 -->
+	<div class="option_select" option-receive="2">
+	<div class="pop_option">
+		<ul>
+			<li><a href="#">국가유공자증</a></li>
+			<li><a href="#">국가유공자증2</a></li>
+		</ul>
+	</div>
+	</div>
+
+	<!-- 시간 옵션 -->
+	<div class="option_select" option-receive="1">
+	<div class="pop_option">
+		<ul>
+			<li><a href="#">대한항공</a></li>
+			<li><a href="#">아시아나</a></li>
+			<li><a href="#">에어서울</a></li>
+			<li><a href="#">진에어</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>좌석 업그레이드</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="notice_list">
+				<li>아시아나, 대한항공에서만 제공되는 메뉴입니다.</li>
+			</ul>
+			<div class="booker_info">
+				<h2>탑승자 1</h2>
+				<table class="tbl_type3">
+					<colgroup>
+						<col style="width:110px;">
+						<col style="width:auto;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">한글이름</th>
+							<td>김신라</td>
+						</tr>
+						<tr>
+							<th scope="row">영문이름</th>
+							<td>KIM SHILLA</td>
+						</tr>
+						<tr>
+							<th scope="row">생년월일</th>
+							<td>1983.04.12</td>
+						</tr>
+						<tr>
+							<th scope="row">탑승항공사</th>
+							<td>대한항공</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="info_inp_reg">
+				<h2>마일리지번호</h2>
+				<input type="text" placeholder="마일리지 번호">
+
+				<h2 class="sub">업그레이드 구간</h2>
+				<button type="button" name="button" class="btn_option" option-call="1">인천 → 프라하</button>
+
+				<h2 class="sub">업그레이드 요청사항</h2>
+				<div class="text_box">
+					<textarea id="" name="" placeholder="상세 요청사항을 입력해주세요."></textarea>
+				</div>
+			</div>
+
+			<div class="note_list">
+			<strong>유의사항</strong>
+			<ul class="notice_list">
+				<li>보유하신 항공사 마일리지로 좌석 업그레이드를 요청할 수 있습니다.</li>
+				<li>잔여 좌석 상황과 보유하신 마일리지에 따라 서비스가 불가능 할 수 도 있습니다.</li>
+			</ul>
+		</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">등록하기</button>
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+
+
+	<!-- 구간 옵션 -->
+	<div class="option_select" option-receive="1">
+	<div class="pop_option">
+		<ul>
+			<li><a href="#">인천 → 프라하</a></li>
+			<li><a href="#">인천 → 프랑크푸르트</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

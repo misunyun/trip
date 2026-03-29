@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<div class="wrap">
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			등급별 혜택
+		</h2>
+	</header>
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<div class="benefit_box">
+			<div class="tab_wrap">
+				<div class="tab_menu round">
+					<ul>
+						<li><a href="#" class="on"><span class="round_box"><i class="ico grd01"></i></span><span class="txt">탐나라</span></a></li>
+						<li><a href="#"><span class="round_box"><i class="ico grd02"></i></span><span class="txt">즐겨라</span></a></a></li>
+						<li><a href="#"><span class="round_box"><i class="ico grd03"></i></span><span class="txt">꿈꿔라</span></a></a></li>
+						<li><a href="#"><span class="round_box"><i class="ico grd04"></i></span><span class="txt">이어라</span></a></a></li>
+					</ul>
+				</div>
+				<!-- 탐나라 : S -->
+				<div class="tab_cont active"><!-- 2019-08-29 첫번째 tab_cont에 active 클래스 추가 -->
+					<!-- 가입된경우 -->
+					<div class="join_state">
+						<div class="i_txt type1">김신라님의 탐나라 등급은 BASIC으로<br> S.Rewards 1.0% 적립 혜택이 있습니다.</div><!-- D : 2019-07-12 br태그 추가 -->
+						<button type="button" name="button" class="btn_txt type4">추가혜택 받기</button>
+						<button type="button" name="button" class="btn_txt type4">클럽 자세히보기</button>
+					</div>
+
+					<!-- 가입하지않은 경우
+					<div class="join_state">
+						<div class="i_txt type2">김신라고객님은 탐나라에 가입되어 있지 않습니다. 해당 클럽을 위해 필요한 부분을 알아보세요!</div>
+						<button type="button" name="button" class="btn_txt type4">클럽 자세히보기</button>
+					</div>
+					-->
+
+					<!-- 가입불가한 경우
+					<div class="join_state">
+						<div class="i_txt type2">탐나라 클럽은 전년도에 신라 인터넷 면세점에서 2회 이상 출국을 한 고객님만 가입할 수 있습니다. (인도장에서 물품 수령 2회 이상)</div>
+						<button type="button" name="button" class="btn_txt type4">클럽 자세히보기</button>
+					</div>
+					-->
+					<h2 class="sub">등급 산정 기준 (2019년)</h2>
+					<table class="tbl_type4">
+						<caption class="hide">등급 산정 기준</caption>
+						<colgroup>
+							<col style="width:30%;">
+							<col style="width:auto;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">BASIC</th>
+								<td>18년도 2회 출국</td>
+							</tr>
+							<tr>
+								<th scope="row">LIGHT</th>
+								<td>누적 S.Rewards 2,500점</td>
+							</tr>
+							<tr>
+								<th scope="row">VIP</th>
+								<td>누적 S.Rewards 5,000점</td>
+							</tr>
+							<tr>
+								<th scope="row">VVIP</th>
+								<td>누적 S.Rewards 10,000점</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="noti">적립 기준 : 매월 1일 등급 산정 시, 직전 12개월 누적 S.Rewards 기준</p>
+				</div>
+				<!-- //탐나라 : E -->
+
+				<!-- 즐겨라 : S -->
+				<div class="tab_cont">
+					<!-- 가입된경우
+					<div class="join_state">
+						<div class="i_txt type1">김신라님의 즐겨라 등급은 BASIC 입니다.</div>
+						<button type="button" name="button" class="btn_txt type4">기본혜택 받기</button>
+						<button type="button" name="button" class="btn_txt type4">클럽 자세히보기</button>
+					</div>
+					-->
+
+					<!-- 가입하지않은 경우 -->
+					<div class="join_state">
+						<div class="i_txt type2">김신라고객님은 즐겨라에 가입되어 있지 않습니다. 해당 클럽을 위해 필요한 부분을 알아보세요!</div>
+						<button type="button" name="button" class="btn_txt type4">클럽 자세히보기</button>
+					</div>
+
+					<h2 class="sub">등급 산정 기준 (2019년)</h2>
+					<table class="tbl_type4">
+						<caption class="hide">등급 산정 기준</caption>
+						<colgroup>
+							<col style="width:30%;">
+							<col style="width:auto;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">BASIC</th>
+								<td>즉시 가입(공통)</td>
+							</tr>
+							<tr>
+								<th scope="row">LIGHT</th>
+								<td>누적 S.Rewards 2,500점</td>
+							</tr>
+							<tr>
+								<th scope="row">VIP</th>
+								<td>누적 S.Rewards 5,000점</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="noti">적립 기준 : 매월 1일 등급 산정 시, 직전 12개월 누적 S.Rewards 기준</p>
+				</div>
+				<!-- //즐겨라 : E -->
+
+				<!-- 꿈꿔라 : S -->
+				<div class="tab_cont">
+					<!-- 가입된경우 -->
+					<div class="join_state">
+						<div class="i_txt type1">김신라님은 꿈꿔라 회원으로 활동중 입니다.</div>
+						<button type="button" name="button" class="btn_txt type4">기본혜택 받기</button>
+						<button type="button" name="button" class="btn_txt type4">클럽 자세히보기</button>
+					</div>
+
+					<!-- 가입하지않은 경우
+					<div class="join_state">
+						<div class="i_txt type2">김신라고객님은 꿈꿔라에 가입되어 있지 않습니다. 간단한 클럽 가입으로 다양한 혜택을 경험해보세요.</div>
+						<button type="button" name="button" class="btn_txt type4">클럽 자세히보기</button>
+					</div>
+					-->
+
+					<!-- 가입불가한 경우
+					<div class="join_state">
+						<div class="i_txt type2">꿈꿔라 클럽은 만 18~25세라면 누구나 가입할 수 있습니다.</div>
+					</div>
+					-->
+				</div>
+				<!-- //꿈꿔라 : E -->
+
+				<!-- 이어라 : S -->
+				<div class="tab_cont">
+					<!-- 가입된경우 -->
+					<div class="join_state">
+						<div class="i_txt type1">김신라님의 이어라 사랑방은 <br>알콩달콩 신혼방 입니다.</div><!-- D : 2019-07-12 br태그 추가 -->
+						<button type="button" name="button" class="btn_txt type4">기본혜택 받기</button>
+						<button type="button" name="button" class="btn_txt type4">클럽 자세히보기</button>
+					</div>
+
+					<!-- 가입하지않은 경우
+					<div class="join_state">
+						<div class="i_txt type2">김신라고객님은 이어라에 가입되어 있지 않습니다. 해당 클럽을 위해 필요한 부분을 알아보세요!</div>
+						<button type="button" name="button" class="btn_txt type4">클럽 자세히보기</button>
+					</div>
+					-->
+
+					<h2 class="sub">이어라 사랑방 소개</h2>
+					<table class="tbl_type4">
+						<caption class="hide">이어라 사랑방 소개</caption>
+						<colgroup>
+							<col style="width:48%;">
+							<col style="width:auto;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">알콩달콩 신혼방</th>
+								<td>예비부부 &amp; 신혼부부</td>
+							</tr>
+							<tr>
+								<th scope="row">새내기 부모방</th>
+								<td>예비 부모 &amp; 영유아 부모</td>
+							</tr>
+							<tr>
+								<th scope="row">슈퍼맘 &amp; 대디방</th>
+								<td>초등학생 자녀를 둔 부모</td>
+							</tr>
+							<tr>
+								<th scope="row">육아 졸업방</th>
+								<td>중학생 이상 자녀를 둔 부모</td>
+							</tr>
+							<tr>
+								<th scope="row">둘이서도 행복한 방</th>
+								<td>자녀계획 無! 둘만으로 행복한 부부</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="noti">우리 부부에게 맞는 사랑방을 선택, 가입하면 맞춤 혜택을 드려요</p>
+				</div>
+				<!-- //이어라 : E -->
+			</div>
+		</div>
+	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+    <!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

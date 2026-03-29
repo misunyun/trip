@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<div class="wrap">
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			상세 적립내역
+		</h2>
+	</header>
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<div class="tab_wrap">
+			<div class="tab_menu tscroll">
+				<!-- 2019-12-06 텍스트 수정 및 라라캐시 탭 주석처리 --> 
+				<ul class="ul_size">
+					<li><a href="#" class="on">S.Rewards</a></li><!-- 2019-12-06 텍스트 수정 --><!-- 2019-10-29 텍스트 수정 -->
+					<!-- <li><a href="#">라라캐시</a></li> -->
+				</ul>
+			</div>
+
+			<!-- S.Rewards : S -->
+			<div class="tab_cont active">
+				<div class="pnt_wrap">
+					<div class="pnt_detail">
+						<ul>
+							<li>
+								<a href="#">
+									<span class="tit">지급</span>
+									<span class="price em"><strong>11,000P(12,000원)</strong></span><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="tit">예정</span>
+									<span class="price"><strong>0P(0원)</strong></span><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="sub">신라트립 적립내역 <button type="button" name="button" class="ico btn_help" popup-call="pop_point_type">도움말</button></h3><!-- 2019-11-14 popup-call로 변경 -->
+					<div class="pnt_area">
+						<div class="ipt_opt">
+							<button type="button" name="button" class="btn_date" popup-call="calendar">2019.01.27~2019.01.31</button>
+							<div class="form">
+								<span><button type="button" name="button" class="btn_option" option-call="sort1_1">전체</button></span>
+								<span><button type="button" name="button" class="btn_option" option-call="sort1_2">전체</button></span>
+
+								<!-- sort1 -->
+								<div class="option_select" option-receive="sort1_1">
+									<div class="pop_option">
+										<ul>
+											<li><a href="#" class="on">전체</a></li>
+											<li><a href="#">지급내역</a></li>
+											<li><a href="#">지급예정내역</a></li>
+											<li><a href="#">취소내역</a></li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- sort2 -->
+								<div class="option_select" option-receive="sort1_2">
+									<div class="pop_option">
+										<ul>
+											<li><a href="#" class="on">전체</a></li>
+											<li><a href="#">S.Rewards</a></li>
+											<!-- <li><a href="#">라라캐시</a></li> 2019-12-06 라라캐시 주석처리 -->
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- detail_list : S -->
+						<!-- 2019-12-06 S.Rewards 표기 법 수정요청 -->
+						<ul class="detail_list">
+							<li>
+								<a href="#">
+									<div class="detail_box">
+										<span>2019.08.10</span>
+									</div>
+									<div class="detail_box">
+										<div class="desc">하나투어 오사카 유니버셜 나이트 투어 에어텔/패키지 구매</div>
+										<div class="price">
+											<span class="txt">지급완료</span><span class="em">+<strong>135</strong>P(1,000원)</span><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="detail_box">
+										<span>2019.08.10</span>
+									</div>
+									<div class="detail_box">
+										<div class="desc">인터파크투어 동유럽 여행 10박 11일 모아랑 상품구매</div>
+										<div class="price done"><!-- done 클래스 추가 -->
+											<span class="txt">취소완료</span><span class="em">-<strong>1,000</strong>P(1,000원)</span><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="detail_box">
+										<span>2019.08.10</span>
+									</div>
+									<div class="detail_box">
+										<div class="desc">항공/숙박 모아랑 구매</div>
+										<div class="price">
+											<span class="txt">지급예정</span><span class="em">+<strong>135</strong>P(1,000원)</span><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="detail_box">
+										<span>2019.08.10</span>
+									</div>
+									<div class="detail_box">
+										<div class="desc">에세이 작성</div>
+										<div class="price">
+											<span class="txt">지급완료</span><span class="em">+<strong>135</strong>P(1,000원)</span><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="detail_box">
+										<span>2019.08.10</span>
+									</div>
+									<div class="detail_box">
+										<div class="desc">인터파크투어 항공권 구매</div>
+										<div class="price done"><!-- done 클래스 추가 -->
+											<span class="txt">취소완료</span><span class="em">-<strong>1,000</strong>P(1,000원)</span><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<!-- //2019-12-06 S.Rewards 표기 법 수정요청 -->
+						<!-- detail_list : E -->
+					</div>
+				</div>
+			</div>
+			<!-- S.Rewards : E -->
+
+			<!-- 라라캐시 : S -->
+			<div class="tab_cont">
+				<div class="pnt_wrap">
+					<div class="pnt_detail">
+						<ul>
+							<li>
+								<a href="#">
+									<span class="tit">지급</span>
+									<span class="price em"><strong>100원</strong></span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="tit">예정</span>
+									<span class="price"><strong>1,000원</strong></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="sub">신라트립 적립내역 <button type="button" name="button" modal-call="modal_pnt_type" class="ico btn_help">도움말</button></h3>
+					<div class="pnt_area">
+						<div class="ipt_opt">
+							<button type="button" name="button" class="btn_date">2019.01.27~2019.01.31</button>
+							<div class="form">
+								<span><button type="button" name="button" class="btn_option" option-call="sort2_1">전체</button></span>
+								<span><button type="button" name="button" class="btn_option" option-call="sort2_2">전체</button></span>
+
+								<!-- sort1 -->
+								<div class="option_select" option-receive="sort2_1">
+									<div class="pop_option">
+										<ul>
+											<li><a href="#" class="on">전체</a></li>
+											<li><a href="#">지급내역</a></li>
+											<li><a href="#">지급예정내역</a></li>
+											<li><a href="#">취소내역</a></li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- sort2 -->
+								<div class="option_select" option-receive="sort2_2">
+									<div class="pop_option">
+										<ul>
+											<li><a href="#" class="on">전체</a></li>
+											<li><a href="#">S.Rewards</a></li>
+											<li><a href="#">라라캐시</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- detail_list : S -->
+						<ul class="detail_list">
+							<li>
+								<a href="#">
+									<div class="detail_box">
+										<span>2019.08.10</span>
+									</div>
+									<div class="detail_box">
+										<div class="desc">하나투어 오사카 유니버셜 나이트 투어 에어텔/패키지 구매</div>
+										<div class="price">
+											<span class="txt">S.Rewards 지급완료</span><span class="em">+<strong>135</strong>원</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="detail_box">
+										<span>2019.08.10</span>
+									</div>
+									<div class="detail_box">
+										<div class="desc">인터파크투어 동유럽 여행 10박 11일 모아랑 상품구매</div>
+										<div class="price done"><!-- done 클래스 추가 -->
+											<span class="txt">S.Rewards 취소완료</span><span class="em">-<strong>1,000</strong>원</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="detail_box">
+										<span>2019.08.10</span>
+									</div>
+									<div class="detail_box">
+										<div class="desc">항공/숙박 모아랑 구매</div>
+										<div class="price">
+											<span class="txt">S.Rewards 지급예정</span><span class="em">+<strong>135</strong>원</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="detail_box">
+										<span>2019.08.10</span>
+									</div>
+									<div class="detail_box">
+										<div class="desc">에세이 작성</div>
+										<div class="price">
+											<span class="txt">S.Rewards 지급완료</span><span class="em">+<strong>135</strong>원</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="detail_box">
+										<span>2019.08.10</span>
+									</div>
+									<div class="detail_box">
+										<div class="desc">인터파크투어 항공권 구매</div>
+										<div class="price done"><!-- done 클래스 추가 -->
+											<span class="txt">S.Rewards 취소완료</span><span class="em">-<strong>1,000</strong>원</span>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<!-- detail_list : E -->
+					</div>
+				</div>
+            </div>
+			<!-- 라라캐시 : E -->
+
+	    </div>
+	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<!-- 팝업 : S -->
+	<div class="popup" popup-receive="calendar">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>날짜선택</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont"><!-- 2019-09-27 하단버튼이 들어가는 경우 full클래스 삭제, 안들어갈 경우 full클래스 추가 -->
+			<div class="calendar_wrap">
+				<div class="calendar_month default"><!-- 가격표시 안될경우 'default' 클래스 추가 -->
+					<div class="month_header">2019.01</div>
+					<div class="month_cont">
+						<table>
+							<thead>
+								<tr>
+									<th>일</th>
+									<th>월</th>
+									<th>화</th>
+									<th>수</th>
+									<th>목</th>
+									<th>금</th>
+									<th>토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">1</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">2</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled"><!-- 선택불가 'disabled' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">3</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<!-- 2019-08-12 오늘일때 <span class="today">삭제, <span class="price">추가 -->
+									<td class="today">
+										<div class="day_inner">
+											<span class="day">4</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<!-- //2019-08-12 오늘일때 <span class="today">삭제, <span class="price">추가 -->
+									<td class="holiday disabled"><!-- 토일,휴일 'holiday' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">5</span>
+											<span class="price"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday disabled">
+										<div class="day_inner">
+											<span class="day">6</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">7</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">8</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">9</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected start"><!-- 시작일 'start'클래스 추가  -->
+										<div class="day_inner">
+											<span class="day">10</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected"><!-- 선택된 기간 'selected' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">11</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday selected">
+										<div class="day_inner">
+											<span class="day">12</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="selected holiday">
+										<div class="day_inner">
+											<span class="day">13</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected">
+										<div class="day_inner">
+											<span class="day">14</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected end">
+										<div class="day_inner">
+											<span class="day">15</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">16</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">17</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">18</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">19</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">20</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">21</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected start end"><!-- 하루 -->
+										<div class="day_inner">
+											<span class="day">22</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">23</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">24</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">25</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">26</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">27</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">28</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">29</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">30</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">31</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="calendar_month default"><!-- 가격표시 안될경우 'default' 클래스 추가 -->
+					<div class="month_header">2019.02</div>
+					<div class="month_cont">
+						<table>
+							<thead>
+								<tr>
+									<th>일</th>
+									<th>월</th>
+									<th>화</th>
+									<th>수</th>
+									<th>목</th>
+									<th>금</th>
+									<th>토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">1</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">2</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled"><!-- 선택불가 'disabled' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">3</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">4</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday"><!-- 토일,휴일 'holiday' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">5</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">6</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">7</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">8</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">9</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">10</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">11</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">12</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">13</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">14</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">15</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">16</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">17</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">18</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">19</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">20</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">21</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">22</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">23</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">24</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">25</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">26</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">27</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">28</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">29</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">30</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">31</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!--삭제 <div class="white_shadow"></div>-->
+		</div>
+		<div class="btn_box"><!-- 2019-09-27 하단버튼이 들어가는 경우 추가(언제부터 언제까지 기간 선택일 때) -->
+			<button type="submit" name="button" class="btn primary">적용</button>
+		</div>
+	</div>
+	<!-- 팝업 : E -->
+
+	<!-- 2019-11-14 신라트립 적립 유형 팝업 추가 : S -->
+	<div class="popup" popup-receive="pop_point_type">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>신라트립 적립 유형</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="exp_type">
+				<dl class="type_list">
+					<dt>지급완료</dt>
+					<dd>
+						<ul class="notice_list">
+							<li>지급이 완료 된 S.Rewards의 지급 내역을 보여 줍니다.</li>
+						</ul>
+					</dd>
+
+					<dt>지급예정</dt>
+					<dd>
+						<ul class="notice_list">
+							<li>지급예정인 상태로, 00일내 지급 예정인 S.Rewards 입니다.</li>
+						</ul>
+					</dd>
+
+					<dt>취소완료</dt>
+					<dd>
+						<ul class="notice_list">
+							<li>신라트립 여행상품 구매취소 또는 예약변경이 진행되어 회수된 S.Rewards 입니다. 미회수 건은 조회 시 확인 하실 수 있습니다.</li>
+						</ul>
+					</dd>
+
+					<dt>S.Rewards 회수 및 상품 취소 정책</dt>
+					<dd>
+						<ul class="notice_list">
+							<li>신라트립 여행상품을 구매하여 S.Rewards를 지급받은 이후, 환불 또는 취소요청을 할 경우 아래와 같이 처리됩니다.
+								<ol class="num_list">
+									<li>
+										지급받은 S.Rewards 만큼의 잔액이 남아있고, 신라트립 여행상품을 취소하는 경우
+										<div class="sub_txt">남아있는 S.Rewards에서 해당 금액만큼 차감 후 신라트립 여행 상품 취소 됩니다.</div>
+									</li>
+									<li>
+										지급받은 S.Rewards 만큼의 잔액이 남아있지않고, 신라트립 여행상품을 취소하는 경우
+										<div class="sub_txt">남아있는 S.Rewards에서 금액만큼 차감 후, 신라트립 여행 상품 취소시 부족금액만큼 결제 금액에서 공제 후 환불 됩니다.</div>
+									</li>
+									<li>
+										실시간 항공상품을 구매후 취소 또는 예약을 변경하는 경우
+										<div class="sub_txt">지급 받은 S.Rewards 만큼의 잔액이 남아있는경우, 잔액 차감 후 항공권 취소처리가 진행되며, 잔액이 부족한 경우, 부족금액만큼 S.Rewards를 충전한 이후 취소가 가능 합니다.</div>
+									</li>
+									<li>
+										부킹닷컴/호텔스닷컴/익스피디아/아고다의 숙박제휴 상품을 구매후 취소 또는 예약을 변경하는 경우
+										<div class="sub_txt">신라트립에 직접 결제가 이루어 지지않기 때문에 별도의 회수정책이 적용됩니다.</div>
+									</li>
+								</ol>
+							</li>
+						</ul>
+
+					</dd>
+				</dl>
+				<div class="area_box">
+					<p>아래 링크를 통해 자세한 내용 확인 가능합니다.</p>
+					<div class="btn_detail">
+						<button type="button" name="button" class="btn_txt type3" popup-call="pop_s_rewards2">해외 호텔 S.Rewards 적립</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+	<!-- //2019-11-14 신라트립 적립 유형 팝업 추가 : E -->
+
+	<!-- 2020-01-02 S.Rewards 팝업 추가 : S -->
+	<div class="popup tab_btn" popup-receive="pop_s_rewards2">
+		<!-- Modal content -->
+		<div class="head" data-native="status">
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="s_rewards">
+                <p class="tit"><em>익스피디아, 부킹닷컴, 아고다에서 결제하고, 신라면세점 S.Rewards 받으세요!</em>먼저, 적립방법을 선택해 주세요.</p>
+				<!-- 2020-01-02 탭영역 추가 -->
+				<div class="tab_wrap rewards">
+					<div class="tab_menu tscroll">
+						<ul class="ul_size">
+							<li><a href="#" class="on">지금 받기</a></li>
+							<li><a href="#">나중에 받기</a></li>
+						</ul>
+					</div>
+
+					<!-- 지금받기 : S -->
+					<div class="tab_cont active">
+						<div class="s_rewards_cont">
+							<div class="inner_bx">
+								<p class="txt">신라트립에서 결제가 이루어지지 않는 숙박 제휴사의 경우, 적립 예정 S.Rewards 만큼 미리 결제하고 출발 전 적립을 받을 수 있습니다. 결제하신 금액은 숙박 체크아웃 후 <strong>자동으로 취소 처리</strong> 됩니다.</p>
+								<div class="process">
+									<ol class="step_6">
+										<li>
+											<span class="circle">예약정보<br />입력</span>
+											<span class="arrow right"></span>
+										</li>
+										<li>
+											<span class="circle">S.Rewards<br />확인</span>
+											<span class="arrow right"></span>
+										</li>
+										<li>
+											<span class="circle">S.Rewards<br />결제</span>
+											<span class="arrow down"></span>
+										</li>
+										<li>
+											<span class="circle">S.Rewards<br />적립</span>
+											<span class="arrow left"></span>
+										</li>
+										<li>
+											<span class="circle">숙박<br />체크아웃</span>
+											<span class="arrow left"></span>
+										</li>
+										<li>
+											<span class="circle last">S.Rewards<br />결제취소</span>
+										</li>
+									</ol>
+								</div>
+							</div>
+							<div class="input_info">
+								<div class="reserve_info">
+									<label for="website">예약사이트</label><button type="button" name="website" class="btn_option" option-call="option_website">선택</button>						
+									<label for="stay">숙박일</label><button type="button" name="button" class="btn_date" popup-call="pop_calendar2">2019.01.23 ~ 2020.01.30</button><!-- 2020-01-02 추가(버튼 클릭 시 mypage.css 호출) -->	
+									<label for="reserveNo">예약번호</label><input type="text" name="reserveNo" placeholder="Abcde12345 (예약시확정번호)">
+									<label for="payment">결제금액</label><input type="text" name="payment" placeholder="1,210,000원">
+								</div>
+								<p class="noti">숙박일 및 결제금액이 실제 예약내용과 상이할 경우 지급 및 취소가 지연 될 수 있습니다. 정확히 입력해 주세요</p>
+							</div>
+							<div class="saving_rewards">
+								<span class="txt b">적립 예정</span>
+								<span class="point em"><em>10,000</em>P(10,000원)</span><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+							</div>
+						</div>
+					</div>
+					<!-- 지금받기 : E -->
+
+					<!-- 나중에받기 : S -->
+					<div class="tab_cont">
+						<div class="s_rewards_cont">
+							<div class="inner_bx">
+								<p class="txt">신라트립에서 결제가 이루어지지 않는 숙박 제휴사의 경우, 적립 예정 S.Rewards는 <strong>숙박 체크아웃 이후, 자동 적립</strong>됩니다.</p>
+								<div class="process">
+									<ol class="step_2">
+										<li>
+											<span class="circle">예약정보<br />입력</span>
+											<span class="arrow right"></span>
+										</li>
+										<li>
+											<span class="circle last">체크아웃<br />이후 적립</span>
+										</li>
+									</ol>
+								</div>
+							</div>
+							<div class="input_info">
+								<div class="reserve_info">
+									<label for="website">예약사이트</label><button type="button" name="website" class="btn_option" option-call="option_website">선택</button>						
+									<label for="stay">숙박일</label><button type="button" name="button" class="btn_date" popup-call="pop_calendar2">2019.01.23 ~ 2020.01.30</button><!-- 2020-01-02 추가(버튼 클릭 시 mypage.css 호출) -->
+									<label for="reserveNo">예약번호</label><input type="text" name="reserveNo" placeholder="Abcde12345 (예약시확정번호)">
+									<label for="payment">결제금액</label><input type="text" name="payment" placeholder="1,210,000원">
+								</div>
+								<p class="noti">숙박일 및 결제금액이 실제 예약내용과 상이할 경우 지급 및 취소가 지연 될 수 있습니다. 정확히 입력해 주세요</p>
+							</div>
+							<div class="saving_rewards">
+								<span class="txt b">적립 예정</span>
+								<span class="point em"><em>10,000</em>P(10,000원)</span><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+							</div>
+						</div>
+					</div>
+					<!-- 나중에받기 : E -->
+				</div>
+				<!-- //2020-01-02 탭영역 추가 -->
+			</div>			
+		</div>
+
+		<!-- tab:지금 받기에서 노출되는 버튼 -->
+		<div class="btn_box active">
+			<button type="submit" name="button" class="btn primary">S.Rewards 선결제</button>
+			<!--
+			<button type="submit" name="button" class="btn primary">S.Rewards 선결제완료</button>
+			<button type="submit" name="button" class="btn primary">선결제 카드 취소완료</button>
+			-->
+		</div>
+
+		<!-- tab:나중에 받기에서 노출되는 버튼 -->
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">S.Rewards 적립 신청</button>
+		</div>
+	</div>
+	<!-- 예약사이트 옵션 : S -->
+    <div class="option_select" option-receive="option_website">
+        <div class="pop_option">
+            <!-- 2020-01-02 수정 -->
+			<ul>
+				<li><a href="#none">익스피디아</a></li>
+                <li><a href="#none">부킹닷컴</a></li>
+                <li><a href="#none">아고다</a></li>
+            </ul>
+			<!-- //2020-01-02 수정 -->
+        </div>
+    </div>
+	<!-- 예약사이트 옵션 : E -->
+	<!-- 2020-01-02 S.Rewards 팝업 추가 : E -->
+
+	<!-- 2020-01-02 달력팝업 추가 : S -->
+	<div class="popup" popup-receive="pop_calendar2">
+		<!-- Modal content -->
+		<div class="head" data-native="status">
+			<h1>날짜선택</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont"><!-- 2019-09-27 하단버튼이 들어가는 경우 full클래스 삭제, 안들어갈 경우 full클래스 추가 -->
+			<div class="calendar_wrap">
+				<div class="calendar_month"><!-- 가격표시 안될경우 'default' 클래스 추가 -->
+					<div class="month_header">
+						<span class="t_option" option-call="option_year"><strong>2019</strong>년</span>
+						<span class="t_option" option-call="option_month"><strong>01</strong>월</span>
+					</div>
+					<div class="month_cont">
+						<table>
+							<thead>
+								<tr>
+									<th>일</th>
+									<th>월</th>
+									<th>화</th>
+									<th>수</th>
+									<th>목</th>
+									<th>금</th>
+									<th>토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">1</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">2</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled"><!-- 선택불가 'disabled' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">3</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<!-- 2019-08-12 오늘일때 <span class="today">삭제, <span class="price">추가 -->
+									<td>
+										<div class="day_inner">
+											<span class="day">4</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<!-- //2019-08-12 오늘일때 <span class="today">삭제, <span class="price">추가 -->
+									<td class="holiday disabled"><!-- 토일,휴일 'holiday' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">5</span>
+											<span class="price"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday disabled">
+										<div class="day_inner">
+											<span class="day">6</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">7</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">8</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">9</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected start"><!-- 시작일 'start'클래스 추가  -->
+										<div class="day_inner">
+											<span class="day">10</span>
+											<span class="price">100만원</span>
+										</div>
+									</td>
+									<td class="selected"><!-- 선택된 기간 'selected' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">11</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday selected">
+										<div class="day_inner">
+											<span class="day">12</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday selected">
+										<div class="day_inner">
+											<span class="day">13</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected">
+										<div class="day_inner">
+											<span class="day">14</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected end">
+										<div class="day_inner">
+											<span class="day">15</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">16</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">17</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">18</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">19</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">20</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">21</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected start end"><!-- 하루 -->
+										<div class="day_inner">
+											<span class="day">22</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">23</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">24</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="today">
+										<div class="day_inner">
+											<span class="day">25</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">26</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">27</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">28</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">29</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">30</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">31</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btn_box"><!-- 2019-09-27 하단버튼이 들어가는 경우 추가(언제부터 언제까지 기간 선택일 때) -->
+			<button type="submit" name="button" class="btn primary">적용</button>
+		</div>
+	</div>
+
+	<!-- 옵션_year -->
+	<div class="option_select" option-receive="option_year">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#">2015년</a></li>
+				<li><a href="#">2016년</a></li>
+				<li><a href="#">2017년</a></li>
+				<li><a href="#">2018년</a></li>
+				<li><a href="#" class="on">2019년</a></li>
+				<li><a href="#">2020년</a></li>
+				<li><a href="#">2021년</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 옵션_month -->
+	<div class="option_select" option-receive="option_month">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#" class="on">01월</a></li>
+				<li><a href="#">02월</a></li>
+				<li><a href="#">03월</a></li>
+				<li><a href="#">04월</a></li>
+				<li><a href="#">05월</a></li>
+				<li><a href="#">06월</a></li>
+				<li><a href="#">07월</a></li>
+				<li><a href="#">08월</a></li>
+				<li><a href="#">09월</a></li>
+				<li><a href="#">10월</a></li>
+				<li><a href="#">11월</a></li>
+				<li><a href="#">12월</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 2020-01-02 달력팝업 추가 : E -->
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+	<!-- 이전, top -->
+	<div class="quik_btn">
+		<!-- <a href="#none" class="ico btn_back2">이전</a> -->
+		<a href="#top" class="ico btn_top">맨처음로</a>
+	</div>
+	<!-- //이전, top -->
+    <!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+	</div> -->
+	<!-- 퀵메뉴 2019-12-04 //-->
+	<div class="quick_plus">
+		<a href="#" class="btn_plus">퀵메뉴보기</a>
+		<div class="plus_nav">
+			<ul>
+				<li><a href="#" class="cart">신라면세점</a></li>
+				<li><a href="#" class="srewards">S.Rewards</a></li>
+			</ul>
+		</div>	
+	</div>
+	<!--// 퀵메뉴 2019-12-04 -->
+	
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

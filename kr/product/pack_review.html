@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap fixed">
+	 <header class="sticky_step1">
+		 <h2>
+			 <a href="#" class="ico btn_back">이전 페이지</a>
+			 라랑팩 상세
+			 <button type="button" class="ico btn_like">관심상품</button>
+			 <button type="button" class="ico btn_sns">공유</button>
+		 </h2>
+	 </header>
+	 <!-- 콘텐츠 : S -->
+	 <div class="content">
+		<div class="product_wrap pack">
+			<div class="product_img">
+				<div class="slider_wrap" slider-option="banner fullsize autoplay=0">
+					<div class="slider_item">
+						<img src="../../resource/img/tmp_prd14.jpg" alt="상품이미지">
+						<div class="dim_box"></div><!-- dim -->
+						<div class="txt_box"><!-- 첫번째 li에만 텍스트 노출 -->
+							<!-- 2019-11-14 텍스트 2줄처리 -->
+							<div class="tit1">동유럽 꼼꼼히</div>
+							<div class="tit2">살펴보기 13박 15일</div>
+							<!-- //2019-11-14 텍스트 2줄처리 -->
+							<div class="txt">로우시즌/미들시즌/하이시즌 즉시입장가능 로우시즌/미들시즌/하이시즌 즉시입장가능</div>
+						</div>
+					</div>
+					<div class="slider_item">
+						<img src="../../resource/img/tmp_prd14.jpg" alt="상품이미지">
+						<div class="dim_box"></div><!-- dim -->
+					</div>
+					<div class="slider_item">
+						<img data-lazy="../../resource/img/tmp_prd14.jpg" src="../../resource/img/img_blank.png" alt="상품이미지"><!-- 2020-02-04 data-lazy 추가 -->
+						<div class="dim_box"></div><!-- dim -->
+					</div>
+				</div>
+			</div>
+			<!-- 2019-10-14 원가,할인율 추가, 마크업수정 -->
+
+			<!-- 2019-11-05 <span class="desc">~</span> 삭제, 신라페이 결제시/임직원가 추가 -->
+			<div class="product_info">
+				<div class="price_wrap">
+					<span class="cost">100,000,000원<span class="s_pay">신라페이 결제시</span></span>
+					<div class="price_info">
+						<span class="price">
+							<span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>1,080,000,000</strong>원~</span>
+						</span>
+						<div class="user_info">
+							<span class="info">
+								<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+								<span class="name creator">나만따라와</span>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="hashtag">
+					<span>#여름휴가</span><span>#여름</span><span>#인싸놀이</span><span>#물놀이</span><span>#인생샷</span><span>#일상스타그램</span><span>#여행코디</span><span>#커플</span><span>#여행에미치다</span>
+				</div>
+			</div>
+			<!-- //2019-10-14 원가,할인율 추가, 마크업수정 -->
+			<!-- //2019-11-05 <span class="desc">~</span> 삭제, 신라페이 결제시/임직원가 추가 -->
+			
+			<!-- 2019-10-14 혜택추가 -->
+			<!-- 2019-11-20 혜택영역 수정, 쿠폰받기 모달 팝업 삭제 -->
+			<div class="benefit_area">
+				<div class="txt">
+					<p>김신라님을 위한 혜택을 확인하세요!</p>
+				</div>
+			</div>
+			<!-- //2019-11-20 혜택영역 수정, 쿠폰받기 모달 팝업 삭제 -->
+
+			<!-- 2019-11-05 혜택아코디언 수정 및 추가 -->
+			<div class="accordion t_small" data-js="accordion">
+				<button type="button" name="button" data-js="acc_anchor">
+					<span class="bleft"><span class="tit">최대 할인</span></span><!-- 2019-12-06 텍스트 수정 -->
+					<span class="bright"><span class="price"><strong>20,000</strong>원</span></span>
+				</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="sale_info">
+						<dl>
+							<dt>9월 한달 프로모션 5% 할인</dt>
+							<dd>10,000원</dd>
+
+							<dt>셀러 3% 할인</dt>
+							<dd>10,000원</dd>
+						</dl>
+					</div>
+				</div>
+				<button type="button" name="button" data-js="acc_anchor">
+					<span class="bleft"><span class="tit">S.Rewards 적립</span></span><!-- 2019-12-06 텍스트 수정 --><!-- 2019-10-29 캐시 적립 혜택 텍스트 변경 -->
+					<span class="bright"><span class="price"><strong>10,000</strong>P(10,000원)</span></span><!-- 2019-12-06 S.Rewards 표기 법 수정 --><!-- 2019-10-29 텍스트 수정 -->
+				</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="sale_info">
+						<dl>
+							<dt>구매 시 1.5% 적립</dt><!-- 2019-12-06 텍스트 수정 -->
+							<dd>10,000P(10,000원)</dd><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+
+							<dt>임직원 추가 2% 적립</dt><!-- 2019-12-06 텍스트 수정 -->
+							<dd>10,000P(10,000원)</dd><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+
+							<dt>적립시점</dt>
+							<dd>즉시적립</dd>
+						</dl>
+						<div class="point_info"><p class="txt">(6,104 원/고시환율) x 1,000P</p></div>
+						<div class="btn_detail"><button type="button" name="button" class="btn_txt type4">여행 완성 후 추가적립금 지급</button></div>
+					</div>
+				</div>
+
+				<button type="button" name="button" data-js="acc_anchor">
+					<span class="bleft"><span class="tit">카드사 혜택</span></span>
+				</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="sale_info full">
+						<dl>
+							<dt>삼성카드 5% 청구할인</dt>
+							<dt>신라 페이 결제 시 5% 추가할인</dt>
+						</dl>
+					</div>
+				</div>
+				
+			</div>
+			<!-- //2019-11-05 혜택아코디언 수정 및 추가 -->
+			<!-- //2019-10-14 혜택추가 -->
+
+			<!-- 여행 포인트 : S -->
+			<div class="exp_box">
+				<h3 class="sub">여행 포인트</h3>
+				<ul class="def_list">
+					<li>세계 3대 야경(프라하, 부다페스트)에서 인생샷</li>
+					<li>저렴한 물가로 부담없이 즐기자</li>
+					<li>가는 곳 마다 뷰 포인트</li>
+				</ul>
+			</div>
+			<!-- 여행 포인트 : E -->
+
+			<!-- 사진으로 보는 일정 : S -->
+			<div class="exp_box">
+				<h3 class="sub">사진으로 보는 일정</h3>
+				<div class="photo_list big tscroll">
+					<ul class="ul_size">
+						<!-- D : loop -->
+						<li>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd14.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<div class="photo_txt">파리 루브르 박물관 파리 루브르 박물관파리 루브르 박물관파리 루브르 박물관</div>
+						</li>
+						<!-- //D : loop -->
+						<li>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd14.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<div class="photo_txt">파리 루브르 박물관</div>
+						</li>
+						<li>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd14.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<div class="photo_txt">파리 루브르 박물관</div>
+						</li>
+						<li>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd14.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<div class="photo_txt">파리 루브르 박물관</div>
+						</li>
+						<li>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd14.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<div class="photo_txt">파리 루브르 박물관</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 사진으로 보는 일정 : E -->
+
+			<!-- 배너 : S -->
+			<!-- 2019-11-20 배너수정 -->
+			<div class="banner">
+				<a href="#none">
+					<img class="ajax_lazy" data-src="../../resource/img/tmp_event02.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+					<span class="badge ad">AD</span><!-- 2019-11-14 AD 라벨 클래스 추가 -->
+					<div class="txt">
+						<span class="badge etc">항공권</span>
+						<!-- 2019-11-14 J와 동일하게 텍스트 2줄처리 -->
+						<em class="txt1">신라트립</em>
+						<em class="txt2">최저가 항공권 구매하기</em>
+						<!-- //2019-11-14 J와 동일하게 텍스트 2줄처리 -->
+					</div>
+				</a>
+			</div>
+			<!-- //2019-11-20 배너수정 -->
+			<!-- 배너 : E -->
+
+			<p class="noti">라랑팩은 모든 일정의 항공, 숙박, 액티비티 상품을 자유롭게 선택하여 만드는 에어텔/패키지입니다. 나만의 에어텔/패키지를 만들어 200% 만족할 수 있는 여행을 즐기세요!</p><!-- 2020-01-13 명칭변경 -->
+
+			<!-- 일정 : S -->
+			<h3 class="sub">일정상세<button type="button" name="button" class="btn_txt type1">변경</button></h3><!-- 2019-11-20 변경버튼 추가 -->
+			<div class="stay_opt">
+				<button type="button" name="button" class="btn_date">일정을 등록해 보세요</button><!-- pop_calendar.html 호출 -->
+			</div>
+			<div class="tab_menu tscroll sticky_step2" data-native="status">	<!-- data-native 추가  2019-11-13 -->
+				<ul class="ul_size radio_like">
+					<li><a href="#none" class="radio_item on" goto-call="1">1일차</a></li>
+					<li><a href="#none" class="radio_item" goto-call="2">2일차</a></li>
+					<li><a href="#none" class="radio_item" goto-call="3">3일차</a></li>
+				</ul>
+			</div>
+			<div class="schedule_wrap">
+				<div class="schedule_cont">
+					<!-- 1일차 -->
+					<div id="schedule01" class="schedule_item" goto-receive="1">
+						<div class="schedule">
+							<h3>1일차 <span class="date">2019.07.22 (목)</span></h3>
+							<p class="desc">2일차 일정은 좀 더 다양하고 알찬 스팟으로 구성했습니다. 주변 맛집이 많으니 꼭 확인하고 예약해보세요!</p>
+							<!-- 2019-11-20 클래스 추가(schedule_list, box, prd_item_box, prd_list 등) -->
+							<ol class="schedule_list">
+								<li>
+									<div class="box">
+										<strong class="tit">인천공항</strong>
+									</div>
+								</li>
+								<li>
+									<div class="box">
+										<strong class="tit">바츨라프 하벨 국제공항</strong>
+									</div>
+									<div class="prd_list tscroll">
+										<!-- 2019-10-14 뱃지, 원가, 할인율 추가 -->
+										<ul>
+											<li class="select"><!-- 상품된 상품일때 'select' 클래스 추가 -->
+												<em class="em">필수상품</em><!-- 첫번째 li에서는 select가 아닐때도 노출 -->
+												<div class="prd_item_box">
+													<a href="#none">
+														<div class="img">
+															<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+															<span class="badge_area">
+																<span class="badge type3">신라트립가</span>
+															</span>
+														</div>
+														<div class="info">
+															<span class="cate">티켓/패스</span>
+															<span class="tit">프라하 시내 공항 픽업 서비스</span>
+															<span class="cost">109,968원</span>
+															<span class="price">
+																<span class="per">20%</span><span class="sale"><strong>1,429,000</strong>원~</span>
+															</span>
+														</div>
+													</a>
+												</div>
+								            </li>
+											<li>
+												<em class="em">필수상품</em>
+												<div class="prd_item_box">
+													<a href="#none">
+														<div class="img">
+															<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+															<span class="badge_area">
+																<span class="badge type3">신라트립가</span>
+															</span>
+														</div>
+														<div class="info">
+															<span class="cate">티켓/패스</span>
+															<span class="tit">프라하 시내 공항 픽업 서비스</span>
+															<span class="cost">109,968원</span>
+															<span class="price">
+																<span class="per">20%</span><span class="sale"><strong>1,429,000</strong>원~</span>
+															</span>
+														</div>
+													</a>
+												</div>
+								            </li>
+										</ul>
+										<!-- //2019-10-14 뱃지, 원가, 할인율 추가 -->
+									</div>
+								</li>
+								<li>
+									<div class="box">
+										<strong class="tit">프라하 숙소</strong>
+										<p class="stxt">크리에이터가 추천하는 상품<br>내 취향에 맞는 상품을 선택하세요.</p>
+									</div>
+									<div class="prd_list tscroll">
+										<!-- 2019-10-14 뱃지, 원가, 할인율 추가 -->
+										<ul>
+											<li class="select"><!-- 상품된 상품일때 'select' 클래스 추가 -->
+												<em class="em">선택상품</em><!-- 첫번째 li에서는 select가 아닐때도 노출 -->
+												<div class="prd_item_box">
+													<a href="#none">
+														<div class="img">
+															<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+															<span class="badge_area">
+																<span class="badge type3">신라트립가</span>
+															</span>
+														</div>
+														<div class="info">
+															<span class="cate">호텔</span>
+															<span class="tit">비엔나 하우스 안델스 프라하</span>
+															<span class="cost">109,968원</span>
+															<span class="price">
+																<span class="per">20%</span><span class="sale"><strong>1,429,000</strong>원~</span>
+															</span>
+														</div>
+													</a>
+												</div>
+								            </li>
+											<li class="select">
+												<em class="em">선택상품</em>
+												<div class="prd_item_box">
+													<a href="#none">
+														<div class="img">
+															<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+															<span class="badge_area">
+																<span class="badge type3">신라트립가</span>
+															</span>
+														</div>
+														<div class="info">
+															<span class="cate">호텔</span>
+															<span class="tit">반얀트리 마카오반얀트리 마카오반얀트리 마카오반얀트리 마카오반얀트리 마카오</span>
+															<span class="cost">109,968원</span>
+															<span class="price">
+																<span class="per">20%</span><span class="sale"><strong>1,429,000</strong>원~</span>
+															</span>
+														</div>
+													</a>
+												</div>
+								            </li>
+											<li>
+												<em class="em">선택상품</em>
+												<div class="prd_item_box">
+													<a href="#none">
+														<div class="img">
+															<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+															<span class="badge_area">
+																<span class="badge type3">신라트립가</span>
+															</span>
+														</div>
+														<div class="info">
+															<span class="cate">호텔</span>
+															<span class="tit">반얀트리 마카오반얀트리 마카오반얀트리 마카오반얀트리 마카오반얀트리 마카오</span>
+															<span class="cost">109,968원</span>
+															<span class="price">
+																<span class="per">20%</span><span class="sale"><strong>1,429,000</strong>원~</span>
+															</span>
+														</div>
+													</a>
+												</div>
+								            </li>
+										</ul>
+										<!-- //2019-10-14 뱃지, 원가, 할인율 추가 -->
+									</div>
+									<div class="txt_option">상세페이지에서 옵션을 선택하세요</div>
+								</li>
+								<li>
+									<div class="box">
+										<strong class="tit">야경</strong>
+									</div>
+								</li>
+							</ol>
+							<!-- //2019-11-20 클래스 추가(schedule_list, box, prd_item_box, prd_list 등) -->
+						</div>
+					</div>
+
+					<!-- 2일차 -->
+					<div id="schedule02" class="schedule_item" goto-receive="2">
+						<div class="schedule">
+							<h3>2일차 <span class="date">2019.07.23 (금)</span></h3>
+							<p class="desc">2일차 일정은 좀 더 다양하고 알찬 스팟으로 구성했습니다. 주변 맛집이 많으니 꼭 확인하고 예약해보세요!</p>							
+							<!-- 2019-11-20 클래스 추가(schedule_list, box, prd_item_box, prd_list 등) -->
+							<ol class="schedule_list">
+								<li>
+									<div class="box">
+										<strong class="tit">장미젤라또</strong>
+									</div>
+								</li>
+								<li>
+									<div class="box">
+										<strong class="tit">뮤지엄</strong>
+										<p class="stxt">크리에이터가 추천하는 상품<br>내 취향에 맞는 상품을 선택하세요.</p>
+										<span class="seller_area"><img src="../../resource/img/tmp_logo3.png" alt="agoda" class="seller"></span>
+									</div>
+									<div class="prd_list tscroll">
+										<!-- 2019-10-14 뱃지, 원가, 할인율 추가 -->
+										<ul>
+											<li class="select"><!-- 상품된 상품일때 'select' 클래스 추가 -->
+												<em class="em">선택상품</em>
+												<div class="prd_item_box">
+													<a href="#none">
+														<div class="img">
+															<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+															<span class="badge_area">
+																<span class="badge type3">신라트립가</span>
+															</span>
+														</div>
+														<div class="info">
+															<span class="cate">현지투어</span>
+															<span class="tit">뮤지엄 워킹투어(오디오 가이드 포함)</span>
+															<span class="cost">109,968원</span>
+															<span class="price">
+																<span class="per">20%</span><span class="sale"><strong>1,429,000</strong>원~</span>
+															</span>
+														</div>
+														<!-- 2020-01-17 신라트립 추천상품인 경우 뱃지 노출 -->
+														<div class="trip_badge">
+															<span class="badge"><em>트립추천</em></span>
+														</div>
+														<!-- //2020-01-17 신라트립 추천상품인 경우 뱃지 노출 -->
+													</a>
+												</div>
+								            </li>
+											<li>
+												<em class="em">선택상품</em>
+												<div class="prd_item_box">
+													<a href="#none">
+														<div class="img">
+															<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+															<span class="badge_area">
+																<span class="badge type3">신라트립가</span>
+															</span>
+														</div>
+														<div class="info">
+															<span class="cate">현지투어</span>
+															<span class="tit">뮤지엄 자전거투어</span>
+															<span class="cost">109,968원</span>
+															<span class="price">
+																<span class="per">20%</span><span class="sale"><strong>1,429,000</strong>원~</span>
+															</span>
+														</div>
+														<!-- 2020-01-17 신라트립 추천상품인 경우 뱃지 노출 -->
+														<div class="trip_badge">
+															<span class="badge"><em>트립추천</em></span>
+														</div>
+														<!-- //2020-01-17 신라트립 추천상품인 경우 뱃지 노출 -->
+													</a>
+												</div>
+								            </li>
+											<li>
+												<em class="em">선택상품</em>
+												<div class="prd_item_box">
+													<a href="#none">
+														<div class="img">
+															<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+															<span class="badge_area">
+																<span class="badge type3">신라트립가</span>
+															</span>
+														</div>
+														<div class="info">
+															<span class="cate">현지투어</span>
+															<span class="tit">뮤지엄 자전거투어</span>
+															<span class="cost">109,968원</span>
+															<span class="price">
+																<span class="per">20%</span><span class="sale"><strong>1,429,000</strong>원~</span>
+															</span>
+														</div>
+													</a>
+												</div>
+								            </li>
+										</ul>
+										<!-- //2019-10-14 뱃지, 원가, 할인율 추가 -->
+									</div>
+								</li>
+								<li>
+									<div class="box">
+										<strong class="tit">야경</strong>
+									</div>
+								</li>
+							</ol>
+							<!-- //2019-11-20 클래스 추가(schedule_list, box, prd_item_box, prd_list 등) -->
+						</div>
+					</div>
+					
+					<!-- 3일차 -->
+					<div id="schedule03" class="schedule_item" goto-receive="3">
+						<div class="schedule">
+							<h3>3일차 <span class="date">2019.07.24 (토)</span></h3>
+							<!-- 2019-11-20 클래스 추가(schedule_list, box, prd_item_box, prd_list 등) -->
+							<ol class="schedule_list">
+								<li>
+									<div class="box">
+										<strong class="tit">공원</strong>
+									</div>
+								</li>
+								<li>
+									<div class="box">
+										<strong class="tit">박물관</strong>
+									</div>
+								</li>
+								<li>
+									<div class="box">
+										<strong class="tit">숙소</strong>
+									</div>
+								</li>
+							</ol>
+							<!-- //2019-11-20 클래스 추가(schedule_list, box, prd_item_box, prd_list 등) -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 일정 : E -->
+
+			<!-- 같은 상품이 포함된 다른 라랑팩 : S -->
+			<h3>같은 상품이 포함된 다른 라랑팩</h3>
+			<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가 -->
+			<!-- 2019-08-07 추천상품 모듈변경 -->
+			<div class="goods_list tscroll">
+				<ul class="">
+					<li>
+						<a href="#none">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge type3">신라트립가</span>
+							</span>
+							<span class="tit">먹다 지치는 오사카 먹방 투어 먹다 지치는 오사카 먹방 투어 먹다 지치는 오사카 먹방 투어 먹다 지치는 오사카 먹방 투어</span>
+							<span class="sale_area">
+								<span class="per">20%</span><span class="cost">10,000,000원</span>
+							</span>
+							<span class="price"><strong>8,000,000</strong>원~</span>
+							<div class="user_info">
+								<span class="info">
+									<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+									<span class="name creator">나만따라와</span>
+								</span>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#none">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="tit">먹다 지치는 오사카 먹방 투어</span>
+							<span class="price"><strong>440,000</strong>원</span>
+							<div class="user_info">
+								<span class="info">
+									<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+									<span class="name creator">나만따라와</span>
+								</span>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#none">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="tit">먹다 지치는 오사카 먹방 투어</span>
+							<span class="price"><strong>440,000</strong>원</span>
+							<div class="user_info">
+								<span class="info">
+									<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+									<span class="name creator">나만따라와</span>
+								</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2019-08-07 추천상품 모듈변경 -->
+			<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가 -->
+			<!-- 같은 상품이 포함된 다른 라랑팩 : E -->
+		</div>
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 옵션바 : S -->
+	<div class="opt_bar">
+		<div class="opt_toggle">
+			<a href="#" class="btn_toggle"><span class="btn_arrow"><i class="ico arrow3">열기/닫기</i></span></a>
+		</div>
+		<div class="opt_wrap">
+			<div class="opt_area">
+				<ul class="option_list">
+					<li>
+						<button type="button" name="button" class="ico btn_del">close</button>
+						<span class="tit">뮤지엄 워킹 투어 (오디오 가이드 선택옵션)</span>
+						<span class="stxt"><span class="date">2019.05.07</span><span class="opt">오디오 가이드 포함</span></span>
+						<span class="ctrl">
+							<button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+							<input type="text" name="" value="1">
+							<button type="button" name="button" class="ico btn_plus">추가</button>
+						</span>
+						<strong class="price"><strong>77,000</strong>원</strong>
+					</li>
+					<li>
+						<button type="button" name="button" class="ico btn_del">close</button>
+						<span class="tit">뮤지엄 워킹 투어 (오디오 가이드 선택옵션)</span>
+						<span class="stxt"><span class="date">2019.05.07</span><span class="opt">오디오 가이드 포함</span></span>
+						<span class="ctrl">
+							<button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+							<input type="text" name="" value="1">
+							<button type="button" name="button" class="ico btn_plus">추가</button>
+						</span>
+						<strong class="price"><strong>77,000</strong>원</strong>
+					</li>
+					<li>
+						<button type="button" name="button" class="ico btn_del">close</button>
+						<span class="tit">뮤지엄 워킹 투어 (오디오 가이드 선택옵션)</span>
+						<span class="stxt"><span class="date">2019.05.07</span><span class="opt">오디오 가이드 포함</span></span>
+						<span class="ctrl">
+							<button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+							<input type="text" name="" value="1">
+							<button type="button" name="button" class="ico btn_plus">추가</button>
+						</span>
+						<strong class="price"><strong>77,000</strong>원</strong>
+					</li>
+					<li>
+						<button type="button" name="button" class="ico btn_del">close</button>
+						<span class="tit">뮤지엄 워킹 투어 (오디오 가이드 선택옵션)</span>
+						<span class="stxt"><span class="date">2019.05.07</span><span class="opt">오디오 가이드 포함</span></span>
+						<span class="ctrl">
+							<button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+							<input type="text" name="" value="1">
+							<button type="button" name="button" class="ico btn_plus">추가</button>
+						</span>
+						<strong class="price"><strong>77,000</strong>원</strong>
+					</li>
+				</ul>
+			</div>
+
+			<div class="total_price">
+				<span class="tit">총 금액</span>
+				<span class="price"><strong>8,888,888,888</strong>원</span>
+			</div>
+		</div>
+	</div>
+	<!-- 옵션바 : E -->
+
+	<div class="btn_wrap">
+		<button type="button" name="button" class="btn primary">결제하기</button>
+	</div>
+
+	<!-- 2019-10-02 쿠폰받기 모달 팝업 : S -->
+	<div class="modal" modal-receive="modal_coupon">
+		<div class="modal_content">
+			<h1>쿠폰받기</h1>
+			<p class="txt_alert">쿠폰이 발급 되었습니다.<br>[마이페이지 &gt; 쿠폰 &gt; 사용가능] 에서 확인하실 수 있습니다.</p>
+		</div>
+		<div class="modal_btn">
+			<button type="button" name="button" class="btn">확인</button>
+		</div>
+	</div>
+	<!-- //2019-10-02 쿠폰받기 모달 팝업 : E -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

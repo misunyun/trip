@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+.blind{overflow:hidden; position:absolute; top:0; left:0; width:0; height:0; font-size:0; line-height:0;}
+/* checkbox & radio Design */
+label.css-label {
+    background-image:url('https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/common/ico_checkbox.png');
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+}
+input[type=checkbox].css-checkbox {
+    overflow:hidden; position:absolute; left:-1000px; width:1px; height:1px; margin:-1px; padding:0; border:0; clip:rect(0 0 0 0); visibility:hidden;
+}
+input[type=checkbox].css-checkbox + label.css-label {
+    display:inline-block; min-width:20px; min-height:20px; padding-left:25px; padding-right:10px; line-height:20px; 
+    background-repeat:no-repeat;
+    background-position:0 0;
+    background-size:20px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position:0 0px;
+    background-image:url('https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/common/ico_checkbox_on.png');
+}
+input[type=checkbox].css-checkbox:disabled + label.css-label {
+    opacity:0.5;
+}
+label.css-radiolabel {
+    background-image:url('https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/common/ico_radio.png');
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+}
+input[type=radio].css-radiobox {
+    overflow:hidden; position:absolute; left:-1000px; width:1px; height:1px; margin:-1px; padding:0; border:0; clip:rect(0 0 0 0);
+}
+input[type=radio].css-radiobox + label.css-radiolabel {
+    display:inline-block; min-width:20px; height:20px; padding-left:25px; padding-right:10px; line-height:20px; 
+    background-repeat:no-repeat;
+    background-position:0 0;
+    background-size:20px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+input[type=radio].css-radiobox:checked + label.css-radiolabel {
+    background-position:0 0px;
+    background-image:url('https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/common/ico_radio_on.png');
+}
+input[type=radio].css-radiobox:disabled + label.css-radiolabel {
+    opacity:0.5;
+}
+
+/* 결제수단 신라페이*/
+/*.spay_tit{font-size:16px; font-weight:bold;}*/
+.spay_tit label em{font-size:13px;font-weight:normal;}
+.pay_type_lala .accordion > button{height:40px; padding-left:10px; line-height:40px; font-size:14px; font-weight:normal;}
+.pay_type_lala .accordion > button.active{font-weight:bold;}
+/*.pay_type_lala .accordion > button:first-child{border-top-color:#f2f2f2;}*/
+.pay_type_lala .desc_wr{padding:10px 10px 16px; background-color:#f9f9f9;}
+.pay_type_lala .desc_card{padding:0; background-color:#fff;}
+.pay_type_lala .use_type .lala_save input[type=text]{height:30px;padding-left:10px;}
+.pay_type_lala .use_type .lala_save .btn{display:inline-block; width:26%; text-align:center;}
+.pay_type_lala .accordion.info{border-top:1px solid #f2f2f2;}
+/*.pay_type.pay_type_lala{background-color:#fff;border-top:1px solid #f2f2f2;}*/
+.pay_item .list > li{margin:0 20px 0 0;}
+.pay_item2{margin:15px -20px 25px; line-height:1;}
+.pay_type_lala .join_lala{display:block; height:40px; line-height:40px; font-size:14px; text-align:center; font-weight:bold; color:#fff; background-color:#373231; margin:10px 0 0;}
+.pay_item .card:after{left:-1px;}
+.pay_banner .banner_custom .txt_box,.pay_type_lala .card .c_list li{line-height:1;}
+.banner_nav{position:absolute;left:0;bottom:10px;width:100%;font-size:0;line-height:0;text-align:center;z-index:2;}
+.banner_nav li{display:inline-block;margin:0 2px;vertical-align:bottom;width:auto!important;float:none!important;}
+.banner_nav li button{display:block;overflow:hidden;width:5px;height:5px;background:#cac9c9;font-size:0;line-height:0;}
+
+.credit .card_info{position:static; background:none; background-color:#e6dfda; width:auto; height:auto; margin:10px -10px -15px;}
+.card .sel_box select{padding:5px}
+
+/* 신라페이 - 스마일캐시(현금영수증) */
+.pay_type .radio_tabwrap{margin-top:20px;padding-top:0 !important;}
+.pay_type .radio_menu{margin-bottom:10px;}
+.pay_type .radio_menu ul{display: flex; flex-basis:0; flex-wrap:wrap; justify-content: flex-start}
+.pay_type .radio_menu ul::after{display:block;content:"";clear:both;}
+.pay_type .radio_menu li{width:49.9%;box-sizing border-box;overflow:hidden}
+.pay_type .radio_menu li label{display:block;font-size:13px;}
+.pay_type .credit.simple{padding:0;background:none;}
+.pay_type .credit.simple .list_box li{margin-top:10px;}
+.pay_type .credit.simple .list_box li:first-child{margin-top:0;}
+.pay_type .credit.simple .list_box .pay_sel,
+.pay_type .credit.simple .list_box .input{border-color:#e0e0e0;}
+.pay_type .agree_box{margin-top:15px;}
+.pay_type .agree_box .guide_li li .em2{font-size:14px;}
+.pay_type_lala .card .c_list li strong{font-weight:bold;}

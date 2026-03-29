@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap fixed"><!-- 2019-11-06 fixed 클래스 추가, fnb영역 삭제(예약 및 결제하기 공통수정) -->
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			예약상품
+		</h2>
+	</header>
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<!-- 2019-09-02 항공사 및 문구추가 -->
+		<div class="flight_info">
+			<p class="route"><strong>인천</strong><i class="ico round"></i><strong>오사카</strong></p>
+ 			<p class="stxt">[대한항공] 성인2명, 유아1명 / 일반석</p>
+			<p class="noti">본 항공권 예약서비스는 <span class="t_agency">㈜모두투어</span> 책임하에 운영됩니다.<br>입력하신 정보는 예약/결제/발권진행에 사용 될 수 있습니다.</p>
+ 		</div>
+		<!-- //2019-09-02 항공사 및 문구추가 -->
+
+		<section class="section">
+			<!-- 2019-09-02 필드분리 및 수정사항 적용 -->
+			<table class="tbl_type3">
+				<colgroup>
+					<col style="width:110px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">신라<br>예약번호</th>
+						<td>shilla12345</td>
+					</tr>
+					<tr>
+						<th scope="row">여행사<br>예약번호</th><!-- 2019-09-27 항공 예약번호로 명칭수정 -->
+						<td>KDPAWK</td>
+					</tr>
+					<tr>
+						<th scope="row">결제시한</th>
+						<td><em class="em">2019년 3월 31일 17:29 까지</em></td>
+					</tr>
+					<tr>
+						<th scope="row">출국일</th>
+						<td>2019년 3월 31일(일) 10:00</td>
+					</tr>
+					<tr>
+						<th scope="row">귀국일</th>
+						<td>2019년 3월 31일(토) 10:00</td>
+					</tr>
+					<!-- 삭제 <tr>
+						<th scope="row">인원 및 좌석</th>
+						<td>성인 2명, 유아 1명 / 일반석</td>
+					</tr> -->
+					<tr>
+						<th scope="row">결제예정 운임</th><!-- 2019-12-10 문구수정 --><!-- 2019-12-05 텍스트 수정(총 운임→신라트립가) -->
+						<td class="em"><strong class="em">1,505,000</strong>원</td>
+					</tr>
+					<tr>
+						<th scope="row">요금확정여부</th>
+						<td>확정</td>
+					</tr>
+					<tr>
+						<th scope="row">좌석확정여부</th>
+						<td>확정</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- //2019-09-02 필드분리 및 수정사항 적용 -->
+			<div class="btn_detail">
+				<a href="#" class="btn_txt type4">상세일정</a>
+			</div>
+		</section>
+
+		<section class="section booker_info">
+			<h3 class="sub">예약자정보</h3>
+			<table class="tbl_type3">
+				<colgroup>
+					<col style="width:110px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">이름</th>
+						<td>김신라<!-- (남성) --></td>
+					</tr>
+					<tr>
+						<th scope="row">휴대폰번호</th>
+						<td>010-1234-5678</td>
+					</tr>
+					<tr>
+						<th scope="row">이메일</th>
+						<td>shilladfsshilladfs@samsung.com</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="noti">긴급상황 발생 시 즉시 연락이 가능해야 하며, 연락이 불가능한 경우 발생되는 불이익에 대해 당사는 책임지지 않사오니 이점 유의하시기 바랍니다.</p>
+		</section>
+
+		<section class="section booker_info">
+			<h3 class="sub">탑승자정보</h3>
+			<!-- 2019-09-02 등록정보 영역 수정 -->
+			<div class="reg_info">
+				<span class="tit_box">탑승자1</span>
+				<!-- 2019-10-29 삭제 <div class="opt_box">
+					<p class="opt">일반석</p>
+				</div> -->
+				<!-- <span class="chk_box">
+					<label class="checkbox" for="traveler01"><input type="checkbox" id="traveler01" name="traveler01_chk" checked><span></span>본인</label>
+					<label class="checkbox" for="traveler02"><input type="checkbox" id="traveler02" name="traveler02_chk" checked><span></span>나중에 입력</label>
+				</span> -->
+			</div>
+			<!-- //2019-09-02 등록정보 영역 수정 -->
+			<table class="tbl_type3">
+				<colgroup>
+					<col style="width:110px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">한글이름</th>
+						<td>김신라</td>
+					</tr>
+					<tr>
+						<th scope="row">영문성</th>
+						<td>KIM</td>
+					</tr>
+					<tr>
+						<th scope="row">영문이름</th>
+						<td>SHILLA</td>
+					</tr>
+					<tr>
+						<th scope="row">생년월일</th>
+						<td>2019.06.14</td>
+					</tr>
+					<!-- 2019-10-30 삭제 
+					<tr>
+						<th scope="row">성별</th>
+						<td>남성</td>
+					</tr>
+					-->
+					<tr>
+						<th scope="row">여권번호</th>
+						<td>M123456</td>
+					</tr>
+					<!-- 2019-10-30 삭제 
+					<tr>
+						<th scope="row">여권만료일</th>
+						<td>2019.06.14</td>
+					</tr>
+					-->
+				</tbody>
+			</table>
+		</section>
+
+		<!-- 2019-09-02 등록하기 추가 -->
+		<section class="section info_reg">
+			<h3 class="sub">등록하기</h3>
+			<ul>
+				<li>
+					<span>증빙서류<i class="ico ok">등록완료</i></span>
+					<a href="#none" class="btn_txt type1">변경</a>
+				</li>
+				<li>
+					<span>여권/기타 정보<i class="ico ok">등록완료</i></span>
+					<a href="#none" class="btn_txt type1">변경</a>
+				</li>
+				<li>
+					<span>항공사 마일리지 정보</span>
+					<a href="#none" class="btn_txt type1">등록</a>
+				</li>
+				<!-- 2019-12-26 추가 -->
+				<li>
+					<span>항공 1:1 문의</span>
+					<a href="#none" class="btn_txt type1">확인</a>
+				</li>
+				<!-- //2019-12-26 추가 -->
+			</ul>
+		</section>
+		<!--// 2019-09-02 등록하기 추가 -->
+
+		<div class="pay_info">
+			<h3 class="sub">결제정보</h3>
+			<h4>성인 2명</h4>
+			<dl class="fare_detail ">
+				<dt>항공요금</dt>
+				<dd>287,000원 × 2</dd>
+
+				<dt>유류할증료</dt>
+				<dd>79480원 × 2</dd>
+
+				<dt>제세공과금</dt>
+				<dd>7,320원 × 2</dd>
+
+				<dt>발권대행수수료</dt>
+				<dd>10,000원 × 2</dd>
+
+				<!-- 2019-11-15 쿠폰할인가 추가 -->
+				<dt>쿠폰할인가</dt>
+				<dd>10,000원 × 2</dd>
+				<!-- //2019-11-15 쿠폰할인가 추가 -->
+			</dl>
+
+			<h4>유아 1명</h4>
+			<dl class="fare_detail">
+				<dt>항공요금</dt>
+				<dd>287,000원</dd>
+
+				<dt>유류할증료</dt>
+				<dd>79480원</dd>
+
+				<dt>제세공과금</dt>
+				<dd>7,320원</dd>
+
+				<dt>발권대행수수료</dt>
+				<dd>10,000원</dd>
+
+				<!-- 2019-11-15 쿠폰할인가 추가 -->
+				<dt>쿠폰할인가</dt>
+				<dd>10,000원</dd>
+				<!-- //2019-11-15 쿠폰할인가 추가 -->
+			</dl>
+
+			<dl class="total">
+				<dt>결제금액</dt><!-- 2019-12-06 텍스트 수정 --><!-- 2019-09-02 텍스트 수정 -->
+				<dd><strong>1,700,000</strong>원</dd>
+			</dl>
+			<a href="#" class="btn_txt type4">항공 요금규정 안내</a>
+		</div>
+		<div class="note_list">
+			<ul>
+				<li>유류할증료/제세공과금은 항공사 사정 및 환율변동  에 의해 매일 변경되며, 발권 당일 환율에 따라 적용 됩니다.</li>
+				<li>결제시한이 지난 예약 및 미확정 요금의 항공권은 사전공지 없이 자동으로 취소될 수 있습니다.</li>
+			</ul>
+		</div>
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<div class="btn_wrap both">
+		<button type="button" name="button" class="btn primary2">예약취소</button>
+		<button type="button" name="button" class="btn primary">결제하기</button>
+	</div>
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

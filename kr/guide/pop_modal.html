@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephoe=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+	<style media="screen">
+		/* 버튼처럼만 보이게 위한 가이드 스타일 */
+		.guide_btn{
+			border-radius: 8px;
+			background-color:#259aed;
+			color:#fff;
+			letter-spacing: - 0.1em;
+			padding: 5px 10px;
+			margin-bottom: 20px;
+			display:inline-block;
+		}
+	</style>
+</head>
+
+<body>
+<div class="wrap">
+	<header>
+		<h1><a href="#">SHILLATRIP</a></h1>
+		<button type="button" name="button" class="ico search">검색</button>
+		<button type="button" name="button" class="ico my">마이페이지</button>
+		<!-- 2019-10-14 GNB 공통SB v2.6현행화 -->
+		<nav class="gnb tscroll">
+			<ul class="ul_size">
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">마감임박</a></li>
+				<li><a href="#">라랑팩</a></li>
+				<li><a href="#">랭킹</a></li>
+				<li><a href="#">고객센터</a></li>
+			</ul>
+		</nav>
+		<!-- //2019-10-14 GNB 공통SB v2.6현행화 -->
+		<h2>
+			<a href="#" class="ico btn_back"></a>
+			항공권상세
+			<button type="button" class="ico btn_like">관심상품</button>
+			<button type="button" class="ico btn_sns">공유</button>
+		</h2>
+	</header>
+	<div class="content">
+		<div class="guide_btn" modal-call="1"> 모달 일반 팝업</div><br>
+		<!-- 모달 팝업 : S -->
+		<div class="modal" modal-receive="1">
+			<button type="button" class="ico btn_close2">close</button>
+			<div class="modal_content">
+				<h1>안내사항</h1>
+				<p class="txt_alert">1운임과 좌석 조회시간이 초과되었습니다. <br>최신내용으로 새로고침하세요.</p>
+				<p class="txt_alert">2운임과 좌석 조회시간이 초과되었습니다. <br>최신내용으로 새로고침하세요.</p>
+			</div>
+			<!-- <div class="modal_btn">
+				<button type="button" name="button" class="btn">확인</button>
+			</div> -->
+		</div>
+		<!-- 모달 팝업 : E -->
+
+		<div class="guide_btn" modal-call="2"> alert 팝업</div><br>
+		<!-- 모달 팝업 : S -->
+		<div class="modal" modal-receive="2">
+			<div class="modal_content">
+				<h1>안내사항</h1>
+				<p class="txt_alert">운임과 좌석 조회시간이 초과되었습니다. <br>최신내용으로 새로고침하세요.</p>
+			</div>
+			<div class="modal_btn">
+				<button type="button" name="button" class="btn">확인</button>
+			</div>
+		</div>
+		<!-- 모달 팝업 : E -->
+
+		<div class="guide_btn"  modal-call="3">담기완료(버튼 예,아니오)</div><br>
+		<!-- 모달 팝업 : S -->
+		<div class="modal" modal-receive="3">
+			<div class="modal_content">
+				<h1>담기완료</h1>
+				<p class="txt_alert">상품이 장바구니에 담겼습니다.<br>장바구니로 이동하시겠습니까?</p>
+			</div>
+			<div class="modal_btn both">
+				<button type="button" name="button" class="btn">아니오</button>
+				<button type="button" name="button" class="btn">예</button>
+			</div>
+	   </div>
+	   <!-- 모달 팝업 : E -->
+		
+		<div class="guide_btn"  modal-call="modal_moa" style="background:#ff9a3a">담기완료(모아랑상품)</div><br>
+		<!-- 2019-10-08 장바구니 모아랑 상품일 때만 모달팝업 추가 -->
+		<div class="modal" modal-receive="modal_moa">
+			<div class="modal_content">
+				<h1>담기완료</h1>
+				<p class="txt_alert">상품이 장바구니에 담겼습니다.<br>장바구니로 이동하시겠습니까?</p>
+				<div class="moa_benefit">
+					<div class="moa_info">
+						<div class="txt_box">
+							<p class="cmt">두 카테고리 이상 구매 시,<br>기본적립액의 최대 20% 추가 적립</p><!-- 2019-12-20 텍스트 수정 -->
+						</div>
+						<div class="moa_stamp">
+							<ul>
+								<li>
+									<div class="ico_flight">
+										<div class="ico_moa flight on"><!-- 장바구니에 모아랑 상품 담길 시 on 클래스 추가 / 아닌 경우 off 클래스 추가 -->
+											<span class="coin front"></span>
+										</div>
+									</div>
+									<span class="txt">항공</span>
+								</li>
+								<li>
+									<div class="ico_hotel">
+										<span class="ico_moa hotel on">
+											<span class="coin front"></span>
+										</span>
+									</div>
+									<span class="txt">숙박</span>
+								</li>
+								<li>
+									<div class="ico_activity">
+										<span class="ico_moa activity off">
+											<span class="coin front"></span>
+										</span>
+									</div>
+									<span class="txt">액티비티</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="state_txt">
+						<p class="cmt">현재까지 S.Rewards <em class="em"><strong>1,000P</strong></em> 추가적립 가능</p><!-- 2019-12-20 문구수정 -->
+					</div>
+				</div>
+			</div>
+			<div class="modal_btn both">
+				<button type="button" name="button" class="btn">아니오</button>
+				<button type="button" name="button" class="btn">예</button>
+			</div>
+		</div>
+		<!-- //2019-10-08 모아랑 혜택받기 -->
+
+		<div class="guide_btn"  modal-call="modal_moa_benefit" style="background:#ff9a3a">모아랑 혜택받기</div><br>
+		<!-- 2019-10-08 모아랑 혜택받기 -->
+		<div class="modal" modal-receive="modal_moa_benefit">
+			<div class="modal_content">
+				<h1>모아랑 혜택받기</h1>
+				<p class="txt_alert">모아랑 혜택을 받은 이후, 해당 상품 중 1개라도 취소하는 경우, 추가적립액 S.Rewards 전체가 회수됩니다. 추가적립을 받으시겠습니까?</p><!-- 2019-12-20 문구수정 -->
+			</div>
+			<div class="modal_btn both">
+				<button type="button" name="button" class="btn">아니오</button>
+				<button type="button" name="button" class="btn">예</button>
+			</div>
+		</div>
+		<!-- //2019-10-08 모아랑 혜택받기 -->
+
+	   <div class="guide_btn" modal-call="4">문제신고(버튼 예,아니오)</div><br>
+	   <!-- 모달 팝업 : S -->
+	   <div class="modal" modal-receive="4">
+		   <div class="modal_content">
+			   <h1>문제신고</h1>
+			   <p class="txt_alert">고객님의 문제에 대해 셀러와 한 번 더 대화를 해보시는 건 어떠신가요?</p>
+		   </div>
+		   <div class="modal_btn both">
+			   <button type="button" name="button" class="btn">취소</button>
+			   <button type="button" name="button" class="btn">셀러톡하기</button>
+		   </div>
+	  </div>
+	  <!-- 모달 팝업 : E -->
+
+	  <div class="guide_btn" modal-call="5">편명입력 오류</div><br>
+	  <!-- 모달 팝업 : S -->
+	  <div class="modal" modal-receive="5">
+		  <div class="modal_content">
+			  <h1>안내사항</h1>
+			  <p class="txt_alert">입력하신 편명의 인도장 정보가 없습니다. 정확한 편명을 입력해주세요. 편명 조회 오류 시 <br>고객센터 (1688-1110)로 문의 바랍니다.</p>
+		  </div>
+		  <div class="modal_btn">
+			  <button type="button" name="button" class="btn">확인</button>
+		  </div>
+	 </div>
+	 <!-- 모달 팝업 : E -->
+
+
+	 <div class="guide_btn" modal-call="6">항공새로고침시 팝업</div><br>
+	 <!-- 모달 팝업 : S -->
+	 <div class="modal" modal-receive="6">
+		 <div class="modal_content">
+			 <h1>안내사항</h1>
+			 <p class="txt_alert">운임과 좌석 조회시간이 초과되었습니다. <br>최신내용으로 새로고침하세요.</p>
+		 </div>
+		 <div class="modal_btn">
+			 <button type="button" name="button" class="btn">확인</button>
+		 </div>
+	 </div>
+	 <!-- 모달 팝업 : E -->
+
+		<!-- <div class="guide_btn" href="#" modal-call="modal_agree">정보 수집 및 이용 동의</div><br> -->
+		<!-- 모달 팝업 : S -->
+		<div class="modal" modal-receive="modal_agree">
+			<div class="modal_content">
+				<h1>정보 수집 및 이용 동의</h1>
+				<p class="txt_alert">마이페이지 접근을 위해서 개인정보 수집 및 이용 동의 내용을 자세히 읽은 후 동의하여 주시기 바랍니다.</p>
+
+				<h2>개인정보 수집 및 이용 동의 <span class="stxt">(선택)</span></h2>
+
+				<div class="bg_box">
+					<dl class="explain">
+						<dt>수집항목</dt>
+						<dd>프로필 이미지, 닉네임</dd>
+
+						<dt>이용목적</dt>
+						<dd>회원간의 정보 공유<br>정보에 의한 상품, 컨텐츠 추천 및 랭킹 제공</dd>
+					</dl>
+				</div>
+
+			</div>
+			<div class="modal_btn both">
+				<button type="button" name="button" class="btn">미동의</button>
+				<button type="button" name="button" class="btn">동의</button>
+			</div>
+		</div>
+		<!-- 모달 팝업 : E -->
+
+	  <div class="guide_btn" href="#" popup-call="1">full 팝업 예시</div><br>
+
+	  <div class="guide_btn" href="#" dimalert-call="1">관심 상품 버튼</div><br>
+
+
+		<!-- fullpop -->
+		<div class="popup filter" popup-receive="1">
+			<!-- Modal content -->
+			<div class="head" data-native="status">
+				<h1>필터</h1>
+				<button type="button" name="button" class="btn_txt type5 reset">초기화</button>
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</div>
+			<div class="pop_cont">
+				<section class="filter fold_area">
+					<h2>여행사
+						<label class="checkbox fright" for="agency_all"><input type="checkbox" id="agency_all" name="agency" checked><span></span>전체</label>
+					</h2>
+					<div class="fold_target" fold-height="110">
+						<ul class="item_list half_type">
+							<li><label class="checkbox" for="agency01"><input type="checkbox" id="agency01" name="agency" checked><span></span>모두투어</label></li>
+							<li><label class="checkbox" for="agency02"><input type="checkbox" id="agency02" name="agency" checked><span></span>노랑풍선</label></li>
+							<li><label class="checkbox" for="agency03"><input type="checkbox" id="agency03" name="agency" checked><span></span>하나투어</label></li>
+							<li><label class="checkbox" for="agency04"><input type="checkbox" id="agency04" name="agency" checked><span></span>롯데관광</label></li>
+							<li><label class="checkbox" for="agency05"><input type="checkbox" id="agency05" name="agency" checked><span></span>온라인투어</label></li>
+							<li><label class="checkbox" for="agency06"><input type="checkbox" id="agency06" name="agency" checked><span></span>인터파크투어</label></li>
+							<li><label class="checkbox" for="agency07"><input type="checkbox" id="agency07" name="agency" checked><span></span>한진관광</label></li>
+							<li><label class="checkbox" for="agency08"><input type="checkbox" id="agency08" name="agency" checked><span></span>내일투어</label></li>
+						</ul>
+					</div>
+					<div class="fold_button">
+						<button type="button" name="button" class="btn_ico unfold">더보기</button>
+						<button type="button" name="button" class="btn_ico fold">접기</button>
+					</div>
+				</section>
+
+				<section class="filter fold_area">
+					<h2>항공사
+						<label class="checkbox fright" for="airline_all"><input type="checkbox" id="airline_all" name="airline" checked><span></span>전체</label>
+					</h2>
+					<div class="fold_target" fold-height="110">
+						<ul class="item_list half_type">
+							<li><label class="checkbox" for="airline01"><input type="checkbox" id="airline01" name="airline" checked><span></span>대한항공</label></li>
+							<li><label class="checkbox" for="airline02"><input type="checkbox" id="airline02" name="airline" checked><span></span>아시아나항공</label></li>
+							<li><label class="checkbox" for="airline03"><input type="checkbox" id="airline03" name="airline" checked><span></span>진에어</label></li>
+							<li><label class="checkbox" for="airline04"><input type="checkbox" id="airline04" name="airline" checked><span></span>제주에어</label></li>
+							<li><label class="checkbox" for="airline05"><input type="checkbox" id="airline05" name="airline" checked><span></span>이스타항공</label></li>
+							<li><label class="checkbox" for="airline06"><input type="checkbox" id="airline06" name="airline" checked><span></span>에어서울</label></li>
+						</ul>
+					</div>
+					<div class="fold_button">
+						<button type="button" name="button" class="btn_ico unfold">더보기</button>
+						<button type="button" name="button" class="btn_ico fold">접기</button>
+					</div>
+				</section>
+
+				<section class="filter">
+					<h2>일정 <span class="stxt">1박2일 ~ 3박4일</span></h2>
+					<div class="range_wrap">
+						<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+						<span class="range_pointer" style="left:20%"></span>
+						<span class="range_pointer" style="left:80%"></span>
+					</div>
+				</section>
+
+				<section class="filter box_type1">
+					<h2>출발시간 <span class="stxt">06:00 ~ 12:00</span></h2>
+					<p>
+						<label class="checkbox checked" for="time01"><input type="checkbox" name="time" id="time01"><span></span>새벽<br> 00:00 ~ 06:00</label>
+						<label class="checkbox checked" for="time02"><input type="checkbox" name="time" id="time02"><span></span>오전<br> 06:00 ~ 12:00</label>
+						<label class="checkbox checked" for="time03"><input type="checkbox" name="time" id="time03"><span></span>오후<br> 12:00 ~ 18:00</label>
+						<label class="checkbox checked" for="time04"><input type="checkbox" name="time" id="time04"><span></span>야간<br> 18:00 ~ 00:00</label>
+					</p>
+				</section>
+
+				<section class="filter fold_area">
+					<h2>숙박등급</h2>
+					<div class="fold_target" fold-height="110">
+						<ul class="item_list half_type">
+							<li><label class="checkbox" for="grade01"><input type="checkbox" id="grade01" name="grade" checked><span></span>1성급</label></li>
+							<li><label class="checkbox" for="grade02"><input type="checkbox" id="grade02" name="grade" checked><span></span>2성급</label></li>
+							<li><label class="checkbox" for="grade03"><input type="checkbox" id="grade03" name="grade" checked><span></span>3성급</label></li>
+							<li><label class="checkbox" for="grade04"><input type="checkbox" id="grade04" name="grade" checked><span></span>4성급</label></li>
+							<li><label class="checkbox" for="grade05"><input type="checkbox" id="grade05" name="grade" checked><span></span>5성급</label></li>
+						</ul>
+					</div>
+					<div class="fold_button">
+						<button type="button" name="button" class="btn_ico unfold">더보기</button>
+						<button type="button" name="button" class="btn_ico fold">접기</button>
+					</div>
+				</section>
+
+				<section class="filter">
+					<h2>쇼핑횟수 <span class="stxt">1회 ~ 3회</span></h2>
+					<div class="range_wrap">
+						<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+						<span class="range_pointer" style="left:20%"></span>
+						<span class="range_pointer" style="left:80%"></span>
+					</div>
+				</section>
+
+				<section class="filter fold_area">
+					<h2>인솔자</h2>
+					<div class="fold_target" fold-height="110">
+						<ul class="item_list half_type">
+							<li><label class="checkbox" for="leader01"><input type="checkbox" id="leader01" name="leader" checked><span></span>동행</label></li>
+							<li><label class="checkbox" for="leader02"><input type="checkbox" id="leader02" name="leader" checked><span></span>비 동행</label></li>
+						</ul>
+					</div>
+					<div class="fold_button">
+						<button type="button" name="button" class="btn_ico unfold">더보기</button>
+						<button type="button" name="button" class="btn_ico fold">접기</button>
+					</div>
+				</section>
+
+				<section class="filter fold_area">
+					<h2>자유일정</h2>
+					<div class="fold_target" fold-height="110">
+						<ul class="item_list half_type">
+							<li><label class="checkbox" for="travel01"><input type="checkbox" id="travel01" name="travel" checked><span></span>포함</label></li>
+							<li><label class="checkbox" for="travel02"><input type="checkbox" id="travel02" name="travel" checked><span></span>불포함</label></li>
+						</ul>
+					</div>
+					<div class="fold_button">
+						<button type="button" name="button" class="btn_ico unfold">더보기</button>
+						<button type="button" name="button" class="btn_ico fold">접기</button>
+					</div>
+				</section>
+
+				<section class="filter">
+					<h2>가격 <span class="stxt">350,000원 ~ 2,000,000원</span></h2>
+					<div class="range_wrap">
+						<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+						<span class="range_pointer" style="left:20%"></span>
+						<span class="range_pointer" style="left:80%"></span>
+					</div>
+				</section>
+
+				<section class="filter fold_area">
+					<h2>모아랑 상품</h2>
+					<div class="fold_target" fold-height="110">
+						<ul class="item_list">
+							<li><label class="checkbox" for="mprd01"><input type="checkbox" id="mprd01" name="mprd"><span></span>모아랑 상품만 보기</label></li>
+						</ul>
+					</div>
+					<div class="fold_button">
+						<button type="button" name="button" class="btn_ico unfold">더보기</button>
+						<button type="button" name="button" class="btn_ico fold">접기</button>
+					</div>
+				</section>
+			</div>
+			<div class="btn_box">
+				<button type="submit" name="button" class="btn primary">확인</button>
+			</div>
+		</div>
+
+
+	  <div><br><br>스크롤 테스트<br><br><br><br>스크롤 테스트<br><br><br><br>스크롤 테스트<br><br><br><br>스크롤 테스트<br><br><br><br>스크롤 테스트<br><br><br><br>스크롤 테스트<br><br><br><br>스크롤 테스트<br><br><br><br>스크롤 테스트<br><br><br><br>스크롤 테스트<br><br><br><br>스크롤 테스트<br><br><br><br>스크롤 테스트<br><br><br><br>스크롤 테스트<br><br><br><br>끝 스크롤 테스트</div>
+
+		<!-- dim alert : S -->
+		<div class="dim_alert" dimalert-receive="1">
+			<p>관심상품에 등록되었습니다.</p>
+		</div>
+		<!-- dim alert : E -->
+
+	</div>
+	<!-- 콘텐츠 : E -->
+
+		<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+    <!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+</div>
+
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>결제취소</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="notice_list">
+				<li>취소하고자 하는 탑승자를 선택한 후 예약취소요청 버튼을 눌러주세요.</li>
+				<li>예약 취소 요청 시 항공사 운임 규정에 따라 환불수수료 및 여행사 취급수수료가 발생될 수 있으며, 담당자 확인 후 안내가 진행됩니다.</li>
+				<li>주말 및 공휴일은 변경/환불/취소 요청처리가 불가할 수 있으며, 요청건은 평일 업무시간(09:00~17:00)에 처리됩니다.</li>
+			</ul>
+
+			<h2>탑승자 선택</h2>
+			<div class="i_list">
+				<ul>
+					<li>
+						<label class="checkbox big" for="l_radio01">
+							<input type="checkbox" id="l_radio01" name="r_list"><span></span>
+							<em class="tit normal">김신라</em><!-- 2019-10-23 normal 클래스 추가 -->
+							<span class="eng">KIM SHILLA / 1983.01.02</span>
+							<em class="pay">신용카드(국민카드)</em>
+						</label>
+					</li>
+					<li>
+						<label class="checkbox big" for="l_radio02">
+							<input type="checkbox" id="l_radio02" name="r_list"><span></span>
+							<em class="tit normal">김신라</em><!-- 2019-10-23 normal 클래스 추가 -->
+							<span class="eng">KIM SHILLA / 1983.01.02</span>
+							<em class="pay">신용카드(국민카드)</em>
+						</label>
+					</li>
+				</ul>
+			</div>
+
+			<section class="pay_info cancel">
+				<h2>취소정보</h2>
+				<dl class="fare_detail">
+					<dt>결제번호</dt>
+					<dd>shilla12345(KDPAWK)</dd>
+
+					<dt>결제일</dt>
+					<dd>2019년 4월 2일 11:00</dd><!-- 2019-10-23 텍스트 수정 -->
+
+					<dt>결제방법</dt>
+					<dd>신용카드(국민카드/3개월)</dd>
+
+					<dt>결제금액</dt>
+					<dd>1,905,000원</dd>
+
+					<!-- 2019-10-23 price_dep1 클래스 추가 -->
+					<dt class="price_dep1">취소금액</dt>
+					<dd class="price_dep1">1,905,000원</dd>
+
+					<!-- 2019-10-23 취소수수료, S.Rewards 추가 -->
+					<dt class="price_dep2">취소수수료</dt>
+					<dd class="price_dep2">-5,000원</dd>
+
+					<dt class="price_dep2">S.Rewards</dt>
+					<dd class="price_dep2">-5,000P(5,000원)</dd><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+					<!--// 2019-10-23 취소수수료, S.Rewards 추가 -->
+				</dl>
+
+				<dl class="total">
+					<dt>총 환급금액</dt>
+					<dd><strong>1,900,000</strong>원</dd>
+				</dl>
+			</section>
+
+			<h2>취소사유</h2>
+			<button type="button" name="button" class="btn_option" option-call="1">선택</button>
+			<!-- 기타 선택시에만 인풋박스 노출 -->
+			<input type="text" name="" value="" class="mt10">
+			<!-- //기타 선택시에만 인풋박스 노출 -->
+			
+			<!-- 2019-10-23 S.Rewards 취소정보 추가 -->
+			<h2>S.Rewards 취소정보</h2>
+			<section class="pay_info cancel">
+				<dl class="fare_detail type2">
+					<dt>현재 금액</dt>
+					<dd>1,000P(1,000원)</dd><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+
+					<dt>충전 금액 <button type="button" name="button" class="ico btn_help">도움말</button></dt>
+					<dd>4,000P(4,000원)</dd><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+				</dl>
+
+				<dl class="total">
+					<dt>총 차감 S.Rewards</dt>
+					<dd><strong>-5,000</strong>P(5,000원)</dd><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+				</dl>
+			</section>
+			<!-- //2019-10-23 S.Rewards 취소정보 추가 -->
+		</div>
+
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary" popup-call="pop_s_rewards_cancel">취소요청</button>
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+
+	<!-- 취소사유 옵션 -->
+	<div class="option_select" option-receive="1">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#">일정취소</a></li>
+				<li><a href="#">중복예약</a></li>
+				<li><a href="#">서비스 불만</a></li>
+				<li><a href="#">타사결제</a></li>
+				<li><a href="#">기타</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 2019-10-29 수정_S.Rewards 취소 팝업 : S -->
+	<div class="popup" popup-receive="pop_s_rewards_cancel">
+		<!-- Modal content -->
+		<div class="head">
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="s_rewards">
+                <p class="tit"><em>지급받은 S.Rewards를 충전하면</em>실시간 항공 예약 취소가 완료됩니다.</p>
+                <div class="inner_bx">
+                    <p class="txt">고객님의 실시간 항공 예약을 통해 지급된 S.Rewards 잔액이 부족하여, 해당 금액만큼 충전한 이후 취소가 진행 됩니다.</p>
+                    <div class="process"> <!-- 2019-10-29 수정 -->
+                        <ol class="step_4"> <!-- 2019-10-29 수정 -->
+                            <li>
+                                <span class="circle">S.Rewards<br />충전 금액<br />확인</span>
+                                <span class="arrow right"></span>
+                            </li>
+                            <li> <!-- 2019-10-29 수정 -->
+                                <span class="circle">S.Rewards<br />결제/충전</span>
+                                <span class="arrow down"></span>
+                            </li>
+                            <li>
+                                <span class="circle last2">S.Rewards<br />차감</span>
+                                <span class="arrow left"></span>
+                            </li>
+                            <li>
+                                <span class="circle last">항공<br />취소진행</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="saving_rewards">
+                    <span class="txt">현재 잔액</span>
+                    <span class="point">1,000원</span>
+                </div>
+                <div class="saving_rewards">
+                    <span class="txt b">필요 충전 금액</span>
+                    <span class="point em"><em>4,000</em>원</span>
+                </div>
+
+                <p class="txt_ok">4,000원 결제 후 취소 진행 하시겠습니까?</p>
+			</div>			
+		</div>
+		<div class="btn_box both">
+			<button type="button" name="button" class="btn primary2">아니오</button>
+			<button type="button" name="button" class="btn primary">예</button>
+		</div>
+	</div>
+	<!-- 2019-10-29 수정_S.Rewards 취소 팝업 : E -->
+
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

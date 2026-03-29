@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<header class="sticky_step1" data-native="status">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			카테고리
+		</h2>
+	</header>
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<!-- 2020-01-08 카테고리 추가 -->
+		<div class="category_wrap">
+			<ul class="category_list">
+				<li>
+					<a href="#">
+						<span class="tit">항공</span>
+						<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+						<span class="cate"><i class="ico_cate flight"></i></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="tit">숙박</span>
+						<span class="txt">실시간 가격비교 숙박 검색</span>
+						<span class="cate"><i class="ico_cate hotel"></i></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="tit">에어텔/패키지</span>
+						<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+						<span class="cate"><i class="ico_cate package"></i></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="tit">액티비티</span>
+						<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+						<span class="cate"><i class="ico_cate activity"></i></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- //2020-01-08 카테고리 추가 -->
+	</div>
+	<!-- 콘텐츠 : E -->
+
+	<nav class="fnb">
+        <a href="#"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+        <a href="#" class="on"><i class="ico cate"></i>카테고리</a><!-- 2020-01-08 option-call="fnb" 삭제 -->
+    </nav>
+
+	<!-- 이전, top -->
+	<div class="quik_btn">
+		<!-- <a href="#none" class="ico btn_back2">이전</a> --><!-- 메인에서 이전버튼이 노출되는 경우도 있고, 아닌 경우도 있어 확인필요 -->
+		<a href="#top" class="ico btn_top">맨처음로</a>
+	</div>
+	<!-- //이전, top -->
+
+	<!-- 퀵메뉴 2019-12-04 //-->
+	<div class="quick_plus">
+		<a href="#" class="btn_plus">퀵메뉴보기</a>
+		<div class="plus_nav">
+			<ul>
+				<li><a href="#" class="cart">신라면세점</a></li>
+				<li><a href="#" class="srewards">S.Rewards</a></li>
+			</ul>
+		</div>	
+	</div>
+	<!--// 퀵메뉴 2019-12-04 -->
+
+	<!-- 2019-10-25 오픈준비중 모달 팝업 : S -->
+	<div class="modal" modal-receive="modal_ready">
+		<div class="modal_content">
+			<h1>안내사항</h1>
+			<p class="txt_alert">새로운 메뉴가 오픈 준비중 입니다. <br>조금만 기다려주세요!</p>
+		</div>
+		<div class="modal_btn">
+			<button type="button" name="button" class="btn"><span>확인</span></button>
+		</div>
+	</div>
+	<!-- 2019-10-25 오픈준비중 모달 팝업 : E -->
+</div>
+<!-- 2019-09-27 스크립트 순서변경 및 intersection-observer.js추가 -->
+<script type="text/javascript" src="../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../resource/js/lalang.js"></script>
+<script type="text/javascript" src="../resource/js/swiper.min.js"></script> <!-- 2019-12-20 추가 -->
+<script>
+
+	$(document).ready(function(){
+		popMessage.show();
+	});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/ranking.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+
+<body>
+<div class="wrap">
+	<!-- Header : S -->
+	<header>
+		<h1><a href="#">SHILLATRIP</a></h1>
+		<button type="button" name="button" class="ico search">검색</button>
+		<button type="button" name="button" class="ico my">마이페이지</button>
+		<!-- 2019-10-14 GNB 공통SB v2.6현행화 -->
+		<nav class="gnb tscroll">
+			<ul class="ul_size">
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">마감임박</a></li>
+				<li><a href="#">라랑팩</a></li>
+				<li><a href="#" class="on">랭킹</a></li>
+				<li><a href="#">고객센터</a></li>
+			</ul>
+		</nav>
+		<!-- //2019-10-14 GNB 공통SB v2.6현행화 -->
+	</header>
+	<!-- Header : E -->
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<!-- 2019-06-27 수정 : S -->
+		<div class="keyword_list">
+			<div class="now_view">
+				<h3>실시간검색어</h3>
+				<div class="txt_roll rolling">
+					<ol id="test">
+						<li><a href="#"><b class="num">1</b><span class="kwd">상트페테르부르크</span><i class="ico up">상승</i></a></li>
+						<li><a href="#"><b class="num">2</b><span class="kwd">베트남</span><i class="ico same"></i></a></li>
+						<li><a href="#"><b class="num">3</b><span class="kwd">다낭</span><i class="ico dn">하락</i></a></li>
+						<li><a href="#"><b class="num">4</b><span class="kwd">홍콩</span><i class="ico same"></i></a></li>
+						<li><a href="#"><b class="num">5</b><span class="kwd">런던</span><i class="ico new">NEW</i></a></li>
+						<li><a href="#"><b class="num">6</b><span class="kwd">짠내투어</span><i class="ico up">상승</i></a></li>
+						<li><a href="#"><b class="num">7</b><span class="kwd">짠내투어</span><i class="ico new">NEW</i></a></li>
+						<li><a href="#"><b class="num">8</b><span class="kwd">패키지</span><i class="ico up">상승</i></a></li>
+						<li><a href="#"><b class="num">9</b><span class="kwd">파리</span><i class="ico up">상승</i></a></li>
+						<li><a href="#"><b class="num">10</b><span class="kwd">파리</span><i class="ico up">상승</i></a></li>
+					</ol>
+				</div>
+				<button type="button" name="button" class="ico btn_unfold">펼치기</button><!-- 접기 'btn_fold'클래스 -->
+			</div>
+
+			<ol class="rank"><!-- 2019-06-27 클래스 추가 -->
+				<li><a href="#"><b class="num">1</b><span class="kwd">상트페테르부르크</span><i class="ico up">상승</i></a></li>
+				<li><a href="#"><b class="num">2</b><span class="kwd">배트남</span><i class="ico same"></i></a></li>
+				<li><a href="#"><b class="num">3</b><span class="kwd">다낭</span><i class="ico dn">하락</i></a></li>
+				<li><a href="#"><b class="num">4</b><span class="kwd">홍콩</span><i class="ico same"></i></a></li>
+				<li><a href="#"><b class="num">5</b><span class="kwd">런던</span><i class="ico new">NEW</i></a></li>
+			</ol>
+			<ol start="6" class="rank"><!-- 2019-06-27 클래스 추가 -->
+				<li><a href="#"><b class="num">6</b><span class="kwd">짠내투어</span><i class="ico up">상승</i></a></li>
+				<li><a href="#"><b class="num">7</b><span class="kwd">짠내투어</span><i class="ico new">NEW</i></a></li>
+				<li><a href="#"><b class="num">8</b><span class="kwd">패키지</span><i class="ico up">상승</i></a></li>
+				<li><a href="#"><b class="num">9</b><span class="kwd">파리</span><i class="ico up">상승</i></a></li>
+				<li><a href="#"><b class="num">10</b><span class="kwd">파리</span><i class="ico up">상승</i></a></li>
+			</ol>
+
+			<p class="txt_type2">2019.04.09  11:01 기준</p>
+		</div>
+		<!-- 2019-06-27 수정 : E-->
+
+		<h3><a href="#" class="btn_more">도시랭킹</a></h3><!-- 2019-11-21 타이틀 더보기 영역 수정 -->
+
+		<div class="thumb_list tscroll">
+			<ol class="ul_size">
+				<li><a href="#"><span class="txt_area"><em class="tit">일본</em><span class="txt">후쿠오카</span></span><img class="ajax_lazy" data-src="../../resource/img/tmp_prd12.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><span class="badge_area"><span class="badge">TOP 1</span></span></a></li>
+				<li><a href="#"><span class="txt_area"><em class="tit">일본</em><span class="txt">후쿠오카</span></span><img class="ajax_lazy" data-src="../../resource/img/tmp_prd12.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><span class="badge_area"><span class="badge">TOP 2</span></span></a></li>
+				<li><a href="#"><span class="txt_area"><em class="tit">일본</em><span class="txt">후쿠오카</span></span><img class="ajax_lazy" data-src="../../resource/img/tmp_prd12.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><span class="badge_area"><span class="badge">TOP 3</span></span></a></li>
+				<li><a href="#"><span class="txt_area"><em class="tit">일본</em><span class="txt">후쿠오카</span></span><img class="ajax_lazy" data-src="../../resource/img/tmp_prd12.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><span class="badge_area"><span class="badge type3">4</span></span></a></li><!-- D : 2019-06-20 수정 : 뱃지 클래스 변경 -->
+				<li><a href="#"><span class="txt_area"><em class="tit">일본</em><span class="txt">후쿠오카</span></span><img class="ajax_lazy" data-src="../../resource/img/tmp_prd12.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 --><span class="badge_area"><span class="badge type3">5</span></span></a></li><!-- D : 2019-06-20 수정 : 뱃지 클래스 변경 -->
+			</ol>
+		</div>
+
+		<h3><a href="#" class="btn_more">셀러 TOP 10</a></h3><!-- 2019-11-21 타이틀 더보기 영역 수정 -->
+		<div class="seller_top10 tscroll">
+			<ol class="ul_size">
+				<li>
+					<a href="#">
+						<span class="thum"><span class="tit">인</span></span><!-- 2019-10-14 이미지없는 경우 추가 -->
+						<span class="rank em">1</span>
+						<span class="name">인터파크투어</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="thum"><img src="../../resource/img/tmp_logo2.png" alt="인터파크"></span>
+						<span class="rank em">2</span>
+						<span class="name">모두투어</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="thum"><img src="../../resource/img/tmp_logo2.png" alt="인터파크"></span>
+						<span class="rank em">3</span>
+						<span class="name">인터파크투어</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="thum"><img src="../../resource/img/tmp_logo2.png" alt="인터파크"></span>
+						<span class="rank">4</span>
+						<span class="name">인터파크투어</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="thum"><img src="../../resource/img/tmp_logo2.png" alt="인터파크"></span>
+						<span class="rank">5</span>
+						<span class="name">모두투어</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="thum"><img src="../../resource/img/tmp_logo2.png" alt="인터파크"></span>
+						<span class="rank">6</span>
+						<span class="name">인터파크투어</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="thum"><img src="../../resource/img/tmp_logo2.png" alt="인터파크"></span>
+						<span class="rank">7</span>
+						<span class="name">인터파크투어</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="thum"><img src="../../resource/img/tmp_logo2.png" alt="인터파크"></span>
+						<span class="rank">8</span>
+						<span class="name">인터파크투어</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="thum"><img src="../../resource/img/tmp_logo2.png" alt="인터파크"></span>
+						<span class="rank">9</span>
+						<span class="name">인터파크투어</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="thum"><img src="../../resource/img/tmp_logo2.png" alt="인터파크"></span>
+						<span class="rank">10</span>
+						<span class="name">인터파크투어</span>
+					</a>
+				</li>
+			</ol>
+		</div>
+
+		<h3><a href="#" class="btn_more">카테고리 랭킹</a></h3><!-- 2019-11-21 타이틀 더보기 영역 수정 -->
+		<div class="tab_wrap rank_categ">
+			<div class="tab_menu tscroll">
+				<ul class="ul_size">
+					<li><a href="#none" class="on">항공권</a></li>
+					<li><a href="#none">숙박</a></li>
+					<li><a href="#none">에어텔/패키지</a></li><!-- 2020-01-13 명칭변경 -->
+					<li><a href="#none">액티비티</a></li>
+				</ul>
+			</div>
+
+			<!-- 항공권  -->
+			<div class="tab_cont active">
+				<div class="total_box">
+					<div class="sorting">
+						<button type="button" name="button" class="btn_ico sort" option-call="1">판매 높은순</button>
+						<div class="option_select" option-receive="1">
+							<div class="pop_option">
+								<ul>
+									<li><a href="#">판매 높은순</a></li>
+									<li><a href="#">관심 높은순</a></li>
+									<li><a href="#">조회 높은순</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 2019-11-14 랭킹 항공권 모듈수정 -->
+				<div class="ticket_list vertical">
+					<ul>
+						<li>
+							<a href="#">
+								<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+								<span class="route">
+									<strong class="from">크로아티아</strong>
+									<img src="../../resource/img/bg_route2.png">
+									<strong class="to">크로아티아</strong>
+								</span>
+								<span class="period">03.02 출발 ~ 04.11 도착</span>
+								<p class="price">
+									<span class="terms">삼성카드 결제조건</span>
+									<span class="money"><strong>1,440,000</strong>원</span>
+								</p>
+								<span class="badge_area">
+									<span class="badge">TOP 1</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+								<span class="route">
+									<strong class="from">서울</strong>
+									<img src="../../resource/img/bg_route2.png">
+									<strong class="to">크로아티아</strong>
+								</span>
+								<span class="period">03.02 출발 ~ 04.11 도착</span>
+								<p class="price">
+									<span class="terms">삼성카드 결제조건</span>
+									<span class="money"><strong>1,440,000</strong>원</span>
+								</p>
+								<span class="badge_area">
+									<span class="badge">TOP 2</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+								<span class="route">
+									<strong class="from">서울</strong>
+									<img src="../../resource/img/bg_route2.png">
+									<strong class="to">크로아티아</strong>
+								</span>
+								<span class="period">03.02 출발 ~ 04.11 도착</span>
+								<p class="price">
+									<span class="terms">삼성카드 결제조건</span>
+									<span class="money"><strong>1,440,000</strong>원</span>
+								</p>
+								<span class="badge_area">
+									<span class="badge">TOP 3</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+								<span class="route">
+									<strong class="from">서울</strong>
+									<img src="../../resource/img/bg_route2.png">
+									<strong class="to">크로아티아</strong>
+								</span>
+								<span class="period">03.02 출발 ~ 04.11 도착</span>
+								<p class="price">
+									<span class="terms">삼성카드 결제조건</span>
+									<span class="money"><strong>1,440,000</strong>원</span>
+								</p>
+								<span class="badge_area">
+									<span class="badge type3">4</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+								<span class="route">
+									<strong class="from">서울</strong>
+									<img src="../../resource/img/bg_route2.png">
+									<strong class="to">크로아티아</strong>
+								</span>
+								<span class="period">03.02 출발 ~ 04.11 도착</span>
+								<p class="price">
+									<span class="terms">삼성카드 결제조건</span>
+									<span class="money"><strong>1,440,000</strong>원</span>
+								</p>
+								<span class="badge_area">
+									<span class="badge type3">5</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+								<span class="route">
+									<strong class="from">크로아티아</strong>
+									<img src="../../resource/img/bg_route2.png">
+									<strong class="to">크로아티아</strong>
+								</span>
+								<span class="period">03.02 출발 ~ 04.11 도착</span>
+								<p class="price">
+									<span class="terms">삼성카드 결제조건</span>
+									<span class="money"><strong>1,440,000</strong>원</span>
+								</p>
+								<span class="badge_area">
+									<span class="badge type3">6</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+								<span class="route">
+									<strong class="from">서울</strong>
+									<img src="../../resource/img/bg_route2.png">
+									<strong class="to">크로아티아</strong>
+								</span>
+								<span class="period">03.02 출발 ~ 04.11 도착</span>
+								<p class="price">
+									<span class="terms">삼성카드 결제조건</span>
+									<span class="money"><strong>1,440,000</strong>원</span>
+								</p>
+								<span class="badge_area">
+									<span class="badge type3">7</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+								<span class="route">
+									<strong class="from">서울</strong>
+									<img src="../../resource/img/bg_route2.png">
+									<strong class="to">크로아티아</strong>
+								</span>
+								<span class="period">03.02 출발 ~ 04.11 도착</span>
+								<p class="price">
+									<span class="terms">삼성카드 결제조건</span>
+									<span class="money"><strong>1,440,000</strong>원</span>
+								</p>
+								<span class="badge_area">
+									<span class="badge type3">8</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+								<span class="route">
+									<strong class="from">서울</strong>
+									<img src="../../resource/img/bg_route2.png">
+									<strong class="to">크로아티아</strong>
+								</span>
+								<span class="period">03.02 출발 ~ 04.11 도착</span>
+								<p class="price">
+									<span class="terms">삼성카드 결제조건</span>
+									<span class="money"><strong>1,440,000</strong>원</span>
+								</p>
+								<span class="badge_area">
+									<span class="badge type3">9</span>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="airline"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공"> 대한항공</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+								<span class="route">
+									<strong class="from">서울</strong>
+									<img src="../../resource/img/bg_route2.png">
+									<strong class="to">크로아티아</strong>
+								</span>
+								<span class="period">03.02 출발 ~ 04.11 도착</span>
+								<p class="price">
+									<span class="terms">삼성카드 결제조건</span>
+									<span class="money"><strong>1,440,000</strong>원</span>
+								</p>
+								<span class="badge_area">
+									<span class="badge type3">10</span>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- //2019-11-14 랭킹 항공권 모듈수정 -->
+			</div>
+
+			<!-- 숙박  -->
+			<div class="tab_cont">
+				<div class="total_box">
+					<div class="sorting">
+						<button type="button" name="button" class="btn_ico sort" option-call="2">판매 높은순</button>
+						<div class="option_select" option-receive="2">
+							<div class="pop_option">
+								<ul>
+									<li><a href="#">평점 낮은순</a></li>
+									<li><a href="#">평점 높은순</a></li>
+									<li><a href="#">가격 높은순</a></li>
+									<li><a href="#">가격 낮은순</a></li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<ol class="goods_list3">
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 1</span>
+							</span>
+							<span class="cate">호텔</span>
+							<span class="tit">오사카 아파 호텔</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 2</span>
+							</span>
+							<span class="cate">호텔</span>
+							<span class="tit">오사카 아파 호텔</span>
+							<span class="cost">10,000,000원</span>
+							<span class="box">
+								<span class="price"><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 3</span>
+							</span>
+							<span class="cate">호텔</span>
+							<span class="tit">오사카 아파 호텔</span>
+							<span class="box">
+								<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+				</ol>
+				
+				<!-- 2019-10-14 상품모듈 수정(할인율,원가추가) -->
+				<!-- D : 2019-06-20 수정 : 뱃지 클래스 변경 -->
+				<ol start="4" class="goods_horiz ranking">
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">4</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">호텔</span>
+							<span class="tit">반얀트리 마카오</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">5</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<!-- <span class="cate">호텔</span> -->
+							<span class="tit">반얀트리 마카오</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">6</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<!-- <span class="cate">호텔</span> -->
+							<span class="tit">반얀트리 마카오</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">7</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<!-- <span class="cate">호텔</span> -->
+							<span class="tit">반얀트리 마카오</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">8</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<!-- <span class="cate">호텔</span> -->
+							<span class="tit">반얀트리 마카오</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">9</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<!-- <span class="cate">호텔</span> -->
+							<span class="tit">반얀트리 마카오</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">10</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<!-- <span class="cate">호텔</span> -->
+							<span class="tit">반얀트리 마카오</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+				</ol>
+				<!-- //D : 2019-06-20 수정 : 뱃지 클래스 변경 -->
+				<!-- //2019-10-14 상품모듈 수정(할인율,원가추가) -->
+			</div>
+
+			<!-- 패키지 -->
+			<div class="tab_cont">
+				<div class="total_box">
+					<div class="sorting">
+						<button type="button" name="button" class="btn_ico sort" option-call="3">판매 높은순</button>
+						<div class="option_select" option-receive="3">
+							<div class="pop_option">
+								<ul>
+									<li><a href="#">판매 높은순</a></li>
+									<li><a href="#">관심 높은순</a></li>
+									<li><a href="#">조회 높은순</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<ol class="goods_list3">
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 1</span>
+							</span>
+							<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+							<span class="tit">후쿠오카 출발 가능 / 북큐슈 일주</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 2</span>
+							</span>
+							<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+							<span class="tit">후쿠오카 출발 가능 / 북큐슈 일주</span>
+							<span class="cost">10,000,000원</span>
+							<span class="box">
+								<span class="price"><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 3</span>
+							</span>
+							<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+							<span class="tit">후쿠오카 출발 가능 / 북큐슈 일주</span>
+							<span class="box">
+								<span class="price"><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+				</ol>
+				
+				<!-- 2019-10-14 상품모듈 수정(할인율,원가추가) -->
+				<!-- D : 2019-06-20 수정 : 뱃지 클래스 변경 -->
+				<ol start="4" class="goods_horiz ranking">
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">4</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+							<span class="tit">오사카 나라 고베 여행 2박3일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">5</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+							<span class="tit">오사카 나라 고베 여행 2박3일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">6</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+							<span class="tit">오사카 나라 고베 여행 2박3일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">7</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+							<span class="tit">오사카 나라 고베 여행 2박3일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">8</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+							<span class="tit">오사카 나라 고베 여행 2박3일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">9</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+							<span class="tit">오사카 나라 고베 여행 2박3일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">10</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">에어텔/패키지</span><!-- 2020-01-13 명칭변경 -->
+							<span class="tit">오사카 나라 고베 여행 2박3일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+				</ol>
+				<!-- //D : 2019-06-20 수정 : 뱃지 클래스 변경 -->
+				<!-- //2019-10-14 상품모듈 수정(할인율,원가추가) -->
+			</div>
+
+			<!-- 액티비티 -->
+			<div class="tab_cont">
+				<div class="total_box">
+					<div class="sorting">
+						<button type="button" name="button" class="btn_ico sort" option-call="4">판매 높은순</button>
+						<div class="option_select" option-receive="4">
+							<div class="pop_option">
+								<ul>
+									<li><a href="#">평점 낮은순</a></li>
+									<li><a href="#">평점 높은순</a></li>
+									<li><a href="#">가격 높은순</a></li>
+									<li><a href="#">가격 낮은순</a></li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<ol class="goods_list3">
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 1</span>
+							</span>
+							<span class="cate">유심/와이파이</span>
+							<span class="tit">오사카 와이파이 도시락 3일/4일/5일</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 2</span>
+							</span>
+							<span class="cate">입장권/티켓</span>
+							<span class="tit">오사카 아파 호텔</span>
+							<span class="cost">10,000,000원</span>
+							<span class="box">
+								<span class="price"><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 3</span>
+							</span>
+							<span class="cate">입장권/티켓</span>
+							<span class="tit">오사카 아파 호텔</span>
+							<span class="box">
+								<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+				</ol>
+
+				<!-- 2019-10-14 상품모듈 수정(할인율,원가추가) -->
+				<!-- D : 2019-06-20 수정 : 뱃지 클래스 변경 -->
+				<ol start="4" class="goods_horiz ranking">
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">4</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<!-- <span class="cate">유심/와이파이</span> -->
+							<span class="tit">오사카 와이파이 도시락 3일/4일/5일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">5</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<!-- <span class="cate">유심/와이파이</span> -->
+							<span class="tit">오사카 와이파이 도시락 3일/4일/5일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">6</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<!-- <span class="cate">유심/와이파이</span> -->
+							<span class="tit">오사카 와이파이 도시락 3일/4일/5일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">7</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<!-- <span class="cate">유심/와이파이</span> -->
+							<span class="tit">오사카 와이파이 도시락 3일/4일/5일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">8</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<!-- <span class="cate">유심/와이파이</span> -->
+							<span class="tit">오사카 와이파이 도시락 3일/4일/5일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">9</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<!-- <span class="cate">유심/와이파이</span> -->
+							<span class="tit">오사카 와이파이 도시락 3일/4일/5일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="badge_area">
+								<span class="badge type3">10</span>
+							</span>
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd04.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<!-- <span class="cate">유심/와이파이</span> -->
+							<span class="tit">오사카 와이파이 도시락 3일/4일/5일</span>
+							<p class="class">
+								<!-- <span class="score"><b>1</b>성급</span> -->
+								<span class="review_point"><span class="score" style="width:57%">3</span></span>
+								<span>(35)</span>
+							</p>
+							<span class="cost">10,000,000원</span>
+							<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+						</a>
+					</li>
+				</ol>
+				<!-- //D : 2019-06-20 수정 : 뱃지 클래스 변경 -->
+				<!-- 2019-10-14 상품모듈 수정(할인율,원가추가) -->
+			</div>
+		</div>
+
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+	<!-- 이전, top -->
+	<div class="quik_btn">
+		<a href="#none" class="ico btn_back2">이전</a>
+		<!-- <a href="#top" class="ico btn_top">맨처음로</a> -->
+	</div>
+	<!-- //이전, top -->
+	
+	<!-- <div class="option_select" option-receive="fnb">
+		<div class="pop_option">
+			<ul class="fnb_opt">
+				<li><a href="#"><i class="ico flight"></i>항공</a></li>
+				<li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+				<li><a href="#"><i class="ico pack"></i>패키지</a></li>
+				<li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+			</ul>
+		</div>
+	</div> -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+
+</body>
+</html>

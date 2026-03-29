@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+	<!-- 팝업 : S -->
+	<div class="popup search s_main show"><!-- 2019-10-29 s_main 클래스 추가 -->
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>여행일정</h1>
+			<button type="button" name="button" class="ico btn_close5">팝업닫기</button>
+		</div>
+		<!-- 2019-11-05 위치변경 //-->
+		<fieldset class="route_select">
+			<div class="route">
+				<button type="button" name="button" class="selected"><span class="city">인천/김포</span><span class="code">SEL</span> </button><!-- 선택된도시 'selected'-->
+				<button type="button" name="button" class="btn_swap"><i class="ico arrow2">출도착지 전환</i></button><!-- 2019-09-27 왕복버튼으로 수정 -->
+				<button type="button" name="button"><span class="city">도착도시</span><span class="code">SEL</span></button>
+				<button type="button" name="button" class="date selected">2019.05.07</button>
+				<button type="button" name="button" class="ico btn_wplus">구간추가</button>
+			</div>
+			<div class="route">
+				<button type="button" name="button"><span class="city">출발도시</span><span class="code">SEL</span> </button><!-- 현재 검색중인 도시  'active'-->
+				<button type="button" name="button" class="btn_swap"><i class="ico arrow2">출도착지 전환</i></button><!-- 2019-09-27 왕복버튼으로 수정 -->
+				<button type="button" name="button" class="selected"><span class="city">인천/김포</span><span class="code">SEL</span> </button>
+				<button type="button" name="button" class="date">오는날</button>
+				<button type="button" name="button" class="ico btn_wminus">구간삭제</button>
+			</div>
+		</fieldset>
+		<!--// 2019-11-05 위치변경 -->
+		<div class="pop_cont">
+			<div class="tab_wrap route2"><!-- 2019-08-22 주석수정(최대3개→4개) : 구간갯수에 따라 클래스 변경 route1 (1개) ~ route4 (4개) 최대4개 -->
+			    <div class="tab_menu search tscroll">
+					<!-- 2019-10-29 항공 메뉴로 인한 항공탭도 삭제, 텍스트 수정 -->
+					<ul class="ul_size"><!-- 2019-10-18 메뉴 추가, 텍스트 수정 -->
+						<li><a href="#" class="on">도시선택</a></li>
+						<li><a href="#">날짜선택</a></li>
+						<li><a href="#">인원선택</a></li>
+					</ul>
+			    </div>
+
+			    <!-- 도시탭 내용 -->
+			    <div class="tab_cont active"><!-- 2019-08-29 첫번째 tab_cont에 active 클래스 추가 -->
+					<!-- 검색영역 : S -->
+					<!-- 2019-09-27 검색영역 수정(J와 동일) -->
+					<div class="input_search_kwd">
+						<div class="sch_input">
+							<input type="search" name="" value="뉴저지" placeholder="도시명을 입력하세요."><!-- 2019-10-29 텍스트 수정 --><!-- 2019-10-18 텍스트 수정 -->
+							<button type="button" name="button" class="ico btn_del2">입력내용 삭제</button><!-- 텍스트 입력 될때 표시 -->
+							<button type="button" name="button" class="ico btn_search">검색</button>
+						</div>
+					</div>
+					<!-- //2019-09-27 검색영역 수정(J와 동일) -->
+					<!-- 검색영역 : E -->
+
+			        <!-- 자동완성 기능 -->
+					<!-- 2019-10-18 자동완성기능 수정 (style="display:none" 삭제 후 확인가능, 도시에서는 다중선택으로 최대3개까지 선택가능, 최근검색 및 도시탭있는 tab_wrap 부분 비노출) -->
+			        <div class="sch_lst_area auto_sch" style="display:block"><!-- 2019-10-29 data-area="airport" 삭제, sch_lst_area로 변경(자동완성만 auto_sch추가) -->
+						<!-- 2019-10-29 자동완성검색 수정 -->
+						<ul class="sch_city_list select">
+							<li>
+								<label class="checkbox big" for="a_checkbox01">
+									<input type="radio" id="a_checkbox01" name="city_list"><span></span>
+									<span class="tit"><mark>뉴저지</mark>, 미국</span><!-- 자동완성기능에서 검색어 포함 단어(mark) -->
+									<span class="area">JFK, 존에프케네디국제공항</span>
+								</label>
+							</li>
+							<li>
+								<label class="checkbox big" for="a_checkbox02">
+									<input type="radio" id="a_checkbox02" name="city_list"><span></span>
+									<span class="tit"><mark>뉴저지</mark>, 미국</span>
+									<span class="area">LGA, 라과디아공항</span>
+								</label>
+							</li>
+							<li>
+								<label class="checkbox big" for="a_checkbox03">
+									<input type="radio" id="a_checkbox03" name="city_list"><span></span>
+									<span class="tit"><mark>뉴저지</mark>, 미국</span>
+									<span class="area">EWR, 뉴와크리버티국제공항</span>
+								</label>
+							</li>
+							<li>
+								<label class="checkbox big" for="a_checkbox04">
+									<input type="radio" id="a_checkbox04" name="city_list"><span></span>
+									<span class="tit">뉴욕, 미국</span>
+									<span class="area">JFK, JFK 국제공항</span>
+								</label>
+							</li>
+							<li>
+								<label class="checkbox big" for="a_checkbox05">
+									<input type="radio" id="a_checkbox05" name="city_list"><span></span>
+									<span class="tit">하와이, 미국</span>
+									<span class="area">HNL, 호놀룰루 국제공항</span>
+								</label>
+							</li>
+							<li>
+								<label class="checkbox big" for="a_checkbox06">
+									<input type="radio" id="a_checkbox06" name="city_list"><span></span>
+									<span class="tit">보스턴, 미국</span>
+									<span class="area">BOS, 보스턴 로건 국제공항</span>
+								</label>
+							</li>
+							<li>
+								<label class="checkbox big" for="a_checkbox07">
+									<input type="radio" id="a_checkbox07" name="city_list"><span></span>
+									<span class="tit">워싱턴DC, 미국</span>
+									<span class="area">DCA, 로널드 레이건 워싱턴 국제공항</span>
+								</label>
+							</li>
+							<li id="oceania">
+								<label class="checkbox big" for="a_checkbox08">
+									<input type="radio" id="a_checkbox08" name="city_list"><span></span>
+									<span class="tit">올버니, 미국</span>
+									<span class="area">ALB, 올버니 국제공항</span>
+								</label>
+							</li>
+							<li>
+								<label class="checkbox big" for="a_checkbox09">
+									<input type="radio" id="a_checkbox09" name="city_list"><span></span>
+									<span class="tit">애틀란타, 미국</span>
+									<span class="area">ATL, 하츠필드잭슨 국제공항</span>
+								</label>
+							</li>
+							<li>
+								<label class="checkbox big" for="a_checkbox10">
+									<input type="radio" id="a_checkbox10" name="city_list"><span></span>
+									<span class="tit">콜럼버스, 미국</span>
+									<span class="area">CMH, 포트 콜럼버스 국제공항</span>
+								</label>
+							</li>
+		                </ul>
+						<!-- //2019-10-29 자동완성검색 수정 -->
+			        </div>
+					<!-- //2019-10-18 자동완성기능 수정 -->
+
+			        <div class="tab_wrap" style="display:none"><!-- 검색 input 터치시 display:none -->
+			            <div class="tab_menu type2 tscroll">
+			                <ul class="ul_size">
+			                    <li><a href="#" class="on">최근검색</a></li><!-- 2019-10-29 텍스트 수정 --><!-- 2019-10-18 텍스트 수정 -->
+			                    <li><a href="#">국내</a></li>
+			                    <li><a href="#">일본</a></li>
+			                    <li><a href="#">중국</a></li>
+			                    <li><a href="#">동남아</a></li>
+			                    <li><a href="#">미주</a></li>
+			                    <li><a href="#">유럽</a></li>
+			                    <li><a href="#">대양주</a></li>
+			                </ul>
+			            </div>
+			            <!-- 최근검색 -->
+			            <div class="tab_cont active"><!-- 2019-08-29 첫번째 tab_cont에 active 클래스 추가 -->
+							<!-- 2019-10-29 최근검색 리스트 -->
+							<div class="sch_lst_area">
+								<ul class="sch_city_list select recent"><!-- 최근검색일때만 recent 클래스 추가 -->
+									<li>
+										<label class="checkbox big" for="r_checkbox01">
+											<input type="radio" id="r_checkbox01" name="city_list"><span></span>
+											<span class="tit">세부, 필리핀</span>
+											<span class="area">CEB, 막탄세부국제공항</span>
+										</label>
+										<button type="button" name="button" class="ico btn_del">삭제</button>
+									</li>
+									<li>
+										<label class="checkbox big" for="r_checkbox02">
+											<input type="radio" id="r_checkbox02" name="city_list"><span></span>
+											<span class="tit">파리, 프랑스</span>
+											<span class="area">PAR, 샤를드골국제공항</span>
+										</label>
+										<button type="button" name="button" class="ico btn_del">삭제</button>
+									</li>
+									<li>
+										<label class="checkbox big" for="r_checkbox03">
+											<input type="radio" id="r_checkbox03" name="city_list"><span></span>
+											<span class="tit">제주, 대한민국</span>
+											<span class="area">CJU, 제주국제공항</span>
+										</label>
+										<button type="button" name="button" class="ico btn_del">삭제</button>
+									</li>
+								</ul>
+							</div>
+							<!-- //2019-10-29 최근검색 리스트 -->
+			            </div>
+
+			            <!-- 국내 -->
+			            <div class="tab_cont">
+							<!-- 2019-10-29 도시리스트 -->
+							<div class="sch_lst_area">
+								<ul class="sch_city_list select">
+									<li>
+										<label class="checkbox big" for="kr_checkbox01">
+											<input type="radio" id="kr_checkbox01" name="city_list"><span></span>
+											<span class="tit">제주, 대한민국</span>
+											<span class="area">CJU, 제주국제공항</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox big" for="kr_checkbox02">
+											<input type="radio" id="kr_checkbox02" name="city_list"><span></span>
+											<span class="tit">부산, 대한민국</span>
+											<span class="area">LGA, 라과디아공항</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox big" for="kr_checkbox03">
+											<input type="radio" id="kr_checkbox03" name="city_list"><span></span>
+											<span class="tit">김포, 대한민국</span>
+											<span class="area">GMP, 김포국제공항</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox big" for="kr_checkbox04">
+											<input type="radio" id="kr_checkbox04" name="city_list"><span></span>
+											<span class="tit">인천, 대한민국</span>
+											<span class="area">ICN, 인천국제공항</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox big" for="kr_checkbox05">
+											<input type="radio" id="kr_checkbox05" name="city_list"><span></span>
+											<span class="tit">광주, 대한민국</span>
+											<span class="area">KWJ, 광주공항</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<!-- //2019-10-29 도시리스트 -->
+			            </div>
+
+			            <!-- 일본 -->
+			            <div class="tab_cont">
+							<!-- 2019-10-29 도시리스트 -->
+							<div class="sch_lst_area">
+								<ul class="sch_city_list select">
+									<li>
+										<label class="checkbox big" for="jp_checkbox01">
+											<input type="radio" id="jp_checkbox01" name="city_list"><span></span>
+											<span class="tit">나리타, 일본</span>
+											<span class="area">NRT, 나리타 국제공항</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox big" for="jp_checkbox02">
+											<input type="radio" id="jp_checkbox02" name="city_list"><span></span>
+											<span class="tit">오사카, 일본</span>
+											<span class="area">KIX, 간사이 국제공항</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox big" for="jp_checkbox03">
+											<input type="radio" id="jp_checkbox03" name="city_list"><span></span>
+											<span class="tit">후쿠오카, 일본</span>
+											<span class="area">FUK, 후쿠오카 국제공항</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<!-- //2019-10-29 도시리스트 -->
+			            </div>
+
+			            <!-- 중국 -->
+			            <div class="tab_cont">
+							<!-- 2019-10-29 도시리스트 -->
+							<div class="sch_lst_area">
+								<ul class="sch_city_list select">
+									<li>
+										<label class="checkbox big" for="cn_checkbox01">
+											<input type="radio" id="cn_checkbox01" name="city_list"><span></span>
+											<span class="tit">광저우, 중국</span>
+											<span class="area">CAN, 광저우 바이윈 국제공항</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox big" for="cn_checkbox02">
+											<input type="radio" id="cn_checkbox02" name="city_list"><span></span>
+											<span class="tit">난징, 중국</span>
+											<span class="area">NKG, 난징 루커우 국제공항</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox big" for="cn_checkbox03">
+											<input type="radio" id="cn_checkbox03" name="city_list"><span></span>
+											<span class="tit">후마카오, 중국</span>
+											<span class="area">MFM, 마카오 국제공항</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<!-- //2019-10-29 도시리스트 -->
+			            </div>
+
+			            <!-- 동남아 -->
+			            <div class="tab_cont">
+							<!-- 2019-10-29 도시리스트 -->
+							<div class="sch_lst_area">
+								<ul class="sch_city_list select">
+									<li>
+										<label class="checkbox big" for="d1_checkbox01">
+											<input type="radio" id="d1_checkbox01" name="city_list"><span></span>
+											<span class="tit">세부, 필리핀</span>
+											<span class="area">CEB, 막탄세부국제공항</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox big" for="d1_checkbox02">
+											<input type="radio" id="d1_checkbox02" name="city_list"><span></span>
+											<span class="tit">코타키나발루, 말레이시아</span>
+											<span class="area">BKI, 코타키나발루국제공항</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<!-- //2019-10-29 도시리스트 -->
+			            </div>
+
+			            <!-- 미주 -->
+			            <div class="tab_cont">
+							<!-- 2019-10-29 도시리스트 -->
+							<div class="sch_lst_area">
+								<ul class="sch_city_list select">
+									<li>
+										<label class="checkbox big" for="u1_checkbox01">
+											<input type="radio" id="u1_checkbox01" name="city_list"><span></span>
+											<span class="tit">뉴욕, 미국</span>
+											<span class="area">JFK, 존에프케네디 국제공항</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox big" for="u1_checkbox02">
+											<input type="radio" id="u1_checkbox02" name="city_list"><span></span>
+											<span class="tit">샌프란시스코, 미국</span>
+											<span class="area">SFO, 샌프란시스코국제공</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<!-- //2019-10-29 도시리스트 -->
+			            </div>
+
+			            <!-- 유럽 -->
+			            <div class="tab_cont">
+							<!-- 2019-10-29 도시리스트 -->
+							<div class="sch_lst_area">
+								<ul class="sch_city_list select">
+									<li>
+										<label class="checkbox big" for="e1_checkbox01">
+											<input type="radio" id="e1_checkbox01" name="city_list"><span></span>
+											<span class="tit">파리, 프랑스</span>
+											<span class="area">PAR, 샤를드골국제공항</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox big" for="e1_checkbox02">
+											<input type="radio" id="e1_checkbox02" name="city_list"><span></span>
+											<span class="tit">프라하, 체코</span>
+											<span class="area">PRG, 바츨라프하벨 공항</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<!-- //2019-10-29 도시리스트 -->
+			            </div>
+
+						<!-- 대양주 -->
+					   <div class="tab_cont">
+						<!-- 2019-10-29 도시리스트 -->
+							<div class="sch_lst_area">
+								<ul class="sch_city_list select">
+									<li>
+										<label class="checkbox big" for="n1_checkbox01">
+											<input type="radio" id="n1_checkbox01" name="city_list"><span></span>
+											<span class="tit">브리즈번, 호주</span>
+											<span class="area">BNE, 브리즈번국제공항</span>
+										</label>
+									</li>
+									<li>
+										<label class="checkbox big" for="n1_checkbox02">
+											<input type="radio" id="n1_checkbox02" name="city_list"><span></span>
+											<span class="tit">시드니, 호주</span>
+											<span class="area">SYD, 시드니국제공항</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<!-- //2019-10-29 도시리스트 -->
+					   </div>
+
+			        </div>
+			    </div>
+
+			    <!-- 날짜탭 내용  -->
+			    <div class="tab_cont">
+			        <div class="calendar_wrap">
+			            <div class="calendar_month default"><!-- 2019-12-02 default 클래스 추가 -->
+			                <div class="month_header">2019.01</div>
+			                <div class="month_cont">
+			                    <table>
+			                        <thead>
+			                            <tr>
+			                                <th>일</th>
+			                                <th>월</th>
+			                                <th>화</th>
+			                                <th>수</th>
+			                                <th>목</th>
+			                                <th>금</th>
+			                                <th>토</th>
+			                            </tr>
+			                        </thead>
+			                        <tbody>
+			                            <tr>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day"></span>
+			                                        <span class="price"></span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day"></span>
+			                                        <span class="price"></span>
+			                                    </div>
+			                                </td>
+			                                <td class="disabled">
+			                                    <div class="day_inner">
+			                                        <span class="day">1</span>
+			                                        <span class="price"></span>
+			                                    </div>
+			                                </td>
+			                                <td class="disabled">
+			                                    <div class="day_inner">
+			                                        <span class="day">2</span>
+			                                        <span class="price"></span>
+			                                    </div>
+			                                </td>
+			                                <td class="disabled"><!-- 선택불가 'disabled' 클래스 추가 -->
+			                                    <div class="day_inner">
+			                                        <span class="day">3</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">4</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td class="holiday"><!-- 토일,휴일 'holiday' 클래스 추가 -->
+			                                    <div class="day_inner">
+			                                        <span class="day">5</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                            </tr>										
+			                            <tr>
+											<!-- 2019-08-12 오늘일때 <span class="today">삭제, <span class="price">추가 -->
+			                                <td class="holiday today"><!-- 오늘 -->
+			                                    <div class="day_inner">
+			                                        <span class="day">6</span>
+													<span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+											<!-- //2019-08-12 오늘일때 <span class="today">삭제, <span class="price">추가 -->
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">7</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">8</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">9</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td class="selected start"><!-- 시작일 'start'클래스 추가  -->
+			                                    <div class="day_inner">
+			                                        <span class="day">10</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td class="selected"><!-- 선택된 기간 'selected' 클래스 추가 -->
+			                                    <div class="day_inner">
+			                                        <span class="day">11</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td class="holiday selected">
+			                                    <div class="day_inner">
+			                                        <span class="day">12</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                                <td class="selected holiday">
+			                                    <div class="day_inner">
+			                                        <span class="day">13</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td class="selected">
+			                                    <div class="day_inner">
+			                                        <span class="day">14</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td class="selected end">
+			                                    <div class="day_inner">
+			                                        <span class="day">15</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">16</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">17</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">18</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td class="holiday">
+			                                    <div class="day_inner">
+			                                        <span class="day">19</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                                <td class="holiday">
+			                                    <div class="day_inner">
+			                                        <span class="day">20</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">21</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">22</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">23</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">24</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">25</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td class="holiday">
+			                                    <div class="day_inner">
+			                                        <span class="day">26</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                                <td class="holiday">
+			                                    <div class="day_inner">
+			                                        <span class="day">27</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">28</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">29</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">30</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">31</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day"></span>
+			                                        <span class="price"></span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day"></span>
+			                                        <span class="price"></span>
+			                                    </div>
+			                                </td>
+			                            </tr>
+			                        </tbody>
+			                    </table>
+			                </div>
+			            </div>
+			            <div class="calendar_month default"><!-- 2019-12-02 default 클래스 추가 -->
+			                <div class="month_header">2019.01</div>
+			                <div class="month_cont">
+			                    <table>
+			                        <thead>
+			                            <tr>
+			                                <th>일</th>
+			                                <th>월</th>
+			                                <th>화</th>
+			                                <th>수</th>
+			                                <th>목</th>
+			                                <th>금</th>
+			                                <th>토</th>
+			                            </tr>
+			                        </thead>
+			                        <tbody>
+			                            <tr>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day"></span>
+			                                        <span class="price"></span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day"></span>
+			                                        <span class="price"></span>
+			                                    </div>
+			                                </td>
+			                                <td class="disabled">
+			                                    <div class="day_inner">
+			                                        <span class="day">1</span>
+			                                        <span class="price"></span>
+			                                    </div>
+			                                </td>
+			                                <td class="disabled">
+			                                    <div class="day_inner">
+			                                        <span class="day">2</span>
+			                                        <span class="price"></span>
+			                                    </div>
+			                                </td>
+			                                <td class="disabled"><!-- 선택불가 'disabled' 클래스 추가 -->
+			                                    <div class="day_inner">
+			                                        <span class="day">3</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">4</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td class="holiday"><!-- 토일,휴일 'holiday' 클래스 추가 -->
+			                                    <div class="day_inner">
+			                                        <span class="day">5</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                                <td class="holiday">
+			                                    <div class="day_inner">
+			                                        <span class="day">6</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">7</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">8</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">9</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">10</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">11</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td class="holiday">
+			                                    <div class="day_inner">
+			                                        <span class="day">12</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                                <td class="holiday">
+			                                    <div class="day_inner">
+			                                        <span class="day">13</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">14</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">15</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">16</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">17</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">18</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td class="holiday">
+			                                    <div class="day_inner">
+			                                        <span class="day">19</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                                <td class="holiday">
+			                                    <div class="day_inner">
+			                                        <span class="day">20</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">21</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">22</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">23</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">24</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">25</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td class="holiday">
+			                                    <div class="day_inner">
+			                                        <span class="day">26</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                                <td class="holiday">
+			                                    <div class="day_inner">
+			                                        <span class="day">27</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">28</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">29</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">30</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day">31</span>
+			                                        <span class="price">54만원</span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day"></span>
+			                                        <span class="price"></span>
+			                                    </div>
+			                                </td>
+			                                <td>
+			                                    <div class="day_inner">
+			                                        <span class="day"></span>
+			                                        <span class="price"></span>
+			                                    </div>
+			                                </td>
+			                            </tr>
+			                        </tbody>
+			                    </table>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+
+			    <!-- 인원탭 내용 -->
+				<!-- 2019-10-18 내용수정 -->
+			    <div class="tab_cont">
+			        <ul class="seat_option">
+			            <li>
+			                <span class="tit"><b>성인</b> 만 12세 이상</span>
+			                <span class="ctrl">
+			                    <button type="button" name="button" class="ico btn_minus2" disabled="">삭제</button>
+			                    <input type="text" name="" value="1" class="em">
+			                    <button type="button" name="button" class="ico btn_plus2">추가</button>
+			                </span>
+			            </li>
+			            <li>
+			                <span class="tit"><b>소아</b> 만 2세 ~ 12세 미만</span>
+			                <span class="ctrl">
+			                    <button type="button" name="button" class="ico btn_minus2" disabled="">삭제</button>
+			                    <input type="text" name="" value="1" class="em">
+			                    <button type="button" name="button" class="ico btn_plus2">추가</button>
+			                </span>
+			            </li>
+			            <li>
+			                <span class="tit"><b>유아</b> 만 2세 미만</span>
+			                <span class="ctrl">
+			                    <button type="button" name="button" class="ico btn_minus2" disabled="">삭제</button>
+			                    <input type="text" name="" value="1" class="em">
+			                    <button type="button" name="button" class="ico btn_plus2">추가</button>
+			                </span>
+			            </li>
+			        </ul>
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="lang_kr"><input type="checkbox" id="lang_kr" name="language" checked><span></span>일반석</label></li>
+						<li><label class="checkbox" for="lang_en"><input type="checkbox" id="lang_en" name="language" checked><span></span>프리미엄 일반석</label></li>
+						<li><label class="checkbox" for="lang_jp"><input type="checkbox" id="lang_jp" name="language" checked><span></span>비즈니스</label></li>
+						<li><label class="checkbox" for="lang_cn"><input type="checkbox" id="lang_cn" name="language" checked><span></span>일등석</label></li>
+					</ul>
+			    </div>
+
+			</div>
+
+		</div>
+		<div class="btn_box">			
+			<button type="submit" disabled name="button" class="btn primary2">다음</button><!-- 2019-09-27 다음버튼 추가 -->
+			<!-- <button type="submit" name="button" class="btn primary2">검색</button> -->
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+</div>
+<script type="text/javascript" src="../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../resource/js/lalang.js"></script>
+</body>
+</html>

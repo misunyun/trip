@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<!-- <link type="text/css" href="../../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../../resource/css/event.css" rel="stylesheet" />
+	<link type="text/css" href="../../../resource/css/desktop.css" rel="stylesheet" /> -->
+	<link type="text/css" href="http://shillatrip.shilladfs.com/shop/_ui/mobile/common/lalanghome/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="http://shillatrip.shilladfs.com/shop/_ui/mobile/common/lalanghome/css/event.css" rel="stylesheet" />
+	<link type="text/css" href="http://shillatripdev.shilladfs.com/shop/_ui/mobile/common/lalanghome/css/tmp_event.css" rel="stylesheet" />
+	<link type="text/css" href="http://shillatrip.shilladfs.com/shop/_ui/mobile/common/lalanghome/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<!-- Header : S -->
+	<header>
+		 <h1><a href="#">SHILLATRIP</a></h1>
+		<button type="button" name="button" class="ico search">검색</button>
+		<button type="button" name="button" class="ico my">마이페이지</button>
+		<!-- 2019-10-14 GNB 공통SB v2.6현행화 -->
+		<nav class="gnb tscroll">
+			<ul class="ul_size">
+				<li><a href="#" class="on">이벤트</a></li>
+				<li><a href="#">마감임박</a></li>
+				<li><a href="#">라랑팩</a></li>
+				<li><a href="#">랭킹</a></li>
+				<li><a href="#">고객센터</a></li>
+			</ul>
+		</nav>
+		<!-- //2019-10-14 GNB 공통SB v2.6현행화 -->
+		 <h2>
+			 <a href="#" class="ico btn_back">이전 페이지</a>
+			 이벤트 상세
+			 <button type="button" class="ico btn_sns">공유</button>
+		 </h2>
+	 </header>
+	 <!-- Header : E -->
+
+
+	 <div class="content">
+		<!-- 이벤트 html 영역 -->
+		<div class="event_detail">
+			<style>
+				#promotion_wrap.free_st .event_img {position:relative} 
+				#promotion_wrap.free_st .event_img img  { height:auto} 
+				#promotion_wrap.free_st .event_img .ev_text {  position:absolute; z-index:1; left:26px; top:227px; display:inline-block; letter-spacing:-0.5px;  font-size:4.2vw; color:#fff; letter-spacing:-0.4px; } 
+				#promotion_wrap.free_st .ev_cont02 { margin:-10px 0  0 -20px;  padding:0px 20px 231px 0; background-image:url('http://media.shilladfs.com/files/attach/ckeditor/2019/12/12/1576146846571_20191212_1_staff02.png'); background-repeat:no-repeat; background-size:181px 212.5px; background-position:right bottom;  }
+				#promotion_wrap.free_st .ev_top_tx { margin-left:20px}
+				#promotion_wrap.free_st .ev_top_tx dt { font-size:25px; line-height:36px; font-weight:bold; ;letter-spacing:-0.4px}
+				#promotion_wrap.free_st .ev_top_tx dt strong { color:#1f508e;}
+				#promotion_wrap.free_st .ev_top_tx dd { font-size:15px; line-height:24px; margin-top:10px; color:#757575; letter-spacing:0.4px }
+				#promotion_wrap.free_st .ev_cont02 .note_list { margin-left:20px}
+				#promotion_wrap.free_st .event_img02 { position:relative; text-align:center; margin:21px 0 0 20px}
+				#promotion_wrap.free_st .event_img02 .ev_text {position:absolute; z-index:1; left:0px; bottom:32px; display:block;text-align:center;width:100%; letter-spacing:-0.5px;  font-size:4.2vw; color:#333; font-weight:bold}
+				#promotion_wrap.free_st .ir_blind { text-indent:-1000px; width:0; height:0; overflow:hidden; line-height:0; font-size:0 }
+
+				@media screen and (min-width:768px) {
+					#promotion_wrap.free_st .event_img .ev_text { font-size:30px; top:455px}
+					#promotion_wrap.free_st .ev_top_tx dt  { font-size:50px; line-height:72px}
+					#promotion_wrap.free_st .ev_top_tx dd  { font-size:30px;  line-height:50px}
+					#promotion_wrap.free_st .ev_cont02 {  background-size:362px 425px; padding-bottom:462px}
+				}
+			</style>
+			<div id="promotion_wrap">
+				<!-- 서비스 소개 -->
+				<style type="text/css">
+					/* 레이아웃 */
+									#promotion_wrap .gate_wrap {position:relative; overflow:hidden;}
+									#promotion_wrap .gate_container {position:relative;}
+									#promotion_wrap .gate_body {position:relative; overflow:hidden;}
+									#promotion_wrap .gate_body#pc {display:none;}
+									#promotion_wrap .gate_body img {width:100%;}
+									#promotion_wrap .gate_tag {display:table; table-layout:fixed; position:absolute; top:6.9vw; right:6.9vw; z-index:3; width:16.4vw; height:16.4vw; background:#f94f35; text-align:center;}
+									#promotion_wrap .gate_tag span {display:table-cell; width:100%; font-size:3.3vw; color:#f1d36e; font-weight:bold; line-height:4vw; vertical-align:middle;}
+									#promotion_wrap .gate_motion {position:relative; background-position:0 0; background-repeat:no-repeat; background-size:100% 100%;}
+							
+									/* 상단 */
+									#promotion_wrap .gate_banner {display:table; width:100%; table-layout:fixed; height:15.3vw; background:#f9f9f9;}
+									#promotion_wrap .gate_banner a {display:table-cell; width:100%; padding:0 6.8vw 0 12.2vw; background:url('http://media.shilladfs.com/files/attach/ckeditor/2019/12/18/1576630091440_20191218_1_kr_mo_gate_ico.png') no-repeat 6.9vw center; background-size:3.2vw auto; font-size:4.2vw; font-weight:bold; color:#fe583e; vertical-align:middle; box-sizing:border-box;}
+									#promotion_wrap .gate_banner a span {display:inline-block; width:100%; padding-top:0.5vw; background:url('http://media.shilladfs.com/files/attach/ckeditor/2019/12/18/1576630407761_20191218_1_kr_mo_gate_arrow.png') no-repeat right center; background-size:1.1vw auto;}
+						
+									#promotion_wrap .gate_top {position:relative;}
+									#promotion_wrap .gate_top .head {position:absolute; top:22.9vw; left:0; width:100%; padding:0 6.3vw; box-sizing:border-box;}
+									#promotion_wrap .gate_top .head_title {font-weight:bold; font-size:8.6vw; line-height:11.4vw; color:#ffffff; letter-spacing:-0.2vw;} 
+									#promotion_wrap .gate_top .head_text {padding-top:0.7vw; font-size:4.2vw; line-height:6.3vw; color:#ffffff;}
+							
+									/* 모션 : 텍스트 공통 */
+									#promotion_wrap .gate_motion .head {position:absolute; top:0; left:0; width:100%; padding:16.7vw 6.3vw 0; box-sizing:border-box;}
+									#promotion_wrap .gate_motion .head_title {font-weight:bold; font-size:7.5vw; line-height:10.6vw; color:#252525; letter-spacing:-0.2vw;} 
+									#promotion_wrap .gate_motion .head_text {padding-top:2.8vw; font-size:3.9vw; line-height:6vw; color:#252525;}
+									#promotion_wrap .gate_motion .image {position:absolute; bottom:0; left:0; width:100%; box-sizing:border-box;}		
+							
+									/* 모션 : 가격비교와 예약 */
+									#promotion_wrap .gate_motion.trip {height:138.6vw; background-image:url('http://media.shilladfs.com/files/attach/ckeditor/2019/12/13/1576199852593_20191213_1_kr_mo_gate_trip_bg.jpg');}
+									#promotion_wrap .gate_motion.trip .head {padding-top:9.7vw;}
+							
+									/* 모션 : S.Rewards 즉시 적립 */
+									#promotion_wrap .gate_motion.save {height:161.7vw; background-image:url('http://media.shilladfs.com/files/attach/ckeditor/2019/12/13/1576200044441_20191213_1_kr_mo_gate_save_bg.jpg');}
+									#promotion_wrap .gate_motion.save .image {top:63.1vw; bottom:auto; text-align:center;}
+									#promotion_wrap .gate_motion.save .image ul {display:inline-block; width:69.4vw;}
+									#promotion_wrap .gate_motion.save .image ul li {position:relative; height:15.3vw; margin-top:2.8vw; padding:0 0 0 22.4vw; background-color:#ffffff; background-position:0 0; background-repeat:no-repeat; background-size:auto 100%; line-height:15.3vw; text-align:left; box-sizing:border-box; -webkit-box-shadow: 5px 5px 10px 0px rgba(27,27,27,0.1); -moz-box-shadow: 5px 5px 10px 0px rgba(27,27,27,0.1); box-shadow: 5px 5px 10px 0px rgba(27,27,27,0.1);}
+									#promotion_wrap .gate_motion.save .image ul li em {font-size:3.9vw; color:#252525;}
+									#promotion_wrap .gate_motion.save .image ul li strong {position:absolute; top:0; right:6.8vw; height:100%; font-weight:bold; font-size:3.9vw; color:#252525; line-height:15.3vw;}
+									#promotion_wrap .gate_motion.save .image ul li:first-child {margin-top:0;}
+									#promotion_wrap .gate_motion.save .image ul li.ord01 {background-image:url('http://media.shilladfs.com/files/attach/ckeditor/2019/12/13/1576200862208_20191213_1_kr_mo_gate_save_img01.png');}
+									#promotion_wrap .gate_motion.save .image ul li.ord02 {background-image:url('http://media.shilladfs.com/files/attach/ckeditor/2019/12/13/1576200911932_20191213_1_kr_mo_gate_save_img02.png');}
+									#promotion_wrap .gate_motion.save .image ul li.ord03 {background-image:url('http://media.shilladfs.com/files/attach/ckeditor/2019/12/13/1576200924487_20191213_1_kr_mo_gate_save_img03.png');}
+									#promotion_wrap .gate_motion.save .image ul li.ord04 {background-image:url('http://media.shilladfs.com/files/attach/ckeditor/2019/12/13/1576200934340_20191213_1_kr_mo_gate_save_img04.png');}
+									
+							
+									/* 모션 : S.Rewards 추가 적립 */
+									#promotion_wrap .gate_motion.add {height:177.2vw; background-image:url('http://media.shilladfs.com/files/attach/ckeditor/2019/12/13/1576219398580_20191213_1_kr_mo_gate_add_bg.jpg');}
+									#promotion_wrap .gate_motion.add .image {top:66.5vw; bottom:auto; padding:0 5.6vw; text-align:center;}
+									#promotion_wrap .gate_motion.add .image ul:after{content:""; display:block; clear:both;}
+									#promotion_wrap .gate_motion.add .image ul li {position:relative; float:left; width:33.3%;}
+									#promotion_wrap .gate_motion.add .image ul li > div {display:inline-block; width:18.9vw; height:19vw; will-change:transform; text-align:left;}
+									#promotion_wrap .gate_motion.add .image ul li .txt {display:block; margin-top:0.4vw; font-size:3.3vw; line-height:1.2; text-align:center; color:#828282; word-break:keep-all;}
+						
+									#promotion_wrap .gate_motion.add .image .ico_moa {display:inline-block; width:18.9vw; height:19vw; will-change:transform; text-align:left; opacity:0;}
+									#promotion_wrap .gate_motion.add .image .ico_moa.off {opacity:1;}
+									#promotion_wrap .gate_motion.add .image .ico_moa.on {-webkit-transform-style:preserve-3d; transform-style:preserve-3d; -webkit-transform-origin:50%; transform-origin:50%;  -webkit-animation:move 1.5s 0s 1 linear backwards;animation:move 1.5s 0s 1 linear backwards; opacity:1;}
+									#promotion_wrap .gate_motion.add .image .ico_moa .coin {position:absolute; width:18.9vw; height:19vw; background:url('http://media.shilladfs.com/files/attach/ckeditor/2019/12/13/1576206621935_20191213_1_kr_mo_gate_add_img_.png') no-repeat 0 0; background-size:auto 39.8vw;}
+									#promotion_wrap .gate_motion.add .image .ico_moa.on .coin {-webkit-animation:spin2 0.5s 0s 1 linear backwards; animation:spin2 0.5s 0s 1 linear backwards;}
+						
+									#promotion_wrap .gate_motion.add .image .ico_moa.flight .coin {background-position:0 0;}
+									#promotion_wrap .gate_motion.add .image .ico_moa.hotel .coin {background-position:-20.6vw 0;}
+									#promotion_wrap .gate_motion.add .image .ico_moa.activity .coin {background-position:-41.1vw 0;}
+						
+									#promotion_wrap .gate_motion.add .image .ico_moa.flight.on .coin {background-position:0 -20.8vw;}
+									#promotion_wrap .gate_motion.add .image .ico_moa.hotel.on .coin {background-position:-20.6vw -20.8vw;}
+									#promotion_wrap .gate_motion.add .image .ico_moa.activity.on .coin {background-position:-41.1vw -20.8vw;}
+						
+									#promotion_wrap .gate_motion.add .info {position:absolute; top:104.9vw; left:0; width:100%; padding:0 6.9vw; box-sizing:border-box;}
+									#promotion_wrap .gate_motion.add .info .inner {padding:6vw 6.9vw; background:#f9f9f9;}
+									#promotion_wrap .gate_motion.add .info dl {margin-top:6vw;}
+									#promotion_wrap .gate_motion.add .info dl:first-child {margin-top:0;}
+									#promotion_wrap .gate_motion.add .info dl dt {margin-bottom:1vw; color:#252525; font-size:3.9vw; font-weight:bold;}
+									#promotion_wrap .gate_motion.add .info dl dd {color:#828282; font-size:3.9vw; line-height:5.5vw;}
+									#promotion_wrap .gate_motion.add .info dl dd > * {display:inline-block; vertical-align:middle;}
+									#promotion_wrap .gate_motion.add .info dl dd strong {min-width:13.2vw; font-weight:normal;}
+									#promotion_wrap .gate_motion.add .info dl dd em {color:#fe583e;}
+						
+									@keyframes move {
+										0% {
+											opacity: 0;
+											-webkit-transform: translateY(-8.3vw);
+											transform: translateY(-8.3vw);
+										}
+										20% {
+											opacity: 1;
+											-webkit-transform: translateY(0);
+											transform: translateY(0);
+										}  
+										40% {
+											-webkit-transform: translateY(-5.6vw);
+											transform: translateY(-5.6vw);
+										}
+										60% {
+											-webkit-transform: translateY(0);
+											transform: translateY(0);
+										}
+									}
+						
+									@keyframes spin2 {
+										0% {
+											-webkit-transform: rotateY(0deg);
+											transform: rotateY(0deg);
+										}
+										100% {
+											-webkit-transform: rotateY(360deg);
+											transform: rotateY(360deg);
+										}
+									}
+						
+									/* 모션 : S.Rewards 면세 사용 */
+									#promotion_wrap .gate_motion.duty {height:166.4vw; background-image:url('http://media.shilladfs.com/files/attach/ckeditor/2019/12/13/1576201833606_20191213_1_kr_mo_gate_duty_bg.jpg') ;}
+									#promotion_wrap .gate_motion.duty .head {padding-top:32.6vw;}
+									#promotion_wrap .gate_motion.duty .head_title {color:#ffffff;} 
+									#promotion_wrap .gate_motion.duty .head_text {color:#ffffff;}
+						
+									@media all and (min-width:768px) {
+										#promotion_wrap .gate_banner {height:110px;}
+										#promotion_wrap .gate_banner a {padding:0 49px 0 88px; background-position:50px center; background-size:23px auto; font-size:30px;}
+										#promotion_wrap .gate_banner a span {padding-top:0; background-size:8px auto;}
+										#promotion_wrap .gate_body#pc {display:block;}
+										#promotion_wrap .gate_body#mobile {display:none;}
+										#promotion_wrap .gate_tag {position:absolute; top:50px; right:50px; width:118px; height:118px; line-height:118px; text-align:center;}
+										#promotion_wrap .gate_tag span {font-size:24px; color:#f1d36e; line-height:1.3;}
+									}
+				</style>
+				<div class="gate_wrap">
+					<div class="gate_banner"><a href="#"><span>여행소셜플랫폼 PRE OPEN 더보기</span></a>
+					</div>
+					<div class="gate_container">
+						<!-- <div class="gate_tag"><span>GRAND<br />OPEN</span></div> -->
+						<div class="gate_body" id="mobile">
+							<div class="gate_top">
+								<img alt="" src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/13/1576228410515_20191213_1_kr_mo_gate_top.jpg" />
+								<div class="head">
+									<h1 class="head_title">신라트립<br />여행으로 쇼핑하다</h1>
+									<p class="head_text">로그인 한 번에 항공권 예약부터
+										<br />면세 쇼핑까지 가능한 여행상품 중개 플랫폼!</p>
+								</div>
+							</div>
+							<!-- 모션 : 가격비교와 예약 -->
+							<div class="gate_motion trip cm">
+								<div class="head">
+									<h2 class="head_title">여행지만 입력해도<br />항공권부터 액티비티까지</h2>
+									<p class="head_text">실시간 가격비교에, 안전한 예약까지 한번에!</p>
+								</div>
+								<div class="image">
+									<img alt="" src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/13/1576224733635_20191213_1_kr_mo_gate_trip_img.png" />
+								</div>
+							</div>
+							<!-- 모션 : S.Rewards 즉시 적립 -->
+							<div class="gate_motion save">
+								<div class="head">
+									<h2 class="head_title">신라트립 상품 구매 시<br />S.Rewards 즉시 적립</h2>
+									<p class="head_text">구매금액의 일부를 S.Rewards로 기본 적립!</p>
+								</div>
+								<div class="image">
+									<ul>
+										<li class="ord01"><em>항공</em><strong data-num="1.5">0</strong>
+										</li>
+										<li class="ord02"><em>숙박</em><strong data-num="8.0">0</strong>
+										</li>
+										<li class="ord03"><em>패키지</em><strong data-num="2.0">0</strong>
+										</li>
+										<li class="ord04"><em>액티비티</em><strong data-num="4.0">0</strong>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- 모션 : S.Rewards 추가 적립 -->
+							<div class="gate_motion add">
+								<div class="head">
+									<h2 class="head_title">모으면 모을수록<br />더 커지는 S.Rewards</h2>
+									<p class="head_text">모아랑 상품 모아 구매 시, S.Rewards 추가 적립!</p>
+								</div>
+								<div class="image">
+									<ul>
+										<li>
+											<div class="ico_flight">
+												<div class="ico_moa flight">
+													<!-- 장바구니에 모아랑 상품 담길 시 on 클래스 추가 / 아닌 경우 off 클래스 추가 --><span class="coin front">&nbsp;</span>
+												</div>
+											</div>	<span class="txt">항공</span>
+										</li>
+										<li>
+											<div class="ico_hotel"><span class="ico_moa hotel"><span class="coin front">&nbsp;</span> </span>
+											</div>	<span class="txt">숙박</span>
+										</li>
+										<li>
+											<div class="ico_activity"><span class="ico_moa activity off"><span class="coin front">&nbsp;</span> </span>
+											</div>	<span class="txt">액티비티/라랑팩</span>
+										</li>
+									</ul>
+								</div>
+								<div class="info">
+									<div class="inner">
+										<dl>	<dt>두 카테고리 상품 구매 시</dt>
+											<dd><span>기본적립액 x <em>10% 추가 적립</em></span>
+											</dd>
+										</dl>
+										<dl>	<dt>모든 카테고리 상품 구매 시</dt>
+											<dd><span>기본적립액 x <em>20% 추가 적립</em></span>
+											</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+							<!-- 모션 : S.Rewards 면세 사용 -->
+							<div class="gate_motion duty cm">
+								<div class="head">
+									<h2 class="head_title">적립된 S.Rewards<br />면세에서 즉시 사용</h2>
+									<p class="head_text">한국 &middot; 싱가포르 &middot; 홍콩 신라면세점에서
+										<br />S.Rewards로 합리적 쇼핑!</p>
+								</div>
+								<div class="image">
+									<img alt="" src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/13/1576201953385_20191213_1_kr_mo_gate_duty_img.png" />
+								</div>
+							</div>
+						</div>
+						<div class="gate_body" id="pc">
+							<img alt="" src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/17/1576545069344_20191217_1_kr_pc_lalang01.jpg" />
+							<img alt="" src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/17/1576545095294_20191217_1_kr_pc_lalang02.jpg" />
+							<img alt="" src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/20/1576811725170_20191220_1_kr_pc_lalang03.jpg" />
+							<img alt="" src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/20/1576811787880_20191220_1_kr_pc_lalang04.jpg" />
+							<img alt="" src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/17/1576545130395_20191217_1_kr_pc_lalang05.jpg" />
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					(function(root,factory){if(typeof define==="function"&&define.amd){define(factory);}else if(typeof exports==="object"){module.exports=factory(require,exports,module);}else{root.CountUp=factory();}})(this,function(require,exports,module){window.CountUp=function(target,startVal,endVal,decimals,duration,options){var self=this;self.version=function(){return"1.9.3";};self.options={useEasing:true,useGrouping:true,separator:",",decimal:".",easingFn:easeOutExpo,formattingFn:formatNumber,prefix:"",suffix:"",numerals:[]};if(options&&typeof options==="object"){for(var key in self.options){if(options.hasOwnProperty(key)&&options[key]!==null){self.options[key]=options[key];}}} if(self.options.separator===""){self.options.useGrouping=false;}else{self.options.separator=""+self.options.separator;} var lastTime=0;var vendors=["webkit","moz","ms","o"];for(var x=0;x<vendors.length&&!window.requestAnimationFrame;++x){window.requestAnimationFrame=window[vendors[x]+"RequestAnimationFrame"];window.cancelAnimationFrame=window[vendors[x]+"CancelAnimationFrame"]||window[vendors[x]+"CancelRequestAnimationFrame"];} if(!window.requestAnimationFrame){window.requestAnimationFrame=function(callback,element){var currTime=new Date().getTime();var timeToCall=Math.max(0,16-(currTime-lastTime));var id=window.setTimeout(function(){callback(currTime+timeToCall);},timeToCall);lastTime=currTime+timeToCall;return id;};} if(!window.cancelAnimationFrame){window.cancelAnimationFrame=function(id){clearTimeout(id);};} function formatNumber(num){var neg=num<0,x,x1,x2,x3,i,len;num=Math.abs(num).toFixed(self.decimals);num+="";x=num.split(".");x1=x[0];x2=x.length>1?self.options.decimal+x[1]:"";if(self.options.useGrouping){x3="";for(i=0,len=x1.length;i<len;++i){if(i!==0&&i%3===0){x3=self.options.separator+x3;} x3=x1[len-i-1]+x3;} x1=x3;} if(self.options.numerals.length){x1=x1.replace(/[0-9]/g,function(w){return self.options.numerals[+w];});x2=x2.replace(/[0-9]/g,function(w){return self.options.numerals[+w];});} return((neg?"-":"")+self.options.prefix+x1+x2+self.options.suffix);} function easeOutExpo(t,b,c,d){return(c*(-Math.pow(2,(-10*t)/d)+1)*1024)/1023+b;} function ensureNumber(n){return typeof n==="number"&&!isNaN(n);} self.initialize=function(){if(self.initialized)return true;self.error="";self.d=typeof target==="string"?document.getElementById(target):target;if(!self.d){self.error="[CountUp] target is null or undefined";return false;} self.startVal=Number(startVal);self.endVal=Number(endVal);if(ensureNumber(self.startVal)&&ensureNumber(self.endVal)){self.decimals=Math.max(0,decimals||0);self.dec=Math.pow(10,self.decimals);self.duration=Number(duration)*1000||2000;self.countDown=self.startVal>self.endVal;self.frameVal=self.startVal;self.initialized=true;return true;}else{self.error="[CountUp] startVal ("+ startVal+") or endVal ("+ endVal+") is not a number";return false;}};self.printValue=function(value){var result=self.options.formattingFn(value);if(self.d.tagName==="INPUT"){this.d.value=result;}else if(self.d.tagName==="text"||self.d.tagName==="tspan"){this.d.textContent=result;}else{this.d.innerHTML=result;}};self.count=function(timestamp){if(!self.startTime){self.startTime=timestamp;} self.timestamp=timestamp;var progress=timestamp-self.startTime;self.remaining=self.duration-progress;if(self.options.useEasing){if(self.countDown){self.frameVal=self.startVal- self.options.easingFn(progress,0,self.startVal-self.endVal,self.duration);}else{self.frameVal=self.options.easingFn(progress,self.startVal,self.endVal-self.startVal,self.duration);}}else{if(self.countDown){self.frameVal=self.startVal- (self.startVal-self.endVal)*(progress/self.duration);}else{self.frameVal=self.startVal+ (self.endVal-self.startVal)*(progress/self.duration);}} if(self.countDown){self.frameVal=self.frameVal<self.endVal?self.endVal:self.frameVal;}else{self.frameVal=self.frameVal>self.endVal?self.endVal:self.frameVal;} self.frameVal=Math.round(self.frameVal*self.dec)/self.dec;self.printValue(self.frameVal);if(progress<self.duration){self.rAF=requestAnimationFrame(self.count);}else{if(self.callback)self.callback();}};self.start=function(callback){if(!self.initialize())return;self.callback=callback;self.rAF=requestAnimationFrame(self.count);};self.pauseResume=function(){if(!self.paused){self.paused=true;cancelAnimationFrame(self.rAF);}else{self.paused=false;delete self.startTime;self.duration=self.remaining;self.startVal=self.frameVal;requestAnimationFrame(self.count);}};self.reset=function(){self.paused=false;delete self.startTime;self.initialized=false;if(self.initialize()){cancelAnimationFrame(self.rAF);self.printValue(self.startVal);}};self.update=function(newEndVal){if(!self.initialize())return;newEndVal=Number(newEndVal);if(!ensureNumber(newEndVal)){self.error="[CountUp] update() - new endVal is not a number: "+newEndVal;return;} self.error="";if(newEndVal===self.frameVal)return;cancelAnimationFrame(self.rAF);self.paused=false;delete self.startTime;self.startVal=self.frameVal;self.endVal=newEndVal;self.countDown=self.startVal>self.endVal;self.rAF=requestAnimationFrame(self.count);};if(self.initialize())self.printValue(self.startVal);};return CountUp;});
+				</script>
+				<script type="text/javascript">
+					/*! @license ScrollReveal v4.0.5
+		
+						Copyright 2018 Fisssion LLC.
+		
+						Licensed under the GNU General Public License 3.0 for
+						compatible open source projects and non-commercial use.
+		
+						For commercial sites, themes, projects, and applications,
+						keep your source code private/proprietary by purchasing
+						a commercial license from https://scrollrevealjs.org/
+					*/
+					var ScrollReveal=function(){"use strict";var r={delay:0,distance:"0",duration:600,easing:"cubic-bezier(0.5, 0, 0, 1)",interval:0,opacity:0,origin:"bottom",rotate:{x:0,y:0,z:0},scale:1,cleanup:!1,container:document.documentElement,desktop:!0,mobile:!0,reset:!1,useDelay:"always",viewFactor:0,viewOffset:{top:0,right:0,bottom:0,left:0},afterReset:function(){},afterReveal:function(){},beforeReset:function(){},beforeReveal:function(){}};var n={success:function(){document.documentElement.classList.add("sr"),document.body?document.body.style.height="100%":document.addEventListener("DOMContentLoaded",function(){document.body.style.height="100%"})},failure:function(){return document.documentElement.classList.remove("sr"),{clean:function(){},destroy:function(){},reveal:function(){},sync:function(){},get noop(){return!0}}}};function o(e){return"object"==typeof window.Node?e instanceof window.Node:null!==e&&"object"==typeof e&&"number"==typeof e.nodeType&&"string"==typeof e.nodeName}function u(e,t){if(void 0===t&&(t=document),e instanceof Array)return e.filter(o);if(o(e))return[e];if(n=e,i=Object.prototype.toString.call(n),"object"==typeof window.NodeList?n instanceof window.NodeList:null!==n&&"object"==typeof n&&"number"==typeof n.length&&/^\[object (HTMLCollection|NodeList|Object)\]$/.test(i)&&(0===n.length||o(n[0])))return Array.prototype.slice.call(e);var n,i;if("string"==typeof e)try{var r=t.querySelectorAll(e);return Array.prototype.slice.call(r)}catch(e){return[]}return[]}function s(e){return null!==e&&e instanceof Object&&(e.constructor===Object||"[object Object]"===Object.prototype.toString.call(e))}function f(n,i){if(s(n))return Object.keys(n).forEach(function(e){return i(n[e],e,n)});if(n instanceof Array)return n.forEach(function(e,t){return i(e,t,n)});throw new TypeError("Expected either an array or object literal.")}function h(e){for(var t=[],n=arguments.length-1;0<n--;)t[n]=arguments[n+1];if(this.constructor.debug&&console){var i="%cScrollReveal: "+e;t.forEach(function(e){return i+="\n — "+e}),console.log(i,"color: #ea654b;")}}function t(){var n=this,i={active:[],stale:[]},t={active:[],stale:[]},r={active:[],stale:[]};try{f(u("[data-sr-id]"),function(e){var t=parseInt(e.getAttribute("data-sr-id"));i.active.push(t)})}catch(e){throw e}f(this.store.elements,function(e){-1===i.active.indexOf(e.id)&&i.stale.push(e.id)}),f(i.stale,function(e){return delete n.store.elements[e]}),f(this.store.elements,function(e){-1===r.active.indexOf(e.containerId)&&r.active.push(e.containerId),e.hasOwnProperty("sequence")&&-1===t.active.indexOf(e.sequence.id)&&t.active.push(e.sequence.id)}),f(this.store.containers,function(e){-1===r.active.indexOf(e.id)&&r.stale.push(e.id)}),f(r.stale,function(e){var t=n.store.containers[e].node;t.removeEventListener("scroll",n.delegate),t.removeEventListener("resize",n.delegate),delete n.store.containers[e]}),f(this.store.sequences,function(e){-1===t.active.indexOf(e.id)&&t.stale.push(e.id)}),f(t.stale,function(e){return delete n.store.sequences[e]})}function p(e){var i,r=this;try{f(u(e),function(e){var t=e.getAttribute("data-sr-id");if(null!==t){i=!0;var n=r.store.elements[t];n.callbackTimer&&window.clearTimeout(n.callbackTimer.clock),e.setAttribute("style",n.styles.inline.generated),e.removeAttribute("data-sr-id"),delete r.store.elements[t]}})}catch(e){return h.call(this,"Clean failed.",e.message)}if(i)try{t.call(this)}catch(e){return h.call(this,"Clean failed.",e.message)}}function N(e){if(e.constructor!==Array)throw new TypeError("Expected array.");if(16===e.length)return e;if(6!==e.length)throw new RangeError("Expected array with either 6 or 16 values.");var t=z();return t[0]=e[0],t[1]=e[1],t[4]=e[2],t[5]=e[3],t[12]=e[4],t[13]=e[5],t}function z(){for(var e=[],t=0;t<16;t++)t%5==0?e.push(1):e.push(0);return e}function F(e,t){for(var n=N(e),i=N(t),r=[],o=0;o<4;o++)for(var s=[n[o],n[o+4],n[o+8],n[o+12]],a=0;a<4;a++){var c=4*a,l=[i[c],i[c+1],i[c+2],i[c+3]],d=s[0]*l[0]+s[1]*l[1]+s[2]*l[2]+s[3]*l[3];r[o+c]=d}return r}function D(e,t){var n=z();return n[0]=e,n[5]="number"==typeof t?t:e,n}var S=function(){var n={},i=document.documentElement.style;function e(e,t){if(void 0===t&&(t=i),e&&"string"==typeof e){if(n[e])return n[e];if("string"==typeof t[e])return n[e]=e;if("string"==typeof t["-webkit-"+e])return n[e]="-webkit-"+e;throw new RangeError('Unable to find "'+e+'" style property.')}throw new TypeError("Expected a string.")}return e.clearCache=function(){return n={}},e}();function m(e){var t=window.getComputedStyle(e.node),n=t.position,i=e.config,r={},o=(e.node.getAttribute("style")||"").match(/[\w-]+\s*:\s*[^;]+\s*/gi)||[];r.computed=o?o.map(function(e){return e.trim()}).join("; ")+";":"",r.generated=o.some(function(e){return e.match(/visibility\s?:\s?visible/i)})?r.computed:o.concat(["visibility: visible"]).map(function(e){return e.trim()}).join("; ")+";";var s,a,c,l,d,u,f,h,p,m,y,v,g,b=parseFloat(t.opacity),w=isNaN(parseFloat(i.opacity))?parseFloat(t.opacity):parseFloat(i.opacity),E={computed:b!==w?"opacity: "+b+";":"",generated:b!==w?"opacity: "+w+";":""},j=[];if(parseFloat(i.distance)){var T="top"===i.origin||"bottom"===i.origin?"Y":"X",k=i.distance;"top"!==i.origin&&"left"!==i.origin||(k=/^-/.test(k)?k.substr(1):"-"+k);var O=k.match(/(^-?\d+\.?\d?)|(em$|px$|%$)/g),x=O[0];switch(O[1]){case"em":k=parseInt(t.fontSize)*x;break;case"px":k=x;break;case"%":k="Y"===T?e.node.getBoundingClientRect().height*x/100:e.node.getBoundingClientRect().width*x/100;break;default:throw new RangeError("Unrecognized or missing distance unit.")}"Y"===T?j.push((c=k,(l=z())[13]=c,l)):j.push((s=k,(a=z())[12]=s,a))}i.rotate.x&&j.push((d=i.rotate.x,u=Math.PI/180*d,(f=z())[5]=f[10]=Math.cos(u),f[6]=f[9]=Math.sin(u),f[9]*=-1,f)),i.rotate.y&&j.push((h=i.rotate.y,p=Math.PI/180*h,(m=z())[0]=m[10]=Math.cos(p),m[2]=m[8]=Math.sin(p),m[2]*=-1,m)),i.rotate.z&&j.push((y=i.rotate.z,v=Math.PI/180*y,(g=z())[0]=g[5]=Math.cos(v),g[1]=g[4]=Math.sin(v),g[4]*=-1,g)),1!==i.scale&&(0===i.scale?j.push(D(2e-4)):j.push(D(i.scale)));var A={};if(j.length){A.property=S("transform"),A.computed={raw:t[A.property],matrix:function(e){if("string"==typeof e){var t=e.match(/matrix(3d)?\(([^)]+)\)/);if(t)return N(t[2].split(", ").map(parseFloat))}return z()}(t[A.property])},j.unshift(A.computed.matrix);var R=j.reduce(F);A.generated={initial:A.property+": matrix3d("+R.join(", ")+");",final:A.property+": matrix3d("+A.computed.matrix.join(", ")+");"}}else A.generated={initial:"",final:""};var q={};if(E.generated||A.generated.initial){q.property=S("transition"),q.computed=t[q.property],q.fragments=[];var P=i.delay,L=i.duration,M=i.easing;E.generated&&q.fragments.push({delayed:"opacity "+L/1e3+"s "+M+" "+P/1e3+"s",instant:"opacity "+L/1e3+"s "+M+" 0s"}),A.generated.initial&&q.fragments.push({delayed:A.property+" "+L/1e3+"s "+M+" "+P/1e3+"s",instant:A.property+" "+L/1e3+"s "+M+" 0s"}),q.computed&&!q.computed.match(/all 0s/)&&q.fragments.unshift({delayed:q.computed,instant:q.computed});var I=q.fragments.reduce(function(e,t,n){return e.delayed+=0===n?t.delayed:", "+t.delayed,e.instant+=0===n?t.instant:", "+t.instant,e},{delayed:"",instant:""});q.generated={delayed:q.property+": "+I.delayed+";",instant:q.property+": "+I.instant+";"}}else q.generated={delayed:"",instant:""};return{inline:r,opacity:E,position:n,transform:A,transition:q}}function c(e,t){void 0===t&&(t={});var n=t.pristine||this.pristine,i="always"===e.config.useDelay||"onload"===e.config.useDelay&&n||"once"===e.config.useDelay&&!e.seen,r=e.visible&&!e.revealed,o=!e.visible&&e.revealed&&e.config.reset;return t.reveal||r?function(e,t){var n=[e.styles.inline.generated,e.styles.opacity.computed,e.styles.transform.generated.final];t?n.push(e.styles.transition.generated.delayed):n.push(e.styles.transition.generated.instant);e.revealed=e.seen=!0,e.node.setAttribute("style",n.filter(function(e){return""!==e}).join(" ")),a.call(this,e,t)}.call(this,e,i):t.reset||o?function(e){var t=[e.styles.inline.generated,e.styles.opacity.generated,e.styles.transform.generated.initial,e.styles.transition.generated.instant];e.revealed=!1,e.node.setAttribute("style",t.filter(function(e){return""!==e}).join(" ")),a.call(this,e)}.call(this,e):void 0}function a(e,t){var n=this,i=t?e.config.duration+e.config.delay:e.config.duration,r=e.revealed?e.config.beforeReveal:e.config.beforeReset,o=e.revealed?e.config.afterReveal:e.config.afterReset,s=0;e.callbackTimer&&(s=Date.now()-e.callbackTimer.start,window.clearTimeout(e.callbackTimer.clock)),r(e.node),e.callbackTimer={start:Date.now(),clock:window.setTimeout(function(){o(e.node),e.callbackTimer=null,e.revealed&&!e.config.reset&&e.config.cleanup&&p.call(n,e.node)},i-s)}}var e,y=(e=0,function(){return e++});function l(e,t){if(void 0===t&&(t=this.pristine),!e.visible&&e.revealed&&e.config.reset)return c.call(this,e,{reset:!0});var n=this.store.sequences[e.sequence.id],i=e.sequence.index;if(n){var r=new d(n,"visible",this.store),o=new d(n,"revealed",this.store);if(n.models={visible:r,revealed:o},!o.body.length){var s=n.members[r.body[0]],a=this.store.elements[s];if(a)return g.call(this,n,r.body[0],-1,t),g.call(this,n,r.body[0],1,t),c.call(this,a,{reveal:!0,pristine:t})}if(!n.blocked.head&&i===[].concat(o.head).pop()&&i>=[].concat(r.body).shift())return g.call(this,n,i,-1,t),c.call(this,e,{reveal:!0,pristine:t});if(!n.blocked.foot&&i===[].concat(o.foot).shift()&&i<=[].concat(r.body).pop())return g.call(this,n,i,1,t),c.call(this,e,{reveal:!0,pristine:t})}}function v(e){var t=Math.abs(e);if(isNaN(t))throw new RangeError("Invalid sequence interval.");this.id=y(),this.interval=Math.max(t,16),this.members=[],this.models={},this.blocked={head:!1,foot:!1}}function d(e,i,r){var o=this;this.head=[],this.body=[],this.foot=[],f(e.members,function(e,t){var n=r.elements[e];n&&n[i]&&o.body.push(t)}),this.body.length&&f(e.members,function(e,t){var n=r.elements[e];n&&!n[i]&&(t<o.body[0]?o.head.push(t):o.foot.push(t))})}function g(e,t,n,i){var r=this,o=["head",null,"foot"][1+n],s=e.members[t+n],a=this.store.elements[s];e.blocked[o]=!0,setTimeout(function(){e.blocked[o]=!1,a&&l.call(r,a,i)},e.interval)}function b(){var n=this;t.call(this),f(this.store.elements,function(e){var t=[e.styles.inline.generated];e.visible?(t.push(e.styles.opacity.computed),t.push(e.styles.transform.generated.final),e.revealed=!0):(t.push(e.styles.opacity.generated),t.push(e.styles.transform.generated.initial),e.revealed=!1),e.node.setAttribute("style",t.filter(function(e){return""!==e}).join(" "))}),f(this.store.containers,function(e){var t=e.node===document.documentElement?window:e.node;t.addEventListener("scroll",n.delegate),t.addEventListener("resize",n.delegate)}),this.delegate(),this.initTimeout=null}function w(e){return void 0===e&&(e=navigator.userAgent),/Android|iPhone|iPad|iPod/i.test(e)}function E(n){for(var e=[],t=arguments.length-1;0<t--;)e[t]=arguments[t+1];if(s(n))return f(e,function(e){f(e,function(e,t){s(e)?(n[t]&&s(n[t])||(n[t]={}),E(n[t],e)):n[t]=e})}),n;throw new TypeError("Target must be an object literal.")}function i(e,a,t){var c=this;void 0===a&&(a={}),void 0===t&&(t=!1);var l,d=[],n=a.interval||r.interval;try{n&&(l=new v(n));var i=u(e);if(!i.length)throw new Error("Invalid reveal target.");f(i.reduce(function(e,t){var n={},i=t.getAttribute("data-sr-id");i?(E(n,c.store.elements[i]),n.node.setAttribute("style",n.styles.inline.computed)):(n.id=y(),n.node=t,n.seen=!1,n.revealed=!1,n.visible=!1);var r=E({},n.config||c.defaults,a);if(!r.mobile&&w()||!r.desktop&&!w())return i&&p.call(c,n),e;var o,s=u(r.container)[0];if(!s)throw new Error("Invalid container.");return s.contains(t)&&(null===(o=function(t){var e=[],n=arguments.length-1;for(;0<n--;)e[n]=arguments[n+1];var i=null;return f(e,function(e){f(e,function(e){null===i&&e.node===t&&(i=e.id)})}),i}(s,d,c.store.containers))&&(o=y(),d.push({id:o,node:s})),n.config=r,n.containerId=o,n.styles=m(n),l&&(n.sequence={id:l.id,index:l.members.length},l.members.push(n.id)),e.push(n)),e},[]),function(e){(c.store.elements[e.id]=e).node.setAttribute("data-sr-id",e.id)})}catch(e){return h.call(this,"Reveal failed.",e.message)}f(d,function(e){c.store.containers[e.id]={id:e.id,node:e.node}}),l&&(this.store.sequences[l.id]=l),!0!==t&&(this.store.history.push({target:e,options:a}),this.initTimeout&&window.clearTimeout(this.initTimeout),this.initTimeout=window.setTimeout(b.bind(this),0))}var j,T=Math.sign||function(e){return(0<e)-(e<0)||+e},k=(j=Date.now(),function(e){var t=Date.now();16<t-j?e(j=t):setTimeout(function(){return k(e)},0)}),O=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||k;function x(e,t){for(var n=t?e.node.clientHeight:e.node.offsetHeight,i=t?e.node.clientWidth:e.node.offsetWidth,r=0,o=0,s=e.node;isNaN(s.offsetTop)||(r+=s.offsetTop),isNaN(s.offsetLeft)||(o+=s.offsetLeft),s=s.offsetParent;);return{bounds:{top:r,right:o+i,bottom:r+n,left:o},height:n,width:i}}function A(e,t){var i=this;void 0===e&&(e={type:"init"}),void 0===t&&(t=this.store.elements),O(function(){var n="init"===e.type||"resize"===e.type;f(i.store.containers,function(e){n&&(e.geometry=x.call(i,e,!0));var t=function(e){var t,n;return n=e.node===document.documentElement?(t=window.pageYOffset,window.pageXOffset):(t=e.node.scrollTop,e.node.scrollLeft),{top:t,left:n}}.call(i,e);e.scroll&&(e.direction={x:T(t.left-e.scroll.left),y:T(t.top-e.scroll.top)}),e.scroll=t}),f(t,function(e){n&&(e.geometry=x.call(i,e)),e.visible=function(e){void 0===e&&(e={});var t=this.store.containers[e.containerId];if(t){var n=Math.max(0,Math.min(1,e.config.viewFactor)),i=e.config.viewOffset,r=e.geometry.bounds.top+e.geometry.height*n,o=e.geometry.bounds.right-e.geometry.width*n,s=e.geometry.bounds.bottom-e.geometry.height*n,a=e.geometry.bounds.left+e.geometry.width*n,c=t.geometry.bounds.top+t.scroll.top+i.top,l=t.geometry.bounds.right+t.scroll.left-i.right,d=t.geometry.bounds.bottom+t.scroll.top-i.bottom,u=t.geometry.bounds.left+t.scroll.left+i.left;return r<d&&u<o&&c<s&&a<l||"fixed"===e.styles.position}}.call(i,e)}),f(t,function(e){e.sequence?l.call(i,e):c.call(i,e)}),i.pristine=!1})}var R,q,P,L,M,I,C,W,Y="4.0.5";function $(e){var t;if(void 0===e&&(e={}),void 0===this||Object.getPrototypeOf(this)!==$.prototype)return new $(e);if(!$.isSupported())return h.call(this,"Instantiation failed.","This browser is not supported."),n.failure();try{t=E({},I||r,e)}catch(e){return h.call(this,"Invalid configuration.",e.message),n.failure()}try{if(!u(t.container)[0])throw new Error("Invalid container.")}catch(e){return h.call(this,e.message),n.failure()}return!(I=t).mobile&&w()||!I.desktop&&!w()?(h.call(this,"This device is disabled.","desktop: "+I.desktop,"mobile: "+I.mobile),n.failure()):(n.success(),this.store={containers:{},elements:{},history:[],sequences:{}},this.pristine=!0,R=R||A.bind(this),q=q||function(){var n=this;f(this.store.elements,function(e){e.node.setAttribute("style",e.styles.inline.generated),e.node.removeAttribute("data-sr-id")}),f(this.store.containers,function(e){var t=e.node===document.documentElement?window:e.node;t.removeEventListener("scroll",n.delegate),t.removeEventListener("resize",n.delegate)}),this.store={containers:{},elements:{},history:[],sequences:{}}}.bind(this),P=P||i.bind(this),L=L||p.bind(this),M=M||function(){var t=this;f(this.store.history,function(e){i.call(t,e.target,e.options,!0)}),b.call(this)}.bind(this),Object.defineProperty(this,"delegate",{get:function(){return R}}),Object.defineProperty(this,"destroy",{get:function(){return q}}),Object.defineProperty(this,"reveal",{get:function(){return P}}),Object.defineProperty(this,"clean",{get:function(){return L}}),Object.defineProperty(this,"sync",{get:function(){return M}}),Object.defineProperty(this,"defaults",{get:function(){return I}}),Object.defineProperty(this,"version",{get:function(){return Y}}),Object.defineProperty(this,"noop",{get:function(){return!1}}),W||(W=this))}return $.isSupported=function(){return("transform"in(t=document.documentElement.style)||"WebkitTransform"in t)&&("transition"in(e=document.documentElement.style)||"WebkitTransition"in e);var e,t},Object.defineProperty($,"debug",{get:function(){return C||!1},set:function(e){return C="boolean"==typeof e?e:C}}),$(),$}();
+				</script>
+				<script type="text/javascript">
+					window.onload = function(){
+	
+						window.sr = ScrollReveal({
+							duration: 700,
+							scale: 1,
+							distance: '50px',
+							easing: 'cubic-bezier(0.0, 0.0, 0.2, 1)',
+						});
+					
+						sr.reveal('#promotion_wrap .gate_motion .head', {
+							distance: '100px',
+							delay: 1,
+							duration: 800,
+						});
+					
+						sr.reveal('#promotion_wrap .gate_motion.cm .image', {
+							distance: '100px',
+							delay: 0.25,
+							duration: 1200,
+							opacity: 1,
+							reset: true,
+							easing: 'cubic-bezier(0.0, 0.5, 0.2, 0.8)'
+						});
+			
+						sr.reveal('#promotion_wrap .gate_motion.save ul li', {
+							duration: 750,
+							origin: 'right',
+							viewFactor: 0.4,
+							distance: '100px',
+							reset: true,
+							interval : 120,
+							beforeReveal: function( dom ) {
+								var target = dom.children[1];
+								var number = target.dataset.num;
+			
+								// CountUp
+								if (target !== undefined) {
+									var count = new CountUp(target, 0, number, 1, 2, { useEasing: true, separator: ',', suffix: '%', prefix: '최대 ' });
+									if (!count.error) {
+									  count.start();
+									} else {
+									  console.error(count.error);
+									}
+								} else {
+									console.error('DOM 선택이 잘 못 되었습니다.');
+								}
+							},
+						});
+					
+						sr.reveal('#promotion_wrap .gate_motion.add .image', {
+							distance: '100px',
+							duration: 500,
+							opacity: 1,
+							reset: true,
+							easing: 'cubic-bezier(0.0, 0.5, 0.2, 0.8)',
+							beforeReset : function( el ){
+								var target = $(el);
+			
+								var item = target.find('.ico_moa:not(".off")');						
+								item.removeClass('on');
+							},
+							afterReveal : function( el ){
+			
+								var target = $(el);
+								var item = target.find('.ico_moa:not(".off")');
+			
+								for(var i=0; i< item.length; i++) {
+									(function( index ) {
+			
+										setTimeout(function(){
+											$(item[index]).addClass('on');
+										}, 500 * index);
+			
+									})(i);
+								}
+			
+							}
+						});
+	
+					}
+				</script>
+				<!-- // 서비스 소개 -->
+			</div>
+			
+		</div>
+		<!-- 이벤트 html 영역 END-->
+
+
+	 </div>
+
+
+
+
+
+
+	<nav class="fnb">
+		<a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+		<a href="#"><i class="ico cart"></i>장바구니</a>
+		<a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" option-call="fnb"><i class="ico cate"></i>카테고리</a>
+	</nav>
+	<div class="option_select " option-receive="fnb">
+		<div class="pop_option">
+			<ul class="fnb_opt">
+				<li><a href="#"><i class="ico flight"></i>항공</a></li>
+				<li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+				<li><a href="#"><i class="ico pack"></i>패키지</a></li>
+				<li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript" src="../../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../../resource/js/lalang.js"></script>
+
+</body>
+</html>

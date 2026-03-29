@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<!-- Header : S -->
+	<header>	<!-- data-native 추가  2019-11-07 -->
+		<h1><a href="#">SHILLATRIP</a></h1>
+		<button type="button" name="button" class="ico search">검색</button>
+		<button type="button" name="button" class="ico my">마이페이지</button>
+		<!-- 2019-10-14 GNB 공통SB v2.6현행화 -->
+		<nav class="gnb tscroll">
+			<ul class="ul_size">
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">마감임박</a></li>
+				<li><a href="#">라랑팩</a></li>
+				<li><a href="#">랭킹</a></li>
+				<li><a href="#">고객센터</a></li>
+			</ul>
+		</nav>
+		<!-- //2019-10-14 GNB 공통SB v2.6현행화 -->
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			액티비티
+		</h2>
+	 </header>
+	 <!-- Header : E -->
+
+	 <!-- 콘텐츠 : S -->
+	 <div class="content">
+		<!-- 2019-10-18 검색전/검색후 화면 수정 -->
+		<!-- 검색전 : S -->
+		<!-- 클릭 시 pop_search_trip_prd.html 팝업 호출 (trip_plan mini일때도 동일) -->
+		<div class="trip_search big only">
+			<div class="" onclick="">
+				<p class="to">
+					<span>도착지</span>
+					<strong>어디로 떠나세요?</strong>
+				</p>
+			</div>
+			<strong class="stit">최근 검색 일정</strong>
+			<div class="recent_list tscroll">
+				<ul class="ul_size">
+					<li><a href="#none">세부 3월 26일(토)</a></li>
+					<li><a href="#none">세부 3월 26일(토)</a></li>
+					<li><a href="#none">세부 3월 26일(토)</a></li>
+					<li><a href="#none">세부 3월 26일(토)</a></li>
+					<li><a href="#none">세부 3월 26일(토)</a></li>
+				</ul>
+			</div>
+		</div>
+
+ 		<div class="trip_plan mini fixed_step3" data-native="gnbsticky">	<!-- data-native 추가  2019-11-07 -->
+			<a href="#"><!-- 클릭 시 pop_search_trip_prd.html 팝업 호출 -->
+				<p class="route"><strong>어디로 떠나세요?</strong></p>
+				<p class="stxt">여행일정을 입력해보세요.</p>
+			</a>
+		</div>
+		<!-- 검색전 : E -->
+
+		<!-- 검색후 : S -->
+		<!-- <div class="trip_plan big">
+			<p class="route"><a href="#"><strong>프라하에 가시는군요!</strong></a></p>
+			<div class="trip_plan_info">
+				<p class="stxt"><a href="#">10월 15일 (화) ~ 10월 30일 (토)</a></p>
+				<div class="btn_detail">
+					<button type="button" name="button" class="btn_txt type1">변경</button>
+					<button type="button" name="button" class="btn_txt type1">초기화</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="trip_plan mini fixed_step3">
+			<a href="#" class="gotop">
+				<p class="route"><strong>프라하에 가시는군요!</strong></p>
+				<p class="stxt">2019.10.15 ~ 2019.10.30</p>
+			</a>
+		</div> -->
+		<!-- 검색후 : E -->
+		<!-- //2019-10-18 검색전/검색후 화면 수정 -->
+
+		<!-- 2019-12-27 띠배너 슬라이드로 배너로 수정 -->
+		<!-- 2019-11-13 띠배너 추가 -->
+		<div class="band_banner">
+			<div class="slider_wrap" slider-option="banner">
+				<!-- D : loop -->
+				<div class="slider_item">
+					<a href="#">
+						<img src="../../resource/img/tmp_banner01.png" alt="">
+						<div class="banner_txt">
+							<span class="tit">신라트립 회원에게만 특별혜택</span>
+							<span class="sub">메일 수신 동의하면 사은품을 드립니다</span>
+						</div>
+					</a>
+				</div>
+				<!-- //D : loop -->
+				<div class="slider_item">
+					<a href="#">
+						<img src="../../resource/img/tmp_banner01.png" alt="">
+						<div class="banner_txt">
+							<span class="tit">신라트립 회원에게만 특별혜택</span>
+							<span class="sub">메일 수신 동의하면 사은품을 드립니다</span>
+						</div>
+					</a>
+				</div>
+				<div class="slider_item">
+					<a href="#">
+						<img data-lazy="../../resource/img/tmp_banner01.png" src="../../resource/img/img_blank.png" alt=""><!-- 2020-02-04 data-lazy 추가 -->
+						<div class="banner_txt">
+							<span class="tit">신라트립 회원에게만 특별혜택</span>
+							<span class="sub">메일 수신 동의하면 사은품을 드립니다</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- //2019-11-13 띠배너 추가 -->
+		<!-- //2019-12-27 띠배너 슬라이드로 배너로 수정 -->
+
+		<h3>이런 상품은 어때요?</h3>
+		<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+		<div class="goods_list tscroll">
+			<ul class="ul_size">
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="badge_area">
+							<span class="badge type3">신라트립가</span>
+						</span>
+						<span class="cate">티켓/패스</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="sale_area">
+							<span class="per">20%</span><span class="cost">10,000,000원</span>
+						</span>
+						<span class="price"><strong>8,000,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">유심/와이파이</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="price"><strong>8,000,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">여행자보험</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="sale_area">
+							<span class="cost">10,000,000원</span>
+						</span>
+						<span class="price"><strong>8,000,000</strong>원~</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+
+		<div class="tab_wrap d_mt">
+			<div class="tab_menu tscroll">
+				<!-- 2019-07-02 탭명칭 변경 -->
+				<ul class="ul_size">
+					<li><a href="#" class="on">전체</a></li>
+					<li><a href="#">투어/액티비티</a></li>
+					<li><a href="#">현지교통/패스</a></li>
+					<li><a href="#">유심/와이파이</a></li>
+					<li><a href="#">여행편의</a></li>
+				</ul>
+			</div>
+
+			<!-- All -->
+			<div class="tab_cont active">
+				<div class="total_box">
+					<span class="total">총 <b>121</b>개</span>
+					<div class="sorting">
+						<button type="button" name="button" class="btn_ico filter">필터</button>
+						<button type="button" name="button" class="btn_ico sort" option-call="3">평점 높은 순</button>
+						<div class="option_select" option-receive="3">
+							<div class="pop_option">
+								<ul>
+									<li><a href="#" class="on">리뷰 많은 순</a></li>
+									<li><a href="#">판매 많은 순</a></li>
+									<li><a href="#">조회 높은 순</a></li>
+									<li><a href="#">낮은 가격 순</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+				<ul class="goods_list3">
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 1</span>
+								<span class="badge type3">신라트립가</span>
+								<span class="badge type2">모아랑</span>
+								<span class="badge type4">쿠폰</span>
+							</span>
+							<span class="cate">입장권/티켓</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">유심/와이파이</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원</span>
+							<span class="box">
+								<span class="price"><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">현지투어</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="box">
+								<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">여행자편의</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="box">
+								<span class="price"><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+				</ul>
+				<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+			</div>
+
+			<!-- 입장권/티켓 -->
+			<div class="tab_cont">
+				<div class="total_box">
+					<span class="total">총 <b>121</b>개</span>
+					<div class="sorting">
+						<button type="button" name="button" class="btn_ico filter">필터</button>
+						<button type="button" name="button" class="btn_ico sort" option-call="4">평점 높은 순</button>
+						<div class="option_select" option-receive="4">
+							<div class="pop_option">
+								<ul>
+									<li><a href="#" class="on">리뷰 많은 순</a></li>
+									<li><a href="#">판매 많은 순</a></li>
+									<li><a href="#">조회 높은 순</a></li>
+									<li><a href="#">낮은 가격 순</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+				<ul class="goods_list3">
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 1</span>
+								<span class="badge type3">신라트립가</span>
+								<span class="badge type2">모아랑</span>
+								<span class="badge type4">쿠폰</span>
+							</span>
+							<span class="cate">입장권/티켓</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">입장권/티켓</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">입장권/티켓</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">입장권/티켓</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+				</ul>
+				<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+			</div>
+
+
+			<!-- 현지투어 -->
+			<div class="tab_cont">
+				<div class="total_box">
+					<span class="total">총 <b>121</b>개</span>
+					<div class="sorting">
+						<button type="button" name="button" class="btn_ico filter">필터</button>
+						<button type="button" name="button" class="btn_ico sort" option-call="6">평점 높은 순</button>
+						<div class="option_select" option-receive="6">
+							<div class="pop_option">
+								<ul>
+									<li><a href="#" class="on">리뷰 많은 순</a></li>
+									<li><a href="#">판매 많은 순</a></li>
+									<li><a href="#">조회 높은 순</a></li>
+									<li><a href="#">낮은 가격 순</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+				<ul class="goods_list3">
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 1</span>
+								<span class="badge type3">신라트립가</span>
+								<span class="badge type2">모아랑</span>
+								<span class="badge type4">쿠폰</span>
+							</span>
+							<span class="cate">현지투어</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">현지투어</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">현지투어</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd07.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">현지투어</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+				</ul>
+				<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+			</div>
+
+			<!-- 유심/와이파이 -->
+			<div class="tab_cont">
+				<div class="total_box">
+					<span class="total">총 <b>121</b>개</span>
+					<div class="sorting">
+						<button type="button" name="button" class="btn_ico filter">필터</button>
+						<button type="button" name="button" class="btn_ico sort" option-call="5">평점 높은 순</button>
+						<div class="option_select" option-receive="5">
+							<div class="pop_option">
+								<ul>
+									<li><a href="#" class="on">리뷰 많은 순</a></li>
+									<li><a href="#">판매 많은 순</a></li>
+									<li><a href="#">조회 높은 순</a></li>
+									<li><a href="#">낮은 가격 순</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+				<ul class="goods_list3">
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 1</span>
+								<span class="badge type3">신라트립가</span>
+								<span class="badge type2">모아랑</span>
+								<span class="badge type4">쿠폰</span>
+							</span>
+							<span class="cate">유심/와이파이</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">유심/와이파이</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">유심/와이파이</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">유심/와이파이</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="desc">로우시즌/미들시즌/하이시즌 대기없이 바로 즉시입장 가능</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+				</ul>
+				<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+			</div>
+
+			<!-- 여행자보험 -->
+			<div class="tab_cont">
+				<div class="total_box">
+					<span class="total">총 <b>121</b>개</span>
+					<div class="sorting">
+						<button type="button" name="button" class="btn_ico filter">필터</button>
+						<button type="button" name="button" class="btn_ico sort" option-call="7">평점 높은 순</button>
+						<div class="option_select" option-receive="7">
+							<div class="pop_option">
+								<ul>
+									<li><a href="#" class="on">리뷰 많은 순</a></li>
+									<li><a href="#">판매 많은 순</a></li>
+									<li><a href="#">조회 높은 순</a></li>
+									<li><a href="#">낮은 가격 순</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+				<ul class="goods_list3">
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 1</span>
+								<span class="badge type3">신라트립가</span>
+								<span class="badge type2">모아랑</span>
+								<span class="badge type4">쿠폰</span>
+							</span>
+							<span class="cate">여행자편의</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">여행자편의</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">여행자편의</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd08.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="cate">여행자편의</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="desc">로우시즌/미들시즌/하이시즌 대기없이 바로 즉시입장 가능</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+				</ul>
+				<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+			</div>
+		</div>
+
+		<!-- 하단고정버튼 : S -->
+		<div class="r_btn_box">
+			<span><button type="button" name="button" class="btn_ico filter" popup-call="filter">필터</button></span>
+			<span><button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">정렬</button></span>
+		</div>
+		<!-- 하단고정버튼 : E -->
+
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>	
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+	<!-- 이전, top -->
+	<div class="quik_btn">
+		<!-- <a href="#none" class="ico btn_back2">이전</a> -->
+		<a href="#top" class="ico btn_top">맨처음로</a>
+	</div>
+	<!-- //이전, top -->
+   
+	<!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+
+	<div class="option_select" option-receive="fix_b_btn">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#" class="on">평점 높은 순</a></li>
+				<li><a href="#">관심 높은 순</a></li>
+				<li><a href="#">판매 높은 순</a></li>
+				<li><a href="#">낮은 가격 순</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="popup filter" popup-receive="filter">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>필터</h1>
+			<button type="button" name="button" class="btn_txt type5 reset">초기화</button>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+
+			<section class="filter fold_area">
+				<h2>여행사
+					<label class="checkbox fright" for="agency_all"><input type="checkbox" id="agency_all" name="agency" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="agency01"><input type="checkbox" id="agency01" name="agency" checked><span></span>모두투어</label></li>
+						<li><label class="checkbox" for="agency02"><input type="checkbox" id="agency02" name="agency" checked><span></span>노랑풍선</label></li>
+						<li><label class="checkbox" for="agency03"><input type="checkbox" id="agency03" name="agency" checked><span></span>하나투어</label></li>
+						<li><label class="checkbox" for="agency04"><input type="checkbox" id="agency04" name="agency" checked><span></span>롯데관광</label></li>
+						<li><label class="checkbox" for="agency05"><input type="checkbox" id="agency05" name="agency" checked><span></span>온라인투어</label></li>
+						<li><label class="checkbox" for="agency06"><input type="checkbox" id="agency06" name="agency" checked><span></span>인터파크투어</label></li>
+						<li><label class="checkbox" for="agency07"><input type="checkbox" id="agency07" name="agency" checked><span></span>한진관광</label></li>
+						<li><label class="checkbox" for="agency08"><input type="checkbox" id="agency08" name="agency" checked><span></span>내일투어</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>항공사
+					<label class="checkbox fright" for="airline_all"><input type="checkbox" id="airline_all" name="airline" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="airline01"><input type="checkbox" id="airline01" name="airline" checked><span></span>대한항공</label></li>
+						<li><label class="checkbox" for="airline02"><input type="checkbox" id="airline02" name="airline" checked><span></span>아시아나항공</label></li>
+						<li><label class="checkbox" for="airline03"><input type="checkbox" id="airline03" name="airline" checked><span></span>진에어</label></li>
+						<li><label class="checkbox" for="airline04"><input type="checkbox" id="airline04" name="airline" checked><span></span>제주에어</label></li>
+						<li><label class="checkbox" for="airline05"><input type="checkbox" id="airline05" name="airline" checked><span></span>이스타항공</label></li>
+						<li><label class="checkbox" for="airline06"><input type="checkbox" id="airline06" name="airline" checked><span></span>에어서울</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter">
+				<h2>일정 <span class="stxt">1박2일 ~ 3박4일</span></h2>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+					<span class="range_pointer" style="left:20%"></span>
+					<span class="range_pointer" style="left:80%"></span>
+				</div>
+			</section>
+
+			<section class="filter box_type1">
+				<h2>출발시간 <span class="stxt">06:00 ~ 12:00</span></h2>
+				<p>
+					<label class="checkbox checked" for="time01"><input type="checkbox" name="time" id="time01"><span></span>새벽<br> 00:00 ~ 06:00</label>
+					<label class="checkbox checked" for="time02"><input type="checkbox" name="time" id="time02"><span></span>오전<br> 06:00 ~ 12:00</label>
+					<label class="checkbox checked" for="time03"><input type="checkbox" name="time" id="time03"><span></span>오후<br> 12:00 ~ 18:00</label>
+					<label class="checkbox checked" for="time04"><input type="checkbox" name="time" id="time04"><span></span>야간<br> 18:00 ~ 00:00</label>
+				</p>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>숙박등급</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="grade01"><input type="checkbox" id="grade01" name="grade" checked><span></span>1성급</label></li>
+						<li><label class="checkbox" for="grade02"><input type="checkbox" id="grade02" name="grade" checked><span></span>2성급</label></li>
+						<li><label class="checkbox" for="grade03"><input type="checkbox" id="grade03" name="grade" checked><span></span>3성급</label></li>
+						<li><label class="checkbox" for="grade04"><input type="checkbox" id="grade04" name="grade" checked><span></span>4성급</label></li>
+						<li><label class="checkbox" for="grade05"><input type="checkbox" id="grade05" name="grade" checked><span></span>5성급</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter">
+				<h2>쇼핑횟수 <span class="stxt">1회 ~ 3회</span></h2>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+					<span class="range_pointer" style="left:20%"></span>
+					<span class="range_pointer" style="left:80%"></span>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>인솔자</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="leader01"><input type="checkbox" id="leader01" name="leader" checked><span></span>동행</label></li>
+						<li><label class="checkbox" for="leader02"><input type="checkbox" id="leader02" name="leader" checked><span></span>비 동행</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>자유일정</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="travel01"><input type="checkbox" id="travel01" name="travel" checked><span></span>포함</label></li>
+						<li><label class="checkbox" for="travel02"><input type="checkbox" id="travel02" name="travel" checked><span></span>불포함</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter">
+				<h2>가격 <span class="stxt">350,000원 ~ 2,000,000원</span></h2>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+					<span class="range_pointer" style="left:20%"></span>
+					<span class="range_pointer" style="left:80%"></span>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>모아랑 상품</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list">
+						<li><label class="checkbox" for="mprd01"><input type="checkbox" id="mprd01" name="mprd"><span></span>모아랑 상품만 보기</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

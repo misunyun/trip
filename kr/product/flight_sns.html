@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap fixed">
+	 <header class="sticky_step1">
+		 <h2>
+			 <a href="#" class="ico btn_back">이전 페이지</a>
+			 항공권상세
+			 <button type="button" class="ico btn_like">관심상품</button>
+			 <button type="button" class="ico btn_sns">공유</button>
+		 </h2>
+	 </header>
+	 <!-- 콘텐츠 : S -->
+	 <div class="content">
+		<div class="flight_info">
+			<div class="labels">
+				<span class="label">예약가능</span>
+				<span class="label">요금확정</span>
+			</div>
+
+			<p class="route"><strong>인천</strong><i class="ico round"></i><strong>오사카</strong></p>
+			<p class="stxt">02월 05일 (화) ~ 02월 09일 (토) / 성인2 / 일반석</p>
+
+			<dl>
+				<dt>성인(삼성카드 결제조건) 1인
+					<span class="stxt">항공요금+유류할증료+발권대행수수료 포함</span>
+				</dt>
+				<dd><strong>373,800</strong>원</dd>
+
+				<dt class="em">총 운임(와이페이모어) <button type="button" name="button" class="ico btn_help" tooltip-call="1">도움말</button></dt>
+				<dd class="sum"><strong>373,800</strong>원</dd>
+			</dl>
+
+			<button type="button" name="button" class="btn_txt type4">항공 요금규정 안내</button>
+		</div>
+
+		<p class="noti">조회좌석과 예약완료 후 좌석상태가 상이할 수 있으므로 반드시 예약완료 후 좌석상태를 확인해주시기 바랍니다.</p>
+
+		<!-- Depart : S -->
+		<div class="itinerary_info">
+			<span class="label ok">환불가능</span>
+			<span class="label not">변경불가</span>
+			<span class="label code">코드쉐어</span>
+			<p class="route">
+				<span class="stit">가는 항공편</span>
+				<strong>인천</strong><i class="ico arrow"></i><strong>오사카</strong>
+			</p>
+			<p class="fleet_info">
+				<span>
+					<i class="ico wifi on">와이파이</i><!-- 해당서비스 'on' 클래스 추가 -->
+					<i class="ico power">콘센트</i>
+					<i class="ico enter">엔터테인먼트</i>
+					<i class="ico meal">기내식</i>
+				</span>
+				<span class="flight_time"><i class="ico time"></i>02시간 25분</span>
+			</p>
+
+			<!-- Depart -->
+			<ol class="itinerary">
+				<li class="depart">
+					<span class="date"><b>07:15</b>02월 05일(화)</span>
+					<p>
+						<strong>인천(ICN)출발</strong>
+						<span class="flight"><img src="../../resource/img/ico_flight_ke.png" class="ico_pl" alt="">대한항공 OZ9636</span>
+						<span class="time"><b>비행</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="arrival">
+					<span class="date"><b>07:15</b>02월 05일(화)</span>
+					<p>
+						<strong>오사카(KIX)도착</strong>
+					</p>
+				</li>
+			</ol>
+		</div>
+		<!-- Depart : E -->
+
+		<!-- Return : S -->
+		<div class="itinerary_info">
+			<span class="label ok">환불가능</span>
+			<span class="label not">변경불가</span>
+			<span class="label code">코드쉐어</span>
+			<p class="route">
+				<span class="stit">오는 항공편</span>
+				<strong>파리</strong><i class="ico arrow"></i><strong>마닐라</strong><i class="ico arrow"></i><strong>홍콩</strong><i class="ico arrow"></i><strong>인천</strong>
+			</p>
+			<p class="fleet_info">
+				<span>
+					<i class="ico wifi on">와이파이</i><!-- 해당서비스 'on' 클래스 추가 -->
+					<i class="ico power">콘센트</i>
+					<i class="ico enter">엔터테인먼트</i>
+					<i class="ico meal">기내식</i>
+				</span>
+				<span class="flight_time"><i class="ico time"></i>02시간 25분</span>
+			</p>
+
+			<!-- Depart -->
+			<ol class="itinerary">
+				<li class="depart">
+					<span class="date"><b>07:15</b>02월 05일(화)</span>
+					<p>
+						<strong>파리(CDG)출발</strong>
+						<span class="flight"><img src="../../resource/img/ico_flight_ke.png" class="ico_pl" alt="">대한항공 OZ9636</span>
+						<span class="time"><b>비행</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="via">
+					<span class="date"><b>07:15</b>02월 05일(화)</span>
+					<p>
+						<strong>마닐라(MNL)도착</strong>
+						<span class="flight"><img src="../../resource/img/ico_flight_ke.png" class="ico_pl" alt="">대한항공 OZ9636</span>
+						<span class="time"><b>대기</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="depart">
+					<span class="date"><b>07:15</b>02월 05일(화)</span>
+					<p>
+						<strong>마닐라(MNL)출발</strong>
+						<span class="flight"><img src="../../resource/img/ico_flight_ke.png" class="ico_pl" alt="">대한항공 OZ9636</span>
+						<span class="time"><b>비행</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="via">
+					<span class="date"><b>07:15</b>02월 05일(화)</span>
+					<p>
+						<strong>홍콩(HKG)도착</strong>
+						<span class="flight"><img src="../../resource/img/ico_flight_ke.png" class="ico_pl" alt="">대한항공 OZ9636</span>
+						<span class="time"><b>대기</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="depart">
+					<span class="date"><b>07:15</b>02월 05일(화)</span>
+					<p>
+						<strong>홍콩(HKG)출발</strong>
+						<span class="flight"><img src="../../resource/img/ico_flight_ke.png" class="ico_pl" alt="">대한항공 OZ9636</span>
+						<span class="time"><b>비행</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="arrival">
+					<span class="date"><b>07:15</b>02월 05일(화)</span>
+					<p>
+						<strong>인천(ICN)도착</strong>
+					</p>
+				</li>
+			</ol>
+		</div>
+		<!-- Return : E -->
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<div class="btn_wrap">
+		<button type="button" name="button" class="btn primary">예약하기</button>
+	</div>
+
+	<!-- 공유하기 : S -->
+	<div class="pop_sns">
+		<div class="sns_items">
+			<button type="button" name="button" class="ico sns_url">링크복사</button>
+			<button type="button" name="button" class="ico sns_twt">트위터 공유</button>
+			<button type="button" name="button" class="ico sns_face">페이스북 공유</button>
+			<button type="button" name="button" class="ico sns_kakao">카카오톡 공유</button>
+			<button type="button" name="button" class="ico sns_blog">블로그 공유</button>
+		</div>
+		<button type="button" name="button" class="ico btn_close4">창닫기</button>
+		<div class="copy_end">
+			<div><i class="ico copy"></i> URL이 복사되었습니다.</div>
+		</div>
+	</div>
+	<!-- 공유하기 : E -->
+
+	<div class="tooltip" tooltip-receive="1">
+		<strong>요금상세</strong>
+		<div class="fare_area">
+			<div class="tit">성인 1명</div>
+			<dl class="fare_detail">
+				<dt>항공요금</dt>
+				<dd>287,000원</dd>
+
+				<dt>유류할증료</dt>
+				<dd>79,480원</dd>
+
+				<dt>제세공과금</dt>
+				<dd>7,320원</dd>
+
+				<dt>발권대행수수료</dt>
+				<dd>10,000원</dd>
+			</dl>
+
+			<div class="tit">소아 1명</div>
+			<dl class="fare_detail">
+				<dt>항공요금</dt>
+				<dd>287,000원</dd>
+
+				<dt>유류할증료</dt>
+				<dd>79,480원</dd>
+
+				<dt>제세공과금</dt>
+				<dd>7,320원</dd>
+
+				<dt>발권대행수수료</dt>
+				<dd>10,000원</dd>
+			</dl>
+			
+			<dl class="fare_detail total">
+				<dt>총 운임</dt>
+				<dd>1,767,600원</dd>
+			</dl>
+		</div>
+		<button type="button" name="button" class="ico btn_close3">닫기</button>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</html>

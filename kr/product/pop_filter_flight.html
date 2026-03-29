@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+	<!-- 팝업 : S -->
+	<div class="popup filter show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>필터</h1>
+			<button type="button" name="button" class="btn_txt type5 reset">초기화</button>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+
+			<section class="filter fold_area">
+				<h2>직항/경유</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						 <li><label class="checkbox" for="flight01"><input type="checkbox" id="flight01" name="flight" checked><span></span>직항</label></li>
+						 <li><label class="checkbox" for="flight02"><input type="checkbox" id="flight02" name="flight" checked><span></span>경유 1회</label></li>
+						 <li><label class="checkbox" for="flight03"><input type="checkbox" id="flight03" name="flight"><span></span>경유 2회 이상</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter box_type1">
+				<h2>출발시간</h2>
+
+				<h3>가는편 <!-- 2019-11-20 삭제 <span>00:00 ~ 06:00</span> --></h3>
+				<p>
+					<label class="checkbox checked" for="time01"><input type="checkbox" name="time" id="time01"><span></span>새벽<br> 00:00 ~ 06:00</label>
+					<label class="checkbox" for="time02"><input type="checkbox" name="time" id="time02"><span></span>오전<br> 06:00 ~ 12:00</label>
+					<label class="checkbox" for="time03"><input type="checkbox" name="time" id="time03"><span></span>오후<br> 12:00 ~ 18:00</label>
+					<label class="checkbox" for="time04"><input type="checkbox" name="time" id="time04"><span></span>야간<br> 18:00 ~ 00:00</label>
+				</p>
+
+				<h3>오는편 <!-- 2019-11-20 삭제 <span>00:00 ~ 06:00,12:00~18:00</span> --></h3>
+				<p>
+					<label class="checkbox checked" for="b_time01"><input type="checkbox" name="b_time" id="b_time01"><span></span>새벽<br> 00:00 ~ 06:00</label>
+					<label class="checkbox" for="b_time02"><input type="checkbox" name="b_time" id="b_time02"><span></span>오전<br> 06:00 ~ 12:00</label>
+					<label class="checkbox checked" for="b_time03"><input type="checkbox" name="b_time" id="b_time03"><span></span>오후<br> 12:00 ~ 18:00</label>
+					<label class="checkbox" for="b_time04"><input type="checkbox" name="b_time" id="b_time04"><span></span>야간<br> 18:00 ~ 00:00</label>
+				</p>
+			</section>
+
+			<section class="filter">
+				<h2>소요시간</h2>
+
+				<h3>가는편 <span>02시간 20분</span></h3>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:0; width: 50%"></span></div>
+					<span class="range_pointer" style="left:50%"></span>
+				</div>
+
+				<h3>오는편 <span>02시간</span></h3>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:0; width: 50%"></span></div>
+					<span class="range_pointer" style="left:50%"></span>
+				</div>
+			</section>
+
+			<section class="filter">
+				<h2>가격 <span class="stxt">437,500원 ~ 1,200,000원</span></h2>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+					<span class="range_pointer" style="left:20%"></span>
+					<span class="range_pointer" style="left:80%"></span>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>항공사
+					<label class="checkbox fright" for="airline_all"><input type="checkbox" id="airline_all" name="airline" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						 <li><label class="checkbox" for="airline01"><input type="checkbox" id="airline01" name="airline" checked><span></span>대한항공</label></li>
+						<li><label class="checkbox" for="airline02"><input type="checkbox" id="airline02" name="airline" checked><span></span>아시아나항공</label></li>
+						<li><label class="checkbox" for="airline03"><input type="checkbox" id="airline03" name="airline" checked><span></span>가루다인도네시아</label></li>
+						<li><label class="checkbox" for="airline04"><input type="checkbox" id="airline04" name="airline" checked><span></span>중국동방항공</label></li>
+						<li><label class="checkbox" for="airline05"><input type="checkbox" id="airline05" name="airline" checked><span></span>LOT폴란드항공</label></li>
+						<li><label class="checkbox" for="airline06"><input type="checkbox" id="airline06" name="airline" checked><span></span>루프트한자 독일항공</label></li>
+						<li><label class="checkbox" for="airline07"><input type="checkbox" id="airline07" name="airline" checked><span></span>티웨이항공</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+
+			<section class="filter fold_area">
+				<h2>결제조건
+					<label class="checkbox fright" for="pay_chk_all"><input type="checkbox" id="pay_chk_all" name="pay_chk" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list">
+						<li><label class="checkbox" for="pay_chk01"><input type="checkbox" id="pay_chk01" name="pay_chk" checked><span></span>KB국민카드 결제(청구할인)</label></li>
+						<li><label class="checkbox" for="pay_chk02"><input type="checkbox" id="pay_chk02" name="pay_chk" checked><span></span>신한카드 결제(AIR1.5)</label></li>
+						<li><label class="checkbox" for="pay_chk03"><input type="checkbox" id="pay_chk03" name="pay_chk" checked><span></span>비씨카드 결제(청구할인)</label></li>
+						<li><label class="checkbox" for="pay_chk04"><input type="checkbox" id="pay_chk04" name="pay_chk" checked><span></span>하나카드 결제(1Q글로벌카드) </label></li>
+						<li><label class="checkbox" for="pay_chk05"><input type="checkbox" id="pay_chk05" name="pay_chk" checked><span></span>씨티카드결제</label></li>
+						<li><label class="checkbox" for="pay_chk06"><input type="checkbox" id="pay_chk06" name="pay_chk" checked><span></span>IBK 참! 좋은 캐시백플래티늄 카드(청구할인/전원실적 충족 시 적용)</label></li>
+						<li><label class="checkbox" for="pay_chk07"><input type="checkbox" id="pay_chk07" name="pay_chk" checked><span></span>NH농협카드 결제</label></li>
+						<li><label class="checkbox" for="pay_chk08"><input type="checkbox" id="pay_chk08" name="pay_chk" checked><span></span>우리카드 결제</label></li>
+						<li><label class="checkbox" for="pay_chk09"><input type="checkbox" id="pay_chk09" name="pay_chk" checked><span></span>씨티카드 결제</label></li>
+						<li><label class="checkbox" for="pay_chk10"><input type="checkbox" id="pay_chk10" name="pay_chk" checked><span></span>롯데카드 결제</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+
+	</div>
+	<!-- 팝업 : E -->
+</div>
+
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

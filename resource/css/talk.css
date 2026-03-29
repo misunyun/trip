@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+.talk.show {padding-bottom:50px}
+.talk .head{padding-left:50px;padding-right:50px;}
+.talk .head h1{padding-right:0;text-align:center;}
+
+.ico.btn_talk{width : 20px; height :20px;background-position: -359px -319px;}
+
+.talk .head button{position:absolute;}
+.talk .head .btn_back{top :17px;left: 20px;}
+.talk .head .btn_talk{top :17px;right: 20px;}
+.chat_ymd{width: 100%; height: auto;text-align: center; }
+.chat_ymd > span{display:inline-block;height:21px;line-height:23px;text-align: center;color:#828282;font-size:12px;border:1px solid #eee;border-radius: 100px; padding:0 12px 0 12px;}
+
+.chat_icon{position:absolute;right :calc(100% - -10px); top: 0;display: inline-block;width: 36px; height: 36px;border-radius: 50%; -webkit-border-radius: 50%;overflow: hidden;background-color:#f9f9f9; }
+.chat_icon img{position:absolute;left:50%;top:50%;max-width:100%; transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%); border-radius: 50%;}
+.chat_name{display: block;margin-bottom: 5px;}
+.chat_box{border-radius: 6px;display: inline-block;position:relative; max-width: 80%;}
+.chat_box::before{content: '';position: absolute;width: 0; height: 0;border-top: 10px solid transparent;border-bottom: 10px solid transparent;}
+.chat_text{width:100%;padding: 11px 14px 8px 14px; display:inline-block;line-height: 20px;box-sizing:border-box;}
+.chat_text .noti{font-size:15px; color:#252525; display: block; padding:0; padding-top:5px}
+.chat_buttons{display:block;}
+.chat_buttons button{padding: 10px 15px 8px 15px;width: 100%;display:block;text-align: left;border-top:1px solid #ebebeb;font-size: 15px;font-weight:bold; margin-right: 100vw;}
+
+.chat_buttons button:first-child{border-top:none;}
+.chat_text + .chat_buttons button:first-child{border-top:1px solid #ebebeb;}
+.chat_buttons button.active{color:#fe583e;}
+.chat_buttons button:disabled{color:#cfcfcf;}
+.chat_time{display: inline-block;position:absolute;bottom: 0;font-size:11px;color:#828282;width: 60px;}
+
+.chat_seller,.chat_user,[class^="chat_card"]{position:relative;margin: 25px 8px 0 46px;}
+.chat_seller .chat_box{background:#f6f6f6;color:#252525;}
+.chat_seller .chat_box::before{border-left: 10px solid #f6f6f6;top: 0; left:-3px;transform: rotate(-45deg);}
+.chat_seller .chat_time{left: calc(100% - -10px);}
+
+.chat_user{display: flex;}
+.chat_user .chat_photo{margin-left: auto;}
+.chat_user .chat_photo img{width:100%;object-fit: cover;}
+
+.chat_user .chat_box{background:#fe583e;color:#fff;margin-left: auto;}
+.chat_user .chat_photo_box{display: inline-block;position:relative; max-width: 80%;margin-left: auto;}
+.chat_user .chat_box::before{border-left: 10px solid #fe583e;top: 0; right:-3px;transform: rotate(225deg);}
+.chat_user .chat_time{right: calc(100% - -10px);text-align: right;}
+
+[class^="chat_card"]{display: block;margin-top: 10px;}
+[class^="chat_card"] > a{padding: 20px;display: inline-block;width: 100%;height: 100%;color:#252525;box-sizing: border-box;}
+
+.chat_card_order{border-radius: 6px; border:1px solid #f2f2f2;}
+.chat_card_order a{padding: 13px 20px 12px 20px;}
+.chat_card_order span{display: block;}
+.chat_card_order .name{font-size:14px;font-weight:bold;margin-bottom: -2px}
+.chat_card_order .number{font-size:12px; margin-bottom: -1px}
+.chat_card_order .date{font-size:12px;color:#828282; margin-bottom: 3px}
+.chat_card_order .state{float:left;font-size:15px;color:#fe583e;font-weight:bold;}
+.chat_card_order .price{float: right;font-size:15px;}
+
+.chat_card_product{border-radius: 6px; border:1px solid #f2f2f2;}
+.chat_card_product > a{padding: 20px 20px 15px 115px;}
+.chat_card_product .img{float:left;width:75px; height:75px;margin-left:-95px}
+.chat_card_product .img img{width: 100%; height: 100%;object-fit: cover}
+.chat_card_product .info{box-sizing: border-box;}
+.chat_card_product .info > *{display: block;}
+.chat_card_product .info .type{font-size:12px;color:#fe583e; margin-bottom:2px; margin-top: -3px}
+.chat_card_product .info .name{font-size:14px;font-weight:bold; line-height: 19px; height: 38px; margin-bottom: 4px}
+
+.chat_card_event{padding: 0;height: 123px;}
+.chat_card_event a{position:relative;padding: 0;}
+.chat_card_event a > img{width: 100%; height: 100%; object-fit: cover}
+.chat_card_event .mask{position: absolute;top:0;width: 100%; height: 100%; background: #000; opacity: 0.4}
+.chat_card_event .txt{position: absolute;top:0;width: 100%; margin-top:17px;color:#fff;box-sizing: border-box;}
+.chat_card_event .txt .badge{margin:0 20px; margin-bottom: 4px}
+.chat_card_event .txt em{margin:0 20px; font-size:15px; font-weight: bold;max-height:44px; line-height : 22px; margin-bottom: -2px}
+.chat_card_event .txt .date{margin:0 20px; font-size:11px;}
+
+.chat_card_coupon{background:#f9f9f9;}
+.chat_card_coupon a{padding: 19px 20px 16px 20px;}
+.chat_card_coupon .txt{box-sizing:border-box; width: 70%;}
+.chat_card_coupon .add{font-size:12px;width: 100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.chat_card_coupon .date{color:#828282; font-size:11px; margin-top:2px;}
+.chat_card_coupon .name{padding-top: 3px;font-weight:bold; font-size:15px; line-height : 20px; height: 44px;}
+.chat_card_coupon .name.red{color:#ff0000;}
+.chat_card_coupon .name.orange{color:#fe583e;}
+.chat_card_coupon .name.yellow{color:#ffa800;}
+.chat_card_coupon .name.pink{color:#ff3478;}
+.chat_card_coupon .name.mint{color:#00d0b5;}
+.chat_card_coupon .name.green{color:#03c55b;}
+.chat_card_coupon .name.blue{color:#4296fe;}
+.chat_card_coupon .name.purple{color:#731aed;}
+.chat_card_coupon .name.black{color:#252525;}
+.chat_card_coupon .down_area{position:absolute;right:0;top:0;width:68px;height:100%;border-left:1px dashed #ebebeb;box-sizing:border-box;}
+.chat_card_coupon .download{position:absolute;left:50%;top:50%;margin-top:-8px;margin-left:-8px;}
+
+.chat_wayback{display: flex;justify-content: center;margin-top: 30px;}
+.chat_wayback button{border:1px solid #000;padding: 6px 20px 4px 20px; border-radius: 2000px;font-size:15px;color:#fe583e;border:1px solid #fe583e;margin: 0 5px;}
+
+
+/* 말줄임 2줄 */
+.chat_card_product .info .name,
+.chat_card_event .txt em,
+.chat_card_coupon .name{display:-webkit-box;text-overflow:ellipsis;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}

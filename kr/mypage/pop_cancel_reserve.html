@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>예약취소</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="notice_list">
+				<li>취소하고자 하는 상품을 선택한 후 예약취소요청 버튼을 눌러주세요.</li>
+				<li>예약 취소 요청 시 업체 규정에 따라 환불수수료 및  여행사 취급수수료가 발생될 수 있으며, 담당자 확인 후 안내가 진행됩니다.</li>
+				<li>주말 및 공휴일은 변경/환불/취소 요청처리가 불가할 수 있으며, 요청건은 평일 업무시간(09:00~17:00)에 처리됩니다.</li>
+			</ul>
+
+			<!-- 항공 -->
+			<h2>탑승자 선택</h2>
+			<div class="i_list">
+				<ul>
+					<li>
+						<label class="checkbox big" for="l_radio01">
+							<input type="checkbox" id="l_radio01" name="r_list"><span></span>
+							<em class="tit normal">김신라<span class="state">취소전</span></em><!-- 2019-10-23 normal 클래스 추가, state추가 -->
+							<span class="eng">KIM SHILLA / 1983.01.02</span>
+							<em class="pay">신용카드(국민카드)</em>
+						</label>
+					</li>
+					<li>
+						<label class="checkbox big" for="l_radio02">
+							<input type="checkbox" id="l_radio02" name="r_list"><span></span>
+							<em class="tit normal">김신라<span class="state">취소전</span></em><!-- 2019-10-23 normal 클래스 추가, state추가 -->
+							<span class="eng">KIM SHILLA / 1983.01.02</span>
+						</label>
+					</li>
+					<li>
+						<label class="checkbox big" for="l_radio03">
+							<input type="checkbox" id="l_radio03" name="r_list" disabled=""><span></span><!-- 취소완료일 때 disabled 추가 -->
+							<em class="tit normal">김신라<span class="state">취소완료</span></em><!-- 2019-10-23 normal 클래스 추가, state추가 -->
+							<span class="eng">KIM SHILLA / 1983.01.02</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<!-- //항공 -->
+			<!-- 숙박 -->
+			<!-- <h2>객실 선택</h2>
+			<div class="i_list">
+				<ul>
+					<li>
+						<label class="checkbox big" for="h_radio01">
+							<input type="checkbox" id="h_radio01" name="h_list"><span></span>
+							<em class="tit">STANDARD/더블베드</em>
+							<span class="eng">김신라 / KIM SHILLA</span>
+						</label>
+					</li>
+					<li>
+						<label class="checkbox big" for="h_radio02">
+							<input type="checkbox" id="h_radio02" name="h_list"><span></span>
+							<em class="tit">STANDARD/더블베드</em>
+							<span class="eng">김신라 / KIM SHILLA</span>
+						</label>
+					</li>
+				</ul>
+			</div> -->
+			<!-- //숙박 -->
+			<!-- 액티비티/패키지 -->
+			<!-- <h2>옵션 선택</h2>
+			<ul class="option_list type3">
+				<li>
+					<span class="tit">성인 <b>2</b>명</span>
+					<span class="desc">취소수량</span>
+					<span class="ctrl">
+						<button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+						<input type="text" name="" value="1">
+						<button type="button" name="button" class="ico btn_plus">추가</button>
+					</span>
+				</li>
+			</ul> -->
+			<!-- //액티비티/패키지 -->
+			
+
+			<!-- 결제 후 당일취소 -결제 취소, 결제(발권) 후 익일 취소 – 환불일 때 노출 -->
+			<section class="pay_info cancel">
+				<h2>취소정보</h2>
+				<dl class="fare_detail">
+					<dt>예약번호</dt>
+					<dd>shilla12345(KDPAWK)</dd>
+
+					<dt>결제일</dt>
+					<dd>2019년 4월 2일 11:00</dd><!-- 2019-10-23 텍스트 수정 -->
+
+					<dt>결제방법</dt>
+					<dd>신용카드(국민카드/3개월)</dd>
+
+					<dt>결제금액</dt>
+					<dd>1,151,400원</dd>
+
+					<dt>수수료</dt>
+					<dd>-10,000원</dd>
+				</dl>
+
+				<dl class="total">
+					<dt>환불금액</dt>
+					<dd><strong>1,700,000</strong>원</dd>
+				</dl>
+
+				<div class="noti">자세한 환불 정보는 여행사와 문의해 주시기 바랍니다.</div><!-- 결제 (발권) 후 익일 취소 – 환불일 때 노출 -->
+			</section>
+			<!-- //결제 후 당일취소 -결제 취소, 결제(발권) 후 익일 취소 – 환불일 때 노출 -->
+
+			<h2>취소사유</h2>
+			<button type="button" name="button" class="btn_option" option-call="1">선택</button>
+			<!-- 기타 선택시에만 인풋박스 노출 -->
+			<input type="text" name="" value="" class="mt10">
+			<!-- //기타 선택시에만 인풋박스 노출 -->
+		</div>
+
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">취소요청</button>
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+
+	<!-- 취소사유 옵션 -->
+	<div class="option_select" option-receive="1">
+	<div class="pop_option">
+		<ul>
+			<li><a href="#">일정취소</a></li>
+			<li><a href="#">중복예약</a></li>
+			<li><a href="#">서비스 불만</a></li>
+			<li><a href="#">타사결제</a></li>
+			<li><a href="#">기타</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

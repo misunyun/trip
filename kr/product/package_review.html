@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap fixed">
+	 <header class="sticky_step1">
+		 <h2>
+			 <a href="#" class="ico btn_back">이전 페이지</a>
+			 상품상세
+			 <button type="button" class="ico btn_like">관심상품</button>
+			 <button type="button" class="ico btn_sns">공유</button>
+		 </h2>
+	 </header>
+	 <!-- 콘텐츠 : S -->
+	 <div class="content">
+		<div class="product_wrap">
+			<div class="product_img i_badge"><!-- D : 배지가 노출될 때 i_badge 클래스 추가/ 아닐 시 i_badge 클래스 삭제 -->
+				<div class="slider_wrap" slider-option="banner fullsize autoplay=0">
+					<div class="slider_item"><img src="../../resource/img/tmp_prd05_1.jpg" alt="상품이미지"></div>
+					<div class="slider_item"><img src="../../resource/img/tmp_prd05_1.jpg" alt="상품이미지"></div>
+					<div class="slider_item"><img data-lazy="../../resource/img/tmp_prd05_1.jpg" src="../../resource/img/img_blank.png" alt="상품이미지"></div><!-- 2020-02-04 data-lazy 추가 -->
+				</div>
+				<!-- 2019-11-05 뱃지 추가 및 순서변경 -->
+				<!-- 2019-10-14 뱃지 수정 -->
+				<span class="badge_area">
+					<span class="badge">TOP 1</span>
+					<span class="badge type3">신라트립가</span>
+					<span class="badge type2">모아랑</span>
+					<span class="badge type4">쿠폰</span>
+				</span>
+				<!-- //2019-10-14 뱃지 수정 -->
+				<!-- //2019-11-05 뱃지 추가 및 순서변경 -->
+			</div>
+			<!-- 2019-11-05 <span class="desc">~</span> 삭제, 신라페이 결제시/임직원가 추가 -->
+			<div class="product_info">
+				<div class="name">후쿠오카 출발 가능/북큐슈 일주</div>
+				<div class="place">일본, 후쿠오카</div>
+				<!-- 2019-10-02 금액영역 수정 -->
+				<div class="price_wrap">
+					<span class="cost">603,871원<span class="s_pay">신라페이 결제시</span></span>
+					<div class="price_info">
+						<span class="price">
+							<span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>1,000,000,000</strong>원~</span>
+						</span>
+						<div class="label_info">
+							<span class="label opt">최소인원10명</span><!-- 2019-06-27 클래스명 변경 -->
+							<span class="label opt">출발확정</span><!-- 2019-06-27 클래스명 변경 -->
+						</div>
+					</div>
+				</div>
+				<!-- //2019-10-02 금액영역 수정 -->
+			</div>
+			<!-- //2019-11-05 <span class="desc">~</span> 삭제, 신라페이 결제시/임직원가 추가 -->
+
+			<!-- 2019-10-02 혜택추가 -->
+			<!-- 2019-11-20 혜택영역 수정, 쿠폰받기 모달 팝업 삭제 -->
+			<div class="benefit_area">
+				<div class="txt">
+					<p>김신라님을 위한 혜택을 확인하세요!</p>
+				</div>
+			</div>
+			<!-- //2019-11-20 혜택영역 수정, 쿠폰받기 모달 팝업 삭제 -->
+
+			<!-- 2019-11-05 혜택아코디언 수정 및 추가 -->
+			<div class="accordion t_small" data-js="accordion">
+				<button type="button" name="button" data-js="acc_anchor">
+					<span class="bleft"><span class="tit">최대 할인</span></span><!-- 2019-12-06 텍스트 수정 -->
+					<span class="bright"><span class="price"><strong>20,000</strong>원</span></span>
+				</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="sale_info">
+						<dl>
+							<dt>9월 한달 프로모션 5% 할인</dt>
+							<dd>10,000원</dd>
+
+							<dt>셀러 3% 할인</dt>
+							<dd>10,000원</dd>
+						</dl>
+					</div>
+				</div>
+				<button type="button" name="button" data-js="acc_anchor">
+					<span class="bleft"><span class="tit">S.Rewards 적립</span></span><!-- 2019-12-06 텍스트 수정 --><!-- 2019-10-29 캐시 적립 혜택 텍스트 변경 -->
+					<span class="bright"><span class="price"><strong>10,000</strong>P(10,000원)</span></span><!-- 2019-12-06 S.Rewards 표기 법 수정 --><!-- 2019-10-29 텍스트 수정 -->
+				</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="sale_info">
+						<dl>
+							<dt>구매 시 1.5% 적립</dt><!-- 2019-12-06 텍스트 수정 -->
+							<dd>10,000P(10,000원)</dd><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+
+							<dt>임직원 추가 2% 적립</dt><!-- 2019-12-06 텍스트 수정 -->
+							<dd>10,000P(10,000원)</dd><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+
+							<dt>적립시점</dt>
+							<dd>즉시적립</dd>
+						</dl>
+						<div class="point_info"><p class="txt">(6,104 원/고시환율) x 1,000P</p></div>
+						<div class="btn_detail"><button type="button" name="button" class="btn_txt type4">여행 완성 후 추가적립금 지급</button></div>
+					</div>
+				</div>
+
+				<button type="button" name="button" data-js="acc_anchor">
+					<span class="bleft"><span class="tit">카드사 혜택</span></span>
+				</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="sale_info full">
+						<dl>
+							<dt>삼성카드 5% 청구할인</dt>
+							<dt>신라 페이 결제 시 5% 추가할인</dt>
+						</dl>
+					</div>
+				</div>
+				
+			</div>
+			<!-- //2019-11-05 혜택아코디언 수정 및 추가 -->
+			<!-- //2019-10-02 혜택추가 -->
+
+			<div class="state_info">
+				<!-- li가 최대 4개까지만 노출 -->
+				<ul>
+					<li><i class="ico FREE_TRAVEL_YN"></i><span class="txt">자유여행<br>포함</span></li><!-- D : 2019-06-20 br태그 추가 -->
+					<li><i class="ico GUIDE_YN"></i><span class="txt">가이드<br>포함</span></li><!-- 2019-06-20 가이드아이콘 추가, br태그 추가 -->
+					<li><i class="ico LODGMENT_GRADE"></i><span class="txt">4성급</span></li>
+					<li><i class="ico LEADER_YN"></i><span class="txt">인솔자<br>동행</span></li><!-- D : 2019-06-20 br태그 추가 -->
+					<!--
+					<li><i class="ico TOUR_PERIOD"></i><span class="txt">10박12일</span></li>
+					<li><i class="ico AIRLINE"></i><span class="txt">아시아나항공</span></li>
+					<li><i class="ico NUMBER_OF_SHOPPING"></i><span class="txt">쇼핑1회</span></li>
+					<li><i class="ico DEPARTURE_TIME"></i><span class="txt">오전출발</span></li>
+					-->
+				</ul>
+			</div>
+
+			<div class="seller_info">
+				<div class="seller_detail">
+					<div class="tit">
+						<a href="#" class="link">
+							<span class="seller_logo"><img src="../../resource/img/tmp_logo.png" alt="셀러샵 로고"></span><!-- BI이미지 등록시 -->
+							<span class="seller_logo" style="display:none"><em class="tit">인</em></span><!-- D : BI이미지 미등록시 셀러이름 첫 글자만 노출 -->
+							<strong class="seller_tit">인터파크 투어</strong>
+						</a>
+						<button type="button" name="button" class="btn_ico type2 talk"><span>셀러톡</span></button>
+					</div>
+					<div class="txt">일본 주요 스팟들로만 구성했습니다.</div>
+				</div>
+			</div>
+
+			<!-- 탭 : S --><!-- 2019-07-23 상품상세 내 tab_wrap을 product_wrap 안으로 이동 -->
+			<!-- D : 2019-06-27 일정탭 추가 -->
+			<div class="tab_wrap">
+				<div class="tab_menu tscroll">
+					<ul class="ul_size">
+						<li><a href="#" class="on">상품소개</a></li>
+						<li><a href="#">일정표</a></li>
+						<li><a href="#">리뷰 <span class="num">35</span></a></li>
+					</ul>
+				</div>
+
+				<!-- 상품소개 : S -->
+				<div class="tab_cont active">
+					<div class="product_cont">
+						<div class="product_detail fold_area">
+							<!-- D : 에디터로 내용이 입력될 영역 -->
+							<div class="prd_info fold_target" fold-height="417">
+								<div class="fold_inner">	<!-- 2019-12-03 .fold_inner 추가 -->
+									<p style="font-size:22px;font-weight:bold;line-height:1.4;">북큐슈 핵심일주<br>후쿠오카 2박3일 일정!</p>
+									<p style="margin:38px 0 10px 0;font-size:16px;font-weight:bold;">여행 옵션 안내</p>
+									<p>상품소개 부분은 에디터 영역으로 Admin에서 등록된 내용이 나타나게 됩니다.</p>
+									<p style="margin:38px 0 10px 0;font-size:16px;font-weight:bold;">옵션 안내</p>
+									<dl>
+										<dt>1. 로우타임</dt>
+										<dd style="margin-left:15px;font-size:13px;color:#828282;">아동 53,000원 / 성인 77,000원</dd>
+										<dt>2. 미드타임</dt>
+										<dd style="margin-left:15px;font-size:13px;color:#828282;">아동 53,000원 / 성인 77,000원</dd>
+										<dt>3. 하이타임</dt>
+										<dd style="margin-left:15px;font-size:13px;color:#828282;">아동 53,000원 / 성인 77,000원</dd>
+									</dl>
+									<p style="margin:38px 0 10px 0;font-size:16px;font-weight:bold;">주소 안내</p>
+									<p>오사카 유니버셜 스튜디오 재팬<br>Osaka Universal studio Japan</p>
+									<p style="margin:38px 0 10px 0;font-size:16px;font-weight:bold;">티켓 교환 안내</p>
+									<p>해당 상품은 e-티켓으로 이메일에 첨부된 파일을 출력 및 지참 하시면 됩니다.</p>
+								</div>
+							</div>
+							<!-- //D : 에디터로 내용이 입력될 영역 -->
+							<div class="white_shadow"></div>
+							<div class="fold_button">
+								<button type="button" name="button" class="btn_ico unfold">상품설명 더보기</button>
+								<button type="button" name="button" class="btn_ico fold">상품설명 접기</button>
+							</div>
+						</div>
+
+						<div class="accordion info" data-js="accordion">
+							<!-- 2019-06-27 상품정보고시 div class="sec_cont" 추가 -->
+							<!-- 2019-06-17 추가 -->
+							<button type="button" name="button" data-js="acc_anchor">상품정보고시</button>
+							<div class="panel" data-js="acc_panel">
+								<div class="sec_cont">
+									<table class="tbl_type3"><!-- 2019-06-27 클래스명 변경 -->
+										<caption class="hide">가로형</caption>
+										<colgroup>
+											<col style="width:130px;"><!-- 2019-08-07 col width 수정 -->
+											<col style="width:auto;">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">여행사</th>
+												<td>상품 상세 참조</td>
+											</tr>
+											<tr>
+												<th scope="row">이용항공편</th>
+												<td>상품 상세 참조</td>
+											</tr>
+											<tr>
+												<th scope="row">여행기간 및 일정</th>
+												<td>상품 상세 참조</td>
+											</tr>
+											<tr>
+												<th scope="row">총 예정 인원, 출발 가능 인원</th>
+												<td>상품 상세 참조</td>
+											</tr>
+											<tr>
+												<th scope="row">숙박정보</th>
+												<td>상품 상세 참조</td>
+											</tr>
+											<tr>
+												<th scope="row">여행상품 가격</th>
+												<td>상품 상세 참조</td>
+											</tr>
+											<tr>
+												<th scope="row">선택 경비 유무 및 세부 내용</th>
+												<td>상품 상세 참조</td>
+											</tr>
+											<tr>
+												<th scope="row">취소규정(환불, 위약금 등)</th>
+												<td>상품 상세 참조</td>
+											</tr>
+											<tr>
+												<th scope="row">해외여행의 경우 외교부가 지정하는 여행경보 단계</th>
+												<td>상품 상세 참조</td>
+											</tr>
+											<tr>
+												<th scope="row">예약담당 연락처</th>
+												<td>상품 상세 참조</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<button type="button" name="button" data-js="acc_anchor">포함·불포함 사항</button>
+							<div class="panel" data-js="acc_panel">
+								<div class="sec_cont">
+									<dl class="exp_list">
+										<!-- D : loop -->
+										<dt>포함사항</dt>
+										<dd>
+											<ul class="notice_list">
+												<li>왕복 항공권</li>
+												<li>일정표 상의 숙박/식사/차량/관광지 입장료</li>
+												<li>항공 TAX (인천공항세, 현지공항세, 관광진흥개발 기금)</li>
+												<li>해외여행자 보험</li>
+											</ul>
+										</dd>
+										<!-- //D : loop -->
+										<dt>불포함사항</dt>
+										<dd>
+											<ul class="notice_list">
+												<li>가이드/기사 경비: 3000엔/1인 (현지별 도지불)</li>
+												<li>2일차 석식 불포함</li>
+												<li>기타 개인 경비</li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</div>
+
+							<button type="button" name="button" data-js="acc_anchor">참고사항</button>
+							<div class="panel" data-js="acc_panel">
+								<div class="sec_cont">
+									<dl class="exp_list">
+										<!-- D : loop -->
+										<dt>취소수수료</dt>
+										<dd>
+											<ul class="notice_list">
+												<li>여행 개시 30일 전까지 통보시: 위약금 없이 계약 취소</li>
+												<li>여행 개시 29일~20일 전까지 통보시: 여행경비의 10%배상</li>
+												<li>여행 개시 19일~10일 전까지 통보시: 여행경비의 15% 배상</li>
+												<li>여행 개시 9일~8일 전까지 통보시: 여행경비의 20% 배상</li>
+												<li>여행 개시 7일~1일 전까지 통보시: 여행경비의 30% 배상</li>
+												<li>여행 출발 당일 통보시: 여행경비의 50% 배상</li>
+											</ul>
+										</dd>
+										<!-- //D : loop -->
+										<dt>쇼핑안내</dt>
+										<dd>
+											<ul class="notice_list">
+												<li>관광 중 1회 면세점 이용<br>(해외여행시 US$600 초과로 구입한 물품에 대해서는 입국시 관세가 부과될 수 있습니다.)</li>
+											</ul>
+										</dd>
+										<dt>안내 및 정보</dt>
+										<dd>
+											<ul class="notice_list">
+												<li>해외 플랜: G16(성인, 만 15세~69세, 1억원), G17(소아, 만 14세 미만, 300만원), G18(노인, 만 70세~85세, 5000만원)</li>
+												<li>보험사 요청시 상해질병은 진단서 및 치료영수증 / 도난사고는 현지경찰서의 확인서가 있어야 처리 가능하오니 참고 부탁드립니다.</li>
+											</ul>
+										</dd>
+										<dt>보증보험가입</dt>
+										<dd>
+											<ul class="notice_list">
+												<li>영업 보증보험 가입(15억원/2019.1.1~2019.12.31)</li>
+												<li>일반여행업보증 (10억원)</li>
+												<li>기획여행보증 (5억원)</li>
+												<li>배상책임보험(5억원)</li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</div>
+
+							<button type="button" name="button" data-js="acc_anchor">공지사항</button>
+							<div class="panel" data-js="acc_panel">
+								<div class="sec_cont">
+									<dl class="exp_list">
+										<!-- D : loop -->
+										<dt>여행금지제도</dt>
+										<dd>
+											<ul class="notice_list">
+												<li>외교부는 우리 국민을 보호하기 위해 여권법 등 관련 규정에 따라 국민들의 방문 및 체류가 금지되는 국가를 지정하고 있습니다. 여행금지국가는 흑색경보단계인 “여행금지”로 지정된 국가로서, 방문이 금지되며 이미 체류하고 있는 경우 즉시 대피·철수가 요구됩니다.</li>
+											</ul>
+										</dd>
+										<!-- //D : loop -->
+									</dl>
+								</div>
+							</div>
+
+							<button type="button" name="button" data-js="acc_anchor">안전정보·긴급연락처</button>
+							<div class="panel" data-js="acc_panel">
+								<div class="sec_cont">
+									<dl class="exp_list">
+										<!-- D : loop -->
+										<dt>일본(JAPAN)</dt>
+										<dd>
+											<ul class="notice_list">
+												<li>철수권고(일부) : 후쿠시마 원전 반경 30km 이내 및 일본 정부 지정 피난지사구역</li>
+											</ul>
+										</dd>
+										<!-- //D : loop -->
+										<dt>긴급 연락처</dt>
+										<dd>
+											<ul class="notice_list">
+												<li>경찰: 110</li>
+												<li>화재: 119</li>
+												<li>해상 사건사고: 118</li>
+												<li>전화번호 안내: 104</li>
+											</ul>
+										</dd>
+										<dt>의료기관 연락처</dt>
+										<dd>
+											<ul class="notice_list">
+												<li>도쿄도보건의료정보센터 : 03-5285-8181</li>
+												<li>(한국어, 영어, 중국어, 타이어, 스페인어로 근처의 진료 가능 기관 안내)</li>
+												<li>시간 : 토, 일, 공휴일을 포함한 09:00 ~ 20:00 까지</li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+
+						<h3>함께 추천하는 상품</h3>
+						<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<div class="goods_list tscroll">
+							<ul class="ul_size">
+								<li>
+									<a href="#">
+										<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+										<span class="badge_area">
+											<span class="badge type3">신라트립가</span>
+										</span>
+										<span class="cate">티켓/패스</span>
+										<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+										<span class="sale_area">
+											<span class="per">20%</span><span class="cost">10,000,000원</span>
+										</span>
+										<span class="price"><strong>8,000,000</strong>원~</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+										<span class="cate">유심/와이파이</span>
+										<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+										<span class="price"><strong>8,000,000</strong>원~</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+										<span class="cate">여행자보험</span>
+										<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+										<span class="sale_area">
+											<span class="cost">10,000,000원</span>
+										</span>
+										<span class="price"><strong>8,000,000</strong>원~</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+						<div class="prd_num">상품번호 00012345</div>
+					</div>
+				</div>
+				<!-- 상품소개 : E -->
+
+				<!-- 일정표 : S -->
+				<div class="tab_cont">
+					<div class="route_cont">
+						<div class="accordion info" data-js="accordion">
+							<button type="button" name="button" data-js="acc_anchor"><span class="day">1일차</span><span class="date">2018.07.05 (금)</span></button>
+							<div class="panel" data-js="acc_panel">
+								<div class="sec_cont">
+									<table class="tbl_type3">
+										<caption class="hide">가로형</caption>
+										<colgroup>
+											<col style="width:35%;">
+											<col style="width:auto;">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">식사</th>
+												<td>
+													<ul class="info_list">
+														<li><strong class="type">아침</strong><span class="value">기내식</span></li>
+														<li><strong class="type">점심</strong><span class="value">현지식</span></li>
+														<li><strong class="type">저녁</strong><span class="value">리조트식</span></li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">숙소</th>
+												<td>후쿠오카 호텔 인 하카타 숙소</td>
+											</tr>
+											<tr>
+												<th scope="row">교통/이동정보</th>
+												<td>비행기, 전용 차량</td>
+											</tr>
+											<tr>
+												<th scope="row">기타</th>
+												<td>자유여행 1회 포함</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<!-- 2019-08-29 일정표 이미지 추가 -->
+									<div class="photo_list tscroll">
+										<ul class="ul_size">
+											<li>
+												<a href="#none"><img src="../../resource/img/tmp_photo02.jpg" alt="이미지"></a>
+											</li>
+											<li>
+												<a href="#none"><img src="../../resource/img/tmp_photo02.jpg" alt="이미지"></a>
+											</li>
+											<li>
+												<a href="#none"><img src="../../resource/img/tmp_photo02.jpg" alt="이미지"></a>
+											</li>
+											<li>
+												<a href="#none"><img src="../../resource/img/tmp_photo02.jpg" alt="이미지"></a>
+											</li>
+											<li>
+												<a href="#none"><img src="../../resource/img/tmp_photo02.jpg" alt="이미지"></a>
+											</li>
+										</ul>
+									</div>
+									<!-- //2019-08-29 일정표 이미지 추가 -->
+
+									<dl class="exp_list type2">
+										<dt>공항 이동 셔틀버스 운행</dt><!-- 제목 -->
+										<dd>서울역 1번 출구, 강남역 2번 출구, 사당역 3번 출구, 계양역1번 출구 -> 인천공항 1시간 간격 셔틀버스 운행</dd><!-- 내용 -->
+
+										<dt>인천공항 3층 N카운터</dt>
+										<dd>[17:00] 인천공항 3층 N카운터 14번 출입문안 미팅 [공항직원연락처 : 김신라 팀장 010-1111-1111]- 확정일정표, 계약서 수령 후 개별 수속하시면 됩니다.</dd>
+
+										<dt>LJ027편 인천공항 출발</dt>
+
+										<dt>후쿠오카 공항 도착</dt>
+
+										<dt>가이드 미팅 및 숙소이동</dt>
+									</dl>
+								</div>
+							</div>
+
+							<button type="button" name="button" data-js="acc_anchor"><span class="day">2일차</span><span class="date">2018.07.06 (토)</span></button>
+							<div class="panel" data-js="acc_panel">
+								<div class="sec_cont">
+									<table class="tbl_type3">
+										<caption class="hide">가로형</caption>
+										<colgroup>
+											<col style="width:35%;">
+											<col style="width:auto;">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">식사</th>
+												<td>
+													<ul class="info_list">
+														<li><strong class="type">아침</strong><span class="value">기내식</span></li>
+														<li><strong class="type">점심</strong><span class="value">현지식</span></li>
+														<li><strong class="type">저녁</strong><span class="value">리조트식</span></li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">숙소</th>
+												<td>후쿠오카 호텔 인 하카타 숙소</td>
+											</tr>
+											<tr>
+												<th scope="row">교통/이동정보</th>
+												<td>비행기, 전용 차량</td>
+											</tr>
+											<tr>
+												<th scope="row">기타</th>
+												<td>자유여행 1회 포함</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<dl class="exp_list type2">
+										<dt>공항 이동 셔틀버스 운행</dt><!-- 제목 -->
+										<dd>서울역 1번 출구, 강남역 2번 출구, 사당역 3번 출구, 계양역1번 출구 -> 인천공항 1시간 간격 셔틀버스 운행</dd><!-- 내용 -->
+
+										<dt>인천공항 3층 N카운터</dt>
+										<dd>[17:00] 인천공항 3층 N카운터 14번 출입문안 미팅 [공항직원연락처 : 김신라 팀장 010-1111-1111]- 확정일정표, 계약서 수령 후 개별 수속하시면 됩니다.</dd>
+
+										<dt>LJ027편 인천공항 출발</dt>
+
+										<dt>후쿠오카 공항 도착</dt>
+
+										<dt>가이드 미팅 및 숙소이동</dt>
+									</dl>
+								</div>
+							</div>
+
+							<button type="button" name="button" data-js="acc_anchor"><span class="day">3일차</span><span class="date">2018.07.07 (일)</span></button>
+							<div class="panel" data-js="acc_panel">
+								<div class="sec_cont">
+									<table class="tbl_type3">
+										<caption class="hide">가로형</caption>
+										<colgroup>
+											<col style="width:35%;">
+											<col style="width:auto;">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">식사</th>
+												<td>
+													<ul class="info_list">
+														<li><strong class="type">아침</strong><span class="value">기내식</span></li>
+														<li><strong class="type">점심</strong><span class="value">현지식</span></li>
+														<li><strong class="type">저녁</strong><span class="value">리조트식</span></li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row">숙소</th>
+												<td>후쿠오카 호텔 인 하카타 숙소</td>
+											</tr>
+											<tr>
+												<th scope="row">교통/이동정보</th>
+												<td>비행기, 전용 차량</td>
+											</tr>
+											<tr>
+												<th scope="row">기타</th>
+												<td>자유여행 1회 포함</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<dl class="exp_list type2">
+										<dt>공항 이동 셔틀버스 운행</dt><!-- 제목 -->
+										<dd>서울역 1번 출구, 강남역 2번 출구, 사당역 3번 출구, 계양역1번 출구 -> 인천공항 1시간 간격 셔틀버스 운행</dd><!-- 내용 -->
+
+										<dt>인천공항 3층 N카운터</dt>
+										<dd>[17:00] 인천공항 3층 N카운터 14번 출입문안 미팅 [공항직원연락처 : 김신라 팀장 010-1111-1111]- 확정일정표, 계약서 수령 후 개별 수속하시면 됩니다.</dd>
+
+										<dt>LJ027편 인천공항 출발</dt>
+
+										<dt>후쿠오카 공항 도착</dt>
+
+										<dt>가이드 미팅 및 숙소이동</dt>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //일정표 : E -->
+
+				<!-- 리뷰 : S -->
+				<div class="tab_cont">
+					<div class="review_cont">
+						<!-- 데이터없음 : S-->
+						<div class="no_data type2" style="display:none">
+							<em>등록된 리뷰가 없습니다.</em>
+						</div>
+						<!-- 데이터없음 : E -->
+						<div class="total_review">
+							<div class="satisfy_wrap">
+								<dl class="satisfy_average">
+									<dt>평점</dt>
+									<dd>
+										<span class="average">4.0</span>
+										<span class="review_point"><span class="score" style="width:80%">4</span></span>
+									</dd>
+								</dl>
+								<div class="satisfy_detail">
+									<ul>
+										<li>
+											<span class="type">5점</span>
+											<span class="graph"><span class="bar" style="width:18%"></span></span>
+											<span class="rate"><span class="num">18</span>%</span>
+										</li>
+										<li class="on"><!-- 가장 높은 평점에 on 클래스 추가 -->
+											<span class="type">4점</span>
+											<span class="graph"><span class="bar" style="width:64%"></span></span>
+											<span class="rate"><span class="num">64</span>%</span>
+										</li>
+										<li>
+											<span class="type">3점</span>
+											<span class="graph"><span class="bar" style="width:100%"></span></span>
+											<span class="rate"><span class="num">100</span>%</span>
+										</li>
+										<li>
+											<span class="type">2점</span>
+											<span class="graph"><span class="bar" style="width:0%"></span></span>
+											<span class="rate"><span class="num">0</span>%</span>
+										</li>
+										<li>
+											<span class="type">1점</span>
+											<span class="graph"><span class="bar" style="width:0%"></span></span>
+											<span class="rate"><span class="num">0</span>%</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<!-- 2019-08-29 프리미엄 에세이 추가 -->
+							<div class="photo_list_wrap">
+								<h3 class="sub"><a href="#" class="btn_more">프리미엄 에세이 <strong class="em">17</strong></a></h3><!-- 2019-11-21 타이틀 더보기 영역 수정 -->
+								<div class="goods_list big tscroll">
+									<ul>
+										<li>
+											<a href="#none">
+												<img class="ajax_lazy" data-src="../../resource/img/tmp_prd02.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+												<span class="tag">
+													<span>#바르셀로나근교</span>
+												</span>
+												<span class="tit">제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴</span>
+											</a>
+											<a href="#none" class="user_info">
+												<span class="thumb"><img src="../../resource/img/tmp_user01.jpg" alt=""></span>
+												<span class="creator">나만따라와</span>
+											</a>
+										</li>
+										<li>
+											<a href="#none">
+												<img class="ajax_lazy" data-src="../../resource/img/tmp_prd02.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+												<span class="tag">
+													<span>#바르셀로나근교</span>
+												</span>
+												<span class="tit">제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴</span>
+											</a>
+											<a href="#none" class="user_info">
+												<span class="thumb"><img src="../../resource/img/tmp_user01.jpg" alt=""></span>
+												<span class="creator">나만따라와</span>
+											</a>
+										</li>
+										<li>
+											<a href="#none">
+												<img class="ajax_lazy" data-src="../../resource/img/tmp_prd02.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+												<span class="tag">
+													<span>#바르셀로나근교</span>
+												</span>
+												<span class="tit">제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴</span>
+											</a>
+											<a href="#none" class="user_info">
+												<span class="thumb"><img src="../../resource/img/tmp_user01.jpg" alt=""></span>
+												<span class="creator">나만따라와</span>
+											</a>
+										</li>
+									 </ul>
+								</div>
+							</div>
+							<!-- //2019-08-29 프리미엄 에세이 추가 -->
+
+							<div class="review_wrap">
+								<h3 class="sub">
+									리뷰 <strong class="em">35</strong>
+									<div class="sorting">
+
+										<button type="button" name="button" class="btn_ico sort" option-call="1">최신순</button>
+
+										<div class="option_select" option-receive="1">
+											<div class="pop_option">
+												<ul>
+													<li><a href="#" class="on">최신순</a></li>
+													<li><a href="#">평점 높은순</a></li>
+													<li><a href="#">평점 낮은순</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</h3>
+								<div class="review_detail">
+									<ul class="review_list">
+										<!-- D : loop -->
+										<li>
+											<div class="review_item">
+												<div class="user_info">
+													<span class="info">
+														<span class="name">ppo****</span>
+														<span class="date">2019.01.21</span>
+														<span class="purchaser">구매자</span><!-- 2019-08-29 구매자/미구매자 추가 -->
+													</span>
+													<span class="review_point"><span class="score" style="width:80%">4</span></span>
+												</div>
+												<div class="cont">
+													<div class="img">
+														<a href="#">
+															<span class="dim_box"><i class="ico play"></i></span><!-- 동영상 이미지일 때 -->
+															<span class="count"><span class="num">5</span></span><!-- 개수가 여러개일 때 -->
+															<img class="ajax_lazy" data-src="../../resource/img/tmp_video01.jpg" src="../../resource/img/img_blank.png" alt="동영상 이미지"><!-- 2019-11-13 lazyload 적용 -->
+														</a>
+													</div>
+													<div class="txt_area">
+														<div class="txt">바우처 출력으로 바로 입장할 수 있어서 좋았어요 :) 덕분에 잘 놀다 왔습니다. 사진은 저희 어머니랑 같이 찍은 사진이에요~ 바우처 출력으로 바로 입장할 수 있어서 좋았어요 :) 덕분에 잘 놀다 왔습니다. 사진은 저희 어머니랑 같이 찍은 사진이에요~</div>
+														<button type="button" name="button" class="btn_txt more">더보기</button><!-- D : 더보기 버튼은 3줄 이상일 때 노출 -->
+													</div>
+												</div>
+											</div>
+										</li>
+										<!-- //D : loop -->
+										<li>
+											<div class="review_item">
+												<div class="user_info">
+													<span class="info">
+														<span class="name">ppo****</span>
+														<span class="date">2019.01.21</span>
+														<span class="non_purchaser">미구매자</span><!-- 2019-08-29 구매자/미구매자 추가 -->
+													</span>
+													<span class="review_point"><span class="score" style="width:80%">4</span></span>
+												</div>
+												<div class="cont">
+													<div class="img">
+														<a href="#">
+															<span class="count"><span class="num">5</span></span><!-- 포토이면서 갯수가 여러개일 때 -->
+															<img class="ajax_lazy" data-src="../../resource/img/tmp_photo02.jpg" src="../../resource/img/img_blank.png" alt="리뷰 이미지"><!-- 2019-11-13 lazyload 적용 -->
+														</a>
+													</div>
+													<div class="txt_area">
+														<div class="txt">역시 한국에서 사서 가는게 제일 싸고 좋은 듯 해요 ㅎㅎ 좋은 가격에 재밌게 잘 놀다 왔네요~!</div>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="review_item">
+												<div class="user_info">
+													<span class="info">
+														<span class="name">ppo****</span>
+														<span class="date">2019.01.21</span>
+														<span class="non_purchaser">미구매자</span><!-- 2019-08-29 구매자/미구매자 추가 -->
+													</span>
+													<span class="review_point"><span class="score" style="width:80%">4</span></span>
+												</div>
+												<div class="cont">
+													<div class="txt_area">
+														<div class="txt">여자친구랑 갔다왔는데 재밌었어요~ 바우처 출력으로 기다리지 않고 가서 훨씬 좋더라구요</div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 리뷰 : E -->
+			</div>
+			<!-- //D : 2019-06-27 일정탭 추가 -->
+			<!-- 탭 : E -->
+		</div>
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<div class="btn_wrap">
+		<button type="button" name="button" class="btn primary">옵션선택</button>
+	</div>
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

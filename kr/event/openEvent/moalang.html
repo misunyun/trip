@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../../resource/css/event.css" rel="stylesheet" />
+	<link type="text/css" href="../../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<!-- Header : S -->
+	<header>
+		 <h1><a href="#">SHILLATRIP</a></h1>
+		<button type="button" name="button" class="ico search">검색</button>
+		<button type="button" name="button" class="ico my">마이페이지</button>
+		<!-- 2019-10-14 GNB 공통SB v2.6현행화 -->
+		<nav class="gnb tscroll">
+			<ul class="ul_size">
+				<li><a href="#" class="on">이벤트</a></li>
+				<li><a href="#">마감임박</a></li>
+				<li><a href="#">라랑팩</a></li>
+				<li><a href="#">랭킹</a></li>
+				<li><a href="#">고객센터</a></li>
+			</ul>
+		</nav>
+		<!-- //2019-10-14 GNB 공통SB v2.6현행화 -->
+		 <h2>
+			 <a href="#" class="ico btn_back">이전 페이지</a>
+			 이벤트 상세
+			 <button type="button" class="ico btn_sns">공유</button>
+		 </h2>
+	 </header>
+	 <!-- Header : E -->
+
+
+	 <div class="content">
+		<!-- 이벤트 html 영역 -->
+		<div class="event_detail">
+			<!--  -->
+			<style>
+				#promotion_wrap.free_st .event_img {} 
+				#promotion_wrap.free_st .event_img img  { height:auto} 
+				#promotion_wrap.free_st .ir_blind { text-indent:-1000px; width:0; height:0; overflow:hidden; line-height:0; font-size:0; margin:0 !important; padding:0 }
+			</style>
+			<!-- html등록 -->
+			<div id="promotion_wrap" class="free_st">
+				<!-- 이벤트 이미지 START -->
+				<div class="event_img">
+					<img alt="신라면세점*신라트립 / 액티비티 사고 적립은 따블로 가! 주말 더블 적립 이벤트" title="" src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/20/1576829969599_20191220_1_moa01.png" />
+				</div>
+				<div class="event_img">
+					<img alt="신라면세점*신라트립 / 액티비티 사고 적립은 따블로 가! 주말 더블 적립 이벤트" title="" src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/20/1576830002461_20191220_1_moa02.png" />
+				</div>
+				<!-- 이벤트 이미지 END -->
+			</div>
+			<!--// html등록 -->
+			
+		</div>
+		<!-- 이벤트 html 영역 END-->
+
+		<div class="note_list">
+			<strong>유의사항</strong>
+			<!-- 유의사항 등록 html  -->
+			<ul>
+				<li><em class="txt_em">모아랑 혜택을 받은 이후, 해당 상품 중 1개라도 취소하는 경우, 추가적립 된 S.Rewards 전체가 회수 됩니다.</em></li>
+				<li>항공, 숙박, 액티비티 카테고리 별로 1개 이상 상품 구매시, 스탬프가 찍힙니다.</li>
+				<li>모아랑 혜택 스탬프가 2개 이상인 경우, 혜택 받기 버튼을 누르면 S.Rewards가 추가 적립 됩니다.</li>
+				<li>이미 모아랑 혜택을 받은 상품은 지난 모아랑 혜택 내역에서 확인 가능하며, 모아랑 혜택 대상에서 제외 됩니다.</li>
+				<li>구매 후 1년이 지난 상품은 모아랑 혜택 대상에서 제외 됩니다.</li>
+			</ul>
+			<!--// 유의사항 등록 html  -->
+		</div>
+
+
+	 </div>
+
+
+
+
+
+
+	<nav class="fnb">
+		<a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+		<a href="#"><i class="ico cart"></i>장바구니</a>
+		<a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" option-call="fnb"><i class="ico cate"></i>카테고리</a>
+	</nav>
+	<div class="option_select " option-receive="fnb">
+		<div class="pop_option">
+			<ul class="fnb_opt">
+				<li><a href="#"><i class="ico flight"></i>항공</a></li>
+				<li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+				<li><a href="#"><i class="ico pack"></i>패키지</a></li>
+				<li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript" src="../../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../../resource/js/lalang.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko"><head>
+	<meta charset="utf-8">	
+	<meta name="viewport" content="width=970, target-densitydpi=160, maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>신라면세점</title>
+	<link rel="stylesheet" href="http://www.shilladfs.com/estore/_ui/desktop/common/shilladfshome/css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="http://www.shilladfs.com/estore/_ui/desktop/common/shilladfshome/css/jquery-ui.css"> 
+	<link rel="stylesheet" type="text/css" media="all" href="http://www.shilladfs.com/estore/_ui/desktop/common/shilladfshome/kr/css/common.css">
+	<link rel="stylesheet" type="text/css" media="all" href="http://www.shilladfs.com/estore/_ui/desktop/common/shilladfshome/kr/css/sub_common.css"> 
+	<link rel="stylesheet" type="text/css" media="all" href="http://www.shilladfs.com/estore/_ui/desktop/common/shilladfshome/kr/css/sub.css"> 
+	<link rel="stylesheet" type="text/css" media="all" href="http://www.shilladfs.com/estore/_ui/desktop/common/shilladfshome/kr/css/sub_dev.css">
+	<link rel="stylesheet" type="text/css" media="all" href="http://www.shilladfs.com/estore/_ui/desktop/common/shilladfshome/kr/css/lalaclub.css?bt=201812101221">
+	<script type="text/javascript" src="http://www.shilladfs.com/estore/_ui/desktop/common/js/jquery-1.11.2.min.js"></script>
+</head>
+
+<body>
+	<!-- 이벤트/기획 -->
+	<style type="text/css">
+		#protowrap {position:relative; width:931px; margin:0 auto;}
+		#protowrap * {border:0; padding:0; margin:0; color:inherit; font-size:inherit; font-family:'NotoSans','맑은 고딕','Malgun Gothic'; line-height:inherit; vertical-align:top}
+		#protowrap .ir_blind {position:absolute; width:0; height:0; left:0; top:0; font-size:0; line-height:0; overflow:hidden}
+		#protowrap .ir_indent {font-size:0; text-indent:-9999px; overflow:hidden}
+		#protowrap .eventwrap {position:relative; overflow:hidden;}
+		#protowrap .eventwrap a {display:block; position:absolute; z-index:11;}
+		#protowrap .eventwrap .ev_btn01 {right:117px; top:70px; width:250px; height:50px;}
+		#protowrap .eventwrap .ev_input01 {position:absolute; left:221px; top:70px; width:343px; height:50px;padding:0 10px; box-sizing:border-box; font-size:15px; line-height:50px}
+	</style>
+
+	<div id="protowrap">
+		<div class="eventwrap">
+			<img src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/11/1576058884608_20191211_1_open01.png" alt="신라트립 오프닝파트너 크리에이터를 위한 슈퍼프리미엄 등급 UP/ 기간: 2019.12.16~ 2020.01.31/ 인증번호 등록기간 : 이벤트 기간과 동일 / 적립금/등급유효기간 : 발급일자로부터 1년" title="" />
+		</div>
+		<div class="eventwrap">
+			<img src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/11/1576058912384_20191211_1_open02.png" alt="신라인터넷면세점 프리미엄 등급은 최대15% 할인, 적립금 7000원, 최대 18% 쿠폰 5종" title="" />
+		</div>
+		<div class="eventwrap">
+			<img src="http://media.shilladfs.com/files/attach/ckeditor/2019/12/11/1576058935342_20191211_1_open03.png" alt="인증번호 입력" />
+			<fieldset class="ev_num_in">
+				<legend>인증번호 입력</legend>
+				<label for="iptNum" class="ir_blind">인증번호 입력</label><input type="text" id="iptNum" class="ev_input01" title="인증번호 입력하세요" />
+				<a href="javascript:partGroupEventByCertNo();" class="ev_btn01"><span class="ir_indent">혜택받기</span></a>
+			</fieldset>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var partGroupEventByCertNoClick = false;
+		function partGroupEventByCertNo() {
+			if(!partGroupEventByCertNoClick){
+				partGroupEventByCertNoClick = true;
+				
+				var certNo = $('#iptNum').val();
+				
+				var url = contextPath + "/event/partGroupEvent";
+				
+				$.ajax({
+					type : "POST",
+					url : url,
+					data : {
+							eventId : $("input[name=eventId]").val()
+						  , 'CSRFToken'  : $('#CSRFToken').val()
+						  , certNo : certNo
+					},
+					dataType : "json",
+					success : function(result) {
+						if (result.result == "success") {
+							alert(result.successMsg);
+						} else {
+							if (result.errorCode == "ANONYMOUS_USER") {
+								if (confirm(result.errorMsg)) {
+									if(!isMobile){
+										ACC.customer.openLoginPopup();
+										
+									}else {
+										var nextUrl = location.pathname+location.search;
+										location.href = contextPath +'/login?nextUrl='+nextUrl;
+									}
+								}
+							} else if(result.errorCode == 'NEED_ADDITIONAL_INFO'){
+								alert(result.errorMsg);
+
+								if(!isMobile){
+									openPopup(contextPath + result.url, "prvateInfo", "720", "750");
+								} else {
+									popOpen($("#layer-switching_member"));
+								}
+							}
+							else {
+								alert(result.errorMsg);
+							}
+						}
+			
+					},    
+					error : function(result) {
+						alert("Wrong access!");
+					},    
+					complete : function(){
+						partGroupEventByCertNoClick = false;
+					}
+				});
+			}
+		}
+		</script>
+
+	<!-- //이벤트/기획 -->
+
+</body>
+</html>
+
+
+

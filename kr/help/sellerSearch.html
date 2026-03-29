@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="http://shillatripdev.shilladfs.com/shop/_ui/mobile/common/lalanghome/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/help.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+	
+	<body style="">
+		
+
+
+<!-- 이용약관 동의 팝업 -->
+<div class="modal popUseAgreeTermArea  " id="popUseAgreeTermArea"></div>
+<!-- 이용약관 동의 팝업 -->
+
+<!-- dimalert : S -->
+<div class="guide_btn" id="dimalert" dimalert-call="1" style="display:none;">message</div>
+<div class="dim_alert" id="dimalert_receive" dimalert-receive="1" style="z-index:999;">
+	<p>modal Message</p>
+</div>
+<!-- dimalert : E --> 
+
+
+<div class="popup" id="baseTermDetail" popup-receive="pop_terms_agree">
+	<div class="head" data-native="status">
+		<h1>신라트립 구매이용약관</h1>
+		<button type="button" name="button" class="ico btn_close" onclick="$.lalang.appCallScript(_GNBCNT,_FNBCNT);">팝업닫기</button>
+	</div>
+	<div class="pop_cont" id="baseTermArea" scrollcorrection-done="true">
+	</div>
+	<div class="btn_box">
+		<button type="submit" name="button" class="btn primary btn_close" onclick="$.lalang.appCallScript(_GNBCNT,_FNBCNT);">확인</button>
+	</div>
+</div>
+<div class="popup" id="optionTermDetail" popup-receive="pop_terms_agree_privacy">
+	<div class="head" data-native="status">
+		<h1>개인정보 수집·이용 동의</h1>
+		<button type="button" name="button" class="ico btn_close" onclick="$.lalang.appCallScript(_GNBCNT,_FNBCNT);">팝업닫기</button>
+	</div>
+	<div class="pop_cont" id="optionTermArea" scrollcorrection-done="true">
+	</div>
+	<div class="btn_box">
+		<button type="submit" name="button" class="btn primary btn_close" onclick="$.lalang.appCallScript(_GNBCNT,_FNBCNT);">확인</button>
+	</div>
+</div>
+
+
+
+<header class="" style="">
+	
+
+<h1>
+	<a href="http://shillatrip.shilladfs.com/shop/kr/ko/">
+		LALANG
+	</a>
+</h1>
+
+
+
+<button type="button" name="button" class="ico search totalSearchBtn">검색</button>
+<button type="button" name="button" class="ico my lalaMyPage">마이페이지</button>
+<script>
+	$(document).ready(function() {
+		$(".lalaMyPage").click(function() {
+			location.href = "/shop/kr/ko/mypage/main";
+		});
+		$(".totalSearchBtn").click(function() {
+			location.href = "/shop/kr/ko/totalSearch/search?uid=customerCenterPage";
+		});
+	});
+</script>
+<nav class="gnb tscroll">
+	<ul class="ul_size">
+		
+         <li>
+         	
+         			<a href="http://shillatrip.shilladfs.com/shop/kr/ko/promotion/main" class="">이벤트
+		         	</a>
+         		
+         	         	
+        </li>
+		
+         <li>
+         	
+         			<a href="http://shillatrip.shilladfs.com/shop/kr/ko/deadLineMainPage/landingPage" class="">마감임박
+		         	</a>
+         		
+         	         	
+        </li>
+		
+         <li>
+         	
+         			<a href="javascript:void(0);" class="" modal-call="modal_ready">라랑팩
+         				<i class="ready">준비중</i>
+         			</a>
+         		
+         	         	
+        </li>
+		
+         <li>
+         	
+         			<a href="http://shillatrip.shilladfs.com/shop/kr/ko/ranking/main" class="">랭킹
+		         	</a>
+         		
+         	         	
+        </li>
+		
+         <li>
+         	
+         			<a href="http://shillatrip.shilladfs.com/shop/kr/ko/customercenter" class="on">고객센터
+		         	</a>
+         		
+         	         	
+        </li>
+		
+	 </ul>
+</nav>
+
+</header>		
+<!-- 콘텐츠 : S -->
+<div class="content">
+	<!-- 셀러 문의 영역 -->
+	
+
+<h3>셀러 문의</h3>
+
+		<input type="hidden" name="currentPage" id="currentPage" value="1">
+		<input type="hidden" name="pageSize" id="pageSize" value="100000">
+			<div class="input_search_kwd">
+				<div class="sch_input">
+					<input type="search" name="searchText" id="searchText" value="" onkeypress="if(event.keyCode==13){getSearchSellerList('');}" data-trans="" placeholder=""><label style="display: none;">셀러명을 입력해주세요.</label>
+					<button type="button" name="button" class="ico btn_del2" style="display: inline-block;"></button>
+					<button type="button" name="button" class="ico btn_search"></button>
+				</div>
+			</div>
+
+				<div id="appendArea" style="display:block">
+<div class="seller_top10_horiz type2 slider_wrap slick-initialized slick-slider" slider-option="variableWidth autoplay=0 dots=0" slider-done="true">
+
+				<div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 5000px; transform: translate3d(0px, 0px, 0px);" role="listbox"><ol class="slider_item slick-slide slick-current slick-active" start="1" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide10">
+			
+					<li>
+						<div class="info_wrap">
+	 						<span class="thum">
+	 							<a href="http://shillatrip.shilladfs.com/shop/kr/ko/sellerShopMainPage/landingPage?seller=8796113045462" tabindex="0">
+	 							
+										<img src="http://shillatrip-img.shilladfs.com/medias/sys_master/images/hc3/h5f/8797001809950.png" alt="내일투어">
+										
+								</a>
+							</span>
+							<span class="info">
+								<span class="name"><!-- 2020-01-06 -->
+									<span class="em" >내일</span>투어
+								</span>
+								<a href="tel:02-6262-5000" tabindex="0">02-6262-5000</a>
+								<button type="button" onclick="javascript:goSellerTalk('S000042','','','','');" class="btn_ico type2 talk" tabindex="0"></button>
+							</span>
+							
+								<span class="desc"> 
+									평일 00:00 ~ 13:00
+										(토 ~ 13:00) 
+										
+								</span>
+							
+						</div>
+					</li>
+			
+				</ol></div></div>
+			
+</div>
+</div>
+		
+<script type="text/javascript">
+
+	// 셀러 리스트 조회
+	function getSearchSellerList(check){	
+		
+		if(check == ""){
+			$("#currentPage").val(1);
+			$("#pageSize").val(100000);
+			$("#appendArea").html('');
+			$("#index").val('0');
+		}
+		
+		$.ajax({
+			type : "post",
+			url : "/shop/kr/ko/customercenter/getSearchSellerAjax",
+			data : {
+				CSRFToken : "24b3bb4c-64a3-48af-bdd4-3bc190d90f4b",
+				currentPage : $("#currentPage").val(),
+				searchText : $("#searchText").val(),
+		    	pageSize : $("#pageSize").val()
+			},
+			dataType: "html",
+			success: function(data){
+				
+				if(data != ""){
+		  	  		// 공지사항리스트 노출
+		  	  		$(".no_data").hide();
+    	  			$("#appendArea").show();
+		  	  		$("#appendArea").append(data);
+				}else{
+					$(".no_data").show();
+    	  			$("#appendArea").hide();
+				}
+	         
+				LALANG_ajaxActions();
+	            
+	  	  	},
+	  	  	error : function(a,b,c){
+	  	  		alert("Invalid Networking\nNetwork Error. Please try again later.");
+	  	  		
+	  	  	}
+		});
+	}
+	
+
+	$(document).ready(function(){
+		
+		// "" 첫페이지 화면
+		getSearchSellerList('');
+		
+		// 검색
+		$(".sch_input").find(".btn_search").click(function(){
+			getSearchSellerList('');
+		});
+		
+		// 검색 초기화 => 전체리스트출력
+		$(".sch_input").find(".btn_del2").click(function(){
+			$("#searchText").val('');
+			getSearchSellerList('');
+		});
+		
+	});
+
+</script>
+
+	
+	<!--  FAQ / 공지사항 / 1:1 문의 영역 -->
+	
+
+<h3>고객센터</h3>
+<div class="ico_list">
+	<ul>
+		<li>
+			<a href="http://shillatrip.shilladfs.com/shop/kr/ko/customercenter/faq">
+				<span class="round_box"><i class="ico faq"></i></span>
+				<span class="txt">FAQ</span>
+			</a>
+		</li>
+		<li>
+			<a href="http://shillatrip.shilladfs.com/shop/kr/ko/customercenter/notice">
+				<span class="round_box"><i class="ico notice"></i></span>
+				<span class="txt">공지사항</span>
+			</a>
+		</li>
+		<li>
+			<a href="http://shillatrip.shilladfs.com/shop/kr/ko/customercenter/onetoone">
+				<span class="round_box"><i class="ico question"></i></span>
+				<span class="txt">1:1문의</span>
+			</a>
+		</li>
+	</ul>
+</div>	
+	
+	<!-- 분쟁해결센터 영역 -->
+	
+
+<h3>판매자와 문제가 있으신가요?</h3>
+<div class="t_box">
+	<p>거래에 문제 발생시 분쟁해결센터를 통해 거래 상대방과 커뮤니케이션을 도와드립니다.</p>
+	<button type="button" name="button" class="btn primary border" id="trouble_Shooter" onclick="location.href='/shop/kr/ko/troubleshootingcenter';">
+		분쟁해결센터
+	</button>
+</div>
+
+</div>
+<!-- 콘텐츠 : E -->
+
+
+		<nav class="fnb">
+			
+				<!-- 에세이 임시  -->
+				<a href="http://shillatrip.shilladfs.com/shop/kr/ko/" class="">
+				<!-- 원소스 -->
+				
+					<i class="ico home"></i>홈
+				</a>
+			
+				<!-- 에세이 임시  -->
+				<a href="http://shillatrip.shilladfs.com/shop/kr/ko/cart" class="">
+				<!-- 원소스 -->
+				
+					<i class="ico cart"></i>장바구니
+				</a>
+			
+				<!-- 에세이 임시  -->
+				<a href="http://shillatrip.shilladfs.com/essay/kr/ko/pub/main/getMainView.do" class="toggle">
+				<!-- 원소스 -->
+				
+					<i class="ico review"></i>에세이
+				</a>
+			
+				<!-- 에세이 임시  -->
+				<a href="http://shillatrip.shilladfs.com/essay/kr/ko/myTrip/getMyTripListView.do?channelId=R" class="">
+				<!-- 원소스 -->
+				
+					<i class="ico trip"></i>나의여행
+				</a>
+			
+				<!-- 에세이 임시  -->
+				<a href="javascript:void(0);" class="" option-call="fnb">
+				<!-- 원소스 -->
+				
+					<i class="ico cate"></i>카테고리
+				</a>
+			
+		</nav>
+		<div class="fnb_message">
+			
+       </div>
+		
+		<div class="quik_btn">
+			
+		</div>
+		
+			<div class="option_select " option-receive="fnb">
+				<div class="pop_option">
+					<ul class="fnb_opt">
+						
+							<li>
+							
+								<a href="http://shillatrip.shilladfs.com/shop/kr/ko/c/10000000"><i class="ico flight"></i>항공</a>
+							</li>
+						
+							<li>
+							
+								<a href="http://shillatrip.shilladfs.com/shop/kr/ko/c/20000000"><i class="ico hotel"></i>숙박</a>
+							</li>
+						
+							<li>
+							
+								<a href="http://shillatrip.shilladfs.com/shop/kr/ko/c/30000000"><i class="ico pack"></i>패키지</a>
+							</li>
+						
+							<li>
+							
+								<a href="http://shillatrip.shilladfs.com/shop/kr/ko/c/40000000"><i class="ico acti"></i>액티비티</a>
+							</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+	<script>
+	
+	$(document).ready(function(){
+		if("customerCenterPage" =="homepage"){
+			if(""  !="true"){
+				ModalPopup.show('.pop_app');				
+			}else{
+				checkRollingModalShow();
+			}
+		}
+		// 오늘 하루 그만보기 쿠키 셋팅.
+		$('#nottoday').click(function(){
+			setCookie("todayStopappInstall", "true" , 1);			
+		});
+		
+		$("#appUrlSms").click(function(){
+			
+			var tel = $("#appUrlSms").parent().find('input').val();
+			var iosUrl = UserAgent.data.KR_APP_URL_IOS;
+			var androidUrl = UserAgent.data.KR_APP_URL_AND;
+			var marketUrl = UserAgent.data.KR_MKT_URL_AND;
+			
+			if (tel == "" || tel.length <= 0){
+				var msg = "휴대폰번호를 입력해주세요.";
+				alert(msg);
+			}
+			
+			if(!formatMobile(tel)) {
+				var msg = "휴대폰번호를 확인해주세요.";
+				alert(msg);
+			}else {
+				
+				$.ajax({
+					url: '/shop/kr/ko/sendInstallUrlToCustomer',
+			     	type: 'POST',
+			     	dataType: "json",
+				   data : {
+					   CSRFToken : "24b3bb4c-64a3-48af-bdd4-3bc190d90f4b"
+			    	 , tel : tel
+			    	 , iosUrl : iosUrl
+			  	    , androidUrl : androidUrl
+			  	    , marketUrl : marketUrl
+			      },
+			     	//timeout: 300000,
+			     	error: function(jqxhr, status, error) {
+			     		console.log("error..");
+			     	}, 
+			     	beforeSend: function (xhr) {
+						// DIM처리 시작
+						//openProgressDialog();
+					}, 
+					success: function(data) {
+				     	//closeProgressDialog();
+			     		if(data.result == 'success') {
+			     			setTimeout(function(){
+			    				$.lalang.modal(
+			    					{
+			    						title:$.lalang.message("appInstallMessage"),
+			    						content:"앱 설치 URL 메세지를 발신했습니다.",
+			    					},
+			    					{
+			    						type:"alert",
+			    						callback: function(){
+			    							//location.reload();
+			    						}
+			    					}
+			    				);
+			    			}, 250);
+			     			return false;
+				     	} else {
+				     		setTimeout(function(){
+			    				$.lalang.modal(
+			    					{
+			    						title:$.lalang.message("appInstallMessage"),
+			    						content:"문자 발송 중 오류가 발생했습니다. 고객센터에 문의 바랍니다.",
+			    					},
+			    					{
+			    						type:"alert",
+			    						callback: function(){
+			    							//location.reload();
+			    						}
+			    					}
+			    				);
+			    			}, 250);
+			     			return false;
+				     	}
+					}
+				});
+				
+			}
+			
+			
+			
+		});
+		
+	});
+	
+	function popAppClose(){
+		ModalPopup.hide('.pop_app', {dimmed:true});
+		checkRollingModalShow();
+		
+	}
+	
+	// 핸드폰번호 포맷으로 변환
+	function formatMobile(phoneNum) { 
+		if(isMobile(phoneNum)) { 
+			return true;
+		} 
+		else {
+			return false;
+		} 
+	}
+
+	// 핸드폰번호 형식 체크
+	function isMobile(phoneNum) { 
+		var regExp =/(01[016789])([1-9]{1}[0-9]{2,3})([0-9]{4})$/; 
+		var myArray; 
+		if(regExp.test(phoneNum)){ 
+			myArray = regExp.exec(phoneNum); 
+			return true; 
+		} else { 
+			return false; 
+		} 
+	}
+
+	
+	function assei(){
+		alert('"J" 프로젝트로 연결됩니다.');
+	}
+	
+		
+	</script>
+
+	</div>
+	
+					
+		<!--  오픈 준비중 모달 팝업 한글 프로퍼티 작업 추후 필요 -->
+		<div class="modal" modal-receive="modal_ready">
+			<div class="modal_content">
+				<h1>안내사항</h1>
+				<p class="txt_alert">새로운 메뉴가 오픈 준비중 입니다. <br>조금만 기다려주세요!</p>
+			</div>
+			<div class="modal_btn">
+				<button type="button" name="button" class="btn"><span>확인</span></button>
+			</div>
+		</div>
+	
+	
+	
+
+<script>document.write("<script type='text/javascript' src='/shop/_ui/mobile/common/lalanghome/js/app.call.js?" + Date.now() + "'><\/script>");</script><script type="text/javascript" src="http://shillatrip.shilladfs.com/shop/_ui/mobile/common/lalanghome/js/app.call.js?1578274370389"></script>
+
+<div class="dimd_all trs"></div></body></html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<!-- 2020-01-14 추가정보 입력 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">
+			<h1>추가정보 입력</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="doc_etc">
+				<div class="group_info input_info type2"><!-- 2020-02-20 type2 클래스 추가 -->
+					<div class="passenger">
+						<label for="add_receivePlace">수령장소</label><input type="text" name="add_receivePlace" placeholder="정문앞">
+						<label for="add_receivePlace">바우처를 픽업하실 지역을 선택해주세요. (예 : 인천공항 a카운터)</label><input type="text" name="add_receivePlace" placeholder="인천공항 a카운터">
+						<label for="receiveDate">수령일</label><button type="button" name="button" class="btn_date" popup-call="calendar">날짜선택</button>
+						<label for="useLang">사용언어</label><button type="button" name="button" class="btn_option" option-call="use_lang">선택</button>
+						<label for="receiveTime">수령시간</label><div class="form"><span><button type="button" name="button" class="btn_option" option-call="receive_hour">00시</button></span><span><button type="button" name="button" class="btn_option" option-call="receive_minute">00분</button></span></div>
+						<label for="add_etc">기타</label><div class="text_box"><textarea id="" name="" placeholder="전달하실 내용을 기재해 주세요"></textarea></div>
+					</div>
+					<div class="confirm_chk">
+						<label class="checkbox" for="confirm_chk01"><input type="checkbox" id="confirm_chk01" name="chk" checkboxlike-done="true"><span></span>구매 일 기준으로 3일(영업일) 이후에 수령하셔야 합니다. 확인하셨나요?</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+	<!-- 2020-01-14 추가정보 입력 팝업 : E -->
+	<!-- 사용언어 -->
+	<div class="option_select" option-receive="use_lang">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#" class="on">선택</a></li>
+				<li><a href="#">영어</a></li>
+				<li><a href="#">스페인어</a></li>
+				<li><a href="#">독일어</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 수령시간(시간) -->
+	<div class="option_select" option-receive="receive_hour">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#" class="on">00시</a></li>
+				<li><a href="#">01시</a></li>
+				<li><a href="#">02시</a></li>
+				<li><a href="#">03시</a></li>
+				<li><a href="#">04시</a></li>
+				<li><a href="#">05시</a></li>
+				<li><a href="#">06시</a></li>
+				<li><a href="#">07시</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 수령시간(분) -->
+	<div class="option_select" option-receive="receive_minute">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#" class="on">00분</a></li>
+				<li><a href="#">05분</a></li>
+				<li><a href="#">10분</a></li>
+				<li><a href="#">15분</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 달력팝업 : S -->
+	<div class="popup" popup-receive="calendar">
+		<!-- Modal content -->
+		<div class="head" data-native="status">
+			<h1>날짜선택</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont full"><!-- 2019-09-27 하단버튼이 들어가는 경우 full클래스 삭제, 안들어갈 경우 full클래스 추가 -->
+			<div class="calendar_wrap">
+				<div class="calendar_month default"><!-- 가격표시 안될경우 'default' 클래스 추가 -->
+					<div class="month_header">2019.01</div>
+					<div class="month_cont">
+						<table>
+							<thead>
+								<tr>
+									<th>일</th>
+									<th>월</th>
+									<th>화</th>
+									<th>수</th>
+									<th>목</th>
+									<th>금</th>
+									<th>토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">1</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">2</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled"><!-- 선택불가 'disabled' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">3</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<!-- 2019-08-12 오늘일때 <span class="today">삭제, <span class="price">추가 -->
+									<td class="today">
+										<div class="day_inner">
+											<span class="day">4</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<!-- //2019-08-12 오늘일때 <span class="today">삭제, <span class="price">추가 -->
+									<td class="holiday disabled"><!-- 토일,휴일 'holiday' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">5</span>
+											<span class="price"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday disabled">
+										<div class="day_inner">
+											<span class="day">6</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">7</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">8</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">9</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class=""><!-- 시작일 'start'클래스 추가  -->
+										<div class="day_inner">
+											<span class="day">10</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class=""><!-- 선택된 기간 'selected' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">11</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">12</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">13</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="">
+										<div class="day_inner">
+											<span class="day">14</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="">
+										<div class="day_inner">
+											<span class="day">15</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">16</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">17</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">18</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">19</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">20</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">21</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected start end"><!-- 하루 -->
+										<div class="day_inner">
+											<span class="day">22</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">23</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">24</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">25</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">26</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">27</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">28</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">29</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">30</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">31</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="calendar_month default"><!-- 가격표시 안될경우 'default' 클래스 추가 -->
+					<div class="month_header">2019.02</div>
+					<div class="month_cont">
+						<table>
+							<thead>
+								<tr>
+									<th>일</th>
+									<th>월</th>
+									<th>화</th>
+									<th>수</th>
+									<th>목</th>
+									<th>금</th>
+									<th>토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">1</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">2</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled"><!-- 선택불가 'disabled' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">3</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">4</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday"><!-- 토일,휴일 'holiday' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">5</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">6</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">7</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">8</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">9</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">10</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">11</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">12</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">13</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">14</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">15</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">16</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">17</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">18</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">19</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">20</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">21</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">22</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">23</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">24</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">25</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">26</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">27</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">28</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">29</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">30</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">31</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!--삭제 <div class="white_shadow"></div>-->
+		</div>
+		<!-- 2019-09-27 하단버튼이 들어가는 경우 추가(언제부터 언제까지 기간 선택일 때)
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">적용</button>
+		</div>
+		 -->
+	</div>
+	<!-- 달력팝업 : E -->
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

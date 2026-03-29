@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap fixed">
+	 <header class="sticky_step1" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+		 <h2>
+			 <a href="#" class="ico btn_back">이전 페이지</a>
+			 항공권상세
+			 <button type="button" class="ico btn_like">관심상품</button>
+			 <button type="button" class="ico btn_sns">공유</button>
+		 </h2>
+	 </header>
+	 <!-- 콘텐츠 : S -->
+	 <div class="content">
+		<div class="flight_info">
+			<!-- 2019-10-18 라벨수정 -->
+			<div class="labels">
+				<span class="label ok">환불가능</span>
+				<span class="label ok">부분환불가능</span><!-- 2019-10-29 라벨추가 -->
+				<span class="label not">부분변경불가</span><!-- 2019-11-05 라벨추가 -->
+				<span class="label not">변경불가</span>
+			</div>
+			<!-- //2019-10-18 라벨수정 -->
+
+			<p class="route"><strong>인천</strong><i class="ico round"></i><strong>오사카</strong></p>
+			<p class="stxt">10월 15일 (토) ~ 10월 30일 (일) / 성인2 / 일반석</p>
+
+			<dl>
+				<dt>성인(삼성카드 결제조건) 1인
+					<span class="stxt">항공요금+유류할증료+발권대행수수료 포함</span>
+				</dt>
+				<dd><strong>373,800</strong>원</dd>
+				<!-- 2019-11-05 총 운임영역 수정(em클래스 삭제, 텍스트 수정 및 임직원가 추가 등) -->
+				<!-- 2019-09-30 총 운임영역 수정 -->
+	 			<dt class="total_fare">신라트립가 <button type="button" name="button" class="ico btn_help" tooltip-call="1">도움말</button></dt><!-- 2019-12-05 텍스트 수정(총 운임→신라트립가) -->
+				<dd class="sum total_fare">
+					<span class="cost"><span class="corp">와이페이모어</span>603,871원</span>
+					<span class="price">
+						<span class="member">임직원가</span>
+						<span class="per">20%</span>
+						<span class="sale"><strong>10,373,800</strong>원</span>
+					</span>
+				</dd>
+				<!-- //2019-09-30 총 운임영역 수정 -->
+				<!-- //2019-11-05 총 운임영역 수정(em클래스 삭제, 텍스트 수정 및 임직원가 추가 등) -->
+			</dl>
+
+			<button type="button" name="button" class="btn_txt type4">항공 요금규정 안내</button>
+
+			<!-- 2019-09-30 혜택추가 -->
+			<!-- 2019-11-20 혜택영역 수정, 쿠폰받기 모달 팝업 삭제 -->
+			<div class="benefit_area">
+				<div class="txt">
+					<p>김신라님을 위한 혜택을 확인하세요!</p>
+				</div>
+			</div>
+			<!-- //2019-11-20 혜택영역 수정, 쿠폰받기 모달 팝업 삭제 -->
+
+			<!-- 2019-11-05 혜택아코디언 수정 및 추가 -->
+			<div class="accordion t_small" data-js="accordion">
+				<button type="button" name="button" data-js="acc_anchor">
+					<span class="bleft"><span class="tit">최대 할인</span></span><!-- 2019-12-06 텍스트 수정 -->
+					<span class="bright"><span class="price"><strong>20,000</strong>원</span></span>
+				</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="sale_info">
+						<dl>
+							<dt>9월 한달 프로모션 5% 할인</dt>
+							<dd>10,000원</dd>
+
+							<dt>셀러 3% 할인</dt>
+							<dd>10,000원</dd>
+						</dl>
+					</div>
+				</div>
+				<button type="button" name="button" data-js="acc_anchor">
+					<span class="bleft"><span class="tit">S.Rewards 적립</span></span><!-- 2019-12-06 텍스트 수정 --><!-- 2019-10-29 캐시 적립 혜택 텍스트 변경 -->
+					<span class="bright"><span class="price"><strong>10,000</strong>P(10,000원)</span></span><!-- 2019-12-06 S.Rewards 표기 법 수정 --><!-- 2019-10-29 텍스트 수정 -->
+				</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="sale_info">
+						<dl>
+							<dt>구매 시 1.5% 적립</dt><!-- 2019-12-06 텍스트 수정 -->
+							<dd>10,000P(10,000원)</dd><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+
+							<dt>임직원 추가 2% 적립</dt><!-- 2019-12-06 텍스트 수정 -->
+							<dd>10,000P(10,000원)</dd><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+
+							<dt>적립시점</dt>
+							<dd>즉시적립</dd>
+						</dl>
+						<div class="point_info"><p class="txt">(6,104 원/고시환율) x 1,000P</p></div>
+						<div class="btn_detail"><button type="button" name="button" class="btn_txt type4">여행 완성 후 추가적립금 지급</button></div>
+						<div class="stxt add_txt">항공요금 기준으로 S.Rewards가 적립됩니다.</div><!-- 2019-12-26 문구추가 -->
+					</div>
+				</div>
+
+				<!-- 2019-11-05 항공에서는 카드사 혜택 삭제 <button type="button" name="button" data-js="acc_anchor">
+					<span class="bleft"><span class="tit">카드사 혜택</span></span>
+				</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="sale_info full">
+						<dl>
+							<dt>삼성카드 5% 청구할인</dt>
+							<dt>신라 페이 결제 시 5% 추가할인</dt>
+						</dl>
+					</div>
+				</div> -->
+				
+			</div>
+			<!-- //2019-11-05 혜택아코디언 수정 및 추가 -->
+			<!-- //2019-09-30 혜택추가 -->
+		</div>
+
+		<p class="noti">조회좌석과 예약완료 후 좌석상태가 상이할 수 있으므로 반드시 예약완료 후 좌석상태를 확인해주시기 바랍니다.</p>
+
+		<!-- Depart : S -->
+		<div class="itinerary_info">
+			<span class="label code">코드쉐어</span>
+			<!-- 2019-10-17 숨은 경유지 추가 -->
+			<p class="route">
+				<span class="stit">가는 항공편</span>
+				<strong>인천</strong><i class="ico arrow"></i><strong>도쿄</strong><span class="add_way">(<span>나리타</span>)(중간경유)</span><i class="ico arrow"></i><strong>오사카</strong>
+			</p>
+			<!-- //2019-10-17 숨은 경유지 추가 -->
+			<p class="fleet_info">
+				<span class="flight_time"><i class="ico time"></i>02시간 25분</span>
+			</p>
+
+			<!-- Depart -->
+			<ol class="itinerary">
+				<li class="depart">
+					<span class="date"><b>07:15</b>2월 5일(화)</span>
+					<p>
+						<strong>인천(ICN)출발</strong>
+						<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공">대한항공 OZ9636</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+						<span class="icons"><!-- 2019-11-27 위치변경에 따른 icons 클래스 추가 -->
+							<i class="ico wifi on">와이파이</i><!-- 해당서비스 'on' 클래스 추가 -->
+							<i class="ico power">콘센트</i>
+							<i class="ico enter">엔터테인먼트</i>
+							<i class="ico meal">기내식</i>
+						</span>
+						<span class="time"><b>비행</b> 01시간 55분</span>
+					</p>
+				</li>				
+				<li class="via">
+					<span class="date"></span><!-- 2019-10-23 숨은 경유지일 때 텍스트만 노출 안함 -->
+					<p>
+						<strong>타이페이(TPE)(중간경유)체류</strong>
+						<span class="txt">주유공급 및 항공기 정비를 위해 대기 후 이동합니다.</span><!-- 2019-10-23 중간경유지 문구추가 -->
+						<span class="time"><b>대기</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="arrival">
+					<span class="date"><b>07:15</b>2월 5일(화)</span>
+					<p>
+						<strong>오사카(KIX)도착</strong>
+					</p>
+				</li>
+			</ol>
+		</div>
+		<!-- Depart : E -->
+
+		<!-- Return : S -->
+		<div class="itinerary_info">
+			<span class="label code">코드쉐어</span>
+			<!-- 2019-10-17 숨은 경유지 추가 -->
+			<p class="route">
+				<span class="stit">오는 항공편</span>
+				<strong>오사카</strong><i class="ico arrow"></i><strong>도쿄</strong><span class="add_way">(<span>나리타</span>)(중간경유)</span><i class="ico arrow"></i><strong>인천</strong>
+			</p>
+			<!-- //2019-10-17 숨은 경유지 추가 -->
+			<p class="fleet_info">				
+				<span class="flight_time"><i class="ico time"></i>02시간 25분</span>
+			</p>
+
+			<!-- Depart -->
+			<ol class="itinerary">
+				<li class="depart">
+					<span class="date"><b>07:15</b>2월 5일(화)</span>
+					<p>
+						<strong>파리(CDG)출발</strong>
+						<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공">대한항공 OZ9636</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+						<span class="icons"><!-- 2019-11-27 위치변경에 따른 icons 클래스 추가 -->
+							<i class="ico wifi on">와이파이</i><!-- 해당서비스 'on' 클래스 추가 -->
+							<i class="ico power">콘센트</i>
+							<i class="ico enter">엔터테인먼트</i>
+							<i class="ico meal">기내식</i>
+						</span>
+						<span class="time"><b>비행</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="via">
+					<span class="date"></span><!-- 2019-10-23 숨은 경유지일 때 텍스트만 노출 안함 -->
+					<p>
+						<strong>마닐라(MNL)(중간경유)체류</strong>
+						<span class="txt">주유공급 및 항공기 정비를 위해 대기 후 이동합니다.</span><!-- 2019-10-23 중간경유지 문구추가 -->
+						<span class="time"><b>대기</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="depart">
+					<span class="date"><b>07:15</b>2월 5일(화)</span>
+					<p>
+						<strong>마닐라(MNL)출발</strong>
+						<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공">대한항공 OZ9636</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+						<span class="time"><b>비행</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="via">
+					<span class="date"></span><!-- 2019-10-23 숨은 경유지일 때 텍스트만 노출 안함 -->
+					<p>
+						<strong>홍콩(HKG)(중간경유)체류</strong>
+						<span class="txt">주유공급 및 항공기 정비를 위해 대기 후 이동합니다.</span><!-- 2019-10-23 중간경유지 문구추가 -->
+						<span class="time"><b>대기</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="depart">
+					<span class="date"><b>07:15</b>2월 5일(화)</span>
+					<p>
+						<strong>홍콩(HKG)출발</strong>
+						<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공">대한항공 OZ9636</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+						<span class="time"><b>비행</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="arrival">
+					<span class="date"><b>07:15</b>2월 5일(화)</span>
+					<p>
+						<strong>인천(ICN)도착</strong>
+					</p>
+				</li>
+			</ol>
+		</div>
+		<!-- Return : E -->
+
+		<!-- 2019-09-02 다구간일 때 -->
+		<!-- 여정 1 : S -->
+		<div class="itinerary_info">
+			<span class="label code">코드쉐어</span>
+			<!-- 2019-10-17 숨은 경유지 추가 -->
+			<p class="route">
+				<span class="stit">여정 1</span>
+				<strong>인천</strong><i class="ico arrow"></i><strong>홍콩</strong><span class="add_way">(<span>국제공항</span>)(중간경유)</span><i class="ico arrow"></i><strong>바르셀로나</strong>
+			</p>
+			<!-- //2019-10-17 숨은 경유지 추가 -->
+			<p class="fleet_info">				
+				<span class="flight_time"><i class="ico time"></i>02시간 25분</span>
+			</p>
+
+			<!-- Depart -->
+			<ol class="itinerary">
+				<li class="depart">
+					<span class="date"><b>07:15</b>2월 5일(화)</span>
+					<p>
+						<strong>인천(ICN)출발</strong>
+						<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공">대한항공 OZ9636</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+						<span class="icons"><!-- 2019-11-27 위치변경에 따른 icons 클래스 추가 -->
+							<i class="ico wifi on">와이파이</i><!-- 해당서비스 'on' 클래스 추가 -->
+							<i class="ico power">콘센트</i>
+							<i class="ico enter">엔터테인먼트</i>
+							<i class="ico meal">기내식</i>
+						</span>
+						<span class="time"><b>비행</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="arrival">
+					<span class="date"><b>07:15</b>2월 5일(화)</span>
+					<p>
+						<strong>오사카(KIX)도착</strong>
+					</p>
+				</li>
+			</ol>
+		</div>
+		<!-- 여정 1 : E -->
+
+		<!-- 여정 2 : S -->
+		<div class="itinerary_info">
+			<span class="label code">코드쉐어</span>
+			<p class="route">
+				<span class="stit">여정 2</span>
+				<strong>파리</strong><i class="ico arrow"></i><strong>마닐라</strong><i class="ico arrow"></i><strong>홍콩</strong><i class="ico arrow"></i><strong>인천</strong>
+			</p>
+			<p class="fleet_info">
+				<span class="flight_time"><i class="ico time"></i>02시간 25분</span>
+			</p>
+
+			<!-- Depart -->
+			<ol class="itinerary">
+				<li class="depart">
+					<span class="date"><b>07:15</b>2월 5일(화)</span>
+					<p>
+						<strong>파리(CDG)출발</strong>
+						<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공">대한항공 OZ9636</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+						<span class="icons"><!-- 2019-11-27 위치변경에 따른 icons 클래스 추가 -->
+							<i class="ico wifi on">와이파이</i><!-- 해당서비스 'on' 클래스 추가 -->
+							<i class="ico power">콘센트</i>
+							<i class="ico enter">엔터테인먼트</i>
+							<i class="ico meal">기내식</i>
+						</span>
+						<span class="time"><b>비행</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="via">
+					<span class="date"></span><!-- 2019-10-23 숨은 경유지일 때 텍스트만 노출 안함 -->
+					<p>
+						<strong>마닐라(MNL)(중간경유)체류</strong>
+						<span class="txt">주유공급 및 항공기 정비를 위해 대기 후 이동합니다.</span><!-- 2019-10-23 중간경유지 문구추가 -->
+						<span class="time"><b>대기</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="depart">
+					<span class="date"><b>07:15</b>2월 5일(화)</span>
+					<p>
+						<strong>마닐라(MNL)출발</strong>
+						<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공">대한항공 OZ9636</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+						<span class="time"><b>비행</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="via">
+					<span class="date"></span><!-- 2019-10-23 숨은 경유지일 때 텍스트만 노출 안함 -->
+					<p>
+						<strong>홍콩(HKG)(중간경유)체류</strong>
+						<span class="txt">주유공급 및 항공기 정비를 위해 대기 후 이동합니다.</span><!-- 2019-10-23 중간경유지 문구추가 -->
+						<span class="time"><b>대기</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="depart">
+					<span class="date"><b>07:15</b>2월 5일(화)</span>
+					<p>
+						<strong>홍콩(HKG)출발</strong>
+						<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공">대한항공 OZ9636</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+						<span class="time"><b>비행</b> 01시간 55분</span>
+					</p>
+				</li>
+				<li class="arrival">
+					<span class="date"><b>07:15</b>2월 5일(화)</span>
+					<p>
+						<strong>인천(ICN)도착</strong>
+					</p>
+				</li>
+			</ol>
+		</div>
+		<!-- 여정 2 : E -->
+		<!-- //2019-09-02 다구간일 때 -->
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<div class="btn_wrap">
+		<button type="button" name="button" class="btn primary">예약하기</button>
+	</div>
+
+	<!-- 2019-11-21 항공로딩바_페이지 전체 로드(딤드) -->
+	<!-- <div class="page_loader">
+		<div class="loader_area">
+			<div class="loader type2">
+				<div class="bar"></div>
+			</div>
+			<div class="txt_box">
+				<p class="txt">항공권 예약 중 입니다.</p>
+				<p class="sub_txt">잠시만 기다려주세요.</p>
+			</div>
+		</div>
+	</div> -->
+	<!-- //2019-11-21 항공로딩바_페이지 전체 로드(딤드) -->
+
+	<!-- 공유하기 : S -->
+	<div class="pop_sns"><!-- 2019-09-30 allowtransparency="true" 추가 -->
+		<div class="iframe_area"><iframe src="flight_sns_iframe.html" style="width:100%;height:100%;border:0;" allowtransparency="true"></iframe></div><!-- flight_sns_iframe.html는 개발서버에 접속이 안되서 EC에 있는 소스 복사에서 테스트용으로 넣음 -->
+		<button type="button" name="button" class="ico btn_close4">창닫기</button>
+	</div>
+	<!-- 공유하기 : E -->
+
+	<div class="tooltip" tooltip-receive="1">
+		<strong>요금상세</strong>
+		<p class="cmt">신라트립가는 쿠폰할인 등 S.Rewards 적립금액을 합산한 최대 혜택가 입니다. 실제 결제 운임과 차이가 있을 수 있습니다.</p><!-- 2019-12-10 문구 추가 -->
+		<!-- 2019-10-17 요금 상세 소아 추가 -->
+		<div class="fare_area">
+			<div class="tit">성인 1명</div>
+			<dl class="fare_detail">
+				<dt>항공요금</dt>
+				<dd>287,000원</dd>
+
+				<dt>유류할증료</dt>
+				<dd>79,480원</dd>
+
+				<dt>제세공과금</dt>
+				<dd>7,320원</dd>
+
+				<dt>발권대행수수료</dt>
+				<dd>10,000원</dd>
+				
+				<!-- 2019-12-10 문구 수정 -->
+				<!-- 2019-11-15 쿠폰할인가 추가 -->
+				<dt>쿠폰할인</dt>
+				<dd>-10,000원</dd>
+				<!-- //2019-11-15 쿠폰할인가 추가 -->
+				<!-- //2019-12-10 문구 수정 -->
+			</dl>
+
+			<div class="tit">소아 1명</div>
+			<dl class="fare_detail">
+				<dt>항공요금</dt>
+				<dd>287,000원</dd>
+
+				<dt>유류할증료</dt>
+				<dd>79,480원</dd>
+
+				<dt>제세공과금</dt>
+				<dd>7,320원</dd>
+
+				<dt>발권대행수수료</dt>
+				<dd>10,000원</dd>
+
+				<!-- 2019-12-10 문구 수정 -->
+				<!-- 2019-11-15 쿠폰할인가 추가 -->
+				<dt>쿠폰할인</dt>
+				<dd>-10,000원</dd>
+				<!-- //2019-11-15 쿠폰할인가 추가 -->
+				<!-- //2019-12-10 문구 수정 -->
+			</dl>
+			
+			<dl class="fare_detail total">
+				<dt>결제예정 운임</dt><!-- 2019-12-10 문구 수정 --><!-- 2019-12-05 텍스트 수정(총 운임→신라트립가) -->
+				<dd>1,767,600원</dd>
+				<!-- 2019-12-10 S.Rewards 적립 영역 추가 -->
+				<dt class="nor_type">S.Rewards 적립</dt>
+				<dd class="nor_type">10,000P(10,000원)</dd>
+				<!-- //2019-12-10 S.Rewards 적립 영역 추가 -->
+			</dl>
+		</div>
+		<!-- //2019-10-17 요금 상세 소아 추가 -->
+		<button type="button" name="button" class="ico btn_close3">닫기</button>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</html>

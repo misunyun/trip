@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/search.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<header class="sticky_step1">
+		<h2>
+			<a href="#none" class="ico btn_back">이전 페이지</a>
+			통합검색
+		</h2>
+	</header>
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<div class="total_search">
+			<!-- 검색영역 : S -->
+			<div class="input_search_kwd sticky_step2" data-native="status">	<!-- data-native 추가  2019-11-13 -->
+				<div class="sch_input menu"><!--메뉴에서 검색시 'menu' 클래스 추가 -->
+					<span class="cate">마감임박<button type="button" name="button" class="ico sch_del">입력내용 삭제</button></span><!--메뉴에서 검색시 메뉴명 라벨 추가 -->
+					<input type="search" name="" value="제주도" placeholder="봄 꽃 여행 5만원 할인~!">
+					<button type="button" name="button" class="ico btn_del2">입력내용 삭제</button><!-- 텍스트 입력 될때 표시 -->
+					<button type="button" name="button" class="ico btn_search">검색</button>
+				</div>
+			</div>
+			<!-- 검색영역 : E -->
+
+			<!-- 통합검색 메인 -->
+			<div class="tab_wrap sch_main" style="display:none">
+				<div class="tab_menu search tscroll">
+					<ul>
+						<li><a href="#none" class="on">인기검색어</a></li>
+						<li><a href="#none">인기해시태그</a></li>
+						<li><a href="#none">인기크리에이터</a></li>
+						<li><a href="#none">최근본상품</a></li>
+					</ul>
+				</div>
+
+				<!-- 인기검색어 : S -->
+				<div class="tab_cont active">
+					<ul class="sch_list">
+						<!-- D : loop -->
+						<li>
+							<a href="#none">
+								<strong class="em">1</strong>
+								<span class="word">제주도</span>
+							</a>
+						</li>
+						<!-- //D : loop -->
+						<li>
+							<a href="#none">
+								<strong class="em">2</strong>
+								<span class="word">제주도</span>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<strong class="em">3</strong>
+								<span class="word">제주도</span>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<strong class="em">4</strong>
+								<span class="word">괌 PIC</span>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<strong class="em">5</strong>
+								<span class="word">유럽 커플 여행</span>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<strong class="em">6</strong>
+								<span class="word">유럽 패키지</span>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<strong class="em">7</strong>
+								<span class="word">스페인</span>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<strong class="em">8</strong>
+								<span class="word">마카오</span>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<strong class="em">9</strong>
+								<span class="word">세부</span>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<strong class="em">10</strong>
+								<span class="word">뉴질랜드</span>
+							</a>
+						</li>
+					</ul>
+					<p class="noti">2019.02.13 기준</p>
+				</div>
+				<!-- 인기검색어 : E -->
+
+				<!-- 해시태그탭 내용 : S -->
+				<div class="tab_cont">
+					<div class="iframe_area">
+						<iframe src="i_hastag.html" width="100%" height="100%" scrolling=""></iframe>
+					</div>
+				</div>
+				<!-- 해시태그탭 : E -->
+
+				<!-- 크리에이터탭 : S -->
+				<div class="tab_cont">
+					<div class="iframe_area">
+						<iframe src="i_creator2.html" width="100%" height="100%" scrolling=""></iframe>
+					</div>
+				</div>
+				<!-- 크리에이터탭 : E -->
+
+				<!-- 최근본상품탭 : S -->
+				<div class="tab_cont">
+					<h3 class="sub">2019.02.03 (목)</h3>
+					<ul class="goods_horiz">
+					<!-- D : loop -->
+						<li>
+							<a href="#none">
+								<img src="../../resource/img/tmp_prd04.jpg" alt="">
+								<span class="tit2">더 파크뷰(제주 신라호텔)</span>
+								<p class="class">
+									<span class="review_point"><span class="score" style="width:57%">3</span></span>
+									<span>(35)</span>
+								</p>
+								<span class="price"><strong>440,000</strong>원~</span>
+							</a>
+						</li>
+						<!-- //D : loop -->
+						<li>
+							<a href="#none">
+								<img src="../../resource/img/tmp_prd04.jpg" alt="">
+								<span class="tit2">라마다 제주시티호텔 라마다 제주시티호텔 라마다 제주시티호텔 라마다 제주시티호텔 라마다 제주시티호텔</span>
+								<p class="class">
+									<span class="review_point"><span class="score" style="width:57%">3</span></span>
+									<span>(35)</span>
+								</p>
+								<span class="price"><strong>440,000</strong>원~</span>
+							</a>
+						</li>
+						<li>
+							<a href="#none">
+								<img src="../../resource/img/tmp_prd04.jpg" alt="">
+								<span class="tit2">히든 클리프 호텔&amp;네이쳐</span>
+								<p class="class">
+									<span class="review_point"><span class="score" style="width:57%">3</span></span>
+									<span>(35)</span>
+								</p>
+								<span class="price"><strong>440,000</strong>원~</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- 최근본상품 : S -->
+			</div>
+
+			<!-- 최근검색결과 : S -->
+			<div class="sch_box recent" style="display:none">
+				<div class="no_data type1" style="display:none">
+					<em>최근 검색 결과가 없습니다.</em>
+					<!-- <em>자동 저장 기능이 꺼져 있습니다.</em> -->
+				</div>
+				<ul class="sch_recent_list">
+					<li><a href="#none">제주도</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+					<li><a href="#none">제주도</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+					<li><a href="#none">제주도</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+					<li><a href="#none">유럽여행 패키지</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+				</ul>
+				<!-- 자동저장 on  : S -->
+				<div class="sch_bottom">
+					<div class="fleft">
+						<span><button type="button" name="button" class="btn_txt">전체삭제</button></span>
+						<span><button type="button" name="button" class="btn_txt">자동저장 끄기</button></span>
+					</div>
+					<div class="fright">
+						<span><button type="button" name="button" class="btn_txt">취소</button></span>
+					</div>
+				</div>
+				<!-- 자동저장 on  : E -->
+
+				<!-- 자동저장 off  : S -->
+				<div class="sch_bottom">
+					<div class="fleft">
+						<span><button type="button" name="button" class="btn_txt">자동저장 켜기</button></span>
+					</div>
+					<div class="fright">
+						<span><button type="button" name="button" class="btn_txt">취소</button></span>
+					</div>
+				</div>
+				<!-- 자동저장 off : E -->
+			</div>
+			<!-- 최근검색결과 : E -->
+
+			<!-- 자동완성 : S -->
+			<div class="sch_box" style="display:none">
+				<div class="no_data type1 dual" style="display:none">
+					<em>검색 결과가 없습니다.</em>
+					<p>정확한 검색어가 맞는지 다시 확인해주세요.</p>
+				</div>
+				<ul class="auto_sch_list">
+					<li><a href="#none"><mark>제주</mark>도</a> </li>
+					<li><a href="#none"><mark>제주</mark> 패키지</a></li>
+					<li><a href="#none"><mark>제주</mark>호텔</a></li>
+					<li><a href="#none"><mark>제주</mark>아쿠아플라넷</a></li>
+				</ul>
+			</div>
+			<!-- 자동완성 : E -->
+
+			<!-- 검색결과 -->
+			<div class="sch_box" style="display:block">
+				<div class="sch_hashtag tscroll">
+					<ul>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#인생샷</a></li>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#커플여행</a></li>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#여름휴가</a></li>
+					</ul>
+				</div>
+
+				<div class="tab_wrap">
+					<div class="tab_menu search tscroll">
+						<ul>
+							<li><a href="#none">상품(1,387)</a></li>
+							<li><a href="#none">이벤트(3)</a></li>
+							<li><a href="#none" class="on">에세이(121)</a></li>
+							<li><a href="#none">크리에이터(3)</a></li>
+						</ul>
+					</div>
+
+					<!-- 상품 : S -->
+					<div class="tab_cont">
+						<h3><a href="#none" class="btn_more">MD추천 <em class="em">10</em></a></h3><!--2019-11-21 수정 -->
+						<ul class="goods_horiz md">
+							<!-- D : loop -->
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="badge_area">
+										<span class="badge type3">MD추천</span>
+									</span>
+									<span class="tit">제주왕복항공권+렌터카3일 포함 렌터카 자차보험 포함</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+							<!-- //D : loop -->
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="badge_area">
+										<span class="badge type3">MD추천</span>
+									</span>
+									<span class="tit">마라도 잠수함 투어</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="badge_area">
+										<span class="badge type3">MD추천</span>
+									</span>
+									<span class="tit">마라도 잠수함 투어</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+						</ul>
+
+						<!-- 실시간 항공, 숙박 : S -->
+						<div class="tab_wrap realtime_prd">
+							<div class="tab_menu tscroll">
+								<ul>
+									<li><a href="#none" class="on">실시간항공</a></li>
+									<li><a href="#none">실시간숙박</a></li>
+								</ul>
+							</div>
+							<!-- 실시간 항공 -->
+							<div class="tab_cont active">
+								<div class="input_info real_search" >
+									<div class="">
+										<label for="start">출발지</label><input type="text" name="start" placeholder="인천/김포(sel)">
+
+										<label for="arrival">도착지</label><input type="text" name="arrival" placeholder="도착지를 입력해주세요">
+
+										<label for="day1">가는날</label><input type="text" name="day1" placeholder="2019.08.01 수">
+
+										<label for="gender">오는날</label><input type="text" name="day1" placeholder="2019.08.03 금">
+
+									</div>
+									<div class="btn_box">
+										<button type="button" name="button" class="btn primary">검색</button>
+									</div>
+								</div>
+							</div>
+
+							<!-- 실시간 숙박 -->
+							<div class="tab_cont">
+								<div class="input_info real_search">
+									<div class="">
+										<label for="start">목적지</label><input type="text" name="start" placeholder="목적지를 입력해주세요.">
+
+										<label for="day1">체크인</label><input type="text" name="day1" placeholder="2019.08.01 수">
+
+										<label for="gender">체크아웃</label><input type="text" name="day1" placeholder="2019.08.03 금">
+									</div>
+									<div class="btn_box">
+										<button type="button" name="button" class="btn primary">검색</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 실시간 항공, 숙박 : E -->
+
+						<ul class="promo_list">
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_event01.jpg" alt="">
+									<div class="mask"></div>
+									<div class="txt">
+										<span class="badge etc">후쿠오카</span>
+										<em>후쿠오카로 떠나는 <br>3일 특급 온천 여행</em>
+										<span class="date">2019.09.10 까지</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+
+						<h3><a href="#none" class="btn_more">라랑팩 <em class="em">10</em></a></h3><!--2019-11-21 수정 -->
+						<div class="tscroll goods_list">
+							<ul>
+								<li>
+									<a href="#none">
+										<img src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="badge_area">
+											<span class="badge type3">신라트립가</span>
+										</span>
+										<span class="tit">먹다 지치는 오사카 먹방 투어 먹다 지치는 오사카 먹방 투어 먹다 지치는 오사카 먹방 투어 먹다 지치는 오사카 먹방 투어</span>
+										<span class="sale_area">
+											<span class="per">20%</span><span class="cost">10,000,000원</span>
+										</span>
+										<span class="price"><strong>8,000,000</strong>원~</span>
+										<div class="user_info">
+											<span class="info">
+												<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+												<span class="name creator">나만따라와</span>
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#none">
+										<img src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="tit">먹다 지치는 오사카 먹방 투어</span>
+										<span class="price"><strong>440,000</strong>원</span>
+										<div class="user_info">
+											<span class="info">
+												<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+												<span class="name creator">나만따라와</span>
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#none">
+										<img src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="tit">먹다 지치는 오사카 먹방 투어</span>
+										<span class="price"><strong>440,000</strong>원</span>
+										<div class="user_info">
+											<span class="info">
+												<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+												<span class="name creator">나만따라와</span>
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#none">
+										<img src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="tit">먹다 지치는 오사카 먹방 투어 먹다 지치는 오사카 먹방 투어 먹다 지치는 오사카 먹방 투어 먹다 지치는 오사카 먹방 투어</span>
+										<span class="price"><strong>440,000</strong>원</span>
+										<div class="user_info">
+											<span class="info">
+												<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+												<span class="name creator">나만따라와</span>
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#none">
+										<img src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="tit">먹다 지치는 오사카 먹방 투어</span>
+										<span class="price"><strong>440,000</strong>원</span>
+										<div class="user_info">
+											<span class="info">
+												<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+												<span class="name creator">나만따라와</span>
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#none">
+										<img src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="tit">먹다 지치는 오사카 먹방 투어</span>
+										<span class="price"><strong>440,000</strong>원</span>
+										<div class="user_info">
+											<span class="info">
+												<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+												<span class="name creator">나만따라와</span>
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#none">
+										<img src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="tit">먹다 지치는 오사카 먹방 투어 먹다 지치는 오사카 먹방 투어 먹다 지치는 오사카 먹방 투어 먹다 지치는 오사카 먹방 투어</span>
+										<span class="price"><strong>440,000</strong>원</span>
+										<div class="user_info">
+											<span class="info">
+												<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+												<span class="name creator">나만따라와</span>
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#none">
+										<img src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="tit">먹다 지치는 오사카 먹방 투어</span>
+										<span class="price"><strong>440,000</strong>원</span>
+										<div class="user_info">
+											<span class="info">
+												<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+												<span class="name creator">나만따라와</span>
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#none">
+										<img src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="tit">먹다 지치는 오사카 먹방 투어</span>
+										<span class="price"><strong>440,000</strong>원</span>
+										<div class="user_info">
+											<span class="info">
+												<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+												<span class="name creator">나만따라와</span>
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#none">
+										<img src="../../resource/img/tmp_prd04.jpg" alt="">
+										<span class="tit">먹다 지치는 오사카 먹방 투어</span>
+										<span class="price"><strong>440,000</strong>원</span>
+										<div class="user_info">
+											<span class="info">
+												<span class="thumb"><img src="../../resource/img/img_thumb_default01.jpg" alt=""></span>
+												<span class="name creator">나만따라와</span>
+											</span>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<h3><a href="#none" class="btn_more">숙박 <em class="em">10</em></a></h3><!--2019-11-21 수정 -->
+						<ul class="goods_horiz">
+							<!-- D : loop -->
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="tit">제주왕복항공권+렌터카3일 포함 렌터카 자차보험 포함</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+							<!-- //D : loop -->
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="tit">제주왕복항공권+렌터카3일 포함 렌터카 자차보험 포함</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="tit">제주왕복항공권+렌터카3일 포함 렌터카 자차보험 포함</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+						</ul>
+
+						<h3><a href="#none" class="btn_more">에어텔/패키지 <em class="em">10</em></a></h3><!-- 2020-01-13 명칭변경 --><!--2019-11-21 수정 -->
+						<ul class="goods_horiz">
+							<!-- D : loop -->
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="tit">제주왕복항공권+렌터카3일 포함 렌터카 자차보험 포함</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+							<!-- //D : loop -->
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="tit">제주왕복항공권+렌터카3일 포함 렌터카 자차보험 포함</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="tit">제주왕복항공권+렌터카3일 포함 렌터카 자차보험 포함</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+						</ul>
+
+						<h3><a href="#none" class="btn_more">액티비티 <em class="em">10</em></a></h3><!--2019-11-21 수정 -->
+						<ul class="goods_horiz">
+							<!-- D : loop -->
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="tit">제주왕복항공권+렌터카3일 포함 렌터카 자차보험 포함</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+							<!-- //D : loop -->
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="tit">제주왕복항공권+렌터카3일 포함 렌터카 자차보험 포함</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="tit">제주왕복항공권+렌터카3일 포함 렌터카 자차보험 포함</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+						</ul>
+
+						<h3><a href="#none" class="btn_more">마감임박 <em class="em">10</em></a></h3><!--2019-11-21 수정 -->
+						<ul class="goods_horiz">
+							<!-- D : loop -->
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="tit">제주왕복항공권+렌터카3일 포함 렌터카 자차보험 포함</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+							<!-- //D : loop -->
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="tit">제주왕복항공권+렌터카3일 포함 렌터카 자차보험 포함</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_prd04.jpg" alt="">
+									<span class="tit">제주왕복항공권+렌터카3일 포함 렌터카 자차보험 포함</span>
+									<p class="class">
+										<!-- <span class="score"><b>1</b>성급</span> -->
+										<span class="review_point"><span class="score" style="width:57%">3</span></span>
+										<span>(35)</span>
+									</p>
+									<span class="cost">10,000,000원</span>
+									<span class="price"><span class="per">20%</span><strong>8,000,000</strong>원~</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- 상품 : E -->
+
+					<!-- 이벤트 : S -->
+					<div class="tab_cont">
+						<h3><a href="#none" class="btn_more">기획전</a></h3><!--2019-11-21 수정 -->
+						<ul class="promo_list">
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_event02.jpg" alt="">
+									<div class="mask"></div>
+									<div class="txt">
+										<span class="badge etc">후쿠오카</span>
+										<em class="txt1">후쿠오카로 떠나는</em>
+										<em class="txt2">3일 특급 온천 여행</em>
+										<span class="date">2019.09.10 까지</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_event02.jpg" alt="">
+									<div class="mask"></div>
+									<div class="txt">
+										<span class="badge etc">후쿠오카</span>
+										<em class="txt1">후쿠오카로 떠나는</em>
+										<em class="txt2">3일 특급 온천 여행</em>
+										<span class="date">2019.09.10 까지</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_event02.jpg" alt="">
+									<div class="mask"></div>
+									<div class="txt">
+										<span class="badge etc">후쿠오카</span>
+										<em class="txt1">후쿠오카로 떠나는</em>
+										<em class="txt2">3일 특급 온천 여행</em>
+										<span class="date">2019.09.10 까지</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+
+						<h3><a href="#none" class="btn_more">이벤트</a></h3><!--2019-11-21 수정 -->
+						<ul class="event_list">
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_event01.jpg" alt="">
+									<div class="mask" style="background-color:#1a3b5d"><!-- 어드민에서 칼라 지정 -->
+										<em>2019년 설 연휴 <br>출발고객 혜택출발고객 혜택출발고객 혜택</em>
+										<span class="sub">여행은 내가 할인은 신라트립 여행은 내가 할인은 신라트립</span>
+										<span class="date">2019.09.10 까지</span>
+									</div>
+									<p class="desc"><b>라랑이 쏜다 할인 특집 신라트립이 쏜다 할인 특집 신라트립이 쏜다 할인 특집 신라트립이 쏜다 할인 특집</b> <span class="during">2019.03.19 ~ 2019.04.08</span></p>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_event01.jpg" alt="">
+									<div class="mask" style="background-color:#1a3b5d"><!-- 어드민에서 칼라 지정 -->
+										<em>2019년 설 연휴 <br>출발고객 혜택출발고객 혜택출발고객 혜택</em>
+										<span class="sub">여행은 내가 할인은 신라트립</span>
+										<span class="date">2019.09.10 까지</span>
+									</div>
+									<p class="desc"><b>투표 이벤트</b> <span class="during">2019.03.19 ~ 2019.04.08</span></p>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img src="../../resource/img/tmp_event01.jpg" alt="">
+									<div class="mask" style="background-color:#1a3b5d"><!-- 어드민에서 칼라 지정 -->
+										<em>2019년 설 연휴 <br>출발고객 혜택출발고객 혜택출발고객 혜택</em>
+										<span class="sub">여행은 내가 할인은 신라트립</span>
+										<span class="date">2019.09.10 까지</span>
+									</div>
+									<p class="desc"><b>투표 이벤트</b> <span class="during">2019.03.19 ~ 2019.04.08</span></p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- 이벤트 : E -->
+
+					<!-- 에세이 : S -->
+					<div class="tab_cont active">
+						<!-- J 에서 불러오는 영역 -->
+						<div class="sch_iframe_area">
+							<iframe src="i_essay.html" width="100%" height="100%" scrolling=""></iframe>
+						</div>
+					</div>
+					<!-- 에세이 : E -->
+
+					<!-- 크리에이터 : S -->
+					<div class="tab_cont">
+						<!-- J 에서 불러오는 영역 -->
+						<div class="sch_iframe_area">
+							<iframe src="i_creator.html" width="100%" height="100%" scrolling=""></iframe>
+						</div>
+					</div>
+					<!-- 크리에이터 : S -->
+				</div>
+			</div>
+			<!-- 검색결과 : E -->
+		</div>
+
+	</div>
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+	<!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+
+	<!-- top -->
+	<div class="quik_btn">
+		<a href="#top" class="ico btn_top">맨처음로</a>
+	</div>
+	<!-- //top -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+<script type="text/javascript">
+	$(document).on('ready', function(){
+		// var obj = { one: 'test1', two: 'test2', three: 'test3', four: 'test4', five: 'test5' };
+		// SearchMethod.rolling($('.sch_input').find('input[type=search]'),5000,obj)
+	})
+</script>
+</body>
+</html>

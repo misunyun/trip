@@ -1,0 +1,845 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="keywords">
+		<meta name="description">
+		<meta name="robots" content="noindex,follow">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, target-densitydpi=160, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="renderer" content="ie-stand">
+		<meta http-equiv="Expires" content="-1">
+		<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+		<meta http-equiv="PRAGMA" content="NO-CACHE">
+		<link rel="stylesheet" type="text/css" media="all" href="../../resource/css/common.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="../../resource/css/msh.css" />
+		<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+
+		<!-- 가이드용 스타일 -->
+		<style media="screen">
+			body{padding:0 0 0 20px}
+			h1{padding-bottom:5px;margin-bottom: 10px;}
+			h2{padding:50px 0 25px 0;font-size:20px}
+			p{padding-bottom: 5px}
+			section{margin-bottom: 30px;padding:0 0 30px 20px;margin-left: -20px}
+			.btn_wrap{margin:0;}
+			.add{font-size:15px;}
+			.delta_scroll{position: fixed; top: 0;transition: transform 0.5s ease; background: #ddd; width: 100%; left:0; background: #fff; border-bottom: 1px solid #eee;text-align: center;}
+			.delta_scroll_up{transform: translate3d(0,0,0);}
+			.delta_scroll_down{transform: translate3d(0,-100%,0);}
+			.fold_area{margin-bottom: 20px}
+		</style>
+	</head>
+
+<body>
+	<section class="section">
+		<h1>Layout</h1>
+		<p>하단 버튼 고정 'wrap fixed'</p>
+		<p>버튼 고정아닌 서브화면은 (예약,결제) 'wrap'</p>
+		<p>section의 'section'클래스 기본 컨텐츠 박스 <br>
+			- 하단 여백 : 30px
+			- 우측 여백 : 10px
+			- 하단 보더 : 1px solid #f2f2f2
+		</p>
+	</section>
+
+	<section class="section">
+		<h1>h1 예약이<br>완료되었습니다.</h1>
+		<h3>h3 마감임박 특가</h3>
+		<h3 class="sub"><a href="#" class="btn_more">프리미엄 에세이 <strong class="em">17</strong></a></h3>
+		<h3 class="sub_first"><a href="#" class="btn_more">타이틀 상단 여백없음. sub_first <strong class="em">17</strong></a></h3>
+	</section>
+
+	<section class="section">
+		<h1>TEXT</h1>
+		<p>기본텍스트 색상 : #252525, 폰트사이즈 15px<br>기본줄간격 1.75(텍스트 상하 간격 11px)</p><br>
+		<p class="stxt">서브텍스트 색상 : #828282 폰트사이즈 13px 줄간격 1.5<br>h2 안으로 들어갈경우 14px<br>당일 매표소에서 긴 줄 대기할 필요없이 즉시 입장 가능한 상품입니다.</p>
+
+		<p class="em">포인트 색상 : #fe583e</p>
+		<p class="color3">서브텍스트 색상 : #828282</p>
+
+		<p class="noti">주의사항 class="noti" 폰트사이즈 12px; #a5a5a5 주의사항조회좌석과 예약완료 후 좌석상태가 상이할 수 있으므로 반드시 예약완료 후 좌석상태를 확인해주시기 바랍니다.</p>
+
+		<p class="noti2">주의사항 class="noti" 여백 다름 하단 라인 </p>
+	</section>
+
+	<section>
+		<h1>공통클래스</h1>
+		<p><strong>fright</strong> - float:right  <br>
+			<strong>fleft</strong> -float:right  <br>
+			<strong>center</strong> - text-align:center  <br>
+			<strong class="em">em</strong> - color:#fe583e(포인트색상)  <br>
+			<strong>tscroll</strong> - 투명 스클롤바 (하단 공백 6px 생성 주의)<br>
+			<strong>ico_pl</strong> - 항공사 아이콘 이미지 사이즈  <br>
+			<strong>color1</strong> - <span class="color1"> #a5a5a5  13px</span><br>
+			<strong>color2</strong> - <span class="color2"> #d9d9d9  13px</span><br>
+			<strong>color3</strong> - <span class="color3"> #828282</span><br>
+			<strong>mt70</strong> - 콘텐츠간 여백 70px  <br>
+			<strong>mr20</strong> - 콘텐츠 우측 여백 20px  <br>
+			<strong>mt10</strong> - 콘텐츠 상단 여백 10px  <br>
+			<strong>d_mt</strong> - 콘텐츠 상단 여백 55px  탭위 <br>
+		 </p>
+	</section>
+
+	<section class="section">
+		<h1>Form</h1>
+		<input type="text" name="" value="김신라 123,456"><br><br>
+		<input type="text" name="" placeholder="이름을 입력하세요."><br><br>
+		<input type="text" name="" value="김신라 123,456" disabled><br><br>
+		<button type="button" name="button" class="btn_date">날짜 선택</button><!-- D : 날짜 선택시 ex)2019.01.27로 표현 -->
+		<br><br>
+		<p>input type date, time</p>
+		<input type="tel" name="" value="" placeholder="숫자타입"><br><br>
+		<input type="password" name="" value="" placeholder="패스워드"><br><br>
+		<input type="date" name="" value="" placeholder="출국일 선택"><br><br>
+		<input type="time" name="" value=""  placeholder="출국시간 선택">
+		<br><br>
+		<div class="inp_btn">
+			<input type="text" name="" placeholder="신고하실 거래내역을 선택하세요" value="">
+			<button type="button" name="button" class="btn primary">선택</button>
+		</div>
+
+		<br>
+
+		<div class="text_box">
+			<textarea id="" name="" placeholder="문의사항을 작성해주세요(5자 이상)"></textarea>
+		</div>
+
+		<br>
+
+		<p>
+			<label class="checkbox" for="chk01"><input type="checkbox" id="chk01" name="chk"><span></span>여자</label>
+			<label class="checkbox" for="chk02"><input type="checkbox" id="chk02" name="chk" checked><span></span>남자</label>
+			<label class="checkbox disabled" for="chk03"><input type="checkbox" id="chk03" name="chk" disabled><span></span>여자</label>
+		</p>
+
+		<p>
+			<label class="radio" for="rad01"><input type="radio" id="rad01" name="rad"><span></span>여자</label>
+			<label class="radio" for="rad02"><input type="radio" id="rad02" name="rad" checked><span></span>남자</label>
+			<label class="radio disabled" for="rad03"><input type="radio" id="rad03" name="rad" disabled><span></span>여자</label>
+		</p>
+
+		<ul class="item_list half_type">
+			<li><label class="checkbox" for="receive01"><input type="checkbox" id="receive01" name="receiving" checked><span></span>E-티켓</label></li>
+			<li><label class="checkbox" for="receive02"><input type="checkbox" id="receive02" name="receiving" checked><span></span>공항수령</label></li>
+			<li><label class="checkbox" for="receive02"><input type="checkbox" id="receive02" name="receiving"><span></span>현장수령</label></li>
+		</ul>
+
+		<h2>기본 버튼 btn</h2>
+		<button type="button" name="button" class="btn primary">확인</button>
+		<button type="button" name="button" class="btn primary border">확인</button>
+		<button type="button" name="button" class="btn primary2">검색</button>
+		<button type="button" name="button" class="btn primary2" disabled>검색 disable</button>
+
+
+		<h3>중간에 버튼이 올때<span class="add">(_reserve_end.html)</span></h3>
+
+		<div class="btn_box">
+			<button type="button" name="button" class="btn primary">결제 내역 확인</button>
+		</div>
+
+		<h3>하단에 버튼이 올때</h3>
+
+		<div class="btn_wrap">
+			<button type="button" name="button" class="btn primary">확인</button>
+		</div>
+
+		<br>
+
+		<div class="btn_wrap both">
+			<button type="button" name="button" class="btn primary">확인</button>
+			<button type="button" name="button" class="btn primary2">검색</button>
+		</div>
+		<div class="btn_wrap both">
+			<button type="button" name="button" class="btn primary" disabled>확인</button>
+			<button type="button" name="button" class="btn primary2" disabled>검색</button>
+		</div>
+
+		<h3>small버튼</h3>
+		<button type="button" name="button" class="btn primary small">확인</button>
+
+
+
+
+		<h2>옵션 btn</h2>
+
+		<!--  비활성화 예시 -->
+		<button type="button" name="button" class="btn_option" disabled>비활성화 확인용</button>
+
+		<br><br>
+
+		 <!--  1번 option call-->
+		<button type="button" name="button" class="btn_option" option-call="1">일반 형태 1</button>
+
+		<br><br>
+
+		 <!--  2번 option call-->
+		<button type="button" name="button" class="btn_option" option-call="2" >리스트 추가 형태</button>
+		<ul class="option_list" option-plus="2">
+			<li>
+				<button type="button" name="button" class="ico btn_del">close</button>
+				<span class="tit">로우시즌 성인</span>
+				<span class="ctrl">
+					<button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+					<input type="text" name="" value="1">
+					<button type="button" name="button" class="ico btn_plus">추가</button>
+				</span>
+				<strong class="price"><strong>8,888,888,888</strong>원</strong><!-- 2019-07-23 금액부분에 strong태그 추가 -->
+			</li>
+			<!-- 아이템 갯수만큼 추가 -->
+			<!-- <li>
+				<button type="button" name="button" class="ico btn_del">close</button>
+				<span class="tit">로우시즌 성인</span>
+				<span class="ctrl">
+					<button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+					<input type="text" name="" value="1">
+					<button type="button" name="button" class="ico btn_plus">추가</button>
+				</span>
+				<strong class="price">8,888,888,888원</strong>
+			</li> -->
+		</ul><!-- D : 2019-06-12 수정 (div 태그를 ul태그로 변경) -->
+
+		<br>
+
+		 <!--  3번 option call-->
+		<button type="button" name="button" class="btn_ico sort" option-call="3">일반 형태 2</button>
+
+		<br><br>
+
+
+		<!--  1번 option receive-->
+		<div class="option_select" option-receive="1">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#">option 1</a></li>
+				<li><a href="#">option 2</a></li>
+				<li><a href="#">option 3</a></li>
+				<li><a href="#">option 4</a></li>
+				<li><a href="#">option 5</a></li>
+				<li><a href="#">option 6</a></li>
+			</ul>
+		</div>
+		</div>
+
+		<!--  2번 option receive -->
+		<div class="option_select plus" option-receive="2">
+		<div class="pop_option">
+			<ul>
+				<li class="none_click"><a href="#" class="on">선택 없음</a></li>
+				<li>
+					<a href="#">
+						<div class="fleft">
+							<span class="option_name">로우시즌 성인</span>
+							<span class="option_stock">재고 999</span>
+						</div>
+						<div class="fright">
+							<strong class="option_price">77,000원</strong>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="fleft">
+							<span class="option_name">로우시즌 성인</span>
+							<span class="option_stock">재고 999</span>
+						</div>
+						<div class="fright">
+							<strong class="option_price">8,888,888,888원</strong>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		</div>
+
+		<!--  3번 option receive-->
+		<div class="option_select" option-receive="3">
+		<div class="pop_option">
+		 <ul>
+			 <li><a href="#">값이 들어가야함 1</a></li>
+			 <li><a href="#">값이 들어가야함 2</a></li>
+			 <li><a href="#">값이 들어가야함 3</a></li>
+			 <li><a href="#">값이 들어가야함 4</a></li>
+			 <li><a href="#">값이 들어가야함 5</a></li>
+			 <li><a href="#">값이 들어가야함 6</a></li>
+			 <li><a href="#">스크롤 생성 확인용</a></li>
+			 <li><a href="#">스크롤 생성 확인용</a></li>
+			 <li><a href="#">스크롤 생성 확인용</a></li>
+			 <li><a href="#">스크롤 생성 확인용</a></li>
+			 <li><a href="#">스크롤 생성 확인용</a></li>
+			 <li><a href="#">스크롤 생성 확인용</a></li>
+		 </ul>
+		</div>
+		</div>
+
+		<h2>텍스트 버튼, 링크</h2>
+		<button type="button" name="button" class="btn_txt type1">버튼태그</button> <a href="#" class="btn_txt type1">링크태그</a><br>
+		<button type="button" name="button" class="btn_txt type2">정보수정</button> <a href="#" class="btn_txt type2">링크태그</a><br>
+
+		<button type="button" name="button" class="btn_txt type3">요금상세</button> <a href="#" class="btn_txt type3">요금상세</a><br>
+		<button type="button" name="button" class="btn_txt type4">요금상세</button> <a href="#" class="btn_txt type4">요금상세</a><br>
+
+		<h2>아이콘 버튼</h2>
+		<button type="button" name="button" class="btn_ico unfold">상품설명 열기</button>
+		<button type="button" name="button" class="btn_ico fold">상품설명 접기</button><br>
+		<button type="button" name="button" class="btn_ico unfold more_view">더보기</button>
+
+		<button type="button" name="button" class="btn_ico filter">필터</button>
+
+		<button type="button" name="button" class="btn_ico type2 add"><span>객실추가</span></button>
+
+		<button type="button" name="button" class="btn_ico type2 talk"><span>셀러톡</span></button>
+
+		<button type="button" name="button" class="btn_ico type2 download"><span>전체다운로드</span></button>
+
+		<button type="button" name="button" class="btn_ico type2 delete"><span>선택삭제</span></button>
+		<button type="button" name="button" class="btn_ico type2 review"><span>리뷰작성</span></button>
+
+		<br>
+		<button type="button" name="button" class="ico btn_more">더보기</button>
+		<button type="button" name="button" class="ico btn_del">삭제</button>
+		<button type="button" name="button" class="ico btn_del2">삭제</button>
+		<button type="button" name="button" class="ico btn_del3">삭제</button>
+		<button type="button" name="button" class="ico btn_del4">삭제</button>
+
+		<button type="button" name="button" class="ico btn_plus">추가</button>
+		<button type="button" name="button" class="ico btn_minus">삭제</button>
+
+		<button type="button" name="button" class="ico btn_plus" disabled>추가</button>
+		<button type="button" name="button" class="ico btn_minus" disabled>삭제</button>
+
+		<button type="button" name="button" class="ico btn_plus2">추가</button>
+		<button type="button" name="button" class="ico btn_minus2">삭제</button><br>
+		<button type="button" name="button" class="ico btn_refresh">새로고침</button>
+
+		<p style="background:#ccc" >
+			<button type="button" name="button" class="ico btn_wplus">추가</button>
+			<button type="button" name="button" class="ico btn_wminus">삭제</button>
+		</p>
+	 </section>
+
+	<section>
+		<h1>ICON</h1>
+		<p style="background:#ccc" >
+			<i class="ico round"></i> &nbsp;
+			<i class="ico round2"></i>
+			<i class="ico arrow"></i> &nbsp;
+			<i class="ico arrow2"></i> &nbsp;
+			<i class="ico ok"></i> &nbsp;
+			<i class="ico notice"></i> &nbsp;
+			<i class="ico xx"></i> &nbsp;<br>
+		</p>
+
+		<i class="ico wifi on">와이파이</i> &nbsp;  <i class="ico power on">콘센트</i> &nbsp;  <i class="ico enter">엔터테인먼트</i> &nbsp;  <i class="ico meal">기내식</i> &nbsp;
+
+		<h2>별점</h2>
+		<span class="review_point"><span class="score">5</span></span><br>
+		<span class="review_point"><span class="score" style="width:79%">4</span></span><br>
+		<span class="review_point"><span class="score" style="width:57%">3</span></span><br>
+		<span class="review_point"><span class="score" style="width:40%">2</span></span><br>
+		<span class="review_point"><span class="score" style="width:20%">1</span></span><br>
+
+		<span class="review_point big"><span class="score">5</span></span><br>
+		<span class="review_point big"><span class="score" style="width:79%">4</span></span><br>
+		<span class="review_point big"><span class="score" style="width:57%">3</span></span><br>
+		<span class="review_point big"><span class="score" style="width:40%">2</span></span><br>
+		<span class="review_point big"><span class="score" style="width:20%">1</span></span><br>
+
+		<h3>별점선택</h3>
+		<span class="review_point_input">
+			<input type="number" value="0" min="1" max="5"></span>
+		<br>
+
+		<h2>등급</h2>
+		<i class="grade lv1">1</i>1등급
+		<i class="grade lv2">2</i>2등급
+		<i class="grade lv3">3</i>3등급
+		<i class="grade lv4">4</i>4등급
+		<i class="grade lv5">5</i>5등급
+
+		<br><br>
+
+		<span class="i_grade silver">S</span>
+		<span class="i_grade basic">B</span>
+		<span class="i_grade bronze">B</span>
+		<span class="i_grade gold">G</span>
+
+		<span class="i_grade small silver">S</span>
+		<span class="i_grade small basic">B</span>
+		<span class="i_grade small bronze">B</span>
+		<span class="i_grade small gold">G</span>
+	</section>
+
+	<section>
+ 		<h1>tooltip</h1>
+		<button type="button" name="button" class="ico btn_tooltip" tooltip-call="1">도움말</button>
+ 	</section>
+
+	<section>
+		<h1>Label, Badge</h1>
+		<span class="label">예약가능</span>
+		<span class="label ok">환불가능</span>
+		<span class="label not">변경불가</span> <span class="label not">환불불가</span>
+		<span class="label code">코드쉐어</span>
+		<span class="badge">기본뱃지</span>
+
+		<h3>
+			상품모듈/이벤트/랭킹
+			<p class="add">(상품모듈 : TOP1 - 모아랑 - 신라트립가 순)</p>
+		</h3>		
+		<span class="badge">TOP 1</span>		
+		<span class="badge type2">모아랑</span>
+		<span class="badge type3">신라트립가</span>
+
+		<br>
+		
+		<span class="badge etc">이벤트</span>
+		<span class="badge type3">4</span>
+	</section>
+
+	<section>
+		<h1>Tab</h1>
+
+		<h2>Tab 기본</h2>
+		<p>전체 높이 35px, 텍스트 위 여백 10px</p>
+		<div class="tab_menu tscroll">
+			<ul class="ul_size">
+				<li><a href="#">All</a></li>
+				<li><a href="#" class="on">입장권/티켓</a></li>
+				<li><a href="#">유심/와이파이</a></li>
+				<li><a href="#">현지투어</a></li>
+				<li><a href="#">여행자보험</a></li>
+			</ul>
+		</div>
+
+		<h2>Tab type2</h2>
+		<div class="tab_menu type2 tscroll">
+			<ul class="ul_size">
+				<li><a href="#">상품소개</a></li>
+				<li><a href="#" class="on">리뷰 35</a></li>
+			</ul>
+		</div>
+
+		<h3>단일 Tab 구성</h3>
+		<div class="tab_wrap">
+			<div class="tab_menu tscroll">
+				<ul class="ul_size">
+					<li><a href="#" class="on">1번탭</a></li>
+					<li><a href="#">2번탭</a></li>
+					<li><a href="#">3번탭</a></li>
+				</ul>
+			</div>
+			<div class="tab_cont active">
+				1번 영역~
+			</div>
+			<div class="tab_cont">
+				 2번 영역~
+			</div>
+			<div class="tab_cont">
+				3번 영역~
+			</div>
+		</div>
+
+		<h3>단일 Tab 구성 플레인(필수 요소만)</h3>
+		<div class="tab_wrap">
+			<div class="tab_menu">
+				<ul>
+					<li><a href="#" class="on">A</a></li>
+					<li><a href="#">B</a></li>
+					<li><a href="#">C</a></li>
+				</ul>
+			</div>
+			<div class="tab_cont active">
+				AAA
+			</div>
+			<div class="tab_cont">
+				 BBB
+			</div>
+			<div class="tab_cont">
+				CCC
+			</div>
+		</div>
+
+
+		<h3>다중 Tab 구성</h3>
+		<div class="tab_wrap">
+			<div class="tab_menu tscroll">
+				<ul class="ul_size">
+					<li><a href="#" class="on">Naver</a></li>
+					<li><a href="#">Google</a></li>
+					<li><a href="#">Kakao</a></li>
+				</ul>
+			</div>
+			<div class="tab_cont active">
+				<div class="tab_wrap">
+					<div class="tab_menu type2 tscroll">
+						<ul class="ul_size">
+							<li><a href="#" class="on">네이버 쇼핑</a></li>
+							<li><a href="#">네이버 웹툰</a></li>
+							<li><a href="#">네이버 영화</a></li>
+						</ul>
+					</div>
+					<div class="tab_cont active">
+						네이버 쇼핑 영역~
+					</div>
+					<div class="tab_cont">
+						네이버 웹툰 영역~
+					</div>
+					<div class="tab_cont">
+						네이버 영화 영역 ~
+					</div>
+				</div>
+			</div>
+			<div class="tab_cont">
+				<div class="tab_wrap">
+					<div class="tab_menu tscroll">
+						<ul class="ul_size">
+							<li><a href="#" class="on">구글 검색</a></li>
+							<li><a href="#">구글 번역</a></li>
+							<li><a href="#">구글 DOCS</a></li>
+						</ul>
+					</div>
+					<div class="tab_cont active">
+						구글 검색 영역~
+					</div>
+					<div class="tab_cont">
+						구글 번역 영역~
+					</div>
+					<div class="tab_cont">
+						구글 DOCS 영역 ~
+					</div>
+				</div>
+			</div>
+			<div class="tab_cont">
+				<div class="tab_wrap">
+					<div class="tab_menu tscroll">
+						<ul class="ul_size">
+							<li><a href="#" class="on">카카오톡</a></li>
+							<li><a href="#">카카오페이</a></li>
+							<li><a href="#">카카오뱅크</a></li>
+						</ul>
+					</div>
+					<div class="tab_cont active">
+						카카오톡 영역~
+					</div>
+					<div class="tab_cont">
+						카카오페이 영역~
+					</div>
+					<div class="tab_cont">
+						카카오뱅크 영역 ~
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h1>필터</h1>
+		<p>기본여백 상80px 하 30px<br>
+			상품,여정검색 하단 140x, class="total_box type1"<br>
+			타이틀 하단,라인(항공) 하단 50px class="total_box type2"
+		</p>
+		<div class="total_box">
+			<span class="total">총 <b>121</b>개</span>
+			<div class="sorting">
+				<button type="button" name="button" class="btn_ico filter" option-call="1" >필터</button>
+				<button type="button" name="button" class="btn_ico sort" option-call="4">평점 높은 순</button>
+
+				<div class="option_select" option-receive="4">
+					<div class="pop_option">
+						<ul>
+							<li><a href="#" class="on">평점 높은 순</a></li>
+							<li><a href="#">관심 높은 순</a></li>
+							<li><a href="#">판매 높은 순</a></li>
+							<li><a href="#">낮은 가격 순</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+	</section>
+
+	<section>
+		<h1>Accordion</h1>
+		<div class="accordion" data-js="accordion">
+			<button type="button" name="button" data-js="acc_anchor">본 이용자가 제기하는 정당한 의견이나 불만을반영하고 그 피해</button>
+			<div class="panel" data-js="acc_panel">
+				<ul class="notice_list">
+					<li>본 이용자가 제기하는 정당한 의견이나 불만을반영하고 그 피해를 보상처리하기 위하여 피해보상처리기구를 설치  운영합니다.</li>
+					<li>이용자로부터 제출되는 불만사항 및 의견은 우선적으로 그 사항을 처리합니다. </li>
+					<li>다만, 신속한 처리가 곤란한 경우에는 이용자께 그 사유와 처리일정을 즉시 통보해 드립니다. </li>
+					<li>이용자간에 발생한 전자상거래 분쟁과 관련하여 이용 자의 피해구제신청이 있는 경우에는 공정거래위원회 또는 시•도지사가 의뢰하는 분쟁조정기관의 조정에 따를 수 있습니다. </li>
+				</ul>
+			</div>
+			<button type="button" name="button" data-js="acc_anchor">유의사항</button>
+			<div class="panel" data-js="acc_panel">
+				<ul class="notice_list">
+					<li>이용자가 제기하는 정당한 의견이나 불만을반영하고 그 피해를 보상처리하기 위하여 피해보상처리기구를 설치  운영합니다.</li>
+					<li>이용자로부터 제출되는 불만사항 및 의견은 우선적으로 그 사항을 처리합니다. </li>
+					<li>다만, 신속한 처리가 곤란한 경우에는 이용자께 그 사유와 처리일정을 즉시 통보해 드립니다. </li>
+					<li>이용자간에 발생한 전자상거래 분쟁과 관련하여 이용 자의 피해구제신청이 있는 경우에는 공정거래위원회 또는 시•도지사가 의뢰하는 분쟁조정기관의 조정에 따를 수 있습니다. </li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h1>Table</h1>
+		<table class="tbl_type1">
+			<caption>가로형</caption>
+			<colgroup>
+				<col style="width:35%;">
+				<col style="width:auto;">
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row">항공사</th>
+					<td>에어서울</td>
+				</tr>
+				<tr>
+					<th scope="row">운임조건</th>
+					<td>성인(삼성카드 결제 조건)</td>
+				</tr>
+				<tr>
+					<th scope="row">요금확정여부</th>
+					<td>확정</td>
+				</tr>
+				<tr>
+					<th scope="row">유효기간</th>
+					<td>~최대 12개울</td>
+				</tr>
+				<tr>
+					<th scope="row">카드사용여부</th>
+					<td>사용가능</td>
+				</tr>
+				<tr>
+					<th scope="row">오픈가능여부</th>
+					<td>가능</td>
+				</tr>
+				<tr>
+					<th scope="row">중간체류가능여부</th>
+					<td>불가</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="tbl_type2">
+			<caption>가로형2</caption>
+			<colgroup>
+				<col style="width:35%;">
+				<col style="width:auto;">
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row">항공사</th>
+					<td>에어서울</td>
+				</tr>
+				<tr>
+					<th scope="row">운임조건</th>
+					<td>성인(삼성카드 결제 조건)</td>
+				</tr>
+				<tr>
+					<th scope="row">요금확정여부</th>
+					<td>확정</td>
+				</tr>
+				<tr>
+					<th scope="row">유효기간</th>
+					<td>~최대 12개울</td>
+				</tr>
+				<tr>
+					<th scope="row">카드사용여부</th>
+					<td>사용가능</td>
+				</tr>
+				<tr>
+					<th scope="row">오픈가능여부</th>
+					<td>가능</td>
+				</tr>
+				<tr>
+					<th scope="row">중간체류가능여부</th>
+					<td>불가</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="tbl_type3">
+			<caption>라인이 없는 경우</caption>
+			<colgroup>
+				<col style="width:100px;">
+				<col style="width:auto;">
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row">이름</th>
+					<td>김신라</td>
+				</tr>
+				<tr>
+					<th scope="row">휴대폰번호</th>
+					<td>010-1234-5678</td>
+				</tr>
+				<tr>
+					<th scope="row">이메일</th>
+					<td>shilladfsshilladfs@samsung.com</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h1>White Shadow</h1>
+		<!--  테스트 타겟입니다  사용은 .white_shadow만! -->
+		<div class="test_target" style="width:100%;height:200px;background:#aaa;"></div>
+
+		<!-- 사용 범위 -White Shadow : start-->
+		<div class="white_shadow"></div>
+		<!-- 사용 범위 -White Shadow : end-->
+	</section>
+
+	<section>
+		<h1>컨텐츠 펼침, 접음 영역</h1>
+
+		<!-- 사용 범위 -더보기 버튼 fold_area : start-->
+		<div class="fold_area" style="border:1px solid #aaa">
+			<!--  fold-height :접혔을때의 높이 px 속성이 없으면 0-->
+			<div class="fold_target" fold-height="100">
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~
+			</div>
+			<div class="white_shadow"></div>
+			<div class="fold_button">
+				<button type="button" name="button" class="btn_ico unfold">열기</button>
+				<button type="button" name="button" class="btn_ico fold">닫기</button>
+			</div>
+		</div>
+
+		<!-- 사용 범위 -더보기 버튼 fold_area : start-->
+		<div class="fold_area open" style="border:1px solid #aaa">
+
+			<div class="fold_button">
+				<span>접힘상태에 영향받지않는 고정 텍스트 버튼</span>
+			</div>
+			<!--  fold-height :접혔을때의 높이 px 속성이 없으면 0-->
+			<div class="fold_target" fold-height="0">
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~<br>
+				나는 넓은 영역~~~
+			</div>
+
+		</div>
+		<!-- 사용 범위 -더보기버튼 fold_area : end-->
+
+
+
+	</section>
+
+	<section>
+		<h1>li 50% 사이즈 리스트</h1>
+
+		<!-- 사용 범위 -50% 리스트  start-->
+		<ul class="half_type">
+			 <li>
+ 				 aboris nisi ut aliquip ex ea commodo consequiatur. Excepteur sint occaecat cupidatat
+ 				 non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ 			 </li>
+			 <li>
+ 				Lorem ipsumi utmmodo consequiatur. Excepteur sint occaecat cupidatat
+ 				 non proident, sunt in culpa qui officia deserunt mollit anim id est laboeserunt mollit anim id est laboeserunt mollit anim id est laboeserunt mollit anim id est laborum.
+ 			 </li>
+			 <li>
+ 				Lorem ipsues
+			</li>
+			<li>
+			   Lorem ipsumi ut aliquip ex ea commodo consequiatur. Excepteur sint occaecat cupidatat
+				non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</li>
+			<li>
+			   Lorem ipsumi ut aliquip ex ea commodo consequiatur. Excepteur sint occaecat cupidatat
+				non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</li>
+		</ul>
+		<!-- 사용 범위 -50% 리스트  end-->
+	</section>
+
+	<section>
+		<h1>데이터없음</h1>
+		<div class="no_data type1">
+			<em>최근 검색 결과가 없습니다.</em>
+		</div>
+
+		<br>
+
+		<div class="no_data type1 dual">
+			<em>검색 결과가 없습니다.</em>
+			<p>정확한 검색어가 맞는지 다시 확인해주세요.</p>
+		</div>
+
+		<br>
+
+		<div class="no_data type2">
+			<em>등록된 리뷰가 없습니다.</em>
+		</div>
+
+		<br>
+
+		<div class="no_data type3 dual">
+			<em>문제신고가 접수완료되었습니다.</em>
+			<p>분쟁해결과정은<br>분쟁해결센터에서 계속 확인하실 수 있습니다.</p>
+		</div>
+
+		<br>
+
+		<div class="no_data type4">
+			<em>관심상품이 없습니다.</em>
+			<button type="button" name="button" class="btn_txt type3">추천상품보기</button>
+		</div>
+	</section>
+	<section>
+		<h1>유의사항</h1>
+		<div class="note_list">
+			<strong>유의사항</strong>
+			<ul>
+				<li>상품 별로 2개 이상 구매 시 인정됩니다.</li>
+				<li>출국 정보를 입력해야 S.Rewards 추가적립이 가능합니다.</li>
+				<li>추가 적립금은 출국일 7일 이내로 일괄 적립됩니다.</li>
+				<li>출국일 변경은 기존 등록 된 S.Rewards 적립일 2일전까지 가능합니다.</li>
+				<li>구매 후 1년이 지난 모아랑 상품은 혜택대상에서 제외됩니다.</li>
+				<li>적립된 S.Rewards는 신라면세점에서 확인 가능합니다.</li>
+			</ul>
+		</div>
+	</section>
+
+	<div class="tooltip" tooltip-receive="1">
+		<strong>최소 출발 인원</strong>
+		<p>최소 출발인원은 성인기준이며, 여행을 진행하기 위해 필요한 인원을 말합니다.</p>
+		<button type="button" name="button" class="ico btn_close3">도움말</button>
+	</div>
+
+
+	<!-- delta_scroll 사용법 : delta_scroll클래스를 주고
+	delta_scroll_up, delta_scroll_down 클래스로 값제어  -->
+	<div class="delta_scroll">
+		스크롤 위, 아래 구분 태그
+	</div>
+
+
+ </body>
+</html>

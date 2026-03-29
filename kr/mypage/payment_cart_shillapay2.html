@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			결제하기
+		</h2>
+	</header>
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<h3>주문상품정보 3건</h3><!-- 1건시 미노출 -->
+		<!-- 상품1(액티비티) : S -->
+		<section class="prd_item">
+			<div class="thumb_info">
+				<div class="img">
+					<img src="../../resource/img/tmp_prd05.jpg" alt="">
+				</div>
+				<div class="info">
+					<div class="name">[오사카]유니버셜 스튜디오 입장권 유니버셜 스튜디오 입장권</div>
+					<span class="price"><strong>20,000</strong>원</span>
+				</div>
+			</div>
+
+			<div class="opt_info">
+				<div class="date">2019.05.05 ~ 2019.05.18</div>
+				<div class="opt">STANDARD/더블베드, 조식포함/예약취소, 환불불가</div>
+			</div>
+
+			<!-- 여행자정보 입력 -->
+			<div class="accordion info_traveler" data-js="accordion">
+				<button type="button" name="button" data-js="acc_anchor">여행자정보 입력</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="input_info">
+						<!-- <legend>여행자정보</legend> -->
+						<div class="passenger">
+							<p class="tourist">
+								<span>여행자1</span>
+								<label class="checkbox" for="traveler01"><input type="checkbox" id="traveler01" name="traveler01_chk" checked><span></span>본인</label>
+							</p>
+							<div class="kor_name"><label for="korName">한글이름</label><input type="text" name="korName" placeholder="김신라" value="김신라"></div><!-- 외국국적일 경우 삭제 -->
+							<label for="familyName">영문성</label><input type="text" name="familyName" placeholder="KIM"  value="KIN">
+							<label for="givenName">영문이름</label><input type="text" name="givenName" placeholder="SHILLA" value="SHILLA">
+							<label for="birthDay">생년월일</label><input type="text" name="birthDay" placeholder="19880123 ('-'없이)" value="1988.01.23">
+
+							<label for="gender">성별</label>
+							<span class="gender">
+								<label class="radio" for="traveler01_gender_male"><input type="radio" id="traveler01_gender_male" name="traveler01_gender" checked><span></span>남자</label>
+								<label class="radio" for="traveler01_gender_female"><input type="radio" id="traveler01_gender_female" name="traveler01_gender"><span></span>여자</label>
+							</span>
+
+							<label for="passtNo">여권번호 <button type="button" name="button" modal-call="1" class="ico btn_help">도움말</button></label><input type="text" name="passtNo">
+							<label for="passtEx">여권만료일</label><input type="text" name="passtEx" placeholder="19880123('-'없이)">
+						</div>
+
+						<div class="passenger">
+							<p class="tourist">
+								<span>여행자2</span>
+								<label class="checkbox" for="traveler01"><input type="checkbox" id="traveler01" name="traveler01_chk" checked><span></span>나중에 입력</label>
+							</p>
+							<div class="kor_name"><label for="korName">한글이름</label><input type="text" name="korName" placeholder="김신라"></div><!-- 외국국적일 경우 삭제 -->
+							<label for="familyName">영문성</label><input type="text" name="familyName" placeholder="KIM">
+							<label for="givenName">영문이름</label><input type="text" name="givenName" placeholder="SHILLA">
+							<label for="birthDay">생년월일</label><input type="text" name="birthDay" placeholder="19880123 ('-'없이)">
+							
+							<label for="gender">성별</label>
+							<span class="gender">
+								<label class="radio" for="traveler02_gender_male"><input type="radio" id="traveler02_gender_male" name="traveler02_gender" checked><span></span>남자</label>
+								<label class="radio" for="traveler02_gender_female"><input type="radio" id="traveler02_gender_female" name="traveler02_gender"><span></span>여자</label>
+							</span>
+
+							<label for="passtNo">여권번호 <button type="button" name="button" modal-call="1" class="ico btn_help">도움말</button></label><input type="text" name="passtNo">
+							<label for="passtEx">여권만료일</label><input type="text" name="passtEx" placeholder="19880123('-'없이)">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- 상품1 : E -->
+
+		<!-- 상품2(패키지) : S -->
+		<section class="prd_item">
+			<div class="thumb_info">
+				<div class="img">
+					<img src="../../resource/img/tmp_prd05.jpg" alt="">
+				</div>
+				<div class="info">
+					<div class="name">후쿠오카 출발 가능/북큐슈 일주</div>
+					<span class="price"><strong>20,000</strong>원</span>
+				</div>
+			</div>
+
+			<div class="opt_info">
+				<div class="date">2019.05.05 ~ 2019.05.18</div>
+				<div class="opt">STANDARD/더블베드, 조식포함/예약취소, 환불불가</div>
+			</div>
+
+			<div class="accordion info_traveler" data-js="accordion">
+				<button type="button" name="button" data-js="acc_anchor">여행자정보 입력</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="input_info">
+						<!-- <legend>여행자정보</legend> -->
+						<div class="passenger">
+							<p class="tourist">
+								<span>여행자1</span>
+								<label class="checkbox" for="traveler01"><input type="checkbox" id="traveler01" name="traveler01_chk" checked><span></span>본인</label>
+							</p>
+							<div class="kor_name"><label for="korName">한글이름</label><input type="text" name="korName" placeholder="김신라" value="김신라"></div><!-- 외국국적일 경우 삭제 -->
+							<label for="familyName">영문성</label><input type="text" name="familyName" placeholder="KIM"  value="KIN">
+							<label for="givenName">영문이름</label><input type="text" name="givenName" placeholder="SHILLA" value="SHILLA">
+							<label for="birthDay">생년월일</label><input type="text" name="birthDay" placeholder="19880123 ('-'없이)" value="1988.01.23">
+
+							<label for="gender">성별</label>
+							<span class="gender">
+								<label class="radio" for="traveler01_gender_male"><input type="radio" id="traveler01_gender_male" name="traveler01_gender" checked><span></span>남자</label>
+								<label class="radio" for="traveler01_gender_female"><input type="radio" id="traveler01_gender_female" name="traveler01_gender"><span></span>여자</label>
+							</span>
+
+							<label for="passtNo">여권번호 <button type="button" name="button" modal-call="1" class="ico btn_help">도움말</button></label><input type="text" name="passtNo">
+							<label for="passtEx">여권만료일</label><input type="text" name="passtEx" placeholder="19880123('-'없이)">
+						</div>
+
+						<div class="passenger">
+							<p class="tourist">
+								<span>여행자2</span>
+								<label class="checkbox" for="traveler01"><input type="checkbox" id="traveler01" name="traveler01_chk" checked><span></span>나중에 입력</label>
+							</p>
+							<div class="kor_name"><label for="korName">한글이름</label><input type="text" name="korName" placeholder="김신라"></div><!-- 외국국적일 경우 삭제 -->
+							<label for="familyName">영문성</label><input type="text" name="familyName" placeholder="KIM">
+							<label for="givenName">영문이름</label><input type="text" name="givenName" placeholder="SHILLA">
+							<label for="birthDay">생년월일</label><input type="text" name="birthDay" placeholder="19880123 ('-'없이)">
+							
+							<label for="gender">성별</label>
+							<span class="gender">
+								<label class="radio" for="traveler02_gender_male"><input type="radio" id="traveler02_gender_male" name="traveler02_gender" checked><span></span>남자</label>
+								<label class="radio" for="traveler02_gender_female"><input type="radio" id="traveler02_gender_female" name="traveler02_gender"><span></span>여자</label>
+							</span>
+
+							<label for="passtNo">여권번호 <button type="button" name="button" modal-call="1" class="ico btn_help">도움말</button></label><input type="text" name="passtNo">
+							<label for="passtEx">여권만료일</label><input type="text" name="passtEx" placeholder="19880123('-'없이)">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- 상품2 : E -->
+
+		<!-- 상품3(숙박) : S -->
+		<section class="prd_item">
+			<div class="thumb_info">
+				<div class="img">
+					<img src="../../resource/img/tmp_prd05.jpg" alt="">
+				</div>
+				<div class="info">
+					<div class="name">후쿠오카 출발 가능/북큐슈 일주</div>
+					<span class="price"><strong>20,000</strong>원</span>
+				</div>
+			</div>
+
+			<div class="opt_info">
+				<div class="date">2019.05.05 ~ 2019.05.18</div>
+				<div class="opt">STANDARD/더블베드, 조식포함/예약취소, 환불불가</div>
+			</div>
+
+			<div class="accordion info_traveler" data-js="accordion">
+				<button type="button" name="button" data-js="acc_anchor">여행자정보 입력</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="input_info">
+						<!-- <legend>여행자정보</legend> -->
+						<div class="passenger">
+							<p class="tourist">
+								<span>여행자1</span>
+								<label class="checkbox" for="traveler01"><input type="checkbox" id="traveler01" name="traveler01_chk" checked><span></span>나중에 입력</label>
+							</p>
+							<div class="kor_name"><label for="korName">한글이름</label><input type="text" name="korName" placeholder="김신라" value="김신라"></div><!-- 외국국적일 경우 삭제 -->
+							<label for="familyName">영문성</label><input type="text" name="familyName" placeholder="KIM"  value="KIN">
+							<label for="givenName">영문이름</label><input type="text" name="givenName" placeholder="SHILLA" value="SHILLA">
+							<label for="birthDay">생년월일</label><input type="text" name="birthDay" placeholder="19880123 ('-'없이)" value="1988.01.23">
+
+							<label for="gender">성별</label>
+							<span class="gender">
+								<label class="radio" for="traveler01_gender_male"><input type="radio" id="traveler01_gender_male" name="traveler01_gender" checked><span></span>남자</label>
+								<label class="radio" for="traveler01_gender_female"><input type="radio" id="traveler01_gender_female" name="traveler01_gender"><span></span>여자</label>
+							</span>
+
+							<label for="passtNo">여권번호 <button type="button" name="button" modal-call="1" class="ico btn_help">도움말</button></label><input type="text" name="passtNo">
+							<label for="passtEx">여권만료일</label><input type="text" name="passtEx" placeholder="19880123('-'없이)">
+						</div>
+
+						<div class="passenger">
+							<p class="tourist">
+								<span>여행자2</span>
+								<label class="checkbox" for="traveler01"><input type="checkbox" id="traveler01" name="traveler01_chk" checked><span></span>본인</label>
+							</p>
+							<div class="kor_name"><label for="korName">한글이름</label><input type="text" name="korName" placeholder="김신라"></div><!-- 외국국적일 경우 삭제 -->
+							<label for="familyName">영문성</label><input type="text" name="familyName" placeholder="KIM">
+							<label for="givenName">영문이름</label><input type="text" name="givenName" placeholder="SHILLA">
+							<label for="birthDay">생년월일</label><input type="text" name="birthDay" placeholder="19880123 ('-'없이)">
+							<div class="">
+
+								<label for="gender">성별</label>
+								<label class="radio" for="traveler02_gender_male"><input type="radio" id="traveler02_gender_male" name="traveler02_gender" checked><span></span>남자</label>
+								<label class="radio" for="traveler02_gender_female"><input type="radio" id="traveler02_gender_female" name="traveler02_gender"><span></span>여자</label>
+							</div>
+							<label for="passtNo">여권번호 <button type="button" name="button" modal-call="1" class="ico btn_help">도움말</button></label><input type="text" name="passtNo">
+							<label for="passtEx">여권만료일</label><input type="text" name="passtEx" placeholder="19880123('-'없이)">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- 상품3 : E -->
+
+		<section class="section booker_info">
+			<h3>예약자정보  <a href="#" class="btn_txt type1">정보수정</a></h3>
+			<table class="tbl_type3">
+				<colgroup>
+					<col style="width:110px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">이름</th>
+						<td>김신라</td>
+					</tr>
+					<tr>
+						<th scope="row">휴대폰번호</th>
+						<td>010-1234-5678</td>
+					</tr>
+					<tr>
+						<th scope="row">이메일</th>
+						<td>shilladfsshilladfs@samsung.com</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="noti">긴급상황 발생 시 즉시 연락이 가능해야 하며, 연락이 불가능한 경우 발생되는 불이익에 대해 당사는 책임지지 않사오니 이점 유의하시기 바랍니다.</p>
+		</section>
+
+		<div class="accordion pay_info" data-js="accordion">
+			<button type="button" name="button" data-js="acc_anchor">상품금액<em><b>1,799,000</b>원</em></button>
+			<div class="panel" data-js="acc_panel">
+				<h4>성인 2명</h4>
+				<dl class="fare_detail ">
+					<dt>항공요금</dt>
+					<dd>287,000원 × 2</dd>
+
+					<dt>유류할증료</dt>
+					<dd>79480원 × 2</dd>
+
+					<dt>제세공과금</dt>
+					<dd>7,320원 × 2</dd>
+
+					<dt>발권대행수수료</dt>
+					<dd>10,000원 × 2</dd>
+				</dl>
+
+				<h4>유아 1명</h4>
+				<dl class="fare_detail">
+					<dt>항공요금</dt>
+					<dd>287,000원</dd>
+
+					<dt>유류할증료</dt>
+					<dd>79480원</dd>
+
+					<dt>제세공과금</dt>
+					<dd>7,320원</dd>
+
+					<dt>발권대행수수료</dt>
+					<dd>10,000원</dd>
+				</dl>
+
+				<dl class="total">
+					<dt>총 금액</dt>
+					<dd><strong>1,700,000</strong>원</dd>
+				</dl>
+			</div>
+		</div>
+
+		<section class="section sale_info">
+			<h3>할인쿠폰 <button type="button" name="button" class="btn_ico type2 download"><span>쿠폰다운로드</span></button></h3>
+			<h4><button type="button" name="button" class="btn_txt type4">적용쿠폰(사용가능 <b class="em">5</b>장)</button></h4>
+			<dl>
+				<dt>10% 할인 쿠폰</dt>
+				<dd>-7,000원</dd>
+
+				<dt>가입 축하 쿠폰</dt>
+				<dd>-3,480원</dd>
+			</dl>
+
+			<h4><button type="button" name="button" class="btn_txt type4">제휴사 할인혜택</button></h4>
+			<dl>
+				<dt>10% 할인 쿠폰 </dt>
+				<dd>-7,000원</dd>
+
+				<dt>가입 축하 쿠폰</dt>
+				<dd>-3,480원</dd>
+			</dl>
+
+			<dl class="total">
+				<dt>총 할인금액</dt>
+				<dd>-7,000원</dd>
+			</dl>
+		</section>
+
+		<section class="section total_pay">
+			<h3>결제금액</h3>
+			<dl>
+				<dt>상품금액</dt>
+				<dd>1,400,000원</dd>
+
+				<dt>쿠폰할인</dt>
+				<dd>-3,480원</dd>
+
+				<dt>제휴사할인</dt>
+				<dd>-3,480원</dd>
+			</dl>
+			<dl class="total">
+				<dt>총 결제금액</dt>
+				<dd><strong>1,400,000</strong>원</dd>
+
+				<dt class="save">S.Rewards 적립예정</dt>
+				<dd class="save">+3,480원</dd>
+			</dl>
+		</section>
+
+		<section class="section payment">
+			<!-- 숙박 결제시 노출 (2019-08-07 마크업 위치수정) -->
+			<div class="pay_right" style="display:none">
+				<span class="color1">지금 바로 결제와 함께 예약을 완료</span>
+				<label class="checkbox checked" for="checkbox"><input type="checkbox" id="checkbox" name="checkbox" checked=""><span></span>즉시결제</label>
+			</div>
+			<!-- //숙박 결제시 노출 (2019-08-07 마크업 위치수정) -->
+
+			<!-- 2019-09-05 결제수단 신라페이 영역 추가 -->
+			<script type="text/javascript" src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/js/lalapay/shilla.lalapay.js?bt=201909042120"></script>
+			<script type="text/javascript" src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/js/lalapay/swiper.min.js?bt=201909042120"></script>			
+			<link type="text/css" href="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/css/lalapay/swiper.css?bt=201909042120" rel="stylesheet" />
+			<link type="text/css" href="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/css/sub.css?bt=201909042120" rel="stylesheet" />
+			<link type="text/css" href="../../resource/css/shillapay.css" rel="stylesheet" />
+
+			<h3>결제수단</h3>
+			<div class="payment_sel">
+				<ul class="item_list half_type">
+					<li><label class="radio" for="rad09" data-target="1"><input type="radio" id="rad09" name="payment" checked=""><span></span>신라페이</label></li>
+					<li><label class="radio" for="rad05" data-target="2"><input type="radio" id="rad05" name="payment"><span></span>신용카드</label></li>
+				</ul>
+				<div class="payment_method">
+
+					<!-- 신라페이(미가입) 선택시 노출 -->
+					<div class="pay_type pay_type_lala" data-content="1">	 <!-- 2019-09-06 data-content 추가 -->
+
+						<div class="pay_item">
+							<ul class="list swiper-wrapper">
+								<li class="swiper-slide">							
+									<div class="card c_type7">
+										<span class="cp_icon icon2"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/icon_bank2.png" alt="로고" /></span>
+										<p class="c_txt3"><span>실시간 무통장 입금</span><span class="swiper-pagination"></span></p> 
+										<ul class="c_list">
+											<li>결제 시 최대 <strong>1.7%</strong> S.Rewards 추가적립</li>
+										</ul>
+									</div>											
+								</li>
+								<li class="swiper-slide">
+									<div class="card c_type8">
+										<span class="cp_icon"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/icon_card2.png" alt="로고" /></span>
+										<p class="c_txt3"><span>카드 간편결제 </span><span class="swiper-pagination"></span></p>
+										<ul class="c_list">
+											<li>결제 시 최대 <strong>0.3%</strong> 스마일캐시 적립</li>
+											<li>결제 시 최대 <strong>0.2%</strong> S.Rewards 추가적립</li>
+										</ul>
+									</div>											
+								</li>															
+							</ul>									
+						</div>
+						<a href="#none" class="btn join_lala">신라페이 가입하기</a>
+
+					</div>
+					
+						
+					<!-- 신용카드 선택시 노출 (EC카드결제)  -->				
+					<div class="credit" data-content="2">	 <!-- 2019-09-06 data-content 추가 -->
+						<div class="tableDl">
+							<dl>
+								<dt>카드종류</dt>
+								<dd>
+									<select name="korCreditCard" id="korCreditCard" class="pay_sel">
+										<option value="" selected="selected">선택</option>
+										<option value="031" data-isglobalcardcompany="false">삼성카드</option>
+										<option value="029" data-isglobalcardcompany="false">신한카드</option>
+										<option value="016" data-isglobalcardcompany="false">KB국민카드</option>
+										<option value="026" data-isglobalcardcompany="false">BC카드</option>
+										<option value="027" data-isglobalcardcompany="false">현대카드</option>
+										<option value="008" data-isglobalcardcompany="false">외환카드</option>
+										<option value="047" data-isglobalcardcompany="false">롯데카드</option>
+										<option value="022" data-isglobalcardcompany="false">씨티카드</option>
+										<option value="006" data-isglobalcardcompany="false">하나카드</option>
+										<option value="021" data-isglobalcardcompany="false">우리카드</option>
+										<option value="018" data-isglobalcardcompany="false">NH농협카드</option>
+										<option value="002" data-isglobalcardcompany="false">KJB광주카드</option>
+										<option value="010" data-isglobalcardcompany="false">JB전북카드</option>
+										<option value="017" data-isglobalcardcompany="false">수협카드</option>
+										<option value="011" data-isglobalcardcompany="false">제주카드</option>
+										<option value="058" data-isglobalcardcompany="false">산업은행카드</option>
+										<option value="081" data-isglobalcardcompany="false">은련카드</option>
+										<option value="A16" data-isglobalcardcompany="false">카카오뱅크</option>
+										<option value="C26" data-isglobalcardcompany="false">K뱅크</option>
+										<option value="050" data-isglobalcardcompany="true" data-paymethod="P101">해외VISA카드</option>
+										<option value="049" data-isglobalcardcompany="true" data-paymethod="P102">해외MasterCard</option>
+										<option value="028" data-isglobalcardcompany="true" data-paymethod="P104">해외JCB카드</option>
+									</select>
+								</dd>
+							</dl>
+							<dl>
+								<dt>할부기간</dt>
+								<dd>
+									<select name="cardInstallment" id="cardInstallment" class="pay_sel">
+										<option value="00">일시불</option>
+										<option value="02">2개월</option>
+										<option value="03">3개월</option>
+										<option value="04">4개월</option>
+										<option value="05">5개월</option>
+										<option value="06">6개월</option>
+										<option value="07">7개월</option>
+										<option value="08">8개월</option>
+										<option value="09">9개월</option>
+										<option value="10">10개월</option>
+										<option value="11">11개월</option>
+										<option value="12">12개월</option>
+									</select>
+									<p class="btn_text_wr">
+										<a href="#none" class="btn_text" popup-call="1"><span>무이자 할부 안내</span></a>
+									</p>
+								</dd>
+							</dl>
+						</div>
+						<ul class="guide_li inside">
+							<li>할인정보에서 카드할인쿠폰 적용시 선택한 카드만 표시 됩니다. 다른 카드로 결제 시 카드할인 적용을 취소해 주십시오.</li>
+							<li>해외카드로 결제시 당사에 고지된 환율과 해외카드사 자체에서 취급하는 환율이 상이하므로, 실제 결제하는 금액이 차이 날 수 있습니다.</li>
+							<li>할부는 50,000원 이상 결제시 가능합니다.</li>
+						</ul>
+						<div class="card_info" id="paywayinfo_1" style="">신한카드 결제 시 최대 8% 청구할인 (30만원↑)</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- // 2019-09-05 결제수단 신라페이 영역 추가 -->
+		</section>
+
+		<div class="agree_list">
+			<h3 class="sub">약관 확인 및 동의</h3>
+			<ul>
+				<li><label class="checkbox" for="achk1"><input type="checkbox" id="achk1" name="agree"><span></span><b>모든 약관에 동의합니다.</b></label></li>
+				<li>
+					<label class="checkbox" for="achk2"><input type="checkbox" id="achk2" name="agree"><span></span>일반규정 <em class="em">(필수)</em></label>
+					<button type="button" name="button" class="btn_txt type2">보기</button>
+				</li>
+				<li>
+					<label class="checkbox" for="achk3"><input type="checkbox" id="achk3" name="agree"><span></span>요금규정 <em class="color3">(선택)</em></label>
+					<button type="button" name="button" class="btn_txt type2">보기</button>
+				</li>
+			</ul>
+		</div>
+
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<div class="btn_wrap">
+		 <button type="button" name="button" class="btn primary">결제하기</button>
+	</div>
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+        <a href="#" option-call="fnb"><i class="ico cate"></i>카테고리</a>
+    </nav>
+
+	<div class="option_select " option-receive="fnb">
+         <div class="pop_option">
+             <ul class="fnb_opt">
+                 <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                 <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                 <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                 <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+             </ul>
+         </div>
+     </div>
+
+	<!-- 무이자 할부 팝업 : S -->
+	<div class="popup" popup-receive="1">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>무이자할부 안내</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+
+		<div class="pop_cont">
+			<h2>무이자 할부 (5만원 이상)</h2>
+			<table class="tbl_type1">
+				<colgroup>
+					<col style="width:35%;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">삼성카드</th>
+						<td>2~5개월</td>
+					</tr>
+					<tr>
+						<th scope="row">신한카드</th>
+						<td>2~5개월</td>
+					</tr>
+					<tr>
+						<th scope="row">비씨카드</th>
+						<td>2~5개월</td>
+					</tr>
+					<tr>
+						<th scope="row">KB국민카드</th>
+						<td>2~5개월</td>
+					</tr>
+					<tr>
+						<th scope="row">현대카드</th>
+						<td>2~3개월(7.1~7.31) 2~6개월(8.1~8.31)</td>
+					</tr>
+					<tr>
+						<th scope="row">농협카드</th>
+						<td>2~5개월</td>
+					</tr>
+					<tr>
+						<th scope="row">시티카드</th>
+						<td>2~5개월</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>부분 무이자 할부 (5만원 이상)</h2>
+			<table class="tbl_type1">
+				<colgroup>
+					<col style="width:35%;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">국민카드</th>
+						<td> 10개월 (1~2회차 고객부담)</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="note_list">
+				<strong>유의사항</strong>
+				<ul class="notice_list"><!-- 2019-06-27 내용 변경 -->
+					<li>법인, 체크, 선불, 올앳, 기프트, 하이브리드카드 제외</li>
+					<li>씨티카드 결제 시 씨티BC, 기업 제외</li>
+					<li>BC카드 결제 시 NON-BC 제외</li>
+					<li>신한BC, 씨티BC는 BC카드 할부 행사 적용</li>
+				</ul>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+	<!-- 무이자 할부 팝업 : E -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+<script type="text/javascript" src="../../resource/js/shillapay.js"></script><!-- 신라페이 관련 JS 추가 -->
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap fixed"><!-- 2019-11-06 fixed 클래스 추가, fnb영역 삭제(예약 및 결제하기 공통수정) -->
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			결제상품
+		</h2>
+	 </header>
+
+	 <!-- 콘텐츠 : S -->
+	 <div class="content">
+		<!-- 2019-09-02 항공사 추가 -->
+		<div class="flight_info">
+			<p class="route"><strong>인천</strong><i class="ico round"></i><strong>오사카</strong></p><!-- 왕복 : ico round / 편도 : ico oneway_f -->
+ 			<p class="stxt">[대한항공] 성인2명, 유아1명 / 일반석</p>
+			<p class="noti">본 항공권 예약서비스는 <span class="t_agency">㈜모두투어</span> 책임하에 운영됩니다.<br>입력하신 정보는 예약/결제/발권진행에 사용 될 수 있습니다.</p><!-- 2019-11-20 문구추가 -->
+ 		</div>
+		<!-- //2019-09-02 항공사 추가 -->
+
+		<section class="section">
+			<table class="tbl_type3">
+				<colgroup>
+					<col style="width:110px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">출국일</th>
+						<td>2019년 3월 31일(일) 10:00</td>
+					</tr>
+					<tr>
+						<th scope="row">귀국일</th>
+						<td>2019년 3월 31일(토) 10:00</td>
+					</tr>
+					<tr>
+						<th scope="row">인원 및 좌석</th>
+						<td>성인2명, 유아1명 / 일반석</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 2019-09-27 버튼추가 -->
+			<div class="btn_detail">
+				<a href="#none" class="btn_txt type4">탑승자 정보 보기</a>
+				<a href="#none" class="btn_txt type4">상세일정</a><!-- 2019-11-20 버튼추가 -->
+				<a href="#none" class="btn_txt type4 btn_block" popup-call="pop_fare_info">항공 요금규정 안내</a><!-- 2020-01-30 버튼추가 -->
+			</div>
+			<!-- //2019-09-27 버튼추가 -->
+		</section>
+
+		<div class="pay_info">
+			<h3>결제금액</h3>
+			<h4>성인 2명</h4>
+			<dl class="fare_detail ">
+				<dt>항공요금</dt>
+				<dd>287,000원 × 2</dd>
+
+				<dt>유류할증료</dt>
+				<dd>79480원 × 2</dd>
+
+				<dt>제세공과금</dt>
+				<dd>7,320원 × 2</dd>
+
+				<dt>발권대행수수료</dt>
+				<dd>10,000원 × 2</dd>
+			</dl>
+
+			<h4>유아 1명</h4>
+			<dl class="fare_detail">
+				<dt>항공요금</dt>
+				<dd>287,000원</dd>
+
+				<dt>유류할증료</dt>
+				<dd>79480원</dd>
+
+				<dt>제세공과금</dt>
+				<dd>7,320원</dd>
+
+				<dt>발권대행수수료</dt>
+				<dd>10,000원</dd>
+			</dl>
+
+			<dl class="sub_total">
+				<dt>합계금액</dt>
+				<dd>110,000원</dd>
+			</dl>
+		</div>
+
+		<section class="section total_pay">
+			<dl>
+				<dt>상품금액</dt>
+				<dd>1,400,000원</dd>
+
+				<dt>쿠폰할인</dt>
+				<dd>-3,480원</dd>
+
+				<dt>총 할인금액</dt>
+				<dd>-3,480원</dd>
+			</dl>
+			<dl class="total">
+				<dt>총 결제금액</dt>
+				<dd><strong>1,400,000</strong>원</dd>
+			</dl>
+		</section>
+
+		<section class="section booker_info">
+			<h3>결제정보</h3>
+			<table class="tbl_type3">
+				<colgroup>
+					<col style="width:110px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">결제번호</th>
+						<td>shilla12345(KDPAWK)</td>
+					</tr>
+					<tr>
+						<th scope="row">결제상태</th>
+						<td>결제완료</td>
+					</tr>
+					<tr>
+						<th scope="row">결제일</th>
+						<td>2019.04.02 15:30</td>
+					</tr>
+					<tr>
+						<th scope="row">결제방법</th>
+						<td>신용카드(KB국민카드)</td>
+					</tr>
+					<tr>
+						<th scope="row">결제금액</th>
+						<td>1,149,400원</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section class="section booker_info">
+			<h3>결제방법</h3>
+			<table class="tbl_type3">
+				<colgroup>
+					<col style="width:110px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">결제방법</th>
+						<td>신용카드(국민카드/3개월)</td>
+					</tr>
+					<tr>
+						<th scope="row">카드종류</th>
+						<td>국민카드(****-****-****-****)</td>
+					</tr>
+					<tr>
+						<th scope="row">소유주</th>
+						<td>김신라</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="btn_detail"><button type="button" name="button" class="btn_txt type3">E-티켓보기</button></div><!-- 2019-09-27 버튼 추가 -->
+		</section>
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<div class="btn_wrap">
+		<button type="button" name="button" class="btn primary2">결제취소</button>
+	</div>
+	
+	<!-- 삭제 
+	<div class="tooltip" tooltip-receive="1">
+		<strong>요금상세</strong>
+		<dl class="fare_detail">
+			<dt>항공요금</dt>
+			<dd>287,000원 × 2</dd>
+
+			<dt>유류할증료</dt>
+			<dd>79480원 × 2</dd>
+
+			<dt>제세공과금</dt>
+			<dd>7,320원 × 2</dd>
+
+			<dt>발권대행수수료</dt>
+			<dd>10,000원 × 2</dd>
+		</dl>
+		<dl class="fare_detail total">
+			<dt>총 예상요금</dt>
+			<dd>767,600원</dd>
+		</dl>
+		<button type="button" name="button" class="btn_txt type4">항공 요금규정 안내</button>
+	</div>
+	-->
+	
+	<!-- 팝업 2020-01-29 추가 : S -->
+	<div class="popup" popup-receive="pop_fare_info">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>항공 요금 규정 안내</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<table class="tbl_type1">
+				<colgroup>
+					<col style="width:35%;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">항공사</th>
+						<td>에어서울</td>
+					</tr>
+					<tr>
+						<th scope="row">운임조건</th>
+						<td>성인(삼성카드 결제 조건)</td>
+					</tr>
+					<tr>
+						<th scope="row">요금확정여부</th>
+						<td>확정</td>
+					</tr>
+					<tr>
+						<th scope="row">유효기간</th>
+						<td>~최대 12개월</td>
+					</tr>
+					<tr>
+						<th scope="row">카드사용여부</th>
+						<td>사용가능</td>
+					</tr>
+					<tr>
+						<th scope="row">오픈가능여부</th>
+						<td>가능</td>
+					</tr>
+					<tr>
+						<th scope="row">중간체류가능여부</th>
+						<td>불가</td>
+					</tr>
+					<tr>
+						<th scope="row">소아요금</th>
+						<td>성인요금의 75%</td>
+					</tr>
+					<tr>
+						<th scope="row">최소체류기간</th>
+						<td>제한없음</td>
+					</tr>
+					<tr>
+						<th scope="row">최소/최대인원수</th>
+						<td>1명 이상/9명 이하</td>
+					</tr>
+					<tr>
+						<th scope="row">수하물</th>
+						<td>
+							각 구간별 규정으로 적용됩니다.<br><br>
+							[규정1-출국편] 인천-오사카<br>
+							무료수하물 23KG 가방1개(공동운항편, 타항공사 항공편 탑승,STOPOVER 일정 및 항공사 스케줄이 없어서 24시간 이상 중간 체류 하는 경우,특정도시에 따라 무료수하물 규정은 변경 될 수 있으며, 캐리어 가방외에 기타 수하물은 항공사에 문의 요망)
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+	<!-- 팝업 2020-01-29 추가 : E -->
+
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

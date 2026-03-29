@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+	<!-- 팝업 : S -->
+	<div class="popup filter show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>필터</h1>
+			<button type="button" name="button" class="btn_txt type5 reset">초기화</button>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+
+			<section class="filter">
+				<h2>숙박등급</h2>
+				<ul class="item_list half_type">
+					 <li><label class="checkbox" for="grade01"><input type="checkbox" id="grade01" name="flight" checked><span></span>1성급</label></li>
+					 <li><label class="checkbox" for="grade02"><input type="checkbox" id="grade02" name="flight" checked><span></span>2성급</label></li>
+					 <li><label class="checkbox" for="grade03"><input type="checkbox" id="grade03" name="flight" checked><span></span>3성급</label></li>
+					 <li><label class="checkbox" for="grade04"><input type="checkbox" id="grade04" name="flight" checked><span></span>4성급</label></li>
+					 <li><label class="checkbox" for="grade05"><input type="checkbox" id="grade05" name="flight" checked><span></span>5성급</label></li>
+				</ul>
+			</section>
+
+			<section class="filter">
+				<h2>가격<span class="opt_txt">1박기준</span> <span class="stxt">437,500원 ~ 1,200,000원</span></h2><!-- 2019-11-14 opt_txt 추가 -->
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+					<span class="range_pointer" style="left:20%"></span>
+					<span class="range_pointer" style="left:80%"></span>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>숙소유형
+					<label class="checkbox fright" for="airline_all"><input type="checkbox" id="airline_all" name="stay" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						 <li><label class="checkbox" for="stay01"><input type="checkbox" id="stay01" name="stay" checked><span></span>호텔</label></li>
+						<li><label class="checkbox" for="stay02"><input type="checkbox" id="stay02" name="stay" checked><span></span>호스텔</label></li>
+						<li><label class="checkbox" for="stay03"><input type="checkbox" id="stay03" name="stay" checked><span></span>아파트</label></li>
+						<li><label class="checkbox" for="stay04"><input type="checkbox" id="stay04" name="stay" checked><span></span>모텔</label></li>
+						<li><label class="checkbox" for="stay05"><input type="checkbox" id="stay05" name="stay" checked><span></span>게스트하우스</label></li>
+						<li><label class="checkbox" for="stay06"><input type="checkbox" id="stay06" name="stay" checked><span></span>펜션</label></li>
+						<li><label class="checkbox" for="stay07"><input type="checkbox" id="stay07" name="stay" checked><span></span>리조트</label></li>
+						<li><label class="checkbox" for="stay08"><input type="checkbox" id="stay08" name="stay" checked><span></span>캠핑장</label></li>
+						<li><label class="checkbox" for="stay09"><input type="checkbox" id="stay09" name="stay" checked><span></span>기타</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter">
+				<h2>조식</h2>
+				<ul class="item_list half_type">
+					 <li><label class="checkbox" for="food01"><input type="checkbox" id="food01" name="food" checked><span></span>포함</label></li>
+					 <li><label class="checkbox" for="food02"><input type="checkbox" id="food02" name="food" checked><span></span>불포함</label></li>
+				</ul>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>편의시설
+					<label class="checkbox fright" for="pay_chk_all"><input type="checkbox" id="pay_chk_all" name="comfort" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="comfort01"><input type="checkbox" id="comfort01" name="comfort" checked><span></span>수영장</label></li>
+						<li><label class="checkbox" for="comfort02"><input type="checkbox" id="comfort02" name="comfort" checked><span></span>사우나</label></li>
+						<li><label class="checkbox" for="comfort03"><input type="checkbox" id="comfort03" name="comfort" checked><span></span>스파마사지</label></li>
+						<li><label class="checkbox" for="comfort04"><input type="checkbox" id="comfort04" name="comfort" checked><span></span>카페테리아</label></li>
+						<li><label class="checkbox" for="comfort06"><input type="checkbox" id="comfort06" name="comfort" checked><span></span>세미나실</label></li>
+						<li><label class="checkbox" for="comfort07"><input type="checkbox" id="comfort07" name="comfort" checked><span></span>비지니스센터</label></li>
+						<li><label class="checkbox" for="comfort08"><input type="checkbox" id="comfort08" name="comfort" checked><span></span>클럽라운지</label></li>
+						<li><label class="checkbox" for="comfort09"><input type="checkbox" id="comfort09" name="comfort" checked><span></span>피트니스</label></li>
+						<li><label class="checkbox" for="comfort10"><input type="checkbox" id="comfort10" name="comfort" checked><span></span>편의점(매점)</label></li>
+						<li><label class="checkbox" for="comfort11"><input type="checkbox" id="comfort11" name="comfort" checked><span></span>주차가능</label></li>
+						<li><label class="checkbox" for="comfort12"><input type="checkbox" id="comfort12" name="comfort" checked><span></span>반려동물</label></li>
+						<li><label class="checkbox" for="comfort13"><input type="checkbox" id="comfort13" name="comfort" checked><span></span>키즈플레이룸</label></li>
+						<li><label class="checkbox" for="comfort14"><input type="checkbox" id="comfort14" name="comfort" checked><span></span>공동바베큐</label></li>
+						<li><label class="checkbox" for="comfort15"><input type="checkbox" id="comfort15" name="comfort" checked><span></span>아기침대대여</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>무료서비스
+					<label class="checkbox fright" for="free_chk_all"><input type="checkbox" id="free_chk_all" name="free" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="free01"><input type="checkbox" id="free01" name="free" checked><span></span>공항 픽업</label></li>
+						<li><label class="checkbox" for="free02"><input type="checkbox" id="free02" name="free" checked><span></span>무료 wifi</label></li>
+						<li><label class="checkbox" for="free03"><input type="checkbox" id="free03" name="free" checked><span></span>무료 조식</label></li>
+						<li><label class="checkbox" for="free04"><input type="checkbox" id="free04" name="free" checked><span></span>무료 주차장</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<!-- 2019-11-14 삭제 <section class="filter fold_area">
+				<h2>흥정 상품</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list">
+						<li><label class="checkbox" for="deal"><input type="checkbox" id="deal" name="deal"><span></span>흥정 가능 상품만 보기</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section> -->
+
+			<!-- 2019-11-14 도시선택 추가 -->
+			<section class="filter fold_area">
+				<h2>도시선택</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="city_sel01"><input type="checkbox" id="city_sel01" name="city_sel" checked><span></span>뉴욕</label></li>
+						<li><label class="checkbox" for="city_sel02"><input type="checkbox" id="city_sel02" name="city_sel" checked><span></span>프라하</label></li>
+						<li><label class="checkbox" for="city_sel03"><input type="checkbox" id="city_sel03" name="city_sel" checked><span></span>오사카</label></li>
+						<li><label class="checkbox" for="city_sel04"><input type="checkbox" id="city_sel04" name="city_sel" checked><span></span>파리</label></li>
+						<li><label class="checkbox" for="city_sel05"><input type="checkbox" id="city_sel05" name="city_sel" checked><span></span>후쿠오카</label></li>
+						<li><label class="checkbox" for="city_sel06"><input type="checkbox" id="city_sel06" name="city_sel" checked><span></span>난징</label></li>
+						<li><label class="checkbox" for="city_sel07"><input type="checkbox" id="city_sel07" name="city_sel" checked><span></span>세부</label></li>
+						<li><label class="checkbox" for="city_sel08"><input type="checkbox" id="city_sel08" name="city_sel" checked><span></span>코타키나발루</label></li>
+						<li><label class="checkbox" for="city_sel09"><input type="checkbox" id="city_sel09" name="city_sel" checked><span></span>샌프란시스코</label></li>
+						<li><label class="checkbox" for="city_sel10"><input type="checkbox" id="city_sel10" name="city_sel" checked><span></span>시드니</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+			<!-- //2019-11-14 도시선택 추가 -->
+
+			<section class="filte">
+				<h2>모아랑 상품</h2>
+				<ul class="item_list">
+					 <li><label class="checkbox" for="moa"><input type="checkbox" id="moa" name="moa"><span></span>모아랑 상품만 보기</label></li>
+				</ul>
+			</section>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+	<!-- 팝업 : E -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

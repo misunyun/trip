@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<!-- Header : S -->
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			예약내역
+		</h2>
+	</header>
+	<!-- Header : E -->
+
+	 <!-- 콘텐츠 : S -->
+	 <div class="content">
+		<div class="tab_wrap">
+			<div class="tab_menu tscroll">
+				<ul class="ul_size">
+					<li><a href="#" class="on">예약상품</a></li>
+					<li><a href="#">결제상품</a></li>
+					<li><a href="#">취소/환불</a></li>
+				</ul>
+			</div>
+
+			<!-- 예약상품 -->
+			<div class="tab_cont active">
+				<!-- 2019-08-07 데이터없음 추가 -->
+				<div class="no_data type4" style="">
+					<em>예약된 상품이 없습니다.</em>
+				</div>
+				<!-- //2019-08-07 데이터없음 추가 -->
+
+				<div class="moa_list">
+					<ul>
+						<!-- 2019-09-02 항공사, 항목 추가 수정 -->
+						<li>
+							<span class="date">2019.03.30</span>
+							<a href="#">
+								<p class="product">[아시아나항공] 인천 <i class="ico oneway"></i> 프라하</p><!-- 왕복 : ico round2 / 편도 : ico oneway -->
+								<dl class="moa_detail">
+									<dt>신라<br>예약번호</dt>
+									<dd>shilla12345</dd>
+									
+									<dt>여행사<br>예약번호</dt><!-- 2019-09-27 항공 예약번호로 명칭수정 -->
+									<dd>KDPAWK</dd>
+
+									<dt>여행사</dt>
+									<dd>인터파크투어</dd>
+
+									<dt>출발일시</dt>
+									<dd>2019.05.05 07:30</dd>
+
+									<dt>결제시한</dt>
+									<dd class="em">2019.05.05 07:30 까지</dd>
+								</dl>
+								<span class="state">예약완료</span>
+							</a>
+							<a href="#">
+								<p class="product">[대한항공] 인천 <i class="ico round2"></i> 세부</p>
+								<dl class="moa_detail">
+									<dt>신라<br>예약번호</dt>
+									<dd>shilla12345</dd>
+									
+									<dt>여행사<br>예약번호</dt><!-- 2019-09-27 항공 예약번호로 명칭수정 -->
+									<dd>KDPAWK</dd>
+
+									<dt>여행사</dt>
+									<dd>인터파크투어</dd>
+
+									<dt>출발일시</dt>
+									<dd>2019.05.05 07:30</dd>
+
+									<dt>결제시한</dt>
+									<dd class="em">2019.05.05 07:30 까지</dd>
+								</dl>
+								<span class="state">예약완료</span>
+							</a>
+						</li>
+						<!-- //2019-09-02 항공사, 항목 추가 수정 -->
+						<li>
+							<span class="date">2019.03.30</span>
+							<a href="#">
+								<p class="product">[아시아나항공] 인천 <i class="ico round2"></i> 프라하</p>
+								<dl class="moa_detail">
+									<dt>신라<br>예약번호</dt>
+									<dd>shilla12345</dd>
+									
+									<dt>여행사<br>예약번호</dt><!-- 2019-09-27 항공 예약번호로 명칭수정 -->
+									<dd>KDPAWK</dd>
+
+									<dt>여행사</dt>
+									<dd>인터파크투어</dd>
+
+									<dt>출발일시</dt>
+									<dd>2019.05.05 07:30</dd>
+
+									<dt>결제시한</dt>
+									<dd class="em">2019.05.05 07:30 까지</dd>
+								</dl>
+								<span class="state">예약완료</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 결제상품 -->
+			<div class="tab_cont">
+				<!-- 2019-08-07 데이터없음 추가 -->
+				<div class="no_data type4" style="display:none">
+					<em>결제된 상품이 없습니다.</em>
+				</div>
+				<!-- //2019-08-07 데이터없음 추가 -->
+				<div class="moa_list">
+					<ul>
+						<!-- 2019-09-02 항공사, 항목 추가 수정 -->
+						<li>
+							<span class="date">2019.03.30</span>
+							<div class="prd">
+								<a href="#" class="btn_ico type2 review">리뷰</a>
+								<a href="#">
+									<p class="product">[아시아나항공] 인천 <i class="ico oneway"></i> 프라하</p><!-- 왕복 : ico round2 / 편도 : ico oneway -->
+									<dl class="moa_detail">
+										<dt>신라<br>예약번호</dt>
+										<dd>shilla12345</dd>
+										
+										<dt>여행사<br>예약번호</dt><!-- 2019-09-27 항공 예약번호로 명칭수정 -->
+										<dd>KDPAWK</dd>
+										
+										<dt>출발일시</dt>
+										<dd>2019.05.05 07:30</dd>
+										
+										<dt>결제일시</dt>
+										<dd>2019.03.31</dd>
+
+										<dt>여행사</dt>
+										<dd>인터파크투어</dd>
+									</dl>
+								</a>
+								<div class="btn_detail"><!-- 2019-09-27 버튼 추가 -->
+									<button type="button" name="button" class="btn_txt type4" popup-call="pop_ticket_info">E-티켓보기</button><!-- 2019-10-30 수정 -->
+								</div>
+							</div>
+							<div class="prd">
+								<a href="#" class="btn_ico type2 review">리뷰</a>
+								<a href="#">
+									<p class="product">더 어거스틴 호텔</p>
+									<dl class="moa_detail">
+										<dt>신라<br>예약번호</dt>
+										<dd>shilla12345</dd>
+
+										<dt>숙박<br>예약번호</dt>
+										<dd>KDPAWK</dd>
+
+										<dt>숙박일시</dt>
+										<dd>2019.05.05</dd>
+
+										<dt>결제일시</dt>
+										<dd>2019.05.05</dd>
+
+										<dt>여행사</dt>
+										<dd>인터파크투어</dd>
+									</dl>
+								</a>
+								<div class="btn_detail"><!-- 2019-09-27 버튼 추가 -->
+									<button type="button" name="button" class="btn_txt type4" popup-call="pop_voucher">바우처보기</button>
+									<button type="button" name="button" class="btn_txt type4 rewards" popup-call="pop_s_rewards">S.Rewards 1,000P(1,000원) 받기</button><!-- 2019-12-06 S.Rewards 표기 법 수정 --><!-- 2019-10-23 버튼 추가 -->
+								</div>
+							</div>
+						</li>
+						<!-- //2019-09-02 항공사, 항목 추가 수정 -->
+						<li>
+							<span class="date">2019.03.30</span>
+							<div class="prd">
+								<a href="#" class="btn_ico type2 review">리뷰</a>
+								<a href="#">
+									<p class="product">정통 동유럽 4국 9일</p>
+									<dl class="moa_detail">
+										<dt>신라<br>예약번호</dt>
+										<dd>shilla12345</dd>
+
+										<dt>에어텔/<br>패키지<br>예약번호</dt><!--2020-01-13 명칭변경 -->
+										<dd>KDPAWK</dd>
+
+										<dt>출발일시</dt>
+										<dd>2019.05.05</dd>
+
+										<dt>결제일시</dt>
+										<dd>2019.05.05</dd>
+
+										<dt>여행사</dt>
+										<dd>인터파크투어</dd>
+									</dl>
+								</a>
+							</div>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+
+			<!-- 취소/환불 -->
+			<div class="tab_cont">
+				<!-- 2019-08-07 데이터없음 추가 -->
+				<div class="no_data type4" style="display:none">
+					<em>취소/환불된 상품이 없습니다.</em>
+				</div>
+				<!-- //2019-08-07 데이터없음 추가 -->
+				<div class="moa_list">
+					<ul>
+						<!-- 2019-09-02 항공사, 항목 추가 수정 -->
+						<li>
+							<span class="date">2019.03.30</span>
+							<a href="#">
+								<p class="product">[아시아나항공] 인천 <i class="ico oneway"></i> 프라하</p><!-- 왕복 : ico round2 / 편도 : ico oneway -->
+								<dl class="moa_detail">
+									<dt>신라<br>예약번호</dt>
+									<dd>shilla12345</dd>
+
+									<dt>여행사<br>예약번호</dt><!-- 2019-09-27 항공 예약번호로 명칭수정 -->
+									<dd>KDPAWK</dd>
+
+									<dt>취소일</dt>
+									<dd>2019.05.05</dd>
+
+									<dt>여행사</dt>
+									<dd>인터파크투어</dd>
+								</dl>
+								<span class="state">취소완료</span>
+							</a>
+							<a href="#">
+								<p class="product">더 어거스틴 호텔</p>
+								<dl class="moa_detail">
+									<dt>신라<br>예약번호</dt>
+									<dd>shilla12345</dd>
+
+									<dt>숙박<br>예약번호</dt>
+									<dd>KDPAWK</dd>
+
+									<dt>취소일</dt>
+									<dd>2019.05.05</dd>
+
+									<dt>여행사</dt>
+									<dd>인터파크투어</dd>
+								</dl>
+								<span class="state">환불대기</span>
+							</a>
+						</li>
+						<!-- //2019-09-02 항공사, 항목 추가 수정 -->
+						<li>
+							<span class="date">2019.03.30</span>
+							<a href="#">
+								<p class="product">정통 동유럽 4국 9일</p>
+								<dl class="moa_detail">
+									<dt>신라<br>예약번호</dt>
+									<dd>shilla12345</dd>
+
+									<dt>에어텔/<br>패키지<br>예약번호</dt><!--2020-01-13 명칭변경 -->
+									<dd>KDPAWK</dd>
+
+									<dt>취소일</dt>
+									<dd>2019.05.05</dd>
+
+									<dt>여행사</dt>
+									<dd>인터파크투어</dd>
+								</dl>
+								<span class="state">취소완료</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- 2019-11-14 J와 동일하게 마크업 수정(AD 라벨 클래스 추가, J와 동일하게 텍스트 2줄처리) -->
+		<!-- 2019-10-25 광고배너 J쪽과 동일하게 수정 -->
+		<div class="banner type3">
+			<a href="#none">
+				<img class="ajax_lazy" data-src="../../resource/img/tmp_banner01.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+				<span class="badge ad">AD</span>
+				<div class="txt">
+					<span class="sub">이탈리아 호텔 특가전</span>
+					<em class="txt1">후쿠오카로 떠나는</em>
+					<em class="txt2">3일 특급 온천 여행</em>
+					<span class="date">2019.09.10 까지</span>
+				</div>
+			</a>
+		</div>
+		<!-- //2019-10-25 광고배너 J쪽과 동일하게 수정 -->
+		<!-- //2019-11-14 J와 동일하게 마크업 수정(AD 라벨 클래스 추가, J와 동일하게 텍스트 2줄처리) -->
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+	<!-- 이전, top -->
+	<div class="quik_btn">
+		<!-- <a href="#none" class="ico btn_back2">이전</a> -->
+		<a href="#top" class="ico btn_top">맨처음로</a>
+	</div>
+	<!-- //이전, top -->
+    
+	<!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+
+	<!-- 2019-10-08 바우처보기 팝업 : S -->
+	<div class="popup viewer voucher" popup-receive="pop_voucher">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>바우처 보기</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="viewer_area">
+				<!-- 테스트폰에서 테스트하려고 클룩사이트에 있는 소스를 복사하여 iframe_voucher.html로 만들어 테스트함(개발할땐 이 파일 사용X) -->
+				<iframe src="../iframe_voucher.html" width="100%" height="100%" scrolling=""></iframe>
+			</div>
+		</div>
+	</div>
+	<!-- 2019-10-08 바우처보기 팝업 : E -->
+
+	<!-- 2019-10-30 E-티켓보기(정보) 팝업 : S -->
+	<div class="popup" popup-receive="pop_ticket_info">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>E-티켓 보기</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="doc_etc">
+				<div class="group_info info_box">
+					<div class="passenger">
+						<div class="reg_info type2">    
+							<span class="tit_box">탑승자1</span>
+							<div class="opt_box">
+								<p class="opt">성인</p>
+							</div>
+						</div>
+						<table class="tbl_type3">
+							<colgroup>
+								<col style="width:110px;">
+								<col style="width:auto;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">한글이름</th>
+									<td>김신라</td>
+								</tr>
+								<tr>
+									<th scope="row">영문성</th>
+									<td>KIM</td>
+								</tr>
+								<tr>
+									<th scope="row">영문이름</th>
+									<td>SHILLA</td>
+								</tr>
+								<tr>
+									<th scope="row">생년월일</th>
+									<td>2019.06.14</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="btn_detail">
+							<button type="button" name="button" class="btn_txt type3" popup-call="pop_ticket">E-티켓보기</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="group_info info_box">
+					<div class="passenger">
+						<div class="reg_info type2">    
+							<span class="tit_box">탑승자2</span>
+							<div class="opt_box">
+								<p class="opt">성인</p>
+							</div>
+						</div>
+						<table class="tbl_type3">
+							<colgroup>
+								<col style="width:110px;">
+								<col style="width:auto;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">한글이름</th>
+									<td>김라라</td>
+								</tr>
+								<tr>
+									<th scope="row">영문성</th>
+									<td>KIM</td>
+								</tr>
+								<tr>
+									<th scope="row">영문이름</th>
+									<td>LALA</td>
+								</tr>
+								<tr>
+									<th scope="row">생년월일</th>
+									<td>2019.06.14</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="btn_detail">
+							<button type="button" name="button" class="btn_txt type3" popup-call="pop_ticket">E-티켓보기</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+	<!-- 2019-10-08 E-티켓보기(정보) 팝업 : E -->
+
+	<!-- 2019-10-08 E-티켓보기 팝업 : S -->
+	<div class="popup viewer ticket" popup-receive="pop_ticket">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>E-티켓 보기</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="viewer_area">
+				<iframe src="" width="100%" height="100%" scrolling=""></iframe>
+			</div>
+		</div>
+	</div>
+	<!-- 2019-10-08 E-티켓보기 팝업 : E -->
+
+	<!-- 2019-10-30 S.Rewards 팝업 : S -->
+	<div class="popup" popup-receive="pop_s_rewards">
+		<!-- Modal content -->
+		<div class="head">
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="s_rewards">
+                <p class="tit"><em>캐시백? NO! 선 적립? YES!</em>해외 호텔 적립도 미리 받으세요!</p>
+                <div class="inner_bx">
+                    <p class="txt">신라트립에서 결제가 이루어지지 않는 숙박 제휴사의 경우, 적립 예정 S.Rewards 만큼 미리 결제하고 출발 전 적립을 받을 수 있습니다. 결제하신 금액은 숙박 체크아웃 후 자동으로 취소 처리 됩니다.</p>
+                    <div class="process">
+                        <ol class="step_5"> <!-- 2019-10-29 수정 -->
+                            <li>
+                                <span class="circle">S.Rewards<br />금액 확인</span>
+                                <span class="arrow right"></span>
+                            </li>
+                            <li>
+                                <span class="circle">S.Rewards<br />결제</span>
+                                <span class="arrow right"></span>
+                            </li>
+                            <li> <!-- 2019-10-29 수정 -->
+                                <span class="circle">S.Rewards<br />적립</span>
+                                <span class="arrow down"></span>
+                            </li>
+                            <li>
+                                <span class="circle">숙박<br />체크아웃</span>
+                                <span class="arrow left"></span>
+                            </li>
+                            <li>
+                                <span class="circle last">S.Rewards<br />결제취소</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="saving_rewards">
+                    <span class="txt b">적립 예정 S.Rewards </span>
+                    <span class="point em"><em>10,000</em>P(10,000원)</span><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+                </div>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">S.Rewards 받기</button>
+		</div>
+	</div>
+	<!-- 2019-10-30 S.Rewards 팝업 : E -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+
+</body>
+</html>

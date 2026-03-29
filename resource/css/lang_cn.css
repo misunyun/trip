@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+body{font-family:'Microsoft YaHei','돋움',verdana,AppleGothic,sans-serif;}
+input[type=text],input[type=search],input[type=password],input[type=tel]{line-height:37px;}
+.badge,.label{line-height:19px;}
+
+/* 여행자정보, 결제정보 */
+.input_info .tourist{padding-bottom:0;height:25px;}
+.input_info h3{padding-bottom:15px;}
+.input_info div > label:first-child{margin-top:0;}
+.input_info div > label{display: block;width: 100%;margin:9px 0 0 0}
+.input_info input[type=text],.input_info input[type=tel],.input_info .btn_option,.input_info .t_box,.input_info .schbox,.input_info .btn_date,.input_info .form,.input_info .text_box{width: 100%}
+.input_info .t_box{min-height:inherit;padding-top:0;}
+.input_info .gender{width:100%;}
+.passenger+.noti{margin-top: 15px}
+
+.schedule.pay .input_info div > label{width:100%;}
+.schedule.pay .input_info input[type=text],.schedule.pay .input_info input[type=tel],.schedule.pay .input_info .btn_option,.schedule.pay .input_info .t_box,.schedule.pay .input_info .schbox,.schedule.pay .input_info .btn_date,.schedule.pay 
+.schedule.pay .input_info .gender{width:100%;}
+.input_info .form,.schedule.pay .input_info .text_box{width:100%;}
+
+/* 모아랑 */
+.moa_benefit .now{min-width:40px;}

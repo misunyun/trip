@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>요금상세</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="pay_info">
+				<!-- 2019-12-10 문구 추가 -->
+				<div class="note_box">
+					<p class="noti">신라트립가는 쿠폰할인 등 S.Rewards 적립금액을 합산한 최대 혜택가 입니다. 실제 결제 운임과 차이가 있을 수 있습니다.</p>
+				</div>
+				<!-- //2019-12-10 문구 추가 -->
+				<h3>성인 2명</h3>
+				<dl class="fare_detail ">
+					<dt>항공요금</dt>
+					<dd>287,000원 × 2</dd>
+
+					<dt>유류할증료</dt>
+					<dd>79480원 × 2</dd>
+
+					<dt>제세공과금</dt>
+					<dd>7,320원 × 2</dd>
+
+					<dt>발권대행수수료</dt>
+					<dd>10,000원 × 2</dd>
+
+					<!-- 2019-12-10 문구 수정 -->
+					<!-- 2019-11-15 쿠폰할인가 추가 -->
+					<dt>쿠폰할인</dt>
+					<dd>-10,000원 × 2</dd>
+					<!-- //2019-11-15 쿠폰할인가 추가 -->
+					<!-- //2019-12-10 문구 수정 -->
+				</dl>
+
+				<h4>유아 1명</h4>
+				<dl class="fare_detail">
+					<dt>항공요금</dt>
+					<dd>287,000원</dd>
+
+					<dt>유류할증료</dt>
+					<dd>79480원</dd>
+
+					<dt>제세공과금</dt>
+					<dd>7,320원</dd>
+
+					<dt>발권대행수수료</dt>
+					<dd>10,000원</dd>
+					
+					<!-- 2019-12-10 문구 수정 -->
+					<!-- 2019-11-15 쿠폰할인가 추가 -->
+					<dt>쿠폰할인</dt>
+					<dd>-10,000원</dd>
+					<!-- //2019-11-15 쿠폰할인가 추가 -->
+					<!-- //2019-12-10 문구 수정 -->
+				</dl>
+
+				<dl class="total">
+					<dt>결제예정 운임</dt><!-- 2019-12-10 문구수정 --><!-- 2019-12-05 텍스트 수정(총 운임→신라트립가) -->
+					<dd><strong>1,700,000</strong>원</dd>
+
+					<!-- 2019-12-10 S.Rewards 적립 영역 추가 -->
+					<dt class="nor_type">S.Rewards 적립</dt>
+					<dd class="nor_type">10,000P(10,000원)</dd>
+					<!-- //2019-12-10 S.Rewards 적립 영역 추가 -->
+				</dl>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+
+	<!-- 상이등급 표기된 국가요공자증 선택 옵션 -->
+	<div class="option_select" option-receive="2">
+	<div class="pop_option">
+		<ul>
+			<li><a href="#">국가유공자증</a></li>
+			<li><a href="#">국가유공자증2</a></li>
+		</ul>
+	</div>
+	</div>
+
+	<!-- 시간 옵션 -->
+	<div class="option_select" option-receive="1">
+	<div class="pop_option">
+		<ul>
+			<li><a href="#">대한항공</a></li>
+			<li><a href="#">아시아나</a></li>
+			<li><a href="#">에어서울</a></li>
+			<li><a href="#">진에어</a></li>
+		</ul>
+	</div>
+	</div>
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

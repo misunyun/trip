@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<div class="wrap fixed">
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			리뷰작성
+		</h2>
+	</header>
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<div class="tab_wrap">
+			<div class="tab_menu tscroll">
+				<ul class="ul_size">
+					<li><a href="#" class="on">상품 리뷰 </a></li>
+					<li><a href="#">셀러 리뷰</a></li>
+				</ul>
+			</div>
+
+			<!-- 상품 리뷰 : S -->
+			<div class="tab_cont active"><!-- 2019-08-29 첫번째 tab_cont에 active 클래스 추가 -->
+				<section class="prd_item">
+					<div class="thumb_info">
+						<div class="img">
+							<img src="../../resource/img/tmp_prd05.jpg" alt="">
+						</div>
+						<div class="info">
+							<span class="cate">5성급</span>
+							<div class="name">아파호텔 오사카-히고바시 에키마에</div>
+						</div>
+					</div>
+				</section>
+				
+				<!-- 2019-09-17 별점부분 J와 동일하게 수정 --> 
+				<div class="review_write">
+					<h3 class="sub">파크하얏트에 대한 평점을 남겨주세요. <span class="em">(필수)</em></h3>
+
+					<dl class="review_score total">
+						<dt>종합평가</dt>
+						<dd>
+							<div class="review_rating_wrap">
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="1" id="review_rading01" /><label for="review_rading01"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="4" id="review_rading02" /><label for="review_rading02"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="2" id="review_rading03" /><label for="review_rading03"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="3" id="review_rading04" /><label for="review_rading04"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="5" id="review_rading05" /><label for="review_rading05"></label>
+							</div>
+						</dd>
+					</dl>
+
+					<dl class="review_score">
+						<dt>위치</dt>
+						<dd>
+							<div class="review_rating_wrap">
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="1" id="review_rading06" /><label for="review_rading06"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="4" id="review_rading07" /><label for="review_rading07"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="2" id="review_rading08" /><label for="review_rading08"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="3" id="review_rading09" /><label for="review_rading09"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="5" id="review_rading10" /><label for="review_rading10"></label>
+							</div>
+						</dd>
+
+						<dt>객실</dt>
+						<dd>
+							<div class="review_rating_wrap">
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="1" id="review_rading11" /><label for="review_rading11"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="4" id="review_rading12" /><label for="review_rading12"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="2" id="review_rading13" /><label for="review_rading13"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="3" id="review_rading14" /><label for="review_rading14"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="5" id="review_rading15" /><label for="review_rading15"></label>
+							</div>
+						</dd>
+
+						<dt>서비스</dt>
+						<dd>
+							<div class="review_rating_wrap">
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="1" id="review_rading16" /><label for="review_rading16"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="4" id="review_rading17" /><label for="review_rading17"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="2" id="review_rading18" /><label for="review_rading18"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="3" id="review_rading19" /><label for="review_rading19"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="5" id="review_rading20" /><label for="review_rading20"></label>
+							</div>
+						</dd>
+
+						<dt>청결도</dt>
+						<dd>
+							<div class="review_rating_wrap">
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="1" id="review_rading21" /><label for="review_rading21"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="4" id="review_rading22" /><label for="review_rading22"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="2" id="review_rading23" /><label for="review_rading23"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="3" id="review_rading24" /><label for="review_rading24"></label>
+								<input type="checkbox" name="review_rating" class="review_rating_item" value="5" id="review_rading25" /><label for="review_rading25"></label>
+							</div>
+						</dd>
+					</dl>
+
+					<h3>파크하얏트의 어떤 점이 좋으셨나요? <span class="color3">(선택)</span></h3>
+					<p class="stxt">이용후기를 남겨주시면 추가 적립금을 드립니다.</p>
+					<div class="text_box">
+						<textarea id="" name="" placeholder="상품에 대한 이용후기를 남겨주세요.(10자 이상)"></textarea>
+					</div>
+
+					<div class="upload_photo tscroll">
+						<ul class="ul_size">
+							<li>
+								<!-- 첨부파일 버튼영역 : S -->
+								<span class="upload_box">
+									<label class="btn_upload" for="upload_file"><input type="file" id="upload_file" name=""></label>
+									<span class="txt_file" style="">최대 5장, 100MB 이내 첨부 가능</span><!-- D : 사진첨부시 텍스트 hidden처리  2019-08-07 용량문구 수정-->
+								</span>
+								<!-- 첨부파일 버튼영역 : E -->
+							</li>
+							<li>
+								<!-- 사진첨부된 영역 : S -->
+								<span class="photo_box">
+									<img src="../../resource/img/tmp_photo02.jpg" alt="">
+									<button type="button" name="button" class="ico btn_del4">삭제</button>
+								</span>
+								<!-- 사진첨부된 영역 : E -->
+							</li>
+							<li>
+								<!-- 동영상첨부인 경우 : S -->
+								<span class="photo_box">
+									<img src="../../resource/img/tmp_photo02.jpg" alt="">
+									<button type="button" name="button" class="ico btn_del4">삭제</button>
+									<span class="dim_box"><i class="ico play"></i></span><!--동영상일 때 dim_box 추가 -->
+								</span>
+								<!-- 동영상첨부인 경우 : E -->
+							</li>
+							<li>
+								<span class="photo_box">
+									<img src="../../resource/img/tmp_photo02.jpg" alt="">
+									<button type="button" name="button" class="ico btn_del4">삭제</button>
+								</span>
+							</li>
+							<li>
+								<span class="photo_box">
+									<img src="../../resource/img/tmp_photo02.jpg" alt="">
+									<button type="button" name="button" class="ico btn_del4">삭제</button>
+								</span>
+							</li>
+							<li>
+								<span class="photo_box">
+									<img src="../../resource/img/tmp_photo02.jpg" alt="">
+									<button type="button" name="button" class="ico btn_del4">삭제</button>
+								</span>
+							</li>
+							<li>
+								<span class="photo_box">
+									<img src="../../resource/img/tmp_photo02.jpg" alt="">
+									<button type="button" name="button" class="ico btn_del4">삭제</button>
+								</span>
+							</li>
+							<li>
+								<span class="photo_box">
+									<img src="../../resource/img/tmp_photo02.jpg" alt="">
+									<button type="button" name="button" class="ico btn_del4">삭제</button>
+								</span>
+							</li>
+							<li>
+								<span class="photo_box">
+									<img src="../../resource/img/tmp_photo02.jpg" alt="">
+									<button type="button" name="button" class="ico btn_del4">삭제</button>
+								</span>
+							</li>
+							<li>
+								<span class="photo_box">
+									<img src="../../resource/img/tmp_photo02.jpg" alt="">
+									<button type="button" name="button" class="ico btn_del4">삭제</button>
+								</span>
+							</li>
+							<li>
+								<span class="photo_box">
+									<img src="../../resource/img/tmp_photo02.jpg" alt="">
+									<button type="button" name="button" class="ico btn_del4">삭제</button>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- //2019-09-17 별점부분 J와 동일하게 수정 -->
+			</div>
+			<!-- 상품 리뷰 : E -->
+
+			<!-- 셀러 리뷰 : S -->
+			<div class="tab_cont">
+				<section class="prd_item">
+					<div class="thumb_info">
+						<div class="img">
+							<img src="../../resource/img/tmp_prd05.jpg" alt="">
+						</div>
+						<div class="info">
+							<span class="cate">5성급</span>
+							<div class="name">아파호텔 오사카-히고바시 에키마에</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- 2019-09-17 별점부분 J와 동일하게 수정 -->
+				<div class="review_write seller">
+					<h3 class="sub">상품/서비스에 대한 안내는 이해하기 쉬웠나요?</h3>
+					<div class="review_seller">
+						<div class="review_rating_wrap">
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="1" id="review_rading31" /><label for="review_rading31"></label>
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="4" id="review_rading32" /><label for="review_rading32"></label>
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="2" id="review_rading33" /><label for="review_rading33"></label>
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="3" id="review_rading34" /><label for="review_rading34"></label>
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="5" id="review_rading35" /><label for="review_rading35"></label>
+						</div>
+						<span class="stxt fleft">매우 어려움</span>
+						<span class="stxt fright">매우 쉬움</span>
+					</div>
+
+					<h3>상품/서비스에 대해 안내 받은 것과 실제로 경험한 상품/서비스는 동일하였나요?</h3>
+					<div class="review_seller">
+						<div class="review_rating_wrap">
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="1" id="review_rading36" /><label for="review_rading36"></label>
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="4" id="review_rading37" /><label for="review_rading37"></label>
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="2" id="review_rading38" /><label for="review_rading38"></label>
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="3" id="review_rading39" /><label for="review_rading39"></label>
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="5" id="review_rading40" /><label for="review_rading40"></label>
+						</div>
+						<span class="stxt fleft">매우 동일</span>
+						<span class="stxt fright">매우 상이</span>
+					</div>
+
+					<h3>셀러와의 커뮤니케이션은 만족하셨나요?</h3>
+					<div class="review_seller">
+						<div class="review_rating_wrap">
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="1" id="review_rading41" /><label for="review_rading41"></label>
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="4" id="review_rading42" /><label for="review_rading42"></label>
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="2" id="review_rading43" /><label for="review_rading43"></label>
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="3" id="review_rading44" /><label for="review_rading44"></label>
+							<input type="checkbox" name="review_rating" class="review_rating_item" value="5" id="review_rading45" /><label for="review_rading45"></label>
+						</div>
+						<span class="stxt fleft">불만족</span>
+						<span class="stxt fright">만족</span>
+					</div>
+				</div>
+				<!-- //2019-09-17 별점부분 J와 동일하게 수정 -->
+            </div>
+			<!-- 셀러 리뷰 : E -->
+	    </div>
+	</div>
+	<!-- 콘텐츠 : E -->
+
+	<div class="btn_wrap">
+		<button type="button" name="button" class="btn primary">제출</button>
+	</div>
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

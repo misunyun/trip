@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<header class="sticky_step1">
+		<h2>
+			<a href="#none" class="ico btn_back">이전 페이지</a>
+			통합검색
+		</h2>
+	</header>
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<div class="total_search">
+			<!-- 검색영역 : S -->
+			<div class="input_search_kwd sticky_step2">
+				<div class="sch_input menu"><!--메뉴에서 검색시 'menu' 클래스 추가 -->
+					<span class="cate">스냅<button type="button" name="button" class="ico sch_del">입력내용 삭제</button></span><!--메뉴에서 검색시 메뉴명 라벨 추가 -->
+					<input type="search" name="" value="제주도" placeholder="봄 꽃 여행 5만원 할인~!">
+					<button type="button" name="button" class="ico btn_del2">입력내용 삭제</button><!-- 텍스트 입력 될때 표시 -->
+					<button type="button" name="button" class="ico btn_search">검색</button>
+				</div>
+			</div>
+			<!-- 검색영역 : E -->
+
+			<!-- 자동완성 : S -->
+			<div class="sch_box" style="display:none">
+				<div class="no_data type1 dual" style="display:none">
+					<em>검색 결과가 없습니다.</em>
+					<p>정확한 검색어가 맞는지 다시 확인해주세요.</p>
+				</div>
+				<ul class="auto_sch_list">
+					<li><a href="#none"><mark>제주</mark>도</a> </li>
+					<li><a href="#none"><mark>제주</mark> 패키지</a></li>
+					<li><a href="#none"><mark>제주</mark>호텔</a></li>
+					<li><a href="#none"><mark>제주</mark>아쿠아플라넷</a></li>
+				</ul>
+			</div>
+			<!-- 자동완성 : E -->
+
+			<!-- 검색결과 -->
+			<div class="sch_box" style="display:block">
+				<div class="sch_hashtag tscroll">
+					<ul>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#인생샷</a></li>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#커플여행</a></li>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#커플여행미션완수체험</a></li>
+						<li><a href="#none">#여름휴가</a></li>
+					</ul>
+				</div>
+
+				<!-- J 에서 불러오는 영역 -->
+				<div class="sch_iframe_area">
+					<iframe src="i_snap.html" width="100%" height="100vh" scrolling=""></iframe>
+				</div>
+
+			</div>
+			<!-- 검색결과 : E -->
+		</div>
+
+	</div>
+
+		<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+	<!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+
+	<!-- top -->
+	<div class="quik_btn">
+		<a href="#top" class="ico btn_top">맨처음로</a>
+	</div>
+	<!-- //top -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+<script type="text/javascript">
+	$(document).on('ready', function(){
+		var obj = { one: 'test1', two: 'test2', three: 'test3', four: 'test4', five: 'test5' };
+		SearchMethod.rolling($('.sch_input').find('input[type=search]'),5000,obj)
+	})
+</script>
+</body>
+</html>

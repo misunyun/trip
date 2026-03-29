@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<div class="wrap">
+	<header class="sticky_step1 revers"><!-- 2019-09-09 클래스명 변경 -->
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			마이페이지
+			<button type="button" class="ico btn_logout">알림</button><!-- 2019-11-14 로그아웃 버튼 추가 -->
+			<button type="button" class="ico btn_setting">설정</button>
+			<button type="button" class="ico btn_alarm new">알림</button><!-- D : 확인하지않은 신규 알림이 있는 경우 new 클래스 추가 -->			
+		</h2>
+	</header>
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<div class="mypage_main">
+			<div class="my_info"><!-- 2019-09-09 sticky_step2 클래스 삭제 -->
+				<div class="name"><a href="#"><strong>김신라</strong>님</a></div>
+				<!-- 2019-09-09 관심상품 삭제, 상세 적립내역 추가 -->
+				<div class="info_list">
+					<ul>
+						<li><a href="#"><span class="tit">S.Rewards</span><span class="cont"><strong>10,000</strong>P</span></a></li><!-- 2019-10-29 텍스트 수정 -->
+						<li><a href="#"><span class="tit">쿠폰</span><span class="cont"><strong>20</strong></span></a></li>
+					</ul>
+					<button type="button" name="button" class="btn_txt type4">상세 적립내역</button>
+				</div>
+				<!-- //2019-09-09 관심상품 삭제, 상세 적립내역 추가 -->
+			</div>
+
+			<div class="grade_box">
+				<div class="grd_list">
+					<ul>
+						<li><a href="#"><span class="tit">탐나라</span><span class="cont">가입여부확인</span></a></li>
+						<li><a href="#"><span class="tit">즐겨라</span><span class="cont em">BASIC</span></a></li>
+						<li><a href="#"><span class="tit">꿈꿔라</span><span class="cont">가입가능</span></a></li>
+						<li><a href="#"><span class="tit">이어라</span><span class="cont">가입가능</span></a></li>
+					</ul>
+				</div>
+				<button type="button" name="button" class="btn_txt type4">라라클럽 혜택보기</button>
+			</div>
+
+			<div class="ico_list_type">
+				<ul>
+					<li><a href="#"><i class="ico clock2"></i><span class="txt">예약상품</span><strong class="em">2</strong></a></li>
+					<li><a href="#"><i class="ico card"></i><span class="txt">결제상품</span><strong class="em">1</strong></a></li>
+					<li><a href="#"><i class="ico cancel"></i><span class="txt">취소/환불</span><strong class="em">0</strong></a></li>
+				</ul>
+			</div>
+
+			<!-- 2019-10-08 모아랑 스탬프 수정 -->
+			<div class="moa_benefit" onclick=""><!-- D: 전체 클릭시 링크이동필요 -->
+				<div class="moa_info">
+					<div class="txt_box">
+						<p class="cmt">현재까지 S.Rewards <em class="em"><strong>1,000P</strong></em> 추가적립 가능</p><!-- 2019-12-20 문구수정 -->
+					</div>
+					<div class="moa_stamp">
+						<ul>
+							<li>
+								<div class="ico_moa flight on"><!-- 구매한 모아랑 상품이 있는 경우 on 클래스 추가 / 아닌경우 off 클래스 추가 -->
+									<span class="coin front"></span>
+								</div>
+								<span class="txt">항공</span>
+							</li>
+							<li>
+								<span class="ico_moa hotel on">
+									<span class="coin front"></span>
+								</span>
+								<span class="txt">숙박</span>
+							</li>
+							<li>
+								<span class="ico_moa activity off">
+									<span class="coin front"></span>
+								</span>
+								<span class="txt">액티비티</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- //2019-10-08 모아랑 스탬프 수정 -->
+
+			<!-- 2019-12-20 배너형으로 수정 -->
+			<!-- 2019-10-29 해외사이트 선적립 추가 -->
+			<div class="save_area">
+				<div class="noti">
+					<a href="#">
+						<div class="txt_area">
+							<span class="txt1">익스피디아, 부킹닷컴, 아고다 예약도</span>
+							<span class="txt2">S.Rewards 받으세요!</span><!-- 2020-01-02 문구변경 -->
+						</div>
+					</a>
+				</div>
+			</div>
+			<!-- //2019-10-29 해외사이트 선적립 추가 -->
+			<!-- //2019-12-20 배너형으로 수정 -->
+
+
+
+			<div class="ico_list_type">
+				<ul>
+					<li><a href="#"><i class="ico talk"></i><span class="txt">셀러톡 문의내역</span></a></li>
+					<li><a href="#"><i class="ico question2"></i><span class="txt">1:1 문의내역</span></a></li>
+					<li><a href="#"><i class="ico review"></i><span class="txt">나의리뷰</span></a></li>
+					<li><a href="#"><i class="ico interest"></i><span class="txt">관심셀러</span></a></li>
+					<li><a href="#"><i class="ico wishlist"></i><span class="txt">관심상품</span></a></li><!-- 2019-09-09 관심상품 추가 -->
+					<li><a href="#"><i class="ico info"></i><span class="txt">고객센터</span></a></li>
+				</ul>
+			</div>
+			
+			<!-- 2019-11-14 J와 동일하게 마크업 수정(AD 라벨 클래스 추가, J와 동일하게 텍스트 2줄처리) -->
+			<!-- 2019-10-25 광고배너 J쪽과 동일하게 수정 -->
+			<div class="banner type3">
+				<a href="#none">
+					<img class="ajax_lazy" data-src="../../resource/img/tmp_banner01.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+					<span class="badge ad">AD</span>
+					<div class="txt">
+						<span class="sub">이탈리아 호텔 특가전</span>
+						<em class="txt1">후쿠오카로 떠나는</em>
+						<em class="txt2">3일 특급 온천 여행</em>
+						<span class="date">2019.09.10 까지</span>
+					</div>
+				</a>
+			</div>
+			<!-- //2019-10-25 광고배너 J쪽과 동일하게 수정 -->
+			<!-- //2019-11-14 J와 동일하게 마크업 수정(AD 라벨 클래스 추가, J와 동일하게 텍스트 2줄처리) -->
+		</div>		
+	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+    <!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

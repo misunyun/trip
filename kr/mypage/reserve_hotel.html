@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap fixed"><!-- 2019-11-06 fixed 클래스 추가, fnb영역 삭제(예약 및 결제하기 공통수정) -->
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			예약상품
+		</h2>
+	</header>
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<section class="prd_item">
+			<div class="thumb_info">
+				<div class="img">
+					<img src="../../resource/img/tmp_prd05.jpg" alt="">
+				</div>
+				<div class="info">
+					<span class="cate">5성급</span>
+					<div class="name">아파호텔 오사카-히고바시 에키마에</div>
+				</div>
+			</div>
+
+			<!-- 2019-09-02 필드분리 및 수정사항 적용 -->
+			<table class="tbl_type3">
+				<caption class="hide">호텔 예약정보</caption>
+				<colgroup>
+					<col style="width:120px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">신라<br>예약번호</th>
+						<td>shilla12345</td>
+					</tr>
+					<tr>
+						<th scope="row">숙박<br>예약번호</th>
+						<td>KDPAWK</td>
+					</tr>
+					<tr>
+						<th scope="row">룸타입(1개)</th>
+						<td>디럭스 트윈</td>
+					</tr>
+					<tr>
+						<th scope="row">체크인</th>
+						<td>2019년 2월 5일(일)</td>
+					</tr>
+					<tr>
+						<th scope="row">체크아웃</th>
+						<td>2019년 2월 5일(일)</td>
+					</tr>
+					<tr>
+						<th scope="row">객실요금</th>
+						<td><strong class="em">730,000원</strong> </td>
+					</tr>
+					<tr>
+						<th scope="row">조건</th>
+						<td>비흡연 (Non-Smoking)</td>
+					</tr>
+					<tr>
+						<th scope="row">요금확정여부</th>
+						<td>확정</td>
+					</tr>
+					<tr>
+						<th scope="row">조식여부</th>
+						<td>포함</td>
+					</tr>
+					<tr><!-- 2019-06-19 수정 -->
+						<th scope="row">취소정책</th>
+						<td>2019.02.04까지 <br><span class="color1">무료예약취소가능</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- //2019-09-02 필드분리 및 수정사항 적용 -->
+		</section>
+
+		<section class="section booker_info">
+ 			<h3 class="sub">예약자정보</h3>
+ 			<table class="tbl_type3">
+ 				<colgroup>
+ 					<col style="width:110px;">
+ 					<col style="width:auto;">
+ 				</colgroup>
+ 				<tbody>
+ 					<tr>
+ 						<th scope="row">이름</th>
+ 						<td>김신라</td>
+ 					</tr>
+ 					<tr>
+ 						<th scope="row">휴대폰번호</th>
+ 						<td>010-1234-5678</td>
+ 					</tr>
+ 					<tr>
+ 						<th scope="row">이메일</th>
+ 						<td>shilladfsshilladfs@samsung.com</td>
+ 					</tr>
+ 				</tbody>
+ 			</table>
+ 			<p class="noti">긴급상황 발생 시 즉시 연락이 가능해야 하며, 연락이 불가능한 경우 발생되는 불이익에 대해 당사는 책임지지 않사오니 이점 유의하시기 바랍니다.</p>
+ 		</section>
+
+		<section class="section booker_info">
+			<h3 class="sub">여행자정보</h3>
+			<!-- 2019-09-02 등록정보 영역 수정 -->
+			<div class="reg_info">
+				<span class="tit_box">여행자1</span>
+				<div class="opt_box">
+					<p class="opt">STANDARD/더블베드</p>
+				</div>
+				<!-- <span class="chk_box">
+					<label class="checkbox" for="traveler01"><input type="checkbox" id="traveler01" name="traveler01_chk" checked><span></span>본인</label>
+					<label class="checkbox" for="traveler02"><input type="checkbox" id="traveler02" name="traveler02_chk" checked><span></span>나중에 입력</label>
+				</span> -->
+			</div>
+			<!-- //2019-09-02 등록정보 영역 수정 -->
+			<table class="tbl_type3">
+				<colgroup>
+					<col style="width:110px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">한글이름</th>
+						<td>김신라</td>
+					</tr>
+					<tr>
+						<th scope="row">영문성</th>
+						<td>KIM</td>
+					</tr>
+					<tr>
+						<th scope="row">영문이름</th>
+						<td>SHILLA</td>
+					</tr>
+					<tr>
+						<th scope="row">생년월일</th>
+						<td>2019.06.14</td>
+					</tr>
+					<tr>
+						<th scope="row">성별</th>
+						<td>남성</td>
+					</tr>
+					<tr>
+						<th scope="row">여권번호</th>
+						<td>M123456</td>
+					</tr>
+					<tr>
+						<th scope="row">여권만료일</th>
+						<td>2019.06.14</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<div class="pay_info">
+			<h3 class="sub">결제정보</h3>
+			<h4>2019.05.05 ~ 2019.05.08 (3박4일)</h4>
+			<dl class="fare_detail ">
+				<dt>객실요금</dt>
+				<dd>287,000원 × 2</dd>
+
+				<dt>조식</dt>
+				<dd>79480원 × 2</dd>
+
+				<dt>세금</dt>
+				<dd>7,320원 × 2</dd>
+
+				<dt>도시</dt>
+				<dd>10,000원 × 2</dd>
+			</dl>
+
+			<dl class="total">
+				<dt>총 금액</dt>
+				<dd><strong>1,700,000</strong>원</dd>
+			</dl>
+		</div>
+
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<div class="btn_wrap">
+		<button type="button" name="button" class="btn primary2">예약취소</button>
+	</div>
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

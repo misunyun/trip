@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap fixed"><!-- 하단 버튼 고정시 'fixed' 추가-->
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			타이틀
+			<button type="button" class="ico btn_like" dimalert-call="modal_like">관심상품</button>
+			<button type="button" class="ico btn_sns">공유</button>
+		</h2>
+	</header>
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		 하단버튼 고정有, fnb 無<br>
+		 콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>
+		 콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>
+ 		콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>콘텐츠 영역<br>끗
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<div class="btn_wrap">
+		<button type="button" name="button" class="btn primary">구매하기</button>
+	</div>
+
+	<!-- 공유하기 : S -->
+	<div class="pop_sns">
+		<div class="sns_items">
+			<button type="button" name="button" class="ico sns_url">링크복사</button>
+			<button type="button" name="button" class="ico sns_twt">트위터 공유</button>
+			<button type="button" name="button" class="ico sns_face">페이스북 공유</button>
+			<button type="button" name="button" class="ico sns_kakao">카카오톡 공유</button>
+			<button type="button" name="button" class="ico sns_blog">블로그 공유</button>
+		</div>
+		<button type="button" name="button" class="ico btn_close4">창닫기</button>
+		<div class="copy_end">
+			<div><i class="ico copy"></i> URL이 복사되었습니다.</div>
+		</div>
+	</div>
+	<!-- 공유하기 : E -->
+
+	<!-- 관심상품 모달 : S -->
+	<div class="dim_alert" dimalert-receive="modal_like">
+		<p>관심상품에 등록되었습니다.</p>
+	</div>
+	<!-- 관심상품 모달 : E -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">
+			<h1>개인정보 판매자 제공에 대한 동의</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="terms_box">
+				<ul class="bul_list txt_em">
+					<li>개인정보를 제공받는 자: [셀러명1], [셀러명2], [셀러명3]</li>
+					<li>개인정보를 제공받는 자의 개인정보 이용목적: 주문 상품의 예약, 고객상담 및 불만처리</li>
+					<li>제공하는 개인정보의 항목: ID, 성명, 전화번호, 생년월일, <strong class="em">여권번호(필요 시)</strong>, 여권만료일(필요 시)</li>
+					<li>개인정보를 제공받는 자의 개인정보 보유 및 이용기간: 고객 이용완료 후 6개월까지</li>
+				</ul>
+				<p class="txt">제공정보는 주문처리 및 서비스 제공을 위한 목적으로만 사용됩니다.</p>
+				<p class="txt">고객님께서 위 내용에 대하여 동의를 거부하실 수 있으며 거부시 주문, CS가 제한됩니다.</p>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+	<!-- 팝업 : E -->
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script>
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script>
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

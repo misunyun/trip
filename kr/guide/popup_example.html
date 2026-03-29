@@ -1,0 +1,4413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/moalang.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/deadline.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/help.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/ranking.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/talk.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+	<style media="screen">
+		.guidewrap{border-top:1px dashed #ccc;margin-bottom: 20px;margin-top: 50px;padding-top: 50px;}
+		.guidewrap div{display:inline-block;border:1px solid #333;text-align: left;font-size:12px;line-height : 15px;margin-right: 6px;margin-bottom: 10px;padding: 4px 6px;font-weight:lighter;cursor: pointer;}
+		.guidewrap div.on{background-color:#428af5;border-color:#428af5;color:#fff;}
+		.guidewrap h6{font-weight:bold;color:#333;font-size:20px;margin-bottom: 20px;letter-spacing: -0.1em;}
+	</style>
+</head>
+
+<body>
+<div class="wrap">
+	<!-- Header : S -->
+	<header>
+		 <h1><a href="#">SHILLATRIP</a></h1>
+		<button type="button" name="button" class="ico search">검색</button>
+		<button type="button" name="button" class="ico my">마이페이지</button>
+		<!-- 2019-10-14 GNB 공통SB v2.6현행화 -->
+		<nav class="gnb tscroll">
+			<ul class="ul_size">
+				<li><a href="#">이벤트</a></li>
+				<li><a href="#">마감임박</a></li>
+				<li><a href="#">라랑팩</a></li>
+				<li><a href="#">랭킹</a></li>
+				<li><a href="#">고객센터</a></li>
+			</ul>
+		</nav>
+		<!-- //2019-10-14 GNB 공통SB v2.6현행화 -->
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			팝업 테스트 화면
+		</h2>
+	 </header>
+	 <!-- Header : E -->
+	 <!-- 콘텐츠 : S -->
+	 <div class="content">
+		<!--검색 전  -->
+		<div class="trip_search big">
+			<div class="" onclick="">
+				<p class="from">
+					<span>출발지</span>
+					<strong>인천/김포 <span>SEL</span></strong>
+				</p>
+				<p class="to">
+					<span>도착지</span>
+					<strong>어디로 떠나세요?</strong>
+				</p>
+				<dl>
+					<dt>일정</dt>
+					<dd class="color2">날짜선택</dd>
+					<dt>인원</dt>
+					<dd>성인 1명</dd>
+				</dl>
+			</div>
+			<strong class="stit">최근 검색 일정</strong>
+			<div class="recent_list tscroll">
+				<ul class="ul_size">
+					<li><a href="#">세부 3월 26일(토)</a></li>
+					<li><a href="#">세부 3월 26일(토)</a></li>
+					<li><a href="#">세부 3월 26일(토)</a></li>
+					<li><a href="#">세부 3월 26일(토)</a></li>
+					<li><a href="#">세부 3월 26일(토)</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="search_before mini fixed_step2" data-native="gnbsticky">	<!-- data-native 추가  2019-11-07 -->
+			<i class="ico plane"></i>여행일정을 입력해보세요.
+		</div>
+
+		<!-- 검색 후 -->
+		<!-- <div class="trip_plan big">
+			<p class="route"><a href="#"><strong>인천</strong><i class="ico round"></i><strong>오사카 (KIX)</strong></a></p>
+			<div class="trip_plan_info">
+				<p class="stxt"><a href="#">10월 15일 (화) ~ 10월 30일 (토)</a></p>
+				<div class="btn_detail">
+					<button type="button" name="button" class="btn_txt type1">변경</button>
+					<button type="button" name="button" class="btn_txt type1">초기화</button>
+				</div>
+			</div>
+		</div>
+
+        <div class="trip_plan main mini fixed_step2">
+			<a href="#" class="gotop">
+				<p class="route"><strong>인천</strong><i class="ico round"></i><strong>오사카 (KIX)</strong></p>
+				<p class="stxt">2019.10.15 ~ 2019.10.30</p>
+			</a>
+        </div> -->
+
+		<div class="tab_wrap d_mt">
+			<div class="tab_menu tscroll">
+				<!-- 2019-07-02 탭명칭 변경 -->
+				<ul class="ul_size">
+					<li><a href="#" class="on">전체</a></li>
+				</ul>
+			</div>
+			<!-- All -->
+			<div class="tab_cont active">
+				<div class="total_box">
+					<span class="total">총 <b>121</b>개</span>
+					<div class="sorting">
+						<button type="button" name="button" class="btn_ico filter" popup-call="filter_acivity">필터</button>
+						<button type="button" name="button" class="btn_ico sort" option-call="3">평점 높은 순</button>
+						<div class="option_select" option-receive="3">
+							<div class="pop_option">
+								<ul>
+									<li><a href="#" class="on">리뷰 많은 순</a></li>
+									<li><a href="#">판매 많은 순</a></li>
+									<li><a href="#">조회 높은 순</a></li>
+									<li><a href="#">낮은 가격 순</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<ul class="goods_list3">
+					<li>
+						<a href="#">
+							<img class="ajax_lazy" data-src="../../resource/img/tmp_prd05.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+							<span class="badge_area">
+								<span class="badge">TOP 1</span>
+								<span class="badge type3">신라트립가</span>
+								<span class="badge type2">모아랑</span>
+								<span class="badge type4">쿠폰</span>
+							</span>
+							<span class="cate">입장권/티켓</span>
+							<span class="tit">[오사카]유니버셜 스튜디오 입장권</span>
+							<span class="cost">10,000,000원<span class="s_pay">신라페이 결제시</span></span>
+							<span class="box">
+								<span class="price"><span class="member">임직원가</span><span class="per">20%</span><span class="sale"><strong>10,000,000</strong>원~</span></span>
+								<span class="review"><span class="review_point"><span class="score" style="width:79%">4</span></span> (35)</span>
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="tab_wrap d_mt">
+			<div class="tab_menu tscroll">
+				<ul>
+					<li><a href="#" class="on">가격비교</a></li>
+					<li><a href="#">리뷰 <span class="num">35</span></a></li>
+				</ul>
+			</div>
+			<div class="tab_cont active">
+
+				<div class="stay_opt">
+					<button type="button" name="button" class="btn_date" popup-call="calendar">2019.01.27~2019.01.31</button> <!-- pop_calendar.html 호출 -->
+					<button type="button" name="button" class="btn_person" popup-call="select_per">성인2,소아1</button> <!-- pop_select_per.html 호출 -->
+				</div>
+			</div>
+			<!-- 가격비교 : E -->
+
+			<!-- 리뷰 : S -->
+			<div class="tab_cont">
+				<div class="review_cont">
+					<!-- 데이터없음 : S-->
+					<div class="no_data type2" style="display:none">
+						<em>등록된 리뷰가 없습니다.</em>
+					</div>
+					<!-- 데이터없음 : E -->
+					<div class="total_review">
+						<div class="satisfy_wrap">
+							<dl class="satisfy_average">
+								<dt>평점</dt>
+								<dd>
+									<span class="average">4.0</span>
+									<span class="review_point"><span class="score" style="width:80%">4</span></span>
+								</dd>
+							</dl>
+							<div class="satisfy_detail">
+								<ul>
+									<li>
+										<span class="type">5점</span>
+										<span class="graph"><span class="bar" style="width:18%"></span></span>
+										<span class="rate"><span class="num">18</span>%</span>
+									</li>
+									<li class="on"><!-- 가장 높은 평점에 on 클래스 추가 -->
+										<span class="type">4점</span>
+										<span class="graph"><span class="bar" style="width:64%"></span></span>
+										<span class="rate"><span class="num">64</span>%</span>
+									</li>
+									<li>
+										<span class="type">3점</span>
+										<span class="graph"><span class="bar" style="width:100%"></span></span>
+										<span class="rate"><span class="num">100</span>%</span>
+									</li>
+									<li>
+										<span class="type">2점</span>
+										<span class="graph"><span class="bar" style="width:0%"></span></span>
+										<span class="rate"><span class="num">0</span>%</span>
+									</li>
+									<li>
+										<span class="type">1점</span>
+										<span class="graph"><span class="bar" style="width:0%"></span></span>
+										<span class="rate"><span class="num">0</span>%</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="photo_list_wrap" popup-call="image_detail">
+							<h3 class="sub"><a href="#" class="btn_more">프리미엄 에세이 <strong class="em">17</strong></a></h3><!-- 2019-11-21 타이틀 더보기 영역 수정 -->
+							<div class="goods_list big tscroll">
+								<ul>
+									<li>
+										<a href="#none">
+											<img class="ajax_lazy" data-src="../../resource/img/tmp_prd02.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+											<span class="tag">
+												<span>#바르셀로나근교</span>
+											</span>
+											<span class="tit">제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴</span>
+										</a>
+										<a href="#none" class="user_info">
+											<span class="thumb"><img src="../../resource/img/tmp_user01.jpg" alt=""></span>
+											<span class="creator">나만따라와</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none">
+											<img class="ajax_lazy" data-src="../../resource/img/tmp_prd02.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+											<span class="tag">
+												<span>#바르셀로나근교</span>
+											</span>
+											<span class="tit">제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴</span>
+										</a>
+										<a href="#none" class="user_info">
+											<span class="thumb"><img src="../../resource/img/tmp_user01.jpg" alt=""></span>
+											<span class="creator">나만따라와</span>
+										</a>
+									</li>
+									<li>
+										<a href="#none">
+											<img class="ajax_lazy" data-src="../../resource/img/tmp_prd02.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+											<span class="tag">
+												<span>#바르셀로나근교</span>
+											</span>
+											<span class="tit">제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴제주도 여행 대한항공 특가로 다녀옴</span>
+										</a>
+										<a href="#none" class="user_info">
+											<span class="thumb"><img src="../../resource/img/tmp_user01.jpg" alt=""></span>
+											<span class="creator">나만따라와</span>
+										</a>
+									</li>
+								 </ul>
+							</div>
+						</div>
+
+						<div class="review_wrap">
+							<h3 class="sub">
+								리뷰 <strong class="em">35</strong>
+								<div class="sorting">
+
+									<button type="button" name="button" class="btn_ico sort" option-call="1">최신순</button>
+									<div class="option_select" option-receive="1">
+										<div class="pop_option">
+											<ul>
+												<li><a href="#" class="on">최신순</a></li>
+												<li><a href="#">평점 높은순</a></li>
+												<li><a href="#">평점 낮은순</a></li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+							</h3>
+							<div class="review_detail">
+								<ul class="review_list">
+									<!-- D : loop -->
+									<li>
+										<div class="review_item">
+											<div class="user_info">
+												<span class="info">
+													<span class="name">ppo****</span>
+													<span class="date">2019.01.21</span>
+												</span>
+												<span class="review_point"><span class="score" style="width:80%">4</span></span>
+											</div>
+											<div class="cont">
+												<div class="img">
+													<a href="#">
+														<span class="dim_box"><i class="ico play"></i></span><!-- 동영상 이미지일 때 -->
+														<span class="count"><span class="num">5</span></span><!-- 개수가 여러개일 때 -->
+														<img src="../../resource/img/tmp_video01.jpg" alt="동영상 이미지">
+													</a>
+												</div>
+												<div class="txt_area">
+													<div class="txt">바우처 출력으로 바로 입장할 수 있어서 좋았어요 :) 덕분에 잘 놀다 왔습니다. 사진은 저희 어머니랑 같이 찍은 사진이에요~ 바우처 출력으로 바로 입장할 수 있어서 좋았어요 :) 덕분에 잘 놀다 왔습니다. 사진은 저희 어머니랑 같이 찍은 사진이에요~</div>
+													<button type="button" name="button" class="btn_txt more">더보기</button><!-- D : 더보기 버튼은 3줄 이상일 때 노출 -->
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- //D : loop -->
+									<li>
+										<div class="review_item">
+											<div class="user_info">
+												<span class="info">
+													<span class="name">ppo****</span>
+													<span class="date">2019.01.21</span>
+												</span>
+												<span class="review_point"><span class="score" style="width:80%">4</span></span>
+											</div>
+											<div class="cont">
+												<div class="img">
+													<a href="#">
+														<span class="count"><span class="num">5</span></span><!-- 포토이면서 갯수가 여러개일 때 -->
+														<img src="../../resource/img/tmp_photo02.jpg" alt="리뷰 이미지">
+													</a>
+												</div>
+												<div class="txt_area">
+													<div class="txt">역시 한국에서 사서 가는게 제일 싸고 좋은 듯 해요 ㅎㅎ 좋은 가격에 재밌게 잘 놀다 왔네요~!</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="review_item">
+											<div class="user_info">
+												<span class="info">
+													<span class="name">ppo****</span>
+													<span class="date">2019.01.21</span>
+												</span>
+												<span class="review_point"><span class="score" style="width:80%">4</span></span>
+											</div>
+											<div class="cont">
+												<div class="txt_area">
+													<div class="txt">여자친구랑 갔다왔는데 재밌었어요~ 바우처 출력으로 기다리지 않고 가서 훨씬 좋더라구요</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 리뷰 : E -->
+		</div>
+
+		<div class="noti">
+			<button type="button" name="button" class="btn_txt type4" popup-call="passenger_noti">탑승객 정보 입력시 주의사항</button><!-- 2010-05-31  수정 -->
+			<p class="stxt">탑승객 정보 입력이 정확하지 않을 시 탑승이 거부될 수 있습니다. </p>
+		</div>
+		<div class="noti">
+			<button type="button" name="button" class="btn_txt type4 " popup-call="flight_rule">항공 요금규정 안내</button>
+		</div>
+
+
+		<div class="seller_detail">
+			<div class="tit">
+				<span class="seller_logo" style="display:none"><img src="../../resource/img/tmp_logo.png" alt="셀러샵 로고"></span><!-- BI이미지 등록시 -->
+				<span class="seller_logo"><em class="tit">인</em></span><!-- D : BI이미지 미등록시 셀러이름 첫 글자만 노출 -->
+				<strong class="seller_tit">인터파크 투어</strong>
+				<button type="button" name="button" class="btn_ico type2 talk"><span>셀러톡</span></button>
+			</div>
+			<div class="txt">싸니까 믿으니까 인터파크니까<br>어떤 여행이든 인터파크와 함께 하세요!</div>
+			<div class="bottom_box">
+				<p class="average_area">
+					평점 <span class="review_point"><span class="score" style="width:80%">4.0</span></span>
+					<b>4.0</b>
+				</p>
+				<button type="button" name="button" class="btn_grade" popup-call="seller_grade"><span class="b_txt">나의 등급</span><span class="i_grade small silver">S</span></button>
+			</div>
+		</div>
+
+		<div class="center_wrap" style="margin-top:50px">
+			<div class="cont_box">
+				<button type="button" name="button" class="btn primary border" popup-call="report">문제신고</button>
+			</div>
+		</div>
+
+		<!-- <h3 class="sub">항공편명</h3>
+		<div class="inp_btn" style="padding-right:20px">
+			<input type="text" name="" placeholder="예:KE101" value="">
+			<button type="button" name="button" class="btn primary" popup-call="flight_inp">조회</button>
+		</div> -->
+
+		<!-- <h3 class="sub">도착지</h3>
+		<div class="inp_btn" style="padding-right:20px">
+			<button type="button" name="button" class="btn_option" popup-call="travel_day">선택하세요</button>
+			<div class="option_select" option-receive="2">
+				<div class="pop_option">
+					<ul>
+						<li><a href="#">미국, 호주 이외의 모든 국가</a></li>
+						<li><a href="#">중국</a></li>
+						<li><a href="#">캐나다</a></li>
+						<li><a href="#">미국/괌/사이판</a></li>
+						<li><a href="#">호놀룰루/버진아일랜드</a></li>
+						<li><a href="#">호주</a></li>
+					</ul>
+				</div>
+			</div>
+		</div> -->
+
+		<section class="section" style="margin-top:50px">
+			<table class="tbl_type3">
+				<colgroup>
+					<col style="width:110px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">예약번호</th>
+						<td>shilla12345(KDPAWK)</td>
+					</tr>
+					<tr>
+						<th scope="row">결제시한</th>
+						<td><em class="em">2019년 3월 31일 17:29 까지</em></td>
+					</tr>
+					<tr>
+						<th scope="row">출국일</th>
+						<td>2019년 3월 31일(일) 10:00</td>
+					</tr>
+					<tr>
+						<th scope="row">귀국일</th>
+						<td>2019년 3월 31일(토) 10:00</td>
+					</tr>
+					<tr>
+						<th scope="row">인원 및 좌석</th>
+						<td>성인 2명, 유아 1명 / 일반석</td>
+					</tr>
+					<tr>
+						<th scope="row">신라트립가</th>
+						<td class="em"><strong class="em">1,505,000</strong>원</td>
+					</tr>
+					<tr>
+						<th scope="row">요금확정</th>
+						<td>확정</td>
+					</tr>
+					<tr>
+						<th scope="row">좌석확정여부</th>
+						<td>확정</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="btn_detail">
+				<a href="#1" class="btn_txt type4" popup-call="fare_detail">요금상세</a>
+				<a href="#1" class="btn_txt type4" popup-call="pa_info">탑승자 정보 보기</a>
+				<a href="#1" class="btn_txt type4" popup-call="plan_detail">상세일정</a>
+			</div>
+		</section>
+
+		<div class="info_reg" style="margin-top:50px">
+			<h3 class="sub_first">등록하기</h3>
+			<ul>
+				<li>
+					<span>증빙서류<i class="ico ok">등록완료</i></span>
+					<a href="#1" class="btn_txt type1" popup-call="doc_reg">변경</a>
+				</li>
+				<li>
+					<span>항공사 마일리지 정보 </span>
+					<a href="#1" class="btn_txt type1" popup-call="mile_reg">등록</a>
+				</li>
+				<li>
+					<span>좌석 업그레이드</span>
+					<a href="#1" class="btn_txt type1" popup-call="seat_up">등록</a>
+				</li>
+			</ul>
+		</div>
+
+		<section class="section sale_info">
+			<h3 class="sub">할인쿠폰 <button type="button" name="button" class="btn_ico type2 download"><span popup-call="coupon">쿠폰다운로드</span></button></h3>
+			<h4 popup-call="coupon_selecet"><button type="button" name="button" class="btn_txt type4">적용쿠폰(사용가능 <b class="em">5</b>장)</button></h4>
+			<dl>
+				<dt>10% 할인 쿠폰</dt>
+				<dd>-7,000원</dd>
+				<dt>가입 축하 쿠폰</dt>
+				<dd>-3,480원</dd>
+			</dl>
+			<h4 popup-call="coupon_selecet"><button type="button" name="button" class="btn_txt type4">제휴사 할인혜택</button></h4>
+			<dl>
+				<dt>10% 할인 쿠폰 </dt>
+				<dd>-7,000원</dd>
+				<dt>가입 축하 쿠폰</dt>
+				<dd>-3,480원</dd>
+			</dl>
+			<dl class="total">
+				<dt>총 할인금액</dt>
+				<dd>-7,000원</dd>
+			</dl>
+		</section>
+
+		<div class="btn_wrap" style="margin-left:-10px;margin-top: 50px">
+			<button type="button" name="button" class="btn primary2" popup-call="cancel_hotel">예약취소</button>
+		</div>
+		<div class="guidewrap">
+			<h6>팝업 전체 리스트</h6>
+			<div popup-call="search_trip">serchtrip<br><b>여행검색</b></div>
+			<div popup-call="calendar">calendar<br><b>캘린더</b></div>
+			<div popup-call="image_detail">image_detail<br><b>이미지상세</b></div>
+			<div popup-call="review_detail">review_detail<br><b>리뷰상세</b></div>
+			<div popup-call="passenger_noti">passenger_noti<br><b>탑승객정보입력시주의사항</b></div>
+			<div popup-call="flight_rule">flight_rule<br><b>항공요금규정안내</b></div>
+			<div popup-call="filter_flight">filter_flight<br><b>항공필터팝업</b></div>
+			<div popup-call="filter_acivity">filter_acivity<br><b>액티비티필터</b></div>
+			<div popup-call="filter_hotel">filter_hotel<br><b>숙박필터</b></div>
+			<div popup-call="filter_package">filter_package<br><b>패키지필터</b></div>
+			<div popup-call="select_per">select_per<br><b>인원선택</b></div>
+			<div popup-call="hotel_map">hotel_map<br><b>지도검색</b></div>
+			<div popup-call="seller_grade">seller_grade<br><b>셀러별등급안내혜택</b></div>
+			<div popup-call="report">report<br><b>신고거래선택</b></div>
+			<div popup-call="pop_moa_benefit">pop_moa_benefit<br><b>모아랑혜택보기</b></div>
+			<!-- <div popup-call="benefit_prd">benefit_prd<br><b>모아랑혜택보기상품별</b></div> -->
+			<!-- <div popup-call="flight_inp">flight_inp<br><b>항공편입력</b></div> -->
+			<!-- <div popup-call="travel_day">travel_day<br><b>출국정보선택</b></div> -->
+			<div popup-call="plan_detail">plan_detail<br><b>상세일정</b></div>
+			<div popup-call="doc_reg">doc_reg<br><b>증빙서류등록변경</b>/</div>
+			<div popup-call="mile_reg">mile_reg<br><b>항공사마일리지등록</b></div>
+			<div popup-call="seat_up">seat_up<br><b>좌석업그레이드</b></div>
+			<div popup-call="fare_detail">fare_detail<br><b>요금상세</b></div>
+			<div popup-call="pa_info">pa_info<br><b>탑승자정보</b></div>
+			<div popup-call="coupon">coupon<br><b>쿠폰받기</b></div>
+			<div popup-call="coupon_selecet">coupon_selecet<br><b>쿠폰선택</b></div>
+			<div popup-call="cancel_flight">cancel_flight<br><b>항공예약취소</b></div>
+			<div popup-call="cancel_hotel">cancel_hotel<br><b>숙박예약취소</b></div>
+			<div popup-call="cancel_prd">cancel_prd<br><b>패키지/액티비티결제취소</b></div>
+		</div>
+		<!-- 하단고정버튼 : S -->
+		<div class="r_btn_box">
+			<span><button type="button" name="button" class="btn_ico filter" popup-call="filter_acivity">필터</button></span>
+			<span><button type="button" name="button" class="btn_ico sort" option-call="fix_b_btn">정렬</button></span>
+		</div>
+		<!-- 하단고정버튼 : E -->
+
+ 	</div>
+	<!-- 콘텐츠 : E -->
+	
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+    <!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+
+	<div class="option_select" option-receive="fix_b_btn">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#" class="on">평점 높은 순</a></li>
+				<li><a href="#">관심 높은 순</a></li>
+				<li><a href="#">판매 높은 순</a></li>
+				<li><a href="#">낮은 가격 순</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- popups start -->
+
+	<div class="popup search" popup-receive="search_trip">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>여행일정</h1>
+			<button type="button" name="button" class="ico btn_close5">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<fieldset class="route_select">
+				<div class="route">
+					<button type="button" name="button" class="selected"><span class="city">인천/김포</span><span class="code">SEL</span> </button><!-- 선택된도시 'selected'-->
+					<i class="ico arrow2"></i>
+					<button type="button" name="button"><span class="city">도착도시</span><span class="code">SEL</span></button>
+					<button type="button" name="button" class="date selected">2019.05.07</button>
+					<button type="button" name="button" class="ico btn_wplus">구간추가</button><!-- 2019-08-22 4개 이상 시 +버튼 삭제 -->
+				</div>
+				<div class="route">
+					<button type="button" name="button"><span class="city">출발도시</span><span class="code">SEL</span> </button><!-- 현재 검색중인 도시  'active'-->
+					<i class="ico arrow2"></i>
+					<button type="button" name="button" class="selected"><span class="city">인천/김포</span><span class="code">SEL</span> </button>
+					<button type="button" name="button" class="date">도착일</button>
+					<button type="button" name="button" class="ico btn_wminus">구간삭제</button>
+				</div>
+			</fieldset>
+
+			<div class="tab_wrap route2"><!-- 2019-08-22 주석수정(최대3개→4개) : 구간갯수에 따라 클래스 변경 route1 (1개) ~ route4 (4개) 최대4개 -->
+				<div class="tab_menu search tscroll">
+					<ul class="ul_size">
+						<li><a href="#" class="on">도시선택</a></li>
+						<li><a href="#">날짜선택</a></li>
+						<li><a href="#">인원선택</a></li>
+					</ul>
+				</div>
+
+				<!-- 도시선택 cont -->
+				<div class="tab_cont active">
+					<!-- 검색영역 : S -->
+					<div class="input_search_kwd">
+						<div class="search_cont">
+							<span class="ico btn_search"></span>
+							<form action="">
+								<fieldset>
+									<span class="sch_input"><input type="search" name="" value="" placeholder="도시명을 입력하세요."></span>
+									<button type="button" name="button" class="ico btn_del2">입력내용 삭제</button><!-- 텍스트 입력 될때 표시 -->
+								</fieldset>
+							</form>
+						</div>
+					</div>
+					<!-- 검색영역 : E -->
+
+					<!-- 자동완성 기능 -->
+					<div class="auto_sch_area" style="display:none">
+						<ul class="sch_city_list">
+							<li><a href="#">PRG 프라하, 체코 PRG 프라하, 체코 PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">PRG 프라하, 체코</a></li>
+							<li><a href="#">끗</a></li>
+						</ul>
+					</div>
+
+					<div class="tab_wrap"> <!-- 검색 input 터치시 닫힘 -->
+						<div class="tab_menu type2 tscroll">
+							<ul class="ul_size">
+								<li><a href="#" class="on">최근검색</a></li>
+								<li><a href="#">국내</a></li>
+								<li><a href="#">일본</a></li>
+								<li><a href="#">중국</a></li>
+								<li><a href="#">동남아</a></li>
+								<li><a href="#">미주</a></li>
+								<li><a href="#">유럽</a></li>
+								<li><a href="#">대양주</a></li>
+							</ul>
+						</div>
+						<!-- 최근검색 -->
+						<div class="tab_cont active">
+							<ul class="sch_recent_list">
+								<li><a href="#">PRG 프라하, 체코 PRG 프라하, 체코 PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+								<li><a href="#">PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+								<li><a href="#">PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+								<li><a href="#">PRG 프라하, 체코 PRG 프라하, 체코 PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+								<li><a href="#">PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+								<li><a href="#">PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li><li><a href="#">PRG 프라하, 체코 PRG 프라하, 체코 PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+								<li><a href="#">PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+								<li><a href="#">PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li><li><a href="#">PRG 프라하, 체코 PRG 프라하, 체코 PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+								<li><a href="#">PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+								<li><a href="#">PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li><li><a href="#">PRG 프라하, 체코 PRG 프라하, 체코 PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+								<li><a href="#">PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+								<li><a href="#">PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li><li><a href="#">PRG 프라하, 체코 PRG 프라하, 체코 PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+								<li><a href="#">PRG 프라하, 체코</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+								<li><a href="#">끗</a> <button type="button" name="button" class="ico btn_del">삭제</button></li>
+							</ul>
+						</div>
+
+						<!-- 국내 -->
+						<div class="tab_cont">
+							<ul class="sch_city_list">
+								<li><a href="#">SEL 인천/김포</a></li>
+								<li><a href="#">PUS 김해(부산)</a></li>
+								<li><a href="#">KWJ 광주</a></li>
+							</ul>
+						</div>
+
+						<!-- 일본 -->
+						<div class="tab_cont">
+							<ul class="sch_city_list">
+								<li><a href="#">PRG 삿뽀로</a></li>
+								<li><a href="#">KIX 오사카, 일본</a></li>
+								<li><a href="#">KIX 오사카, 일본</a></li>
+							</ul>
+						</div>
+
+						<!-- 중국 -->
+						<div class="tab_cont">
+							<ul class="sch_city_list">
+								<li><a href="#">PRG 상하이</a></li>
+								<li><a href="#">KIX 상하이, 중국</a></li>
+								<li><a href="#">KIX 상하이, 중국</a></li>
+							</ul>
+						</div>
+
+						<!-- 동남아 -->
+						<div class="tab_cont">
+							<ul class="sch_city_list">
+								<li><a href="#">PRG 방콕</a></li>
+								<li><a href="#">KIX 방콕, 태국</a></li>
+								<li><a href="#">KIX 방콕, 태국</a></li>
+							</ul>
+						</div>
+
+						<!-- 미주 -->
+						<div class="tab_cont">
+							<ul class="sch_city_list">
+								<li><a href="#">PRG 보스톤</a></li>
+								<li><a href="#">KIX 보스톤, 미국</a></li>
+								<li><a href="#">KIX 보스톤, 미국</a></li>
+							</ul>
+						</div>
+
+						<!-- 유럽 -->
+						<div class="tab_cont">
+							<ul class="sch_city_list">
+								<li><a href="#">PRG 프라하, 체코 PRG 프라하, 체코 PRG 프라하, 체코</a></li>
+								<li><a href="#">PRG 프라하, 체코</a></li>
+								<li><a href="#">PRG 프라하, 체코</a></li>
+							</ul>
+						</div>
+
+						<!-- 대양주 -->
+					   <div class="tab_cont">
+						   <ul class="sch_city_list">
+							   <li><a href="#">호주</a></li>
+							   <li><a href="#">뉴질랜드</a></li>
+						   </ul>
+					   </div>
+
+					</div>
+				</div>
+
+				<!-- 날짜선택 cont  -->
+				<div class="tab_cont">
+					<div class="calendar_wrap">
+						<div class="calendar_month">
+							<div class="month_header">2019.01</div>
+							<div class="month_cont">
+								<table>
+									<thead>
+										<tr>
+											<th>일</th>
+											<th>월</th>
+											<th>화</th>
+											<th>수</th>
+											<th>목</th>
+											<th>금</th>
+											<th>토</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<div class="day_inner">
+													<span class="day"></span>
+													<span class="price"></span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day"></span>
+													<span class="price"></span>
+												</div>
+											</td>
+											<td class="disabled">
+												<div class="day_inner">
+													<span class="day">1</span>
+													<span class="price"></span>
+												</div>
+											</td>
+											<td class="disabled">
+												<div class="day_inner">
+													<span class="day">2</span>
+													<span class="price"></span>
+												</div>
+											</td>
+											<td class="disabled"><!-- 선택불가 'disabled' 클래스 추가 -->
+												<div class="day_inner">
+													<span class="day">3</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">4</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td class="holiday"><!-- 토일,휴일 'holiday' 클래스 추가 -->
+												<div class="day_inner">
+													<span class="day">5</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="holiday today"><!-- 오늘 -->
+												<div class="day_inner">
+													<span class="day">6</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">7</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">8</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">9</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td class="selected start"><!-- 시작일 'start'클래스 추가  -->
+												<div class="day_inner">
+													<span class="day">10</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td class="selected"><!-- 선택된 기간 'selected' 클래스 추가 -->
+												<div class="day_inner">
+													<span class="day">11</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td class="holiday selected">
+												<div class="day_inner">
+													<span class="day">12</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="selected holiday">
+												<div class="day_inner">
+													<span class="day">13</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td class="selected">
+												<div class="day_inner">
+													<span class="day">14</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td class="selected end">
+												<div class="day_inner">
+													<span class="day">15</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">16</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">17</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">18</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td class="holiday">
+												<div class="day_inner">
+													<span class="day">19</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="holiday">
+												<div class="day_inner">
+													<span class="day">20</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">21</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">22</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">23</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">24</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">25</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td class="holiday">
+												<div class="day_inner">
+													<span class="day">26</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="holiday">
+												<div class="day_inner">
+													<span class="day">27</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">28</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">29</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">30</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">31</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day"></span>
+													<span class="price"></span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day"></span>
+													<span class="price"></span>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="calendar_month">
+							<div class="month_header">2019.01</div>
+							<div class="month_cont">
+								<table>
+									<thead>
+										<tr>
+											<th>일</th>
+											<th>월</th>
+											<th>화</th>
+											<th>수</th>
+											<th>목</th>
+											<th>금</th>
+											<th>토</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<div class="day_inner">
+													<span class="day"></span>
+													<span class="price"></span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day"></span>
+													<span class="price"></span>
+												</div>
+											</td>
+											<td class="disabled">
+												<div class="day_inner">
+													<span class="day">1</span>
+													<span class="price"></span>
+												</div>
+											</td>
+											<td class="disabled">
+												<div class="day_inner">
+													<span class="day">2</span>
+													<span class="price"></span>
+												</div>
+											</td>
+											<td class="disabled"><!-- 선택불가 'disabled' 클래스 추가 -->
+												<div class="day_inner">
+													<span class="day">3</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">4</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td class="holiday"><!-- 토일,휴일 'holiday' 클래스 추가 -->
+												<div class="day_inner">
+													<span class="day">5</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="holiday">
+												<div class="day_inner">
+													<span class="day">6</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">7</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">8</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">9</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">10</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">11</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td class="holiday">
+												<div class="day_inner">
+													<span class="day">12</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="holiday">
+												<div class="day_inner">
+													<span class="day">13</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">14</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">15</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">16</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">17</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">18</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td class="holiday">
+												<div class="day_inner">
+													<span class="day">19</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="holiday">
+												<div class="day_inner">
+													<span class="day">20</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">21</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">22</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">23</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">24</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">25</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td class="holiday">
+												<div class="day_inner">
+													<span class="day">26</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="holiday">
+												<div class="day_inner">
+													<span class="day">27</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">28</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">29</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">30</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day">31</span>
+													<span class="price">54만원</span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day"></span>
+													<span class="price"></span>
+												</div>
+											</td>
+											<td>
+												<div class="day_inner">
+													<span class="day"></span>
+													<span class="price"></span>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 인원선택 cont  -->
+				<div class="tab_cont">
+					<h2>객실 1</h2><!-- 호텔만 표시 -->
+					<ul class="seat_option">
+						<li>
+							<span class="tit"><b>성인</b> 만 12세 이상</span>
+							<span class="ctrl">
+								<button type="button" name="button" class="ico btn_minus2">삭제</button>
+								<input type="text" name="" value="1" class="em">
+								<button type="button" name="button" class="ico btn_plus2">추가</button>
+							</span>
+						</li>
+						<li>
+							<span class="tit"><b>소아</b> 만 2세 ~ 12세 미만</span>
+							<span class="ctrl">
+								<button type="button" name="button" class="ico btn_minus2">삭제</button>
+								<input type="text" name="" value="1" class="em">
+								<button type="button" name="button" class="ico btn_plus2">추가</button>
+							</span>
+						</li>
+						<li>
+							<span class="tit"><b>유아</b> 만 2세 미만</span>
+							<span class="ctrl">
+								<button type="button" name="button" class="ico btn_minus2">삭제</button>
+								<input type="text" name="" value="1" class="em">
+								<button type="button" name="button" class="ico btn_plus2">추가</button>
+							</span>
+						</li>
+					</ul>
+
+					<h2>객실 2 <button type="button" name="button" class="ico btn_del3">객실삭제</button></h2>
+					<ul class="seat_option">
+						<li>
+							<span class="tit"><b>성인</b> 만 12세 이상</span>
+							<span class="ctrl">
+								<button type="button" name="button" class="ico btn_minus2">삭제</button>
+								<input type="text" name=s"" value="1" class="em">
+								<button type="button" name="button" class="ico btn_plus2">추가</button>
+							</span>
+						</li>
+						<li>
+							<span class="tit"><b>소아</b> 만 2세 ~ 12세 미만</span>
+							<span class="ctrl">
+								<button type="button" name="button" class="ico btn_minus2">삭제</button>
+								<input type="text" name="" value="1" class="em">
+								<button type="button" name="button" class="ico btn_plus2">추가</button>
+							</span>
+						</li>
+						<li>
+							<span class="tit"><b>유아</b> 만 2세 미만</span>
+							<span class="ctrl">
+								<button type="button" name="button" class="ico btn_minus2">삭제</button>
+								<input type="text" name="" value="1" class="em">
+								<button type="button" name="button" class="ico btn_plus2">추가</button>
+							</span>
+						</li>
+					</ul>
+					<!--<button type="button" name="button" class="btn_ico type2 add"><span>객실추가</span></button> -->
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="lang_kr"><input type="checkbox" id="lang_kr" name="language" checked><span></span>일반석</label></li>
+						<li><label class="checkbox" for="lang_en"><input type="checkbox" id="lang_en" name="language" checked><span></span>프리미엄 일반석</label></li>
+						<li><label class="checkbox" for="lang_jp"><input type="checkbox" id="lang_jp" name="language" checked><span></span>비즈니스</label></li>
+						<li><label class="checkbox" for="lang_cn"><input type="checkbox" id="lang_cn" name="language" checked><span></span>일등석</label></li>
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="btn_box">
+			<!-- <button type="submit" disabled name="button" class="btn primary2">검색</button> -->
+			<button type="submit" name="button" class="btn primary2">검색</button>
+		</div>
+
+	</div>
+
+	<div class="popup" popup-receive="calendar">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>날짜선택</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont full">
+			<div class="calendar_wrap">
+				<div class="calendar_month default"><!-- 가격표시 안될경우 'default' 클래스 추가 -->
+					<div class="month_header">2019.01</div>
+					<div class="month_cont">
+						<table>
+							<thead>
+								<tr>
+									<th>일</th>
+									<th>월</th>
+									<th>화</th>
+									<th>수</th>
+									<th>목</th>
+									<th>금</th>
+									<th>토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">1</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">2</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled"><!-- 선택불가 'disabled' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">3</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="today">
+										<div class="day_inner">
+											<span class="day">4</span>
+											<span class="price">54만원</span>
+											<span class="today">오늘</span>
+										</div>
+									</td>
+									<td class="holiday"><!-- 토일,휴일 'holiday' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">5</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">6</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">7</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">8</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">9</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected start"><!-- 시작일 'start'클래스 추가  -->
+										<div class="day_inner">
+											<span class="day">10</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected"><!-- 선택된 기간 'selected' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">11</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday selected">
+										<div class="day_inner">
+											<span class="day">12</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="selected holiday">
+										<div class="day_inner">
+											<span class="day">13</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected">
+										<div class="day_inner">
+											<span class="day">14</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected end">
+										<div class="day_inner">
+											<span class="day">15</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">16</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">17</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">18</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">19</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">20</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">21</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">22</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">23</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">24</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">25</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">26</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">27</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">28</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">29</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">30</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">31</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="calendar_month default">
+					<div class="month_header">2019.02</div>
+					<div class="month_cont">
+						<table>
+							<thead>
+								<tr>
+									<th>일</th>
+									<th>월</th>
+									<th>화</th>
+									<th>수</th>
+									<th>목</th>
+									<th>금</th>
+									<th>토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">1</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">2</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled"><!-- 선택불가 'disabled' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">3</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">4</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday"><!-- 토일,휴일 'holiday' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">5</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">6</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">7</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">8</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">9</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">10</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">11</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">12</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">13</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">14</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">15</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">16</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">17</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">18</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">19</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">20</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">21</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">22</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">23</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">24</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">25</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">26</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">27</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">28</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">29</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">30</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">31</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="popup viewer" popup-receive="image_detail">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>이미지</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<!-- 슬라이드 : S -->
+			<div class="slide_banner photo_slide">
+				<div class="slider_wrap" slider-option="viewer fullsize">
+					<!-- D : loop -->
+					<div class="slider_item">
+						<div class="photo_detail_wrap">
+							<!-- 상단 이미지 영역 : S -->
+							<div class="img_area">
+								<img src="../../resource/img/tmp_video01.jpg" alt="이미지">
+							</div>
+							<!-- 상단 이미지 영역 : E -->
+						</div>
+					</div>
+					<!-- //D : loop -->
+
+					<div class="slider_item">
+						<div class="photo_detail_wrap">
+							<!-- 상단 이미지 영역 : S -->
+							<div class="img_area">
+								<img src="../../resource/img/tmp_product_detail01.jpg" alt="이미지">
+							</div>
+							<!-- 상단 이미지 영역 : E -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 슬라이드 : E -->
+		</div>
+	</div>
+
+	<div class="popup" popup-receive="passenger_noti">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>탑승객 정보 입력시 주의사항</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="notice_list">
+				<li>탑승자의 영문이름, 생년월일, 성별은 여권과 동일해야 하며, 예약 후 이름 변경이 불가하며 동일하지 않을 경우 탑승이 거절될 수 있습니다. </li>
+				<li>나중 등록 / 임의 등록 등 여권 정보 오입력이나 입력 누락된 경우 또는 분실 신고된 여권, 이미 사용된 단수 여권 정보 등 본인 여권 관련 문제의 경우 항공편 탑승 및 현지 입국이 거절될 수 있으며 이에 대해서 당사는 책임지지 않습니다.</li>
+				<li>정확한 본인 영문 이름은 민원24(나의 생활정보 > 처리해야할 생활 정보)에서 확인할 수 있습니다. (공인인증서 필요) </li>
+			</ul>
+
+			<h2>소아/유아 탑승안내</h2>
+			<ul class="notice_list">
+				<li>귀국일 기준으로 만 12세 이상인 소아와 만 2세가 넘는 유아는 추가 차액이 발생하므로 고객센터로 문의바랍니다.</li>
+				<li>혼자 여행하는 16세 미만의 성인 비동반 소아는 추가 요금이 발생할 수 있으므로 고객센터로 문의시기 바랍니다.</li>
+				<li>만 20세 미만의 탑승객이 유아/소아와 동반할 경우, 예약 후 고객센터로 문의 바랍니다.</li>
+			</ul>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+	</div>
+
+	<div class="popup" popup-receive="flight_rule">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>항공 요금 규정 안내</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<table class="tbl_type1">
+				<colgroup>
+					<col style="width:35%;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">항공사</th>
+						<td>에어서울</td>
+					</tr>
+					<tr>
+						<th scope="row">운임조건</th>
+						<td>성인(삼성카드 결제 조건)</td>
+					</tr>
+					<tr>
+						<th scope="row">요금확정여부</th>
+						<td>확정</td>
+					</tr>
+					<tr>
+						<th scope="row">유효기간</th>
+						<td>~최대 12개월</td>
+					</tr>
+					<tr>
+						<th scope="row">카드사용여부</th>
+						<td>사용가능</td>
+					</tr>
+					<tr>
+						<th scope="row">오픈가능여부</th>
+						<td>가능</td>
+					</tr>
+					<tr>
+						<th scope="row">중간체류가능여부</th>
+						<td>불가</td>
+					</tr>
+					<tr>
+						<th scope="row">소아요금</th>
+						<td>성인요금의 75%</td>
+					</tr>
+					<tr>
+						<th scope="row">최소체류기간</th>
+						<td>제한없음</td>
+					</tr>
+					<tr>
+						<th scope="row">최소/최대인원수</th>
+						<td>1명 이상/9명 이하</td>
+					</tr>
+					<tr>
+						<th scope="row">수하물</th>
+						<td>
+							각 구간별 규정으로 적용됩니다.<br><br>
+							[규정1-출국편] 인천-오사카<br>
+							무료수하물 23KG 가방1개(공동운항편, 타항공사 항공편 탑승,STOPOVER 일정 및 항공사 스케줄이 없어서 24시간 이상 중간 체류 하는 경우,특정도시에 따라 무료수하물 규정은 변경 될 수 있으며, 캐리어 가방외에 기타 수하물은 항공사에 문의 요망)
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+	</div>
+
+	<div class="popup filter" popup-receive="filter_flight">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>필터</h1>
+			<button type="button" name="button" class="btn_txt type5 reset">초기화</button>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+
+			<section class="filter fold_area">
+				<h2>직항/경유</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						 <li><label class="checkbox" for="flight01"><input type="checkbox" id="flight01" name="flight" checked><span></span>직항</label></li>
+						 <li><label class="checkbox" for="flight02"><input type="checkbox" id="flight02" name="flight"><span></span>경유 1회</label></li>
+						 <li><label class="checkbox" for="flight03"><input type="checkbox" id="flight03" name="flight"><span></span>경유 2회 이상</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter box_type1">
+				<h2>출발시간</h2>
+
+				<h3>가는편 <span>00:00 ~ 06:00</span></h3>
+				<p>
+					<label class="checkbox checked" for="time01"><input type="checkbox" name="time" id="time01"><span></span>새벽<br> 00:00 ~ 06:00</label>
+					<label class="checkbox checked" for="time02"><input type="checkbox" name="time" id="time02"><span></span>오전<br> 06:00 ~ 12:00</label>
+					<label class="checkbox checked" for="time03"><input type="checkbox" name="time" id="time03"><span></span>오후<br> 12:00 ~ 18:00</label>
+					<label class="checkbox checked" for="time04"><input type="checkbox" name="time" id="time04"><span></span>야간<br> 18:00 ~ 00:00</label>
+				</p>
+
+				<h3>오는편 <span>00:00 ~ 06:00,12:00~18:00</span></h3>
+				<p>
+					<label class="checkbox checked" for="b_time01"><input type="checkbox" name="b_time" id="b_time01"><span></span>새벽<br> 00:00 ~ 06:00</label>
+					<label class="checkbox checked" for="b_time02"><input type="checkbox" name="b_time" id="b_time02"><span></span>오전<br> 06:00 ~ 12:00</label>
+					<label class="checkbox checked" for="b_time03"><input type="checkbox" name="b_time" id="b_time03"><span></span>오후<br> 12:00 ~ 18:00</label>
+					<label class="checkbox checked" for="b_time04"><input type="checkbox" name="b_time" id="b_time04"><span></span>야간<br> 18:00 ~ 00:00</label>
+				</p>
+			</section>
+
+			<section class="filter">
+				<h2>소요시간</h2>
+
+				<h3>가는편 <span>02시간 20분</span></h3>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:0; width: 50%"></span></div>
+					<span class="range_pointer" style="left:50%"></span>
+				</div>
+
+				<h3>오는편 <span>02시간</span></h3>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:0; width: 50%"></span></div>
+					<span class="range_pointer" style="left:50%"></span>
+				</div>
+			</section>
+
+
+			<section class="filter">
+				<h2>가격 <span class="stxt">437,500원 ~ 1,200,000원</span></h2>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+					<span class="range_pointer" style="left:20%"></span>
+					<span class="range_pointer" style="left:80%"></span>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>항공사
+					<label class="checkbox fright" for="airline_all"><input type="checkbox" id="airline_all" name="airline" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						 <li><label class="checkbox" for="airline01"><input type="checkbox" id="airline01" name="airline" checked><span></span>대한항공</label></li>
+						<li><label class="checkbox" for="airline02"><input type="checkbox" id="airline02" name="airline" checked><span></span>아시아나항공</label></li>
+						<li><label class="checkbox" for="airline03"><input type="checkbox" id="airline03" name="airline" checked><span></span>가루다인도네시아</label></li>
+						<li><label class="checkbox" for="airline04"><input type="checkbox" id="airline04" name="airline" checked><span></span>중국동방항공</label></li>
+						<li><label class="checkbox" for="airline05"><input type="checkbox" id="airline05" name="airline" checked><span></span>LOT폴란드항공</label></li>
+						<li><label class="checkbox" for="airline06"><input type="checkbox" id="airline06" name="airline" checked><span></span>루프트한자 독일항공</label></li>
+						<li><label class="checkbox" for="airline07"><input type="checkbox" id="airline07" name="airline" checked><span></span>티웨이항공</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+
+			<section class="filter fold_area">
+				<h2>결제조건
+					<label class="checkbox fright" for="pay_chk_all"><input type="checkbox" id="pay_chk_all" name="pay_chk" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list">
+						<li><label class="checkbox" for="pay_chk01"><input type="checkbox" id="pay_chk01" name="pay_chk" checked><span></span>KB국민카드 결제(청구할인)</label></li>
+						<li><label class="checkbox" for="pay_chk02"><input type="checkbox" id="pay_chk02" name="pay_chk" checked><span></span>신한카드 결제(AIR1.5)</label></li>
+						<li><label class="checkbox" for="pay_chk03"><input type="checkbox" id="pay_chk03" name="pay_chk" checked><span></span>비씨카드 결제(청구할인)</label></li>
+						<li><label class="checkbox" for="pay_chk04"><input type="checkbox" id="pay_chk04" name="pay_chk" checked><span></span>하나카드 결제(1Q글로벌카드) </label></li>
+						<li><label class="checkbox" for="pay_chk05"><input type="checkbox" id="pay_chk05" name="pay_chk" checked><span></span>씨티카드결제</label></li>
+						<li><label class="checkbox" for="pay_chk06"><input type="checkbox" id="pay_chk06" name="pay_chk" checked><span></span>IBK 참! 좋은 캐시백플래티늄 카드(청구할인/전원실적 충족 시 적용)</label></li>
+						<li><label class="checkbox" for="pay_chk07"><input type="checkbox" id="pay_chk07" name="pay_chk" checked><span></span>NH농협카드 결제</label></li>
+						<li><label class="checkbox" for="pay_chk08"><input type="checkbox" id="pay_chk08" name="pay_chk" checked><span></span>우리카드 결제</label></li>
+						<li><label class="checkbox" for="pay_chk09"><input type="checkbox" id="pay_chk09" name="pay_chk" checked><span></span>씨티카드 결제</label></li>
+						<li><label class="checkbox" for="pay_chk10"><input type="checkbox" id="pay_chk10" name="pay_chk" checked><span></span>롯데카드 결제</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+
+	</div>
+
+	<div class="popup filter" popup-receive="filter_acivity">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>필터</h1>
+			<button type="button" name="button" class="btn_txt type5 reset">초기화</button>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+
+			<!-- 2019-06-17 추가 -->
+			<section class="filter fold_area">
+				<h2>카테고리</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="cate01"><input type="checkbox" id="cate01" name="cate" checked><span></span>가이드투어</label></li>
+						<li><label class="checkbox" for="cate02"><input type="checkbox" id="cate02" name="cate" checked><span></span>액티비티</label></li>
+						<li><label class="checkbox" for="cate03"><input type="checkbox" id="cate03" name="cate" checked><span></span>입장권/티켓</label></li>
+						<li><label class="checkbox" for="cate04"><input type="checkbox" id="cate04" name="cate" checked><span></span>레스토랑</label></li>
+						<li><label class="checkbox" for="cate05"><input type="checkbox" id="cate05" name="cate" checked><span></span>스파/마사지</label></li>
+						<li><label class="checkbox" for="cate06"><input type="checkbox" id="cate06" name="cate" checked><span></span>쇼/공연</label></li>
+						<li><label class="checkbox" for="cate07"><input type="checkbox" id="cate07" name="cate" checked><span></span>현지체험</label></li>
+						<li><label class="checkbox" for="cate08"><input type="checkbox" id="cate08" name="cate" checked><span></span>스냅촬영</label></li>
+						<li><label class="checkbox" for="cate09"><input type="checkbox" id="cate09" name="cate" checked><span></span>교통패스</label></li>
+						<li><label class="checkbox" for="cate10"><input type="checkbox" id="cate10" name="cate" checked><span></span>픽업/샌딩</label></li>
+						<li><label class="checkbox" for="cate11"><input type="checkbox" id="cate11" name="cate" checked><span></span>렌터카</label></li>
+						<li><label class="checkbox" for="cate12"><input type="checkbox" id="cate12" name="cate" checked><span></span>유심/와이파이</label></li>
+						<li><label class="checkbox" for="cate13"><input type="checkbox" id="cate13" name="cate" checked><span></span>라운지</label></li>
+						<li><label class="checkbox" for="cate14"><input type="checkbox" id="cate14" name="cate" checked><span></span>케리어서비스</label></li>
+						<li><label class="checkbox" for="cate15"><input type="checkbox" id="cate15" name="cate" checked><span></span>외투보관</label></li>
+						<li><label class="checkbox" for="cate16"><input type="checkbox" id="cate16" name="cate" checked><span></span>유모차대여</label></li>
+						<li><label class="checkbox" for="cate17"><input type="checkbox" id="cate17" name="cate" checked><span></span>여행자보험</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>수령방법</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="receive01"><input type="checkbox" id="receive01" name="receiving" checked><span></span>메일수령</label></li>
+						<li><label class="checkbox" for="receive02"><input type="checkbox" id="receive02" name="receiving" checked><span></span>공항수령</label></li>
+						<li><label class="checkbox" for="receive03"><input type="checkbox" id="receive03" name="receiving" checked><span></span>현장수령</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+
+			<section class="filter">
+				<h2>소요시간 <span class="stxt">6시간 ~ 2박3일</span></h2>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+					<span class="range_pointer" style="left:20%"></span>
+					<span class="range_pointer" style="left:80%"></span>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>사용언어
+					<label class="checkbox fright" for="lang_all"><input type="checkbox" id="lang_all" name="language" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="lang_kr"><input type="checkbox" id="lang_kr" name="language" checked><span></span>한국어</label></li>
+						<li><label class="checkbox" for="lang_en"><input type="checkbox" id="lang_en" name="language" checked><span></span>영어</label></li>
+						<li><label class="checkbox" for="lang_jp"><input type="checkbox" id="lang_jp" name="language" checked><span></span>일본어</label></li>
+						<li><label class="checkbox" for="lang_cn"><input type="checkbox" id="lang_cn" name="language" checked><span></span>중국어</label></li>
+						<li><label class="checkbox" for="lang_ru"><input type="checkbox" id="lang_ru" name="language" checked><span></span>러시아어</label></li>
+						<li><label class="checkbox" for="lang_tr"><input type="checkbox" id="lang_tr" name="language" checked><span></span>터키어</label></li>
+						<li><label class="checkbox" for="lang_no"><input type="checkbox" id="lang_no" name="language" checked><span></span>노르웨이어</label></li>
+						<li><label class="checkbox" for="lang_se"><input type="checkbox" id="lang_se" name="language" checked><span></span>스웨덴어</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter">
+				<h2>가격 <span class="stxt">9,000원 ~ 350,000원</span></h2>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+					<span class="range_pointer" style="left:20%"></span>
+					<span class="range_pointer" style="left:80%"></span>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>흥정 상품</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list">
+						<li><label class="checkbox" for="deal"><input type="checkbox" id="deal" name="deal"><span></span>흥정 가능 상품만 보기</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>모아랑 상품</h2>
+				<div class="fold_target" fold-height="120">
+					<ul class="item_list">
+						<li><label class="checkbox" for="mprd01"><input type="checkbox" id="mprd01" name="mprd"><span></span>모아랑 상품만 보기</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+
+	<div class="popup filter" popup-receive="filter_hotel">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>필터</h1>
+			<button type="button" name="button" class="btn_txt type5 reset">초기화</button>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+
+			<section class="filter">
+				<h2>숙박등급</h2>
+				<ul class="item_list half_type">
+					 <li><label class="checkbox" for="grade01"><input type="checkbox" id="grade01" name="flight" checked><span></span>1성급</label></li>
+					 <li><label class="checkbox" for="grade02"><input type="checkbox" id="grade02" name="flight" checked><span></span>2성급</label></li>
+					 <li><label class="checkbox" for="grade03"><input type="checkbox" id="grade03" name="flight" checked><span></span>3성급</label></li>
+					 <li><label class="checkbox" for="grade04"><input type="checkbox" id="grade04" name="flight" checked><span></span>4성급</label></li>
+					 <li><label class="checkbox" for="grade05"><input type="checkbox" id="grade05" name="flight" checked><span></span>5성급</label></li>
+				</ul>
+			</section>
+
+			<section class="filter">
+				<h2>가격 <span class="stxt">437,500원 ~ 1,200,000원</span></h2>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+					<span class="range_pointer" style="left:20%"></span>
+					<span class="range_pointer" style="left:80%"></span>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>숙소유형
+					<label class="checkbox fright" for="airline_all"><input type="checkbox" id="airline_all" name="stay" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						 <li><label class="checkbox" for="stay01"><input type="checkbox" id="stay01" name="stay" checked><span></span>호텔</label></li>
+						<li><label class="checkbox" for="stay02"><input type="checkbox" id="stay02" name="stay" checked><span></span>호스텔</label></li>
+						<li><label class="checkbox" for="stay03"><input type="checkbox" id="stay03" name="stay" checked><span></span>아파트</label></li>
+						<li><label class="checkbox" for="stay04"><input type="checkbox" id="stay04" name="stay" checked><span></span>모텔</label></li>
+						<li><label class="checkbox" for="stay05"><input type="checkbox" id="stay05" name="stay" checked><span></span>게스트하우스</label></li>
+						<li><label class="checkbox" for="stay06"><input type="checkbox" id="stay06" name="stay" checked><span></span>펜션</label></li>
+						<li><label class="checkbox" for="stay07"><input type="checkbox" id="stay07" name="stay" checked><span></span>리조트</label></li>
+						<li><label class="checkbox" for="stay08"><input type="checkbox" id="stay08" name="stay" checked><span></span>캠핑장</label></li>
+						<li><label class="checkbox" for="stay09"><input type="checkbox" id="stay09" name="stay" checked><span></span>기타</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter">
+				<h2>조식</h2>
+				<ul class="item_list half_type">
+					 <li><label class="checkbox" for="food01"><input type="checkbox" id="food01" name="food" checked><span></span>포함</label></li>
+					 <li><label class="checkbox" for="food02"><input type="checkbox" id="food02" name="food" checked><span></span>불포함</label></li>
+				</ul>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>편의시설
+					<label class="checkbox fright" for="pay_chk_all"><input type="checkbox" id="pay_chk_all" name="comfort" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="comfort01"><input type="checkbox" id="comfort01" name="comfort" checked><span></span>수영장</label></li>
+						<li><label class="checkbox" for="comfort02"><input type="checkbox" id="comfort02" name="comfort" checked><span></span>사우나</label></li>
+						<li><label class="checkbox" for="comfort03"><input type="checkbox" id="comfort03" name="comfort" checked><span></span>스파마사지</label></li>
+						<li><label class="checkbox" for="comfort04"><input type="checkbox" id="comfort04" name="comfort" checked><span></span>카페테리아</label></li>
+						<li><label class="checkbox" for="comfort06"><input type="checkbox" id="comfort06" name="comfort" checked><span></span>세미나실</label></li>
+						<li><label class="checkbox" for="comfort07"><input type="checkbox" id="comfort07" name="comfort" checked><span></span>비지니스센터</label></li>
+						<li><label class="checkbox" for="comfort08"><input type="checkbox" id="comfort08" name="comfort" checked><span></span>클럽라운지</label></li>
+						<li><label class="checkbox" for="comfort09"><input type="checkbox" id="comfort09" name="comfort" checked><span></span>피트니스</label></li>
+						<li><label class="checkbox" for="comfort10"><input type="checkbox" id="comfort10" name="comfort" checked><span></span>편의점(매점)</label></li>
+						<li><label class="checkbox" for="comfort11"><input type="checkbox" id="comfort11" name="comfort" checked><span></span>주차가능</label></li>
+						<li><label class="checkbox" for="comfort12"><input type="checkbox" id="comfort12" name="comfort" checked><span></span>반려동물</label></li>
+						<li><label class="checkbox" for="comfort13"><input type="checkbox" id="comfort13" name="comfort" checked><span></span>키즈플레이룸</label></li>
+						<li><label class="checkbox" for="comfort14"><input type="checkbox" id="comfort14" name="comfort" checked><span></span>공동바베큐</label></li>
+						<li><label class="checkbox" for="comfort15"><input type="checkbox" id="comfort15" name="comfort" checked><span></span>아기침대대여</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>무료서비스
+					<label class="checkbox fright" for="free_chk_all"><input type="checkbox" id="free_chk_all" name="free" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="free01"><input type="checkbox" id="free01" name="free" checked><span></span>공항 픽업</label></li>
+						<li><label class="checkbox" for="free02"><input type="checkbox" id="free02" name="free" checked><span></span>무료 wifi</label></li>
+						<li><label class="checkbox" for="free03"><input type="checkbox" id="free03" name="free" checked><span></span>무료 조식</label></li>
+						<li><label class="checkbox" for="free04"><input type="checkbox" id="free04" name="free" checked><span></span>무료 주차장</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>흥정 상품</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list">
+						<li><label class="checkbox" for="deal"><input type="checkbox" id="deal" name="deal"><span></span>흥정 가능 상품만 보기</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filte">
+				<h2>모아랑 상품</h2>
+				<ul class="item_list">
+					 <li><label class="checkbox" for="moa"><input type="checkbox" id="moa" name="moa"><span></span>모아랑 상품만 보기</label></li>
+				</ul>
+			</section>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+
+	<div class="popup viewer" popup-receive="review_detail">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>이미지 &amp; 영상</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<!-- 슬라이드 : S -->
+			<div class="slide_banner photo_slide">
+				<div class="slider_wrap" slider-option="viewer fullsize">
+					<!-- D : loop -->
+					<div class="slider_item">
+						<div class="photo_detail_wrap">
+							<!-- 상단 이미지 영역 : S -->
+							<div class="img_area">
+								<div>
+									<span class="dim_box"><!-- 동영상인경우 -->
+										<button type="button" name="button" class="ico play">비디오 재생</button><!-- 2019-06-03 play2 → play로 클래스명 수정 -->
+									</span>
+									<img src="../../resource/img/tmp_video01.jpg" alt="동영상이미지">
+								</div>
+							</div>
+							<!-- 상단 이미지 영역 : E -->
+							<!-- 텍스트 리뷰 영역 : S -->
+							<div class="review_item">
+								<div class="user_info">
+									<span class="info">
+										<span class="name">ppo****</span>
+										<span class="date">2019.01.21</span>
+									</span>
+									<span class="review_point"><span class="score" style="width:80%">4</span></span>
+								</div>
+								<div class="cont">
+									<div class="txt_area">
+										<div class="txt">여자친구랑 갔다왔는데 재밌었어요~ 바우처 출력으로 기다리지 않고 가서 훨씬 좋더라구요. 이렇게 편한게 있었다면 진작 할걸 너무 늦게 알아서 아쉽네요.</div>
+									</div>
+								</div>
+							</div>
+							<!-- 텍스트 리뷰 영역 : E -->
+						</div>
+					</div>
+					<!-- //D : loop -->
+
+
+					<div class="slider_item">
+						<div class="photo_detail_wrap">
+							<!-- 상단 이미지 영역 : S -->
+							<div class="img_area">
+								<img src="../../resource/img/tmp_product_detail01.jpg" alt="리뷰이미지">
+							</div>
+							<!-- 상단 이미지 영역 : E -->
+							<!-- 텍스트 리뷰 영역 : S -->
+							<div class="review_item">
+								<div class="user_info">
+									<span class="info">
+										<span class="name">ppo****</span>
+										<span class="date">2019.01.21</span>
+									</span>
+									<span class="review_point"><span class="score" style="width:80%">4</span></span>
+								</div>
+								<div class="cont">
+									<div class="txt_area">
+										<div class="txt">여자친구랑 갔다왔는데 재밌었어요~ 바우처 출력으로 기다리지 않고 가서 훨씬 좋더라구요. 이렇게 편한게 있었다면 진작 할걸 너무 늦게 알아서 아쉽네요. 여자친구랑 갔다왔는데 재밌었어요~ 바우처 출력으로 기다리지 않고 가서 훨씬 좋더라구요. 이렇게 편한게 있었다면 진작 할걸 너무 늦게 알아서 아쉽네요.</div>
+									</div>
+								</div>
+							</div>
+							<!-- 텍스트 리뷰 영역 : E -->
+						</div>
+					</div>
+
+					<div class="slider_item">
+						<div class="photo_detail_wrap">
+							<!-- 상단 이미지 영역 : S -->
+							<div class="img_area">
+								<img src="../../resource/img/tmp_product_detail01.jpg" alt="리뷰이미지">
+							</div>
+							<!-- 상단 이미지 영역 : E -->
+							<!-- 텍스트 리뷰 영역 : S -->
+							<div class="review_item">
+								<div class="user_info">
+									<span class="info">
+										<span class="name">ppo****</span>
+										<span class="date">2019.01.21</span>
+									</span>
+									<span class="review_point"><span class="score" style="width:80%">4</span></span>
+								</div>
+								<div class="cont">
+									<div class="txt_area">
+										<div class="txt">여자친구랑 갔다왔는데 재밌었어요~ 바우처 출력으로 기다리지 않고 가서 훨씬 좋더라구요. 이렇게 편한게 있었다면 진작 할걸 너무 늦게 알아서 아쉽네요. 여자친구랑 갔다왔는데 재밌었어요~ 바우처 출력으로 기다리지 않고 가서 훨씬 좋더라구요. 이렇게 편한게 있었다면 진작 할걸 너무 늦게 알아서 아쉽네요.</div>
+									</div>
+								</div>
+							</div>
+							<!-- 텍스트 리뷰 영역 : E -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 슬라이드 : E -->
+		</div>
+	</div>
+
+	<div class="popup filter" popup-receive="filter_package">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>필터</h1>
+			<button type="button" name="button" class="btn_txt type5 reset">초기화</button>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+
+			<section class="filter fold_area">
+				<h2>카테고리</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="cate01"><input type="checkbox" id="cate01" name="cate" checked><span></span>패키지</label></li>
+						<li><label class="checkbox" for="cate02"><input type="checkbox" id="cate02" name="cate" checked><span></span>에어텔</label></li>
+						<li><label class="checkbox" for="cate03"><input type="checkbox" id="cate03" name="cate" checked><span></span>땡처리항공권</label></li>
+						<li><label class="checkbox" for="cate04"><input type="checkbox" id="cate04" name="cate" checked><span></span>선박/크루즈</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>여행사
+					<label class="checkbox fright" for="agency_all"><input type="checkbox" id="agency_all" name="agency" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="agency01"><input type="checkbox" id="agency01" name="agency" checked><span></span>모두투어</label></li>
+						<li><label class="checkbox" for="agency02"><input type="checkbox" id="agency02" name="agency" checked><span></span>노랑풍선</label></li>
+						<li><label class="checkbox" for="agency03"><input type="checkbox" id="agency03" name="agency" checked><span></span>하나투어</label></li>
+						<li><label class="checkbox" for="agency04"><input type="checkbox" id="agency04" name="agency" checked><span></span>롯데관광</label></li>
+						<li><label class="checkbox" for="agency05"><input type="checkbox" id="agency05" name="agency" checked><span></span>온라인투어</label></li>
+						<li><label class="checkbox" for="agency06"><input type="checkbox" id="agency06" name="agency" checked><span></span>인터파크투어</label></li>
+						<li><label class="checkbox" for="agency07"><input type="checkbox" id="agency07" name="agency" checked><span></span>한진관광</label></li>
+						<li><label class="checkbox" for="agency08"><input type="checkbox" id="agency08" name="agency" checked><span></span>내일투어</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>항공사
+					<label class="checkbox fright" for="airline_all"><input type="checkbox" id="airline_all" name="airline" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="airline01"><input type="checkbox" id="airline01" name="airline" checked><span></span>대한항공</label></li>
+						<li><label class="checkbox" for="airline02"><input type="checkbox" id="airline02" name="airline" checked><span></span>아시아나항공</label></li>
+						<li><label class="checkbox" for="airline03"><input type="checkbox" id="airline03" name="airline" checked><span></span>진에어</label></li>
+						<li><label class="checkbox" for="airline04"><input type="checkbox" id="airline04" name="airline" checked><span></span>제주에어</label></li>
+						<li><label class="checkbox" for="airline05"><input type="checkbox" id="airline05" name="airline" checked><span></span>이스타항공</label></li>
+						<li><label class="checkbox" for="airline06"><input type="checkbox" id="airline06" name="airline" checked><span></span>에어서울</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter">
+				<h2>일정 <span class="stxt">1박2일 ~ 3박4일</span></h2>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+					<span class="range_pointer" style="left:20%"></span>
+					<span class="range_pointer" style="left:80%"></span>
+				</div>
+			</section>
+
+			<!-- 임시로 작성 만약추후발견시 일괄삭제 -->
+			<style media="screen">
+			</style>
+			<!-- //임시로 작성 만약추후발견시 일괄삭제 -->
+
+			<section class="filter box_type1">
+				<h2>출발시간 <span class="stxt">06:00 ~ 12:00</span></h2>
+				<p>
+					<label class="checkbox checked" for="time01"><input type="checkbox" name="time" id="time01"><span></span>새벽<br> 00:00 ~ 06:00</label>
+					<label class="checkbox checked" for="time02"><input type="checkbox" name="time" id="time02"><span></span>오전<br> 06:00 ~ 12:00</label>
+					<label class="checkbox checked" for="time03"><input type="checkbox" name="time" id="time03"><span></span>오후<br> 12:00 ~ 18:00</label>
+					<label class="checkbox checked" for="time04"><input type="checkbox" name="time" id="time04"><span></span>야간<br> 18:00 ~ 00:00</label>
+				</p>
+			</section>
+
+			<section class="filter">
+				<h2>쇼핑횟수 <span class="stxt">1회 ~ 3회</span></h2>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+					<span class="range_pointer" style="left:20%"></span>
+					<span class="range_pointer" style="left:80%"></span>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>인솔자</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="leader01"><input type="checkbox" id="leader01" name="leader" checked><span></span>동행</label></li>
+						<li><label class="checkbox" for="leader02"><input type="checkbox" id="leader02" name="leader" checked><span></span>비동행</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>가이드</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="guide01"><input type="checkbox" id="guide01" name="guide" checked><span></span>포함</label></li>
+						<li><label class="checkbox" for="guide02"><input type="checkbox" id="guide02" name="guide" checked><span></span>불포함</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>자유일정</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="travel01"><input type="checkbox" id="travel01" name="travel" checked><span></span>포함</label></li>
+						<li><label class="checkbox" for="travel02"><input type="checkbox" id="travel02" name="travel" checked><span></span>불포함</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter">
+				<h2>가격 <span class="stxt">350,000원 ~ 2,000,000원</span></h2>
+				<div class="range_wrap">
+					<div class="range_bar"><span class="range_bar_value" style="left:20%; width: 60%"></span></div>
+					<span class="range_pointer" style="left:20%"></span>
+					<span class="range_pointer" style="left:80%"></span>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>출발확정</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list">
+						<li><label class="checkbox" for="start"><input type="checkbox" id="start" name="start"><span></span>출발확정 상품만 보기</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>흥정 상품</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list">
+						<li><label class="checkbox" for="deal"><input type="checkbox" id="deal" name="deal"><span></span>흥정 가능 상품만 보기</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>모아랑 상품</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list">
+						<li><label class="checkbox" for="mprd01"><input type="checkbox" id="mprd01" name="mprd"><span></span>모아랑 상품만 보기</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+		</div>
+
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+
+	<div class="popup" popup-receive="select_per">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>인원선택</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="seat_option">
+				<li>
+					<span class="tit"><b>성인</b> 만 12세 이상</span>
+					<span class="ctrl">
+						<button type="button" name="button" class="ico btn_minus2">삭제</button>
+						<input type="text" name="" value="1" class="em">
+						<button type="button" name="button" class="ico btn_plus2">추가</button>
+					</span>
+				</li>
+				<li>
+					<span class="tit"><b>소아</b> 만 2세 ~ 12세 미만</span>
+					<span class="ctrl">
+						<button type="button" name="button" class="ico btn_minus2">삭제</button>
+						<input type="text" name="" value="1" class="em">
+						<button type="button" name="button" class="ico btn_plus2">추가</button>
+					</span>
+				</li>
+				<li>
+					<span class="tit"><b>유아</b> 만 2세 미만</span>
+					<span class="ctrl">
+						<button type="button" name="button" class="ico btn_minus2">삭제</button>
+						<input type="text" name="" value="1" class="em">
+						<button type="button" name="button" class="ico btn_plus2">추가</button>
+					</span>
+				</li>
+			</ul>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">검색</button>
+		</div>
+
+	</div>
+
+	<div class="popup map_search" popup-receive="hotel_map">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>필터</h1>
+			<button type="button" name="button" class="btn_txt type5 reset">초기화</button>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="map_wrap open"><!-- 가격 클릭시 'open' 클래스 추가 -->
+				<div class="mask"></div>
+				<!-- 지도 영역 -->
+				<div class="map_area" style="background:url('../../resource/img/tmp_map02.jpg')"><!-- 지도 api 삽입시 style 삭제 -->
+
+					<!-- 지도위 가격표시 라벨 -->
+					<div class="marker active" style="left:100px;top:100px"><b>319,257</b>원</div><!-- 클릭시 'active' 클래스 추가 -->
+					<div class="marker" style="left:120px;top:120px"><b>319,257</b>원</div>
+					<div class="marker" style="left:130px;top:120px"><b>319,257</b>원</div>
+					<div class="marker" style="left:140px;top:120px"><b>319,257</b>원</div>
+					<div class="marker" style="left:150px;top:140px"><b>319,257</b>원</div>
+				</div>
+				<!-- 하단고정버튼 : S -->
+				<div class="r_btn_box">
+					<span><button type="button" name="button" class="btn_ico filter">필터</button></span>
+				</div>
+				<!-- 하단고정버튼 : E -->
+				<!-- 관련상품 -->
+				<div class="goods_list tscroll">
+					<ul class="ul_size">
+						<li>
+							<a href="#">
+								<img src="../../resource/img/tmp_prd06.jpg" alt="">
+								<span class="cate">입장권/티켓</span>
+								<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+								<span class="price"><strong>77,000</strong>원~</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../../resource/img/tmp_prd06.jpg" alt="">
+								<span class="badge_area">
+									<span class="badge type2">모아랑</span><!-- 모아랑 상품 표시 -->
+									<span class="badge type4">흥정가능</span><!-- 흥정가능 상품 표시 -->
+								</span>
+								<span class="cate">유심/와이파이</span>
+								<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+								<span class="price"><strong>77,000</strong>원~</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../../resource/img/tmp_prd06.jpg" alt="">
+								<span class="cate">여행자편의</span>
+								<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+								<span class="price"><strong>77,000</strong>원~</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../../resource/img/tmp_prd06.jpg" alt="">
+								<span class="cate">여행자편의</span>
+								<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+								<span class="price"><strong>77,000</strong>원~</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="../../resource/img/tmp_prd06.jpg" alt="">
+								<span class="cate">여행자편의</span>
+								<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+								<span class="price"><strong>77,000</strong>원~</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup" popup-receive="seller_grade">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>셀러별 등급 혜택 안내</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="notice_list">
+				<li>1년 간 사용완료 된 주문건 중에서 누적 구매 금액, 주문 횟수 중 조건 충족시 승급됩니다.</li>
+				<li>승급 후 변경된 혜택은 익월 1일부터 적용됩니다.</li>
+			</ul>
+			<div class="grade_area">
+				<ul>
+					<li>
+						<div class="grade_item">
+							<span class="i_grade basic">B</span>
+							<span class="txt">BASIC</span>
+						</div>
+						<div class="grade_list">
+							<ul>
+								<li>3% 할인 쿠폰</li>
+								<li>구매시 S.Rewards 0.1% 추가 적립</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="grade_item">
+							<span class="i_grade bronze">B</span>
+							<span class="txt">BRONZE</span>
+						</div>
+						<div class="grade_list">
+							<ul>
+								<li>5% 할인 쿠폰</li>
+								<li>구매시 S.Rewards 0.1% 추가 적립</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="grade_item">
+							<span class="i_grade silver">S</span>
+							<span class="txt">SILVER</span>
+						</div>
+						<div class="grade_list">
+							<ul>
+								<li>10% 할인 쿠폰</li>
+								<li>구매시 S.Rewards 0.3% 추가 적립</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="grade_item">
+							<span class="i_grade gold">G</span>
+							<span class="txt">GOLD</span>
+						</div>
+						<div class="grade_list">
+							<ul>
+								<li>15% 할인 쿠폰</li>
+								<li>구매시 S.Rewards 0.5% 추가 적립</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+	</div>
+
+	<div class="popup l_select" popup-receive="report">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>거래선택</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<p>신고하실 거래내역을 선택해주세요.</p>
+			<div class="i_list">
+				<ul>
+					<li>
+						<label class="radio big" for="l_radio01">
+							<input type="radio" id="l_radio01" name="r_list"><span></span>
+							<em class="date">2019.01.21</em>
+							<em class="order_info">모두투어·Y01989173</em>
+							<em class="tit">[오사카]유니버셜 스튜디오 입장권</em>
+							<em class="price"><b>2,450,000</b>원</em>
+						</label>
+					</li>
+					<li>
+						<label class="radio big" for="l_radio02">
+							<input type="radio" id="l_radio02" name="r_list"><span></span>
+							<em class="date">2019.01.21</em>
+							<em class="order_info">모두투어·Y01989173</em>
+							<em class="tit">[유럽]가족여행 패키지A</em>
+							<em class="price"><b>2,450,000</b>원</em>
+						</label>
+					</li>
+					<li>
+						<label class="radio big" for="l_radio03">
+							<input type="radio" id="l_radio03" name="r_list"><span></span>
+							<em class="date">2019.01.21</em>
+							<em class="order_info">모두투어·Y01989173</em>
+							<em class="tit">[오사카]가족여행 패키지A</em>
+							<em class="price"><b>2,450,000</b>원</em>
+						</label>
+					</li>
+					<li>
+						<label class="radio big" for="l_radio04">
+							<input type="radio" id="l_radio04" name="r_list"><span></span>
+							<em class="date">2019.01.21</em>
+							<em class="order_info">모두투어·Y01989173</em>
+							<em class="tit">[오사카]가족여행 패키지B</em>
+							<em class="price"><b>2,450,000</b>원</em>
+						</label>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">선택완료</button>
+		</div>
+	</div>
+
+	<div class="popup" popup-receive="benefit">
+		<!-- Modal content -->
+		<div class="head">
+			<h1></h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont full">
+			<div class="pop_moalang">
+				<strong class="tit">살 때마다 쌓이는 모아랑 혜택</strong>
+				<p class="txt">모아랑 라벨이 붙은 상품 구매시 <br>S.Rewards 최대 1.5% 추가 적립</p>
+				<div class="benefit">
+					<ul class="my_moa_state">
+						<li>
+							<i class="ico flight_b"></i>
+							<span>항공</span>
+						</li>
+						<li>
+							<i class="ico stay_b"></i>
+							<span>숙박</span>
+						</li>
+						<li>
+							<i class="ico package_b"></i>
+							<span>패키지</span>
+						</li>
+						<li>
+							<i class="ico activity_b"></i>
+							<span>액티비티</span>
+						</li>
+					</ul>
+					<p><strong class="em">각 카테고리 별로 1개</strong> 구매 시 인정</p>
+					<div class="rate">
+						<p class="bg1"><span><em>2</em>개</span><span><em>0.5</em>%</em></p>
+						<p class="bg2"><span><em>3</em>개</span><span><em>1.0</em>%</em></p>
+						<p class="bg3"><span><em>4</em>개</span><span><em>1.5</em>%</em></p>
+					</div>
+				</div>
+				<div class="note_list">
+					<strong>유의사항</strong>
+					<ul><!-- 2019-06-27 내용 변경 -->
+						<li>2개 카테고리 이상 충족 시 인정됩니다.</li>
+						<li>모아랑 혜택 받기 버튼 탭 시 즉시 적립 됩니다.</li>
+						<li>S.Rewards가 적립된 상품은 취소/환불이 불가능 합니다.</li>
+						<li>적립 시 혜택은 리셋 처리 됩니다.</li>
+						<li>구매 후 1년이 지난 모아랑 상품은 기간 만료로  혜택대상에서 제외됩니다.</li>
+						<li>적립된 S.Rewards는 신라면세점에서 확인 가능합니다.</li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup" popup-receive="pop_moa_benefit">
+		<div class="head">
+			<h1></h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont full">
+			<div class="pop_moalang">
+				<strong class="tit">살 때마다 쌓이는 모아랑 혜택!</strong>
+				<p class="txt">S.Rewards 최대 20% 추가적립</p>
+				<div class="moa_benefit">
+					<div class="moa_info">
+						<div class="txt_box">
+							<!-- <p class="no_cmt">아직 구매한 모아랑 상품이 없습니다.</p> -->
+							<p class="cmt">각 상품군 별 모아랑 상품 함께 구매 시,<br>최대 25% S.Rewards 추가 적립 가능!</p>
+						</div>
+						<div class="moa_stamp">
+							<ul>
+								<li>
+									<div class="ico_moa flight on"><!-- 구매한 모아랑 상품이 있는 경우 on 클래스 추가 / 아닌경우 off 클래스 추가 -->
+										<span class="coin front"></span>
+									</div>
+									<span class="txt">항공</span>
+								</li>
+								<li>
+									<span class="ico_moa hotel on">
+										<span class="coin front"></span>
+									</span>
+									<span class="txt">숙박</span>
+								</li>
+								<li>
+									<span class="ico_moa activity off">
+										<span class="coin front"></span>
+									</span>
+									<span class="txt">액티비티</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="btn_detail"><button type="button" name="button" class="btn_txt type4">리워즈 혜택보기</button></div>
+				</div>
+				<div class="note_list">
+					<strong>유의사항</strong>
+					<ul>
+						<li>상품 카테고리 별로 각 1개 이상 구매 시 인정됩니다.</li>
+						<li>항공, 숙박, 액티비티 카테고리에서 상품 한 개 씩 구매하면, 3개 스탬프 달성! 여행이 완성됩니다.</li>
+						<li>모아랑 혜택 받기 버튼 탭 시 즉시 적립 됩니다.</li>
+						<li>S.Rewards가 적립된 상품은 취소/환불이 불가능 합니다.</li>
+						<li>적립 시 혜택은 리셋 처리 됩니다.</li>
+						<li>구매 후 1년이 지난 모아랑 상품은 기간 만료로 혜택대상에서 제외됩니다.</li>
+						<li>적립된 S.Rewards는 신라면세점에서 확인 가능합니다.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="popup" popup-receive="flight_inp">
+		<div class="head">
+			<h1>항공편명 입력</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+
+			<h2>항공사코드</h2>
+			<div class="">
+				<input type="text" name="" placeholder="예:KE" value="">
+			</div>
+
+			<h2>항공사편명</h2>
+			<div class="">
+				<input type="text" name="" placeholder="예:101" value="">
+			</div>
+
+			<div class="tab_wrap flight_sort">
+				<div class="tab_menu tscroll">
+					<ul class="ul_size">
+						<li><a href="#" class="on">가나다 순</a></li>
+						<li><a href="#">알파벳순</a></li>
+					</ul>
+				</div>
+
+				<div class="tab_cont active">
+					<div class="tscroll">
+						<div class="sort radio_like">
+							<a href="#sort1">ㄱ</a>
+							<a href="#sort2">ㄴ</a>
+							<a href="#sort3">ㄷ</a>
+							<a href="#sort4">ㄹ</a>
+							<a href="#sort5">ㅁ</a>
+							<a href="#sort6">ㅂ</a>
+							<a href="#sort7">ㅅ</a>
+							<a href="#sort8">ㅇ</a>
+							<a href="#sort9">ㅈ</a>
+							<a href="#sort10">ㅊ</a>
+							<a href="#sort11">ㅋ</a>
+							<a href="#sort12">ㅌ</a>
+							<a href="#sort13">ㅍ</a>
+							<a href="#sort14">ㅎ</a>
+							<a href="#sort15">기타</a>
+							<a href="#sort16">국내항공사</a>
+						</div>
+					</div>
+					<h3 id="sort16">국내항공사</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort1">ㄱ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort2">ㄴ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort3">ㄷ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort4">ㄹ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort5">ㅁ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort6">ㅂ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort7">ㅅ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort8">ㅇ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort9">ㅈ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort10">ㅊ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort11">ㅋ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort12">ㅌ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort13">ㅍ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort14">ㅎ</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="sort15">기타</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+				</div>
+
+
+				<div class="tab_cont">
+					<div class="tscroll">
+						<div class="sort alph radio_like">
+							<a href="#a">A</a>
+							<a href="#b">B</a>
+							<a href="#c">C</a>
+							<a href="#d">D</a>
+							<a href="#e">E</a>
+							<a href="#f">F</a>
+							<a href="#g">G</a>
+							<a href="#h">H</a>
+							<a href="i#">I</a>
+							<a href="#j">J</a>
+							<a href="#k">K</a>
+							<a href="#l">L</a>
+							<a href="#m">M</a>
+							<a href="#n">N</a>
+							<a href="#o">O</a>
+							<a href="#p">P</a>
+							<a href="#q">Q</a>
+							<a href="#r">R</a>
+							<a href="#s">S</a>
+							<a href="#t">T</a>
+							<a href="#u">U</a>
+							<a href="#v">V</a>
+							<a href="#w">W</a>
+							<a href="#x">Y</a>
+							<a href="#y">Y</a>
+							<a href="#z">Z</a>
+							<a href="#airline">국내항공사</a>
+						</div>
+					</div>
+					<h3 id="airline">국내항공사</h3>
+					<ul class="flight_list">
+					   <li><a href="#">대한항공(KE)</a></li>
+					   <li><a href="#">아시아나항공(OZ)</a></li>
+					   <li><a href="#">에어부산(BX)</a></li>
+					   <li><a href="#">에어서울(RS)</a></li>
+					   <li><a href="#">이스타항공(ZE)</a></li>
+					   <li><a href="#">제주항공(7c)</a></li>
+					   <li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="a">A</h3>
+					<ul class="flight_list">
+					   <li><a href="#">대한항공(KE)</a></li>
+					   <li><a href="#">아시아나항공(OZ)</a></li>
+					   <li><a href="#">에어부산(BX)</a></li>
+					   <li><a href="#">에어서울(RS)</a></li>
+					   <li><a href="#">이스타항공(BE)</a></li>
+					   <li><a href="#">제주항공(7c)</a></li>
+					   <li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="b">B</h3>
+					<ul class="flight_list">
+					   <li><a href="#">대한항공(KE)</a></li>
+					   <li><a href="#">아시아나항공(OZ)</a></li>
+					   <li><a href="#">에어부산(BX)</a></li>
+					   <li><a href="#">에어서울(RS)</a></li>
+					   <li><a href="#">이스타항공(ZE)</a></li>
+					   <li><a href="#">제주항공(7c)</a></li>
+					   <li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="c">C</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="d">D</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="e">E</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="f">F</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="g">G</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="h">H</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="i">I</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="j">J</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="k">K</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="l">L</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="M">M</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="n">N</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="o">O</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="p">P</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="q">Q</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="r">R</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="s">S</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="t">T</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="u">U</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="v">V</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="w">W</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="x">X</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="y">Y</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+
+					<h3 id="z">Z</h3>
+					<ul class="flight_list">
+						<li><a href="#">대한항공(KE)</a></li>
+						<li><a href="#">아시아나항공(OZ)</a></li>
+						<li><a href="#">에어부산(BX)</a></li>
+						<li><a href="#">에어서울(RS)</a></li>
+						<li><a href="#">이스타항공(ZE)</a></li>
+						<li><a href="#">제주항공(7c)</a></li>
+						<li><a href="#">진에어(LJ)</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div> -->
+
+	<!-- <div class="popup l_select" popup-receive="travel_day">
+		<div class="head">
+			<h1>출국 정보 선택</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="i_list">
+				<ul>
+					<li>
+						<label class="radio big" for="l_radio01">
+							<input type="radio" id="l_radio01" name="r_list"><span></span>
+							<em class="date">2019.05.18 06:50</em>
+							<em class="order_info">7C1904·직항</em>
+							<em class="tit">인천공항~미국, 호주 이외의 모든 국가</em>
+						</label>
+					</li>
+					<li>
+						<label class="radio big" for="l_radio02">
+							<input type="radio" id="l_radio02" name="r_list"><span></span>
+							<em class="date">2019.05.18 06:50</em>
+							<em class="order_info">7C1904·직항</em>
+							<em class="tit">인천공항~미국, 호주 이외의 모든 국가</em>
+						</label>
+					</li>
+					<li>
+						<label class="radio big" for="l_radio03">
+							<input type="radio" id="l_radio03" name="r_list"><span></span>
+							<em class="date">2019.05.18 06:50</em>
+							<em class="order_info">7C1904·직항</em>
+							<em class="tit">인천공항~미국, 호주 이외의 모든 국가</em>
+						</label>
+					</li>
+					<li>
+						<label class="radio big" for="l_radio04">
+							<input type="radio" id="l_radio04" name="r_list"><span></span>
+							<em class="date">2019.05.18 06:50</em>
+							<em class="order_info">7C1904·직항</em>
+							<em class="tit">인천공항~미국, 호주 이외의 모든 국가</em>
+						</label>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">선택완료</button>
+		</div>
+	</div> -->
+
+	<div class="popup" popup-receive="plan_detail">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>상세일정</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<!-- Depart : S -->
+			<div class="itinerary_info">
+
+				<p class="route">
+					<span class="stit">가는 항공편</span>
+					<strong>인천</strong><i class="ico arrow"></i><strong>오사카</strong>
+				</p>
+				<p class="fleet_info" style="display:none">
+					<span>
+						<i class="ico wifi on">와이파이</i><!-- 해당서비스 'on' 클래스 추가 -->
+						<i class="ico power">콘센트</i>
+						<i class="ico enter">엔터테인먼트</i>
+						<i class="ico meal">기내식</i>
+					</span>
+					<span class="flight_time"><i class="ico time"></i>02시간 25분</span>
+				</p>
+
+				<!-- Depart -->
+				<ol class="itinerary">
+					<li class="depart">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>인천(ICN)출발</strong>
+							<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="">대한항공 OZ9636</span>
+							<span class="time"><b>비행</b> 01시간 55분</span>
+						</p>
+					</li>
+					<li class="arrival">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>오사카(KIX)도착</strong>
+						</p>
+					</li>
+				</ol>
+			</div>
+			<!-- Depart : E -->
+
+			<!-- Return : S -->
+			<div class="itinerary_info">
+
+				<p class="route">
+					<span class="stit">오는 항공편</span>
+					<strong>파리</strong><i class="ico arrow"></i><strong>마닐라</strong><i class="ico arrow"></i><strong>홍콩</strong><i class="ico arrow"></i><strong>인천</strong>
+				</p>
+				<p class="fleet_info" style="display:none">
+					<span>
+						<i class="ico wifi on">와이파이</i><!-- 해당서비스 'on' 클래스 추가 -->
+						<i class="ico power">콘센트</i>
+						<i class="ico enter">엔터테인먼트</i>
+						<i class="ico meal">기내식</i>
+					</span>
+					<span class="flight_time"><i class="ico time"></i>02시간 25분</span>
+				</p>
+
+				<!-- Depart -->
+				<ol class="itinerary">
+					<li class="depart">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>파리(CDG)출발</strong>
+							<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="">대한항공 OZ9636</span>
+							<span class="time"><b>비행</b> 01시간 55분</span>
+						</p>
+					</li>
+					<li class="via">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>마닐라(MNL)도착</strong>
+							<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="">대한항공 OZ9636</span>
+							<span class="time"><b>대기</b> 01시간 55분</span>
+						</p>
+					</li>
+					<li class="depart">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>마닐라(MNL)출발</strong>
+							<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="">대한항공 OZ9636</span>
+							<span class="time"><b>비행</b> 01시간 55분</span>
+						</p>
+					</li>
+					<li class="via">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>홍콩(HKG)도착</strong>
+							<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="">대한항공 OZ9636</span>
+							<span class="time"><b>대기</b> 01시간 55분</span>
+						</p>
+					</li>
+					<li class="depart">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>홍콩(HKG)출발</strong>
+							<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="">대한항공 OZ9636</span>
+							<span class="time"><b>비행</b> 01시간 55분</span>
+						</p>
+					</li>
+					<li class="arrival">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>인천(ICN)도착</strong>
+						</p>
+					</li>
+				</ol>
+			</div>
+			<!-- Return : E -->
+		</div>
+
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+	</div>
+
+	<div class="popup" popup-receive="doc_reg">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>증빙서류 등록/변경</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="notice_list">
+				<li>증빙서류는 개별 1개씩 팩스로 발송해주시고, 발송 완료 후 담당자에게 확인 부탁 드립니다.<br>(FAX : 02-1234-5678)</li>
+				<li>팩스를 먼저 발송해주시고, 팩스 전송 날짜와 시간을 등록해주세요. 미리 전송 내역을 등록하실 경우에는 정확한 확인이 불가능할 수 있습니다.</li>
+				<li>주말 및 공휴일은 확인 및 처리가 불가할 수 있으며, 요청건은 평일 업무시간(09:00~17:00)에 처리됩니다.</li>
+			</ul>
+			<div class="booker_info">
+				<h2>탑승자 1</h2>
+				<table class="tbl_type3">
+					<colgroup>
+						<col style="width:110px;">
+						<col style="width:auto;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">한글이름</th>
+							<td>김신라</td>
+						</tr>
+						<tr>
+							<th scope="row">영문이름</th>
+							<td>KIM SHILLA</td>
+						</tr>
+						<tr>
+							<th scope="row">생년월일</th>
+							<td>1983.04.12</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="info_inp_reg">
+				<h2>복지카드(시/군/구청장 발행)</h2>
+				<div class="form">
+					<input type="date" name="" value="" placeholder="선택"><!-- 2019-07-23 placeholder 텍스트 수정, class="placehide" 삭제 -->
+					<button type="button" name="button" class="btn_option" option-call="1">00:00</button>
+				</div>
+				<p class="stxt">당일부터 2주내 일자만 선택 가능합니다</p>
+
+				<h2>상이등급 표기된 국가유공자증</h2>
+				<div class="form">
+					<button type="button" name="button" class="btn_option" option-call="2">선택</button>
+					<button type="button" name="button" class="btn_option" option-call="1">00:00</button>
+				</div>
+				<p class="stxt">당일부터 2주내 일자만 선택 가능합니다</p>
+
+				<h2>여권사본</h2>
+				<div class="form">
+					<button type="button" name="button" class="btn_option" option-call="2">선택</button>
+					<button type="button" name="button" class="btn_option" option-call="1">00:00</button>
+				</div>
+				<p class="stxt">당일부터 2주내 일자만 선택 가능합니다</p>
+
+				<h2>장애인증명서 원본</h2>
+				<div class="form">
+					<button type="button" name="button" class="btn_option" option-call="2">선택</button>
+					<button type="button" name="button" class="btn_option" option-call="1">00:00</button>
+				</div>
+				<p class="stxt">당일부터 2주내 일자만 선택 가능합니다</p>
+			</div>
+
+			<div class="note_list">
+			<strong>유의사항</strong>
+			<ul class="notice_list">
+				<li>증빙서류는 본인 이외에는 사용할 수 없습니다.</li>
+				<li>잘못된 서류로 인해서 예약/결제가 취소될 수 있습니다.</li>
+			</ul>
+		</div>
+		</div>
+		<div class="btn_box both">
+			<button type="submit" name="button" class="btn primary">예약취소</button>
+			<button type="submit" name="button" class="btn primary2">결제하기</button>
+		</div>
+
+	</div>
+
+	<div class="popup" popup-receive="mile_reg">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>항공사 마일리지 등록</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="notice_list">
+				<li>항공사 마일리지는 출국일 하루 전까지 등록해 주시기 바랍니다.</li>
+			</ul>
+			<div class="booker_info">
+				<h2>탑승자 1</h2>
+				<table class="tbl_type3">
+					<colgroup>
+						<col style="width:110px;">
+						<col style="width:auto;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">한글이름</th>
+							<td>김신라</td>
+						</tr>
+						<tr>
+							<th scope="row">영문이름</th>
+							<td>KIM SHILLA</td>
+						</tr>
+						<tr>
+							<th scope="row">생년월일</th>
+							<td>1983.04.12</td>
+						</tr>
+						<tr>
+							<th scope="row">탑승항공사</th>
+							<td>대한항공</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="info_inp_reg">
+				<h2>항공사선택</h2>
+				<button type="button" name="button" class="btn_option" option-call="1">대한항공</button>
+
+				<h2 class="sub">마일리지번호</h2>
+				<input type="text" placeholder="마일리지 번호">
+			</div>
+
+			<div class="note_list">
+			<strong>유의사항</strong>
+			<ul class="notice_list">
+				<li>마일리지 적립은 탑승자 본인만 가능하며, 실제 탑승 완료 후 적립됩니다.</li>
+				<li>입력한 마일리지 번호가 잘못되었을 경우에는 발권한 티켓번호가 전송되지 않아 예약이 자동으로 취소될 수 있습니다.</li>
+				<li>탑승 클래스에 따라 마일리지 적립이 불가능할 수 도 있습니다.</li>
+			</ul>
+		</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">등록하기</button>
+		</div>
+
+	</div>
+
+	<div class="popup" popup-receive="seat_up">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>좌석 업그레이드</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="notice_list">
+				<li>아시아나, 대한항공에서만 제공되는 메뉴입니다.</li>
+			</ul>
+			<div class="booker_info">
+				<h2>탑승자 1</h2>
+				<table class="tbl_type3">
+					<colgroup>
+						<col style="width:110px;">
+						<col style="width:auto;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">한글이름</th>
+							<td>김신라</td>
+						</tr>
+						<tr>
+							<th scope="row">영문이름</th>
+							<td>KIM SHILLA</td>
+						</tr>
+						<tr>
+							<th scope="row">생년월일</th>
+							<td>1983.04.12</td>
+						</tr>
+						<tr>
+							<th scope="row">탑승항공사</th>
+							<td>대한항공</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="info_inp_reg">
+				<h2>마일리지번호</h2>
+				<input type="text" placeholder="마일리지 번호">
+
+				<h2 class="sub">업그레이드 구간</h2>
+				<button type="button" name="button" class="btn_option" option-call="1">인천 → 프라하</button>
+
+				<h2 class="sub">업그레이드 요청사항</h2>
+				<div class="text_box">
+					<textarea id="" name="" placeholder="상세 요청사항을 입력해주세요."></textarea>
+				</div>
+			</div>
+
+			<div class="note_list">
+			<strong>유의사항</strong>
+			<ul class="notice_list">
+				<li>보유하신 항공사 마일리지로 좌석 업그레이드를 요청할 수 있습니다.</li>
+				<li>잔여 좌석 상황과 보유하신 마일리지에 따라 서비스가 불가능 할 수 도 있습니다.</li>
+			</ul>
+		</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">등록하기</button>
+		</div>
+
+	</div>
+
+	<div class="popup" popup-receive="fare_detail">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>요금상세</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="pay_info">
+				<h3>성인 2명</h3>
+				<dl class="fare_detail ">
+					<dt>항공요금</dt>
+					<dd>287,000원 × 2</dd>
+
+					<dt>유류할증료</dt>
+					<dd>79480원 × 2</dd>
+
+					<dt>제세공과금</dt>
+					<dd>7,320원 × 2</dd>
+
+					<dt>발권대행수수료</dt>
+					<dd>10,000원 × 2</dd>
+				</dl>
+
+				<h4>유아 1명</h4>
+				<dl class="fare_detail">
+					<dt>항공요금</dt>
+					<dd>287,000원</dd>
+
+					<dt>유류할증료</dt>
+					<dd>79480원</dd>
+
+					<dt>제세공과금</dt>
+					<dd>7,320원</dd>
+
+					<dt>발권대행수수료</dt>
+					<dd>10,000원</dd>
+				</dl>
+
+				<dl class="total">
+					<dt>신라트립가</dt>
+					<dd><strong>1,700,000</strong>원</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+	</div>
+
+	<div class="popup" popup-receive="pa_info">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>탑승자정보</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<section class="booker_info">
+				<h2 class="first">예약자 <a href="#" class="btn_txt type1">정보수정</a></h2>
+				<table class="tbl_type3">
+					<colgroup>
+						<col style="width:110px;">
+						<col style="width:auto;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">이름</th>
+							<td>김신라(남성)</td>
+						</tr>
+						<tr>
+							<th scope="row">휴대폰번호</th>
+							<td>010-1234-5678</td>
+						</tr>
+						<tr>
+							<th scope="row">이메일</th>
+							<td>shilladfsshilladfs@samsung.com</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section class="booker_info">
+				<h2>탑승자</h2>
+				<table class="tbl_type3">
+					<caption>탑승자1 <span class="opt">일반석</span> </caption>
+					<colgroup>
+						<col style="width:110px;">
+						<col style="width:auto;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">한글이름</th>
+							<td>김신라</td>
+						</tr>
+						<tr>
+							<th scope="row">영문성</th>
+							<td>KIM</td>
+						</tr>
+						<tr>
+							<th scope="row">영문이름</th>
+							<td>SHILLA</td>
+						</tr>
+						<tr>
+							<th scope="row">생년월일</th>
+							<td>2019.06.14</td>
+						</tr>
+						<tr>
+							<th scope="row">성별</th>
+							<td>남성</td>
+						</tr>
+						<tr>
+							<th scope="row">여권번호</th>
+							<td>M123456</td>
+						</tr>
+						<tr>
+							<th scope="row">여권만료일</th>
+							<td>2019.06.14</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+	</div>
+
+	<div class="popup" popup-receive="coupon">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>쿠폰받기</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="coupon_wrap">
+				<!-- 데이터없음 : S -->
+				<div class="no_data type4" style="display:none">
+					<em>다운로드 가능한 쿠폰이 없습니다.</em>
+				</div>
+				<!-- 데이터없음 : E -->
+
+				<div class="btn_area"><button type="button" name="button" class="btn_ico type2 download"><span>전체다운로드</span></button></div>
+				<div class="coupon_banner">
+					<ul class="coupon_list">
+						<!-- D : loop -->
+						<li>
+							<a href="#">
+								<div class="coupon_item">
+									<div class="inner">
+										<div class="txt">
+											<p class="add"><span class="seller">모두투어</span>숙박, 액티비티</p><!-- D : 셀러표시는 span class="seller" 추가 -->
+											<p class="name orange">모바일 전용 5,000원 할인쿠폰</p><!-- D : 쿠폰 등록시 컬러명 적용(색상 클래스 추가) -->
+											<!--
+											<p class="name red">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name yellow">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name pink">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name mint">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name green">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name blue">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name purple">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name black">모바일 전용 5,000원 할인쿠폰</p>
+											-->
+											<p class="date">3만원 이상 결제 시 사용가능.</p>
+										</div>
+										<div class="down_area"><i class="ico download">다운로드</i></div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<!-- //D : loop -->
+						<li>
+							<a href="#">
+								<div class="coupon_item">
+									<div class="inner">
+										<div class="txt">
+											<p class="add">액티비티</p>
+											<p class="name orange">일본 교통패스 5% 할인쿠폰</p>
+											<p class="date">3만원 이상 결제 시 사용가능.</p>
+										</div>
+										<div class="down_area"><i class="ico download">다운로드</i></div>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+	</div>
+
+	<div class="popup" popup-receive="coupon_selecet">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>쿠폰선택</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<h2>상품 전용 쿠폰</h2>
+			<h3>오사카 유니버셜 스튜디오 입장권 로우시즌/미들시즌/하이시즌 즉시입장</h3>
+			<ul class="item_list">
+				<li><label class="radio" for="rad01"><input type="radio" id="rad01" name="prdra"><span></span>15,000원 할인</label></li>
+				<li><label class="radio" for="rad02"><input type="radio" id="rad02" name="prdra" checked=""><span></span>10% 할인쿠폰 <em class="em">157,000원 할인</em></label></li>
+				<li><label class="radio" for="rad03"><input type="radio" id="rad03" name="prdra" checked=""><span></span>150,000원 할인쿠폰</label></li>
+				<li><label class="radio" for="rad04"><input type="radio" id="rad04" name="prdra" checked=""><span></span>사용안함</label></li>
+			</ul>
+
+			<h3>인천 <i class="ico round2"></i> 파리 왕복 항공권</h3>
+			<ul class="item_list">
+				<li><label class="radio" for="rad05"><input type="radio" id="rad05" name="payment"><span></span>10% 할인쿠폰 <em class="em">157,000원 할인</em></label></li>
+				<li><label class="radio" for="rad06"><input type="radio" id="rad06" name="payment" checked=""><span></span>사용안함</label></li>
+			</ul>
+
+			<h3>장바구니 쿠폰</h3>
+			<ul class="item_list">
+				<li><label class="radio" for="rad07"><input type="radio" id="rad07" name="payment" checked=""><span></span>10% 할인쿠폰 <em class="em">157,000원 할인</em></label></li>
+				<li><label class="radio" for="rad08"><input type="radio" id="rad08" name="payment"><span></span>사용안함</label></li>
+			</ul>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+	</div>
+
+	<div class="popup" popup-receive="cancel_flight">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>예약취소</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="notice_list">
+				<li>취소하고자 하는 탑승자를 선택한 후 예약취소요청 버튼을 눌러주세요.</li>
+				<li>예약 취소 요청 시 항공사 운임 규정에 따라 환불수수료 및 여행사 취급수수료가 발생될 수 있으며, 담당자 확인 후 안내가 진행됩니다.</li>
+				<li>주말 및 공휴일은 변경/환불/취소 요청처리가 불가할 수 있으며, 요청건은 평일 업무시간(09:00~17:00)에 처리됩니다.</li>
+			</ul>
+
+			<h2>탑승자 선택</h2>
+			<div class="i_list">
+				<ul>
+					<li>
+						<label class="checkbox big" for="l_radio01">
+							<input type="checkbox" id="l_radio01" name="r_list"><span></span>
+							<em class="tit">김신라</em>
+							<span class="eng">KIM SHILLA / 1983.01.02</span>
+							<em class="pay">신용카드(국민카드)</em>
+						</label>
+					</li>
+					<li>
+						<label class="checkbox big" for="l_radio02">
+							<input type="checkbox" id="l_radio02" name="r_list"><span></span>
+							<em class="tit">김신라</em>
+							<span class="eng">KIM SHILLA / 1983.01.02</span>
+							<em class="pay">신용카드(국민카드)</em>
+						</label>
+					</li>
+				</ul>
+			</div>
+
+			<section class="pay_info cancel">
+				<h2>취소정보</h2>
+				<dl class="fare_detail">
+					<dt>취소번호</dt>
+					<dd>shilla12345(KDPAWK)</dd>
+
+					<dt>취소일</dt>
+					<dd>2019.04.05 11:00</dd>
+
+					<dt>취소상태</dt>
+					<dd>취소완료</dd>
+
+					<dt>결제금액</dt>
+					<dd>10,000원</dd>
+
+					<dt>수수료</dt>
+					<dd>-10,000원</dd>
+				</dl>
+
+				<dl class="total">
+					<dt>총 환급금액</dt>
+					<dd><strong>1,700,000</strong>원</dd>
+				</dl>
+			</section>
+
+			<h2>취소사유</h2>
+			<button type="button" name="button" class="btn_option" option-call="1">선택</button>
+			<!-- 기타 선택시 <input type="text" name="" value="" class="mt10"> -->
+
+		</div>
+
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">취소요청</button>
+		</div>
+
+	</div>
+
+	<div class="popup" popup-receive="cancel_hotel">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>예약취소</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="notice_list">
+				<li>취소하고자 하는 상품을 선택한 후 예약취소요청 버튼을 눌러주세요.</li>
+				<li>예약 취소 요청 시 업체 규정에 따라 환불수수료 및  여행사 취급수수료가 발생될 수 있으며, 담당자 확인 후 안내가 진행됩니다.</li>
+				<li>주말 및 공휴일은 변경/환불/취소 요청처리가 불가할 수 있으며, 요청건은 평일 업무시간(09:00~17:00)에 처리됩니다.</li>
+			</ul>
+
+			<h2>객실 선택</h2>
+			<div class="i_list">
+				<ul>
+					<li>
+						<label class="checkbox big" for="l_radio01">
+							<input type="radio" id="l_radio01" name="r_list"><span></span>
+							<em class="tit">STANDARD/더블베드</em>
+							<span class="eng">김신라 / KIM SHILLA</span>
+						</label>
+					</li>
+					<li>
+						<label class="checkbox big" for="l_radio02">
+							<input type="radio" id="l_radio02" name="r_list"><span></span>
+							<em class="tit">STANDARD/더블베드</em>
+							<span class="eng">김신라 / KIM SHILLA</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+
+			<section class="pay_info cancel">
+				<h2>취소정보</h2>
+				<dl class="fare_detail">
+					<dt>취소번호</dt>
+					<dd>shilla12345(KDPAWK)</dd>
+
+					<dt>취소일</dt>
+					<dd>2019.04.05 11:00</dd>
+
+					<dt>취소상태</dt>
+					<dd>취소완료</dd>
+
+					<dt>결제금액</dt>
+					<dd>10,000원</dd>
+
+					<dt>수수료</dt>
+					<dd>-10,000원</dd>
+				</dl>
+
+				<dl class="total">
+					<dt>총 환급금액</dt>
+					<dd><strong>1,700,000</strong>원</dd>
+				</dl>
+			</section>
+
+			<h2>취소사유</h2>
+			<button type="button" name="button" class="btn_option" option-call="1">선택</button>
+			<!-- 기타 선택시 <input type="text" name="" value="" class="mt10"> -->
+
+		</div>
+
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">취소요청</button>
+		</div>
+
+	</div>
+
+	<div class="popup" popup-receive="cancel_prd">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>결제취소</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<ul class="notice_list">
+				<li>취소하고자 하는 탑승자를 선택한 후 예약취소요청 버튼을 눌러주세요.</li>
+				<li>예약 취소 요청 시 항공사 운임 규정에 따라 환불수수료 및 여행사 취급수수료가 발생될 수 있으며, 담당자 확인 후 안내가 진행됩니다.</li>
+				<li>주말 및 공휴일은 변경/환불/취소 요청처리가 불가할 수 있으며, 요청건은 평일 업무시간(09:00~17:00)에 처리됩니다.</li>
+			</ul>
+
+			<h2>옵션선택</h2>
+			<ul class="option_list type3">
+				<li>
+					<span class="tit">성인 <b>2</b>명</span>
+					<span class="desc">취소수량</span>
+					<span class="ctrl">
+						<button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+						<input type="text" name="" value="1">
+						<button type="button" name="button" class="ico btn_plus">추가</button>
+					</span>
+				</li>
+			</ul>
+
+			<section class="pay_info cancel">
+				<h2>취소정보</h2>
+				<dl class="fare_detail">
+					<dt>취소번호</dt>
+					<dd>shilla12345(KDPAWK)</dd>
+
+					<dt>취소일</dt>
+					<dd>2019.04.05 11:00</dd>
+
+					<dt>취소상태</dt>
+					<dd>취소완료</dd>
+
+					<dt>결제금액</dt>
+					<dd>10,000원</dd>
+
+					<dt>수수료</dt>
+					<dd>-10,000원</dd>
+				</dl>
+
+				<dl class="total">
+					<dt>총 환급금액</dt>
+					<dd><strong>1,700,000</strong>원</dd>
+				</dl>
+			</section>
+
+			<h2>취소사유</h2>
+			<button type="button" name="button" class="btn_option" option-call="1">선택</button>
+			<!-- 기타 선택시 <input type="text" name="" value="" class="mt10"> -->
+
+		</div>
+
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">취소요청</button>
+		</div>
+
+	</div>
+
+	<!-- //popups start -->
+
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+<script>
+	(()=>{
+		let guideList = document.querySelectorAll('.guidewrap > div'), nowitem = null;
+		guideList.forEach((item)=>{
+			item.addEventListener('click', ()=>{
+				nowitem && nowitem.classList.remove('on');
+				nowitem = item;
+				item.classList.add('on');
+			});
+		});
+	})();
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/product.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+	<!-- 팝업 : S -->
+	<div class="popup filter show">
+		<!-- Modal content -->
+		<div class="head">
+			<h1>필터</h1>
+			<button type="button" name="button" class="btn_txt type5 reset">초기화</button>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<section class="filter fold_area">
+				<h2>카테고리
+					<label class="checkbox fright" for="cate_all"><input type="checkbox" id="cate_all" name="agency" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="cate01"><input type="checkbox" id="cate01" name="cate" checked><span></span>호텔</label></li>
+						<li><label class="checkbox" for="cate02"><input type="checkbox" id="cate02" name="cate" checked><span></span>리조트/풀빌라</label></li>
+						<li><label class="checkbox" for="cate03"><input type="checkbox" id="cate03" name="cate" checked><span></span>비앤비</label></li>
+						<li><label class="checkbox" for="cate04"><input type="checkbox" id="cate04" name="cate" checked><span></span>료칸</label></li>
+						<li><label class="checkbox" for="cate05"><input type="checkbox" id="cate05" name="cate" checked><span></span>모텔</label></li>
+						<li><label class="checkbox" for="cate06"><input type="checkbox" id="cate06" name="cate" checked><span></span>게스트하우스</label></li>
+						<li><label class="checkbox" for="cate07"><input type="checkbox" id="cate07" name="cate" checked><span></span>한인민박</label></li>
+						<li><label class="checkbox" for="cate08"><input type="checkbox" id="cate08" name="cate" checked><span></span>한인민박</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+			<section class="filter fold_area">
+				<h2>도시
+					<label class="checkbox fright" for="city_all"><input type="checkbox" id="city_all" name="agency" checked><span></span>전체</label>
+				</h2>
+				<div class="fold_target" fold-height="110">
+					<ul class="item_list half_type">
+						<li><label class="checkbox" for="city01"><input type="checkbox" id="city01" name="city" checked><span></span>오사카</label></li>
+						<li><label class="checkbox" for="city02"><input type="checkbox" id="city02" name="city" checked><span></span>홋카이도/북해도</label></li>
+						<li><label class="checkbox" for="city03"><input type="checkbox" id="city03" name="city" checked><span></span>도쿄</label></li>
+						<li><label class="checkbox" for="city04"><input type="checkbox" id="city04" name="city" checked><span></span>후쿠오카/큐슈</label></li>
+						<li><label class="checkbox" for="city05"><input type="checkbox" id="city05" name="city" checked><span></span>오키나와</label></li>
+						<li><label class="checkbox" for="city06"><input type="checkbox" id="city06" name="city" checked><span></span>대마도</label></li>
+						<li><label class="checkbox" for="city07"><input type="checkbox" id="city07" name="city" checked><span></span>나고야</label></li>
+						<li><label class="checkbox" for="city08"><input type="checkbox" id="city08" name="city" checked><span></span>요코하마</label></li>
+					</ul>
+				</div>
+				<div class="fold_button">
+					<button type="button" name="button" class="btn_ico unfold">더보기</button>
+					<button type="button" name="button" class="btn_ico fold">접기</button>
+				</div>
+			</section>
+
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+
+	</div>
+	<!-- 팝업 : E -->
+</div>
+
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

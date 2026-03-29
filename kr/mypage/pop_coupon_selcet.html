@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+	<!-- 2019-08-29 쿠폰선택 수정사항 반영 -->
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>쿠폰선택</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		
+		<div class="pop_cont">
+			<h2>상품 전용 쿠폰</h2>
+			<h3>오사카 유니버셜 스튜디오 입장권 로우시즌/미들시즌/하이시즌 즉시입장</h3>
+			<ul class="item_list">
+				<li><label class="checkbox" for="prd1_1"><input type="checkbox" id="prd1_1" name="prd1"><span></span>사용안함</label></li>
+				<li><label class="checkbox" for="prd1_2"><input type="checkbox" id="prd1_2" name="prd1"><span></span>10% 할인쿠폰 <em class="color3">157,000원 할인</em></label></li>
+				<li><label class="checkbox" for="prd1_3"><input type="checkbox" id="prd1_3" name="prd1" checked=""><span></span>150,000원 할인쿠폰</label></li>				
+			</ul>
+
+			<h3>인천 <i class="ico round2"></i> 파리 왕복 항공권</h3>
+			<ul class="item_list">
+				<li><label class="checkbox" for="prd2_1"><input type="checkbox" id="prd2_1" name="prd2" checked=""><span></span>사용안함</label></li>
+				<li><label class="checkbox" for="prd2_2"><input type="checkbox" id="prd2_2" name="prd2" disabled=""><span></span>10% 할인쿠폰 <em class="color3">157,000원 할인</em><div class="stxt em">다른 상품에 적용중</div></label>
+				</li>
+			</ul>
+
+			<h2>장바구니 쿠폰</h2>
+			<button type="button" name="button" class="btn_option" option-call="cart_coupon">사용안함</button>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">쿠폰적용</button>
+		</div>
+	</div>
+	<!-- 팝업 : E -->
+
+	<!-- 장바구니 쿠폰 선택 옵션 -->
+	<div class="option_select" option-receive="cart_coupon">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#" class="on">사용안함</a></li>
+				<li><a href="#">장바구니 쿠폰 3,000원</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- //2019-08-29 쿠폰선택 수정사항 반영 -->
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

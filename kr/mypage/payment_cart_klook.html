@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap fixed"><!-- 2019-11-06 fixed 클래스 추가, fnb영역 삭제(예약 및 결제하기 공통수정) -->
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			결제하기
+		</h2>
+	</header>
+
+	<!-- 콘텐츠 : S -->
+	<div class="content">
+		<!-- <h3>주문상품정보 3건</h3> --><!-- 1건시 미노출 -->
+		<!-- 상품1(액티비티) : S -->
+		<section class="prd_item">
+			<div class="thumb_info">
+				<div class="img">
+					<img src="../../resource/img/tmp_prd05.jpg" alt="">
+				</div>
+				<div class="info">
+					<div class="name">[오사카]유니버셜 스튜디오 입장권 유니버셜 스튜디오 입장권</div>
+					<span class="price"><strong>20,000</strong>원</span>
+				</div>
+			</div>
+
+			<div class="opt_info">
+				<div class="date">2019.05.05 출발</div>
+				<div class="opt">로우시즌 성인 1개, 로우시즌 아동 1개</div>
+			</div>
+
+			<!-- 여행자정보 입력 -->
+			<div class="accordion info_traveler" data-js="accordion">
+				<button type="button" name="button" data-js="acc_anchor">여행자정보 입력</button>
+				<div class="panel" data-js="acc_panel">
+					<div class="input_info">
+						<!-- <legend>여행자정보</legend> -->
+						<div class="passenger">
+							<!-- 2019-09-02 등록정보 영역 수정 -->
+							<div class="reg_info">
+								<span class="tit_box">여행자1</span>
+								<div class="opt_box">
+									<p class="opt">JR패스 성인</p>
+								</div>								
+								<span class="chk_box"><!-- 본인, 나중에 입력 둘다 노출되는 케이스를 넣어드렸으니 필요에 따라 사용가능 -->
+									<label class="checkbox" for="traveler01_1"><input type="checkbox" id="traveler01_1" name="traveler01_1_chk" checked><span></span>본인</label>
+									<!-- <label class="checkbox" for="registration01_1"><input type="checkbox" id="registration01_1" name="registration01_1_chk" checked><span></span>나중에 입력</label> -->
+								</span>
+							</div>
+							<!-- //2019-09-02 등록정보 영역 수정 -->
+							<div class="kor_name"><label for="korName">한글이름</label><input type="text" name="korName" placeholder="김신라" value="김신라"></div><!-- 외국국적일 경우 삭제 -->
+							<label for="familyName">영문성</label><input type="text" name="familyName" placeholder="KIM"  value="KIN">
+							<label for="givenName">영문이름</label><input type="text" name="givenName" placeholder="SHILLA" value="SHILLA">
+							<label for="birthDay">생년월일</label><input type="tel" name="birthDay" placeholder="19880123 ('-'없이)" value="1988.01.23">
+
+							<label for="gender">성별</label>
+							<span class="gender">
+								<label class="radio" for="traveler01_gender_male"><input type="radio" id="traveler01_gender_male" name="traveler01_gender" checked><span></span>남자</label>
+								<label class="radio" for="traveler01_gender_female"><input type="radio" id="traveler01_gender_female" name="traveler01_gender"><span></span>여자</label>
+							</span>
+							<label for="passtNo">여권번호 <button type="button" name="button" modal-call="1" class="ico btn_help">도움말</button></label><input type="text" name="passtNo" value="M123456789">
+							<label for="passtEx">여권만료일</label><input type="text" name="passtEx" placeholder="19880123('-'없이)" value="2030.11.20">
+							<!-- 2020-01-14 삭제
+							<label for="receiveDate">수령일</label><button type="button" name="button" class="btn_date" popup-call="calendar">날짜선택</button>
+							<label for="useLang">사용언어</label><button type="button" name="button" class="btn_option" option-call="use_lang">선택</button>
+							<label for="receiveTime">수령시간</label><div class="form"><span><button type="button" name="button" class="btn_option" option-call="receive_hour">00시</button></span><span><button type="button" name="button" class="btn_option" option-call="receive_minute">00분</button></span></div>
+							-->
+						</div>
+						<!-- 2020-01-14 삭제
+						<div class="confirm_chk">
+							<label class="checkbox" for="confirm_chk01"><input type="checkbox" id="confirm_chk01" name="chk"><span></span>구매일 기준으로 3일(영업일) 이후에 수령하셔야 합니다. 확인하셨나요?</label>
+						</div>
+						-->
+
+						<div class="passenger">
+							<!-- 2019-09-02 등록정보 영역 수정 -->
+							<div class="reg_info">
+								<span class="tit_box">여행자2</span>
+								<div class="opt_box">
+									<p class="opt">JR패스 성인</p>
+								</div>
+								<!-- <span class="chk_box">
+									<label class="checkbox" for="registration01_2"><input type="checkbox" id="registration01_2" name="registration01_2_chk" checked><span></span>나중에 입력</label>
+								</span> -->
+							</div>
+							<!-- //2019-09-02 등록정보 영역 수정 -->
+							<div class="kor_name"><label for="korName">한글이름</label><input type="text" name="korName" placeholder="김신라"></div><!-- 외국국적일 경우 삭제 -->
+							<label for="familyName">영문성</label><input type="text" name="familyName" placeholder="KIM">
+							<label for="givenName">영문이름</label><input type="text" name="givenName" placeholder="SHILLA">
+							<label for="birthDay">생년월일</label><input type="tel" name="birthDay" placeholder="19880123 ('-'없이)" value="2030.11.20">
+							
+							<label for="gender">성별</label>
+							<span class="gender">
+								<label class="radio" for="traveler02_gender_male"><input type="radio" id="traveler02_gender_male" name="traveler02_gender" checked><span></span>남자</label>
+								<label class="radio" for="traveler02_gender_female"><input type="radio" id="traveler02_gender_female" name="traveler02_gender"><span></span>여자</label>
+							</span>
+
+							<label for="passtNo">여권번호 <button type="button" name="button" modal-call="1" class="ico btn_help">도움말</button></label><input type="text" name="passtNo" value="M123456789">
+							<label for="passtEx">여권만료일</label><input type="text" name="passtEx" placeholder="19880123('-'없이)">
+						</div>
+
+						<!-- 2020-01-14 추가정보입력 -->
+						<section class="info_reg">
+							<ul>
+								<!-- 등록 전
+								<li>
+									<span>추가정보 입력</span>
+									<a href="#none" class="btn_txt type1" popup-call="pop_add_info">등록</a>
+								</li>
+								-->
+								<!-- 등록 후 -->
+								<li>
+									<span>추가정보 입력<i class="ico ok">등록완료</i></span>
+									<a href="#none" class="btn_txt type1" popup-call="pop_add_info">변경</a>
+								</li>
+								<!-- //등록 후 -->
+							</ul>
+						</section>
+						<!-- //2020-01-14 추가정보입력 -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- 상품1 : E -->
+
+		<section class="section booker_info">
+			<h3>예약자정보 <a href="#" class="btn_txt type1">정보수정</a></h3>
+			<table class="tbl_type3">
+				<colgroup>
+					<col style="width:110px;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">이름</th>
+						<td>김신라</td>
+					</tr>
+					<tr>
+						<th scope="row">휴대폰번호</th>
+						<td>010-1234-5678</td>
+					</tr>
+					<tr>
+						<th scope="row">이메일</th>
+						<td>shilladfsshilladfs@samsung.com</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="noti">긴급상황 발생 시 즉시 연락이 가능해야 하며, 연락이 불가능한 경우 발생되는 불이익에 대해 당사는 책임지지 않사오니 이점 유의하시기 바랍니다.</p>
+		</section>
+
+		<div class="accordion pay_info" data-js="accordion">
+			<button type="button" name="button" data-js="acc_anchor">상품금액<em><b>1,799,000</b>원</em></button>
+			<div class="panel" data-js="acc_panel">
+				<h4>성인 2명</h4>
+				<dl class="fare_detail ">
+					<dt>로우시즌 입장권</dt>
+					<dd>287,000원 × 2</dd>
+
+					<dt>미들시즌 입장권</dt>
+					<dd>287,000원 × 2</dd>
+				</dl>
+
+				<h4>유아 1명</h4>
+				<dl class="fare_detail">
+					<dt>로우시즌 입장권</dt>
+					<dd>287,000원</dd>
+				</dl>
+
+				<dl class="total">
+					<dt>총 금액</dt>
+					<dd><strong>1,700,000</strong>원</dd>
+				</dl>
+			</div>
+		</div>
+
+		<section class="section sale_info">
+			<h3>할인쿠폰 <!-- <button type="button" name="button" class="btn_ico type2 download"><span>쿠폰다운로드</span></button> --></h3><!-- 2019-10-23 쿠폰다운로드 삭제 -->
+			<h4><button type="button" name="button" class="btn_txt type4">적용쿠폰(사용가능 <b class="em">5</b>장)</button></h4>
+			<dl>
+				<dt>10% 할인 쿠폰</dt>
+				<dd>-7,000원</dd>
+
+				<dt>가입 축하 쿠폰</dt>
+				<dd>-3,480원</dd>
+			</dl>
+
+			<h4><button type="button" name="button" class="btn_txt type4">제휴사 할인혜택</button></h4>
+			<dl>
+				<dt>10% 할인 쿠폰 </dt>
+				<dd>-7,000원</dd>
+
+				<dt>가입 축하 쿠폰</dt>
+				<dd>-3,480원</dd>
+			</dl>
+
+			<dl class="total">
+				<dt>총 할인금액</dt>
+				<dd>-7,000원</dd>
+			</dl>
+		</section>
+
+		<section class="section total_pay">
+			<h3>결제금액</h3>
+			<dl>
+				<dt>상품금액</dt>
+				<dd>1,400,000원</dd>
+
+				<dt>쿠폰할인</dt>
+				<dd>-3,480원</dd>
+
+				<dt>제휴사할인</dt>
+				<dd>-3,480원</dd>
+			</dl>
+			<dl class="total">
+				<dt>총 결제금액</dt>
+				<dd><strong>1,400,000</strong>원</dd>
+
+				<dt class="save">S.Rewards 적립예정</dt>
+				<dd class="save">+3,480P(3,480원)</dd><!-- 2019-12-06 S.Rewards 표기 법 수정 -->
+			</dl>
+		</section>
+
+		<section class="section payment">
+			<!-- 숙박 결제시 노출 (2019-08-07 마크업 위치수정) -->
+			<div class="pay_right" style="display:none">
+				<span class="color1">지금 바로 결제와 함께 예약을 완료</span>
+				<label class="checkbox checked" for="checkbox"><input type="checkbox" id="checkbox" name="checkbox" checked=""><span></span>즉시결제</label>
+			</div>
+			<!-- //숙박 결제시 노출 (2019-08-07 마크업 위치수정) -->
+
+			<!-- 2019-09-10 결제수단 영역 수정 -->
+			<script type="text/javascript" src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/js/lalapay/shilla.lalapay.js?bt=201909042120"></script>
+			<script type="text/javascript" src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/js/lalapay/swiper.min.js?bt=201909042120"></script>			
+			<link type="text/css" href="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/css/lalapay/swiper.css?bt=201909042120" rel="stylesheet" />
+			<link type="text/css" href="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/css/sub.css?bt=201909042120" rel="stylesheet" />
+			<script type="text/javascript" src="http://m.shilladfs.com/estore/_ui/mobile/common/js/slick.min.js?bt=201906131240"></script>
+			<link type="text/css" href="../../resource/css/shillapay.css" rel="stylesheet" />
+
+
+			<h3>결제수단</h3>
+			<div class="payment_sel">
+				<!-- 신라페이 -->					
+				<div class="payment_method">
+					<div class="subtit spay_tit">
+						<label class="radio" for="pay_lala" data-target="1"><input type="radio" id="pay_lala" name="paytype" checked=""><span></span>SHILLA PAY <em>x SmilePay</em>
+					</div>
+
+					<!-- 시스템 배너 (신라페이 미동의회원 노출) -->
+					<div class="pay_banner">
+						<ul class="banner_custom">
+							<li>
+								<a href="#none">
+									<img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/pay_banner01.jpg">
+									<div class="txt_box">
+										<p class="txt1">신라페이만의 특별혜택</p>
+										<p class="txt2">무통장입금 결제 시</p>
+										<p class="txt3">최대 <span style="color:#f95450;">1.7%</span> 혜택!</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/pay_banner01.jpg">
+									<div class="txt_box">
+										<p class="txt1">신라페이만의 특별혜택</p>
+										<p class="txt2">무통장입금 결제 시</p>
+										<p class="txt3">최대 <span style="color:#f95450;">1.7%</span> 혜택!</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/pay_banner01.jpg">
+									<div class="txt_box">
+										<p class="txt1">신라페이만의 특별혜택</p>
+										<p class="txt2">무통장입금 결제 시</p>
+										<p class="txt3">최대 <span style="color:#f95450;">1.7%</span> 혜택!</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									<img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/pay_banner01.jpg">
+									<div class="txt_box">
+										<p class="txt1">신라페이만의 특별혜택</p>
+										<p class="txt2">무통장입금 결제 시</p>
+										<p class="txt3">최대 <span style="color:#f95450;">1.7%</span> 혜택!</p>
+									</div>
+								</a>
+							</li>
+							</li>
+							<li>
+								<a href="#none">
+									<img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/pay_banner01.jpg">
+									<div class="txt_box">
+										<p class="txt1">신라페이만의 특별혜택</p>
+										<p class="txt2">무통장입금 결제 시</p>
+										<p class="txt3">최대 <span style="color:#f95450;">1.7%</span> 혜택!</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<!-- // 시스템 배너 -->
+
+					<div class="pay_type pay_type_lala" data-content="1">
+						<!-- 신라페이(미가입) 선택시 노출 -->
+						<div class="payment_box">
+							<div class="pay_item">
+								<ul class="list swiper-wrapper">
+									<li class="swiper-slide">
+										<div class="card c_type7">
+											<span class="cp_icon icon2"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/icon_bank2.png" alt="로고" /></span>
+											<p class="c_txt3"><span>실시간 무통장 입금</span><span class="swiper-pagination"></span></p> 
+											<ul class="c_list">
+												<li>결제 시 <strong>1.5%</strong> 즉시할인</li>
+											</ul>
+										</div>
+									</li>
+									<li class="swiper-slide">
+										<div class="card c_type8">
+											<span class="cp_icon"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/icon_card2.png" alt="로고" /></span>
+											<p class="c_txt3"><span>카드 간편결제 </span><span class="swiper-pagination"></span></p>
+											<ul class="c_list">
+												<li>결제 시 <strong>0.5%</strong> 스마일캐시 적립</li>
+												<li>결제 시 <strong>0.2%</strong> 라라캐시 적립</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<a href="#" id="joinLaLapayService" class="btn join_lala">신라페이 가입하기</a>
+						<!-- //신라페이(미가입) 선택시 노출 -->
+
+						<!-- 신라페이(가입) 선택시 노출 -->
+						<div class="accordion info" data-js="accordion">
+							<button type="button" name="button" data-js="acc_anchor" class="active">실시간 무통장입금</button>
+							<div class="panel" data-js="acc_panel" style="display:block;">								
+								<div class="desc_wr" style="display:block;">
+									<ul class="bank_list pay_cp" id="bank_cp">
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_kb.png" alt=""><span>국민은행</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_hn.png" alt=""><span>KEB하나은행</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_wr.png" alt=""><span>우리은행</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_sh.png" alt=""><span>신한은행</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_nh.png" alt=""><span>농협은행</span></button></li>
+										
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_ibk.png" alt=""><span>기업은행</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_post.png" alt=""><span>우체국</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_sc.png" alt=""><span>SC제일은행</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_bnk.png" alt=""><span>부산은행</span></button></li>
+										<!--
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_kdb.png" alt="" /><span>산업은행</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_kakao.png" alt="" /><span>카카오뱅크</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/more_bank.png" alt=""><span>더보기</span></button></li>
+
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_cu.png" alt="" /><span>신협중앙회</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_citi.png" alt="" /><span>한국씨티은행</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_dgb.png" alt="" /><span>대구은행</span></button></li>
+
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_knk.png" alt="" /><span>경남은행</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_shsh.png" alt="" /><span>수협은행</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_gj.png" alt="" /><span>광주은행</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_jb.png" alt="" /><span>전북은행</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_mg.png" alt="" /><span>새마을금고</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_jj.png" alt="" /><span>제주은행</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_nhqv.png" alt="" /><span>NH투자증권</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_mrz.png" alt="" /><span>메리츠증권</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_yat.png" alt="" /><span>유안타증권</span></button></li>
+										<li><button type="button"><img src="https://m.shilladfs.com/estore/_ui/mobile/common/shilladfshome/kr/img/lalapay/img_bank_yj.png" alt="" /><span>유진투자증권</span></button></li>
+										-->
+									</ul>
+									<ul class="use_type">
+										<li id="kr-lalapay-virtualAccountTransferTip">
+											<!--<p class="lala_amount">결제금액<strong>100,000<em>원</em></strong></p>-->
+											<p class="lala_save paymentDiscountTip" id="kr-lalapay-virtualAccountTransferDiscountTip">즉시할인 <span>(1.2%)</span><strong>400원</strong></p>
+											<div id="kr-lalapay-virtualAccountTransferRewardTip">
+												<p class="lala_save">S.Rewards<span>(0.3%)</span><strong>1,253원</strong></p>
+											</div>
+											<ul class="guide_li inside" id="kr-lalapay-virtualAccountTransferRewardMoreTip">
+												<li><span>66,995</span>원 더 결제하시면 S.Rewards <span>0.1%</span> 지급!</li>
+											</ul>
+										</li>
+										<li>
+											<p>
+												<input class="css-checkbox" type="checkbox" id="allAgree" name="allAgree">
+												<label class="css-label" for="allAgree">실시간 무통장입금 서비스 이용약관</label>
+											</p>
+											<p class="sub_check">
+												<input class="css-checkbox" type="checkbox" id="elecFinancialAgree" name="elecFinancialAgree">
+												<label class="css-label" for="elecFinancialAgree">전자금융거래 기본 약관 (필수)</label>
+												<a href="#none" class="view open-popup" id="elec-financial"><span class="blind">약관보기</span></a>
+											</p>
+											<p class="sub_check">
+												<input class="css-checkbox" type="checkbox" id="personalInfoAgree" name="personalInfoAgree">
+												<label class="css-label" for="personalInfoAgree">개인정보의 제 3자 제공 동의 (필수)</label>
+												<a href="#none" class="view open-popup" id="personal-info"><span class="blind">약관보기</span></a>
+											</p>
+											<p class="sub_check2">
+												<input class="css-checkbox" type="checkbox" id="elecFinancialAgreeSave" name="elecFinancialAgreeSave" disabled="disabled">
+												<label class="css-label" for="elecFinancialAgreeSave">이용약관 동의내역을 저장하시겠습니까?</label>
+											</p>
+										</li>
+										<li>
+											<p>
+												<input class="css-checkbox" type="checkbox" id="consumer_damage" name="consumer_damage">
+												<label class="css-label" for="consumer_damage" id="pop-consumer">소비자 피해보상보험 신청</label>
+											</p>
+										</li>
+										<li>
+											<p>입금 관련 안내<a href="#none" class="view open-popup" id="deposit-info"><span class="blind">약관보기</span></a></p>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<button type="button" name="button" data-js="acc_anchor">카드 간편결제</button>
+							<div class="panel" data-js="acc_panel">
+								<div class="desc_wr desc_card">
+									<div class="pay_item2 swiper-container-horizontal swiper-container-ios">
+										<ul class="list swiper-wrapper" style="transition-duration: 0ms;">
+											<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0">
+												<div class="card" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30039.png');">
+													<div class="c_txtbox">
+														<p class="c_txt1">우리카드</p>
+														<p class="c_txt2">421420******8140</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불(무이자 최대 6개월 가능)</option>
+															<option value="#none">2개월(무이자)</option>
+															<option value="#none">3개월(무이자)</option>
+															<option value="#none">4개월(무이자)</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+											</li>
+											<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1">
+												<div class="card" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30004.png');">
+													<div class="c_txtbox">
+														<p class="c_txt1">현대카드</p>
+														<p class="c_txt2">624368******6808</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불(무이자 최대 6개월 가능)</option>
+															<option value="#none">2개월(무이자)</option>
+															<option value="#none">3개월(무이자)</option>
+															<option value="#none">4개월(무이자)</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+											</li>
+											<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2">
+												<div class="card off" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30039.png');"> <!-- 결제수단 비활성화 시 클래스 off 추가 -->
+													<div class="c_txtbox">
+														<p class="c_txt1">삼성카드</p>
+														<p class="c_txt2">5380 **** **** **80</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불(무이자 최대 6개월 가능)</option>
+															<option value="#none">2개월(무이자)</option>
+															<option value="#none">3개월(무이자)</option>
+															<option value="#none">4개월(무이자)</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+												<p class="notice"><span class="icon2">유효기간이 만료되었습니다.</span></p>
+											</li>
+											<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3">
+												<div class="card off" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30039.png')">
+													<div class="c_txtbox">
+														<p class="c_txt1">국민카드</p>
+														<p class="c_txt2">5380 **** **** **80</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불</option>
+															<option value="#none">2개월</option>
+															<option value="#none">3개월</option>
+															<option value="#none">4개월</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+												<p class="notice"><span class="icon3">사용 불가합니다</span></p>
+											</li>
+											<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4">
+												<div class="card off" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30039.png');">
+													<div class="c_txtbox">
+														<p class="c_txt1">하나카드</p>
+														<p class="c_txt2">5380 **** **** **80</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불</option>
+															<option value="#none">2개월</option>
+															<option value="#none">3개월</option>
+															<option value="#none">4개월</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+												<p class="notice"><span class="icon2">거래가 일시 중지 되었습니다.</span></p>
+											</li>
+											<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="5">
+												<div class="card none_pay"></div> <!-- 결제수단 없을 시 -->
+												<p class="notice"><span class="icon1">결제수단을 등록해주세요</span></p>
+											</li>												
+											<li class="swiper-slide" data-swiper-slide-index="0">
+												<div class="card" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30039.png');">
+													<div class="c_txtbox">
+														<p class="c_txt1">우리카드</p>
+														<p class="c_txt2">421420******8140</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불(무이자 최대 6개월 가능)</option>
+															<option value="#none">2개월(무이자)</option>
+															<option value="#none">3개월(무이자)</option>
+															<option value="#none">4개월(무이자)</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+											</li>
+											<li class="swiper-slide" data-swiper-slide-index="1">
+												<div class="card" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30004.png');">
+													<div class="c_txtbox">
+														<p class="c_txt1">현대카드</p>
+														<p class="c_txt2">624368******6808</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불(무이자 최대 6개월 가능)</option>
+															<option value="#none">2개월(무이자)</option>
+															<option value="#none">3개월(무이자)</option>
+															<option value="#none">4개월(무이자)</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+											</li>
+											<li class="swiper-slide" data-swiper-slide-index="2">
+												<div class="card off" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30039.png');"> <!-- 결제수단 비활성화 시 클래스 off 추가 -->
+													<div class="c_txtbox">
+														<p class="c_txt1">삼성카드</p>
+														<p class="c_txt2">5380 **** **** **80</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불(무이자 최대 6개월 가능)</option>
+															<option value="#none">2개월(무이자)</option>
+															<option value="#none">3개월(무이자)</option>
+															<option value="#none">4개월(무이자)</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+												<p class="notice"><span class="icon2">유효기간이 만료되었습니다.</span></p>													
+											</li>
+											<li class="swiper-slide" data-swiper-slide-index="3">
+												<div class="card off" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30039.png')">
+													<div class="c_txtbox">
+														<p class="c_txt1">국민카드</p>
+														<p class="c_txt2">5380 **** **** **80</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불</option>
+															<option value="#none">2개월</option>
+															<option value="#none">3개월</option>
+															<option value="#none">4개월</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+												<p class="notice"><span class="icon3">사용 불가합니다</span></p>
+											</li>
+											<li class="swiper-slide" data-swiper-slide-index="4">
+												<div class="card off" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30039.png');">
+													<div class="c_txtbox">
+														<p class="c_txt1">하나카드</p>
+														<p class="c_txt2">5380 **** **** **80</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불</option>
+															<option value="#none">2개월</option>
+															<option value="#none">3개월</option>
+															<option value="#none">4개월</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+												<p class="notice"><span class="icon2">거래가 일시 중지 되었습니다.</span></p>
+											</li>
+											<li class="swiper-slide" data-swiper-slide-index="5">
+												<div class="card none_pay"></div> <!-- 결제수단 없을 시 -->
+												<p class="notice"><span class="icon1">결제수단을 등록해주세요</span></p>
+											</li>
+											<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0">
+												<div class="card" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30039.png');">
+													<div class="c_txtbox">
+														<p class="c_txt1">우리카드</p>
+														<p class="c_txt2">421420******8140</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불(무이자 최대 6개월 가능)</option>
+															<option value="#none">2개월(무이자)</option>
+															<option value="#none">3개월(무이자)</option>
+															<option value="#none">4개월(무이자)</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+											</li>
+											<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1">
+												<div class="card" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30004.png');">
+													<div class="c_txtbox">
+														<p class="c_txt1">현대카드</p>
+														<p class="c_txt2">624368******6808</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불(무이자 최대 6개월 가능)</option>
+															<option value="#none">2개월(무이자)</option>
+															<option value="#none">3개월(무이자)</option>
+															<option value="#none">4개월(무이자)</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+											</li>
+											<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2">
+												<div class="card off" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30039.png');"> <!-- 결제수단 비활성화 시 클래스 off 추가 -->
+													<div class="c_txtbox">
+														<p class="c_txt1">삼성카드</p>
+														<p class="c_txt2">5380 **** **** **80</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불(무이자 최대 6개월 가능)</option>
+															<option value="#none">2개월(무이자)</option>
+															<option value="#none">3개월(무이자)</option>
+															<option value="#none">4개월(무이자)</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+												<p class="notice"><span class="icon2">유효기간이 만료되었습니다.</span></p>
+											</li>
+											<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3">
+												<div class="card off" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30039.png')">
+													<div class="c_txtbox">
+														<p class="c_txt1">국민카드</p>
+														<p class="c_txt2">5380 **** **** **80</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불</option>
+															<option value="#none">2개월</option>
+															<option value="#none">3개월</option>
+															<option value="#none">4개월</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+												<p class="notice"><span class="icon3">사용 불가합니다</span></p>
+											</li>
+											<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4">
+												<div class="card off" style="background-image:url('https://pics.ebay.co.kr/smilepay/paymethod/default_h_30039.png');">
+													<div class="c_txtbox">
+														<p class="c_txt1">하나카드</p>
+														<p class="c_txt2">5380 **** **** **80</p>
+													</div>
+													<div class="sel_box">
+														<select title="결제기간을 선택하세요">
+															<option value="#none">일시불</option>
+															<option value="#none">2개월</option>
+															<option value="#none">3개월</option>
+															<option value="#none">4개월</option>
+															<option value="#none">5개월</option>
+															<option value="#none">6개월</option>
+															<option value="#none">7개월</option>
+															<option value="#none">8개월</option>
+															<option value="#none">9개월</option>
+															<option value="#none">10개월</option>
+															<option value="#none">11개월</option>
+															<option value="#none">12개월</option>
+														</select>
+													</div>
+												</div>
+												<div class="swiper-pagination swiper-pagination-fraction"><span class="swiper-pagination-current">25</span> / <span class="swiper-pagination-total">-13</span></div>
+												<p class="notice"><span class="icon2">거래가 일시 중지 되었습니다.</span></p>
+											</li>											
+											<li class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="5">
+												<div class="card none_pay"></div> <!-- 결제수단 없을 시 -->
+												<p class="notice"><span class="icon1">결제수단을 등록해주세요</span></p>
+											</li>
+										</ul>
+									<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+									<ul class="use_type">
+										<li>
+											<p>
+												<input class="css-checkbox" type="checkbox" id="isPointUsageChecked" name="isPointUsageChecked" disabled="disabled">
+												<label class="css-label" for="isPointUsageChecked">카드사 포인트 사용</label>
+											</p>
+										</li>
+										<li>
+											<p class="lala_save">스마일캐시 적립 <span>(0.5%)</span><strong id="kr-lalaSmilepayDiscountReserveAmount">167원</strong></p>
+											<p class="lala_save paymentDiscountTip" id="kr-lalaSmilepayDiscountTip" style="padding-top: 0px;"></p>
+											<div id="kr-lalaSmilepayRewardTip"><p class="lala_save">S.Rewards 적립<span>(0.2%)</span><strong>67원</strong></p></div>
+											<ul class="guide_li inside" id="kr-lalaSmilepayRewardMoreTip" style="padding-top: 0px;">
+											</ul>
+										</li>
+										<li>									
+											<p class="lala_save smile">스마일캐시<strong>사용가능금액 <span class="txt_red">6,302</span>원</strong></p>
+											<p class="lala_save"><input type="text" id="totalUsedLalaSmileCash"><a href="javascript:void(0);" class="btn" onclick="MiniCalculator.applyLalaSmileCash(6302, true);">전액사용</a></p>
+
+											<!-- 2019-12-09 현금영수증 영역 추가 -->
+											<div class="radio_tabwrap">
+												<div class="radio_menu">
+													<ul>
+														<li><label class="radio" for="smileCash01" data-target="1_1"><input type="radio" id="smileCash01" name="smileCash" checked><span></span>개인소득공제</label></li>
+														<li><label class="radio" for="smileCash02" data-target="1_2"><input type="radio" id="smileCash02" name="smileCash"><span></span>사업자지출증빙</label></li>
+													</ul>
+												</div>
+												<div class="tab_cont" data-content="1_1">
+													<div class="credit simple">
+														<ul class="list_box">
+															<li>
+																<select class="pay_sel">
+																	<option>휴대폰번호</option>
+																	<option>현금영수증 카드번호</option>
+																</select>
+															</li>
+															<li>
+																<input type="tel" class="input" id="" name="" value="" placeholder="'-'없이 숫자만 입력">
+															</li>
+														</ul>
+														<div class="agree_box">
+															<p class="sub_check2">
+																<input class="css-checkbox" type="checkbox" id="InfoAgree_type1" name="InfoAgree_type1">
+																<label class="css-label" for="InfoAgree_type1">제 3자 정보제공에 동의합니다</label>
+															</p>
+															<ul class="guide_li inside">
+																<li><span class="em2">제공받는자 : 이베이코리아</span></li>
+																<li><span class="em2">이용목적: 현금영수증 발급처리</span></li>
+																<li>제공항목: 휴대전화번호, 사업자등록번호</li>
+																<li><span class="em2">보유 및 이용기간: 수집 및 이용목적이 달성되면 지체없이 파기</span></li>
+																<li>동의를 거부할 권리가 있으며, 거부 시 현금영수증 발행이 불가합니다.</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="tab_cont" data-content="1_2">
+													<div class="credit simple">
+														<ul class="list_box">
+															<li>
+																<select class="pay_sel">
+																	<option>사업자 등록번호</option>
+																	<option>현금영수증 카드번호</option>
+																</select>
+															</li>
+															<li>
+																<input type="tel" class="input" id="" name="" value="" placeholder="'-'없이 숫자만 입력">
+															</li>
+														</ul>
+														<div class="agree_box">
+															<p class="sub_check2">
+																<input class="css-checkbox" type="checkbox" id="InfoAgree_type2" name="InfoAgree_type2">
+																<label class="css-label" for="InfoAgree_type2">제 3자 정보제공에 동의합니다</label>
+															</p>
+															<ul class="guide_li inside">
+																<li><span class="em2">제공받는자 : 이베이코리아</span></li>
+																<li><span class="em2">이용목적: 현금영수증 발급처리</span></li>
+																<li>제공항목: 휴대전화번호, 사업자등록번호</li>
+																<li><span class="em2">보유 및 이용기간: 수집 및 이용목적이 달성되면 지체없이 파기</span></li>
+																<li>동의를 거부할 권리가 있으며, 거부 시 현금영수증 발행이 불가합니다.</li>
+															</ul>
+														</div>
+													</div>
+												</div>											
+											</div>
+											<!-- //2019-12-09 현금영수증 영역 추가 -->
+										</li>
+									</ul>
+								</div>	
+
+							</div>
+						</div>
+						<!-- //신라페이(가입) 선택시 노출 -->
+					</div>
+				</div>				
+				<!-- //신라페이 -->
+
+				<!-- 신용카드 -->
+				<div class="payment_method">
+					<div class="subtit">
+						<label class="radio" for="creditCard" data-target="2"><input type="radio" id="creditCard" name="paytype"><span></span>신용카드</label>
+					</div>
+
+					<div class="credit" data-content="2">
+						<div class="tableDl">
+							<dl>
+								<dt>카드종류</dt>
+								<dd>
+									<select name="korCreditCard" id="korCreditCard" class="pay_sel">
+										<option value="" selected="selected">선택</option>
+										<option value="031" data-isglobalcardcompany="false">삼성카드</option>
+										<option value="029" data-isglobalcardcompany="false">신한카드</option>
+										<option value="016" data-isglobalcardcompany="false">KB국민카드</option>
+										<option value="026" data-isglobalcardcompany="false">BC카드</option>
+										<option value="027" data-isglobalcardcompany="false">현대카드</option>
+										<option value="008" data-isglobalcardcompany="false">외환카드</option>
+										<option value="047" data-isglobalcardcompany="false">롯데카드</option>
+										<option value="022" data-isglobalcardcompany="false">씨티카드</option>
+										<option value="006" data-isglobalcardcompany="false">하나카드</option>
+										<option value="021" data-isglobalcardcompany="false">우리카드</option>
+										<option value="018" data-isglobalcardcompany="false">NH농협카드</option>
+										<option value="002" data-isglobalcardcompany="false">KJB광주카드</option>
+										<option value="010" data-isglobalcardcompany="false">JB전북카드</option>
+										<option value="017" data-isglobalcardcompany="false">수협카드</option>
+										<option value="011" data-isglobalcardcompany="false">제주카드</option>
+										<option value="058" data-isglobalcardcompany="false">산업은행카드</option>
+										<option value="081" data-isglobalcardcompany="false">은련카드</option>
+										<option value="A16" data-isglobalcardcompany="false">카카오뱅크</option>
+										<option value="C26" data-isglobalcardcompany="false">K뱅크</option>
+										<option value="050" data-isglobalcardcompany="true" data-paymethod="P101">해외VISA카드</option>
+										<option value="049" data-isglobalcardcompany="true" data-paymethod="P102">해외MasterCard</option>
+										<option value="028" data-isglobalcardcompany="true" data-paymethod="P104">해외JCB카드</option>
+									</select>
+								</dd>
+							</dl>
+							<dl>
+								<dt>할부기간</dt>
+								<dd>
+									<select name="cardInstallment" id="cardInstallment" class="pay_sel">
+										<option value="00">일시불</option>
+										<option value="02">2개월</option>
+										<option value="03">3개월</option>
+										<option value="04">4개월</option>
+										<option value="05">5개월</option>
+										<option value="06">6개월</option>
+										<option value="07">7개월</option>
+										<option value="08">8개월</option>
+										<option value="09">9개월</option>
+										<option value="10">10개월</option>
+										<option value="11">11개월</option>
+										<option value="12">12개월</option>
+									</select>
+									<p class="btn_text_wr">
+										<a href="#none" class="btn_text" popup-call="pop_free"><span>무이자 할부 안내</span></a>
+									</p>
+								</dd>
+							</dl>
+						</div>
+						<ul class="guide_li inside">
+							<li>할인정보에서 카드할인쿠폰 적용시 선택한 카드만 표시 됩니다. 다른 카드로 결제 시 카드할인 적용을 취소해 주십시오.</li>
+							<li>해외카드로 결제시 당사에 고지된 환율과 해외카드사 자체에서 취급하는 환율이 상이하므로, 실제 결제하는 금액이 차이 날 수 있습니다.</li>
+							<li>할부는 50,000원 이상 결제시 가능합니다.</li>
+						</ul>
+						<div class="card_info" id="paywayinfo_1" style="">신한카드 결제 시 최대 8% 청구할인 (30만원↑)</div>
+					</div>
+				</div>
+				<!-- //신용카드 -->
+			</div>
+			<!-- //2019-09-10 결제수단 영역 수정 -->
+		</section>
+
+		<div class="agree_list">
+			<h3 class="sub">약관 확인 및 동의</h3>
+			<ul>
+				<li><label class="checkbox" for="achk1"><input type="checkbox" id="achk1" name="agree"><span></span><b>모든 약관에 동의합니다.</b></label></li>
+				<li>
+					<label class="checkbox" for="achk2"><input type="checkbox" id="achk2" name="agree"><span></span>일반규정 <em class="em">(필수)</em></label>
+					<button type="button" name="button" class="btn_txt type2">보기</button>
+				</li>
+				<li>
+					<label class="checkbox" for="achk3"><input type="checkbox" id="achk3" name="agree"><span></span>요금규정 <em class="color3">(선택)</em></label>
+					<button type="button" name="button" class="btn_txt type2">보기</button>
+				</li>
+			</ul>
+		</div>
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<div class="btn_wrap">
+		 <button type="button" name="button" class="btn primary">결제하기</button>
+	</div>
+
+	<!-- 무이자 할부 팝업 : S -->
+	<div class="popup" popup-receive="pop_free">
+		<!-- Modal content -->
+		<div class="head" data-native="status">
+			<h1>무이자할부 안내</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+
+		<div class="pop_cont">
+			<h2>무이자 할부 (5만원 이상)</h2>
+			<table class="tbl_type1">
+				<colgroup>
+					<col style="width:35%;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">삼성카드</th>
+						<td>2~5개월</td>
+					</tr>
+					<tr>
+						<th scope="row">신한카드</th>
+						<td>2~5개월</td>
+					</tr>
+					<tr>
+						<th scope="row">비씨카드</th>
+						<td>2~5개월</td>
+					</tr>
+					<tr>
+						<th scope="row">KB국민카드</th>
+						<td>2~5개월</td>
+					</tr>
+					<tr>
+						<th scope="row">현대카드</th>
+						<td>2~3개월(7.1~7.31) 2~6개월(8.1~8.31)</td>
+					</tr>
+					<tr>
+						<th scope="row">농협카드</th>
+						<td>2~5개월</td>
+					</tr>
+					<tr>
+						<th scope="row">시티카드</th>
+						<td>2~5개월</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>부분 무이자 할부 (5만원 이상)</h2>
+			<table class="tbl_type1">
+				<colgroup>
+					<col style="width:35%;">
+					<col style="width:auto;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">국민카드</th>
+						<td> 10개월 (1~2회차 고객부담)</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="note_list">
+				<strong>유의사항</strong>
+				<ul class="notice_list"><!-- 2019-06-27 내용 변경 -->
+					<li>법인, 체크, 선불, 올앳, 기프트, 하이브리드카드 제외</li>
+					<li>씨티카드 결제 시 씨티BC, 기업 제외</li>
+					<li>BC카드 결제 시 NON-BC 제외</li>
+					<li>신한BC, 씨티BC는 BC카드 할부 행사 적용</li>
+				</ul>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+	<!-- 무이자 할부 팝업 : E -->
+	<!-- 모달팝업 : S -->
+	<div class="modal" modal-receive="1">
+		<button type="button" class="ico btn_close2">close</button>
+		<div class="modal_content" scrollcorrection-done="true">
+			<h1>여권정보 입력안내</h1>
+			<div class="help_passport">
+				<p>
+					여권 입력시 꼭 확인해 주세요.<br>잘못된 여권 정보는 상품 인도를 하시지 못 할 수 있습니다.
+				</p>
+				<p class="tmp"><img src="../../resource/img/img_passport.png" alt="여권 샘플"></p>
+				<ul>
+					<li>
+						<strong>1. 내국인 여권번호 유형</strong>
+						영문 1자리 + 숫자 8자리 <span class="stxt">예) M01234567</span><br>
+						영문 2자리 + 숫자 7자리 <span class="stxt">예) JR1234567</span><br>
+						숫자 7자리 <span class="stxt">예) 1234567</span><br>
+						관용여권 : S숫자 7자리 <span class="stxt">예) S 1234567</span>
+					</li>
+					<li>
+						<strong>2. 영문이름</strong>
+						‘-’를 제외하고 붙여서 기입하셔야합니다. 성 (LAST-NAME), 이름 (FIRST-NAME) 순으로 입력하시기 바랍니다.
+					</li>
+					<li>
+						<strong>3. 여권만료일</strong>
+						기간이 만료된 구 여권의 경우 상품인도를 하시지 못할 수 있으니 신규 발급받으신 여권으로 입력하셔야 합니다.
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 모달팝업 : E -->
+
+	<!-- 2020-01-14 추가정보 입력 팝업 : S -->
+	<div class="popup" popup-receive="pop_add_info">
+		<!-- Modal content -->
+		<div class="head" data-native="status">
+			<h1>추가정보 입력</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="doc_etc">
+				<div class="group_info input_info type2"><!-- 2020-02-20 type2 클래스 추가 -->
+					<div class="passenger">
+						<label for="add_receivePlace">수령장소</label><input type="text" name="add_receivePlace" placeholder="정문앞">
+						<label for="receiveDate">수령일</label><button type="button" name="button" class="btn_date" popup-call="calendar">날짜선택</button>
+						<label for="useLang">사용언어</label><button type="button" name="button" class="btn_option" option-call="use_lang">선택</button>
+						<label for="receiveTime">수령시간</label><div class="form"><span><button type="button" name="button" class="btn_option" option-call="receive_hour">00시</button></span><span><button type="button" name="button" class="btn_option" option-call="receive_minute">00분</button></span></div>
+						<label for="add_etc">기타</label><div class="text_box"><textarea id="" name="" placeholder="전달하실 내용을 기재해 주세요"></textarea></div>
+					</div>
+					<div class="confirm_chk">
+						<label class="checkbox" for="confirm_chk01"><input type="checkbox" id="confirm_chk01" name="chk" checkboxlike-done="true"><span></span>구매 일 기준으로 3일(영업일) 이후에 수령하셔야 합니다. 확인하셨나요?</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+	<!-- 2020-01-14 추가정보 입력 팝업 : E -->
+	<!-- 사용언어 -->
+	<div class="option_select" option-receive="use_lang">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#" class="on">선택</a></li>
+				<li><a href="#">영어</a></li>
+				<li><a href="#">스페인어</a></li>
+				<li><a href="#">독일어</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 수령시간(시간) -->
+	<div class="option_select" option-receive="receive_hour">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#" class="on">00시</a></li>
+				<li><a href="#">01시</a></li>
+				<li><a href="#">02시</a></li>
+				<li><a href="#">03시</a></li>
+				<li><a href="#">04시</a></li>
+				<li><a href="#">05시</a></li>
+				<li><a href="#">06시</a></li>
+				<li><a href="#">07시</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 수령시간(분) -->
+	<div class="option_select" option-receive="receive_minute">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#" class="on">00분</a></li>
+				<li><a href="#">05분</a></li>
+				<li><a href="#">10분</a></li>
+				<li><a href="#">15분</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 달력팝업 : S -->
+	<div class="popup" popup-receive="calendar">
+		<!-- Modal content -->
+		<div class="head" data-native="status">
+			<h1>날짜선택</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont full"><!-- 2019-09-27 하단버튼이 들어가는 경우 full클래스 삭제, 안들어갈 경우 full클래스 추가 -->
+			<div class="calendar_wrap">
+				<div class="calendar_month default"><!-- 가격표시 안될경우 'default' 클래스 추가 -->
+					<div class="month_header">2019.01</div>
+					<div class="month_cont">
+						<table>
+							<thead>
+								<tr>
+									<th>일</th>
+									<th>월</th>
+									<th>화</th>
+									<th>수</th>
+									<th>목</th>
+									<th>금</th>
+									<th>토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">1</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">2</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled"><!-- 선택불가 'disabled' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">3</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<!-- 2019-08-12 오늘일때 <span class="today">삭제, <span class="price">추가 -->
+									<td class="today">
+										<div class="day_inner">
+											<span class="day">4</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<!-- //2019-08-12 오늘일때 <span class="today">삭제, <span class="price">추가 -->
+									<td class="holiday disabled"><!-- 토일,휴일 'holiday' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">5</span>
+											<span class="price"></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday disabled">
+										<div class="day_inner">
+											<span class="day">6</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">7</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">8</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">9</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class=""><!-- 시작일 'start'클래스 추가  -->
+										<div class="day_inner">
+											<span class="day">10</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class=""><!-- 선택된 기간 'selected' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">11</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">12</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">13</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="">
+										<div class="day_inner">
+											<span class="day">14</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="">
+										<div class="day_inner">
+											<span class="day">15</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">16</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">17</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">18</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">19</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">20</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">21</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="selected start end"><!-- 하루 -->
+										<div class="day_inner">
+											<span class="day">22</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">23</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">24</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">25</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">26</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">27</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">28</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">29</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">30</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">31</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="calendar_month default"><!-- 가격표시 안될경우 'default' 클래스 추가 -->
+					<div class="month_header">2019.02</div>
+					<div class="month_cont">
+						<table>
+							<thead>
+								<tr>
+									<th>일</th>
+									<th>월</th>
+									<th>화</th>
+									<th>수</th>
+									<th>목</th>
+									<th>금</th>
+									<th>토</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">1</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled">
+										<div class="day_inner">
+											<span class="day">2</span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td class="disabled"><!-- 선택불가 'disabled' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">3</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">4</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday"><!-- 토일,휴일 'holiday' 클래스 추가 -->
+										<div class="day_inner">
+											<span class="day">5</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">6</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">7</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">8</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">9</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">10</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">11</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">12</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">13</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">14</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">15</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">16</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">17</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">18</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">19</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">20</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">21</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">22</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">23</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">24</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">25</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">26</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="holiday">
+										<div class="day_inner">
+											<span class="day">27</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">28</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">29</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">30</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day">31</span>
+											<span class="price">54만원</span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+									<td>
+										<div class="day_inner">
+											<span class="day"></span>
+											<span class="price"></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!--삭제 <div class="white_shadow"></div>-->
+		</div>
+		<!-- 2019-09-27 하단버튼이 들어가는 경우 추가(언제부터 언제까지 기간 선택일 때)
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">적용</button>
+		</div>
+		 -->
+	</div>
+	<!-- 달력팝업 : E -->
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+<script type="text/javascript" src="../../resource/js/shillapay.js"></script><!-- 2019-09-05 신라페이 관련 JS 추가 -->
+
+<script type="text/javascript">
+	$(document).ready( function() {
+		$('.banner_custom').slick({
+			arrows: false,
+			dots: true,
+			dotsClass: "banner_nav",
+			autoplay: false,
+			slidesToShow: 1
+		});
+		
+		if($('.pay_banner ul li').length == 1){
+			$('.banner_nav').hide();
+		}
+	});
+</script>
+</body>
+</html>

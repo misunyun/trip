@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>T멤버십 조회</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="membership_wrap">
+				<h2 class="sub_first"><img src="../../resource/img/mem_t01.png" width="115px" alt="Tmembership"></h2>
+				<div class="mem_inp">
+					<label for="">카드번호</label>
+					<input type="tel"> -
+					<input type="tel"> -
+					<input type="tel"> -
+					<input type="tel">
+				</div>
+				<div class="note_list">
+					<ul>
+						<li>제공받는자: ㈜SK텔레콤, ㈜SK플래닛</li>
+						<li>제공목적: T멤버십 사용 및 환불 , VIP/골드 등급 골드멤버십 발급</li>
+						<li>제공항목: T멤버십 카드번호, T멤버십 등급</li>
+						<li>보유 및 이용기간: 카드정보 입력 후 6개월간</li> <!-- 2019-02-28 텍스트 수정 -->
+						<li>동의를 거부할 권리가 있습니다. 동의 거부시 사용 등의 제약이 있습니다.</li> <!-- 2019-02-28 텍스트 추가 -->
+					</ul>
+				</div>
+
+				<div class="agree">
+					<label class="checkbox" for="achk1"><input type="checkbox" id="achk1" name="agree" checkboxlike-done="true"><span></span><b>개인정보 활용에 동의합니다.</b></label>
+				</div>
+
+				<div class="btn_wrap2">
+					<button type="button" name="button" class="btn primary border">조회하기</button>
+				</div>
+
+				<p class="skt_txt">T멤버십 카드번호는  T멤버십 사이트에서 확인 가능합니다.
+					<span>(제휴신용카드에는 <img src="../../resource/img/mem_t02.png" width="12px" alt="T멤버십 로고"> 또는 <img src="../../resource/img/mem_t03.png" width="31px" alt="SKT 로고"> 로고가 있습니다.)</span>
+					<a href="#none" class="btn_txt type4">T멤버십 사이트 바로가기</a>
+				</p>
+
+				<div class="note_list">
+					<ul>
+						<li>제공받는자: ㈜SK텔레콤, ㈜SK플래닛</li>
+						<li>제공목적: T멤버십 사용 및 환불 , VIP/골드 등급 골드멤버십 발급</li>
+						<li>제공항목: T멤버십 카드번호, T멤버십 등급</li>
+						<li>보유 및 이용기간: 카드정보 입력 후 6개월간</li> <!-- 2019-02-28 텍스트 수정 -->
+						<li>동의를 거부할 권리가 있습니다. 동의 거부시 사용 등의 제약이 있습니다.</li> <!-- 2019-02-28 텍스트 추가 -->
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

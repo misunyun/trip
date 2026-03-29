@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>상세일정</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<!-- Depart : S -->
+			<div class="itinerary_info">
+				<!-- 2019-10-17 숨은 경유지 추가 -->
+				<p class="route">
+					<span class="stit">가는 항공편</span>
+					<strong>인천</strong><i class="ico arrow"></i><strong>도쿄</strong><span class="add_way">(<span>나리타</span>)(중간경유)</span><i class="ico arrow"></i><strong>오사카</strong>
+				</p>
+				<!-- //2019-10-17 숨은 경유지 추가 -->
+				<p class="fleet_info" style="display:none">
+					<span>
+						<i class="ico wifi on">와이파이</i><!-- 해당서비스 'on' 클래스 추가 -->
+						<i class="ico power">콘센트</i>
+						<i class="ico enter">엔터테인먼트</i>
+						<i class="ico meal">기내식</i>
+					</span>
+					<span class="flight_time"><i class="ico time"></i>02시간 25분</span>
+				</p>
+
+				<!-- Depart -->
+				<ol class="itinerary">
+					<li class="depart">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>인천(ICN)출발</strong>
+							<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공">대한항공 OZ9636</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+							<span class="time"><b>비행</b> 01시간 55분</span>
+						</p>
+					</li>
+					<li class="via">
+						<span class="date"></span><!-- 2019-10-23 숨은 경유지일 때 텍스트만 노출 안함 -->
+						<p>
+							<strong>마닐라(MNL)(중간경유)체류</strong>
+							<span class="txt">주유공급 및 항공기 정비를 위해 대기 후 이동합니다.</span><!-- 2019-10-23 중간경유지 문구추가 -->
+							<span class="time"><b>대기</b> 01시간 55분</span>
+						</p>
+					</li>
+					<li class="arrival">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>오사카(KIX)도착</strong>
+						</p>
+					</li>
+				</ol>
+			</div>
+			<!-- Depart : E -->
+
+			<!-- Return : S -->
+			<div class="itinerary_info">
+
+				<!-- 2019-10-17 숨은 경유지 추가 -->
+				<p class="route">
+					<span class="stit">오는 항공편</span>
+					<strong>오사카</strong><i class="ico arrow"></i><strong>도쿄</strong><span class="add_way">(<span>나리타</span>)(중간경유)</span><i class="ico arrow"></i><strong>인천</strong>
+				</p>
+				<!-- //2019-10-17 숨은 경유지 추가 -->
+				<p class="fleet_info" style="display:none">
+					<span>
+						<i class="ico wifi on">와이파이</i><!-- 해당서비스 'on' 클래스 추가 -->
+						<i class="ico power">콘센트</i>
+						<i class="ico enter">엔터테인먼트</i>
+						<i class="ico meal">기내식</i>
+					</span>
+					<span class="flight_time"><i class="ico time"></i>02시간 25분</span>
+				</p>
+
+				<!-- Depart -->
+				<ol class="itinerary">
+					<li class="depart">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>파리(CDG)출발</strong>
+							<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공">대한항공 OZ9636</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+							<span class="time"><b>비행</b> 01시간 55분</span>
+						</p>
+					</li>
+					<li class="via">
+						<span class="date"></span><!-- 2019-10-23 숨은 경유지일 때 텍스트만 노출 안함 -->
+						<p>
+							<strong>마닐라(MNL)(중간경유)체류</strong>
+							<span class="txt">주유공급 및 항공기 정비를 위해 대기 후 이동합니다.</span><!-- 2019-10-23 중간경유지 문구추가 -->
+							<span class="time"><b>대기</b> 01시간 55분</span>
+						</p>
+					</li>
+					<li class="depart">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>마닐라(MNL)출발</strong>
+							<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공">대한항공 OZ9636</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+							<span class="time"><b>비행</b> 01시간 55분</span>
+						</p>
+					</li>
+					<li class="via">
+						<span class="date"></span><!-- 2019-10-23 숨은 경유지일 때 텍스트만 노출 안함 -->
+						<p>
+							<strong>홍콩(HKG)(중간경유)체류</strong>
+							<span class="txt">주유공급 및 항공기 정비를 위해 대기 후 이동합니다.</span><!-- 2019-10-23 중간경유지 문구추가 -->
+							<span class="time"><b>대기</b> 01시간 55분</span>
+						</p>
+					</li>
+					<li class="depart">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>홍콩(HKG)출발</strong>
+							<span class="flight"><img src="../../resource/img/airline/air_KE.png" class="ico_pl" alt="대한항공">대한항공 OZ9636</span><!-- 2019-10-29 항공사 이미지 경로 변경 -->
+							<span class="time"><b>비행</b> 01시간 55분</span>
+						</p>
+					</li>
+					<li class="arrival">
+						<span class="date"><b>07:15</b>2월 5일(화)</span>
+						<p>
+							<strong>인천(ICN)도착</strong>
+						</p>
+					</li>
+				</ol>
+			</div>
+			<!-- Return : E -->
+		</div>
+
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+
+
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

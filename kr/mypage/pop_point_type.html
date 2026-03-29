@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>신라트립 적립 유형</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="exp_type">
+				<dl class="type_list">
+					<dt>지급완료</dt>
+					<dd>
+						<ul class="notice_list">
+							<li>지급이 완료 된 S.Rewards의 지급 내역을 보여 줍니다.</li>
+						</ul>
+					</dd>
+
+					<dt>지급예정</dt>
+					<dd>
+						<ul class="notice_list">
+							<li>지급예정인 상태로, 00일내 지급 예정인 S.Rewards 입니다.</li>
+						</ul>
+					</dd>
+
+					<dt>취소완료</dt>
+					<dd>
+						<ul class="notice_list">
+							<li>신라트립 여행상품 구매취소 또는 예약변경이 진행되어 회수된 S.Rewards 입니다. 미회수 건은 조회 시 확인 하실 수 있습니다.</li>
+						</ul>
+					</dd>
+
+					<dt>S.Rewards 회수 및 상품 취소 정책</dt>
+					<dd>
+						<ul class="notice_list">
+							<li>신라트립 여행상품을 구매하여 S.Rewards를 지급받은 이후, 환불 또는 취소요청을 할 경우 아래와 같이 처리됩니다.
+								<ol class="num_list">
+									<li>
+										지급받은 S.Rewards 만큼의 잔액이 남아있고, 신라트립 여행상품을 취소하는 경우
+										<div class="sub_txt">남아있는 S.Rewards에서 해당 금액만큼 차감 후 신라트립 여행 상품 취소 됩니다.</div>
+									</li>
+									<li>
+										지급받은 S.Rewards 만큼의 잔액이 남아있지않고, 신라트립 여행상품을 취소하는 경우
+										<div class="sub_txt">남아있는 S.Rewards에서 금액만큼 차감 후, 신라트립 여행 상품 취소시 부족금액만큼 결제 금액에서 공제 후 환불 됩니다.</div>
+									</li>
+									<li>
+										실시간 항공상품을 구매후 취소 또는 예약을 변경하는 경우
+										<div class="sub_txt">지급 받은 S.Rewards 만큼의 잔액이 남아있는경우, 잔액 차감 후 항공권 취소처리가 진행되며, 잔액이 부족한 경우, 부족금액만큼 S.Rewards를 충전한 이후 취소가 가능 합니다.</div>
+									</li>
+									<li>
+										부킹닷컴/호텔스닷컴/익스피디아/아고다의 숙박제휴 상품을 구매후 취소 또는 예약을 변경하는 경우
+										<div class="sub_txt">신라트립에 직접 결제가 이루어 지지않기 때문에 별도의 회수정책이 적용됩니다.</div>
+									</li>
+								</ol>
+							</li>
+						</ul>
+
+					</dd>
+				</dl>
+				<div class="area_box">
+					<p>아래 링크를 통해 자세한 내용 확인 가능합니다.</p>
+					<div class="btn_detail">
+						<button type="button" name="button" class="btn_txt type3">해외 호텔 S.Rewards 적립</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+	</div>
+	<!-- 팝업 : E -->
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

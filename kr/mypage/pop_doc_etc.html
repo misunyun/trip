@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>여권/기타정보 등록/변경</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="doc_etc">
+				<div class="group_info input_info">
+					<!-- 탑승자1 : S -->
+					<div class="passenger">
+						<div class="reg_info type2">
+							<span class="tit_box">탑승자1</span>
+							<div class="opt_box">
+								<p class="opt">등록전</p>
+							</div>
+							<span class="chk_box">
+								<label class="checkbox" for="traveler01"><input type="checkbox" id="traveler01" name="traveler01_chk" modal-call="modal_reg_alert"><span></span>나중에 등록</label>
+							</span>
+						</div>
+						<div class="kor_name"><label for="korName">한글이름</label><span class="t_box">김신라</span></div><!-- 외국국적일 경우 삭제 -->
+						<label for="givenName">영문이름</label><span class="t_box">KIM SHILLA</span>
+						<!-- <label for="birthDay">생년월일</label><span class="t_box">1988.01.23</span> -->
+						<label for="national">국적</label><button type="button" name="button" class="btn_option" option-call="nationality">대한민국</button>
+						<label for="passtNo">여권번호 <button type="button" name="button" modal-call="1" class="ico btn_help">도움말</button></label><input type="text" name="passtNo" placeholder="M4500065">
+						<label for="birthDay">생년월일</label><input type="tel" name="passtEx" value="1988.01.23" placeholder="19881023('-'없이)">
+						<label for="passtEx">여권만료일</label><input type="text" name="passtEx" placeholder="19880123('-'없이)">
+						<label for="city">발행국</label><button type="button" name="button" class="btn_option" option-call="certificate">대한민국</button>
+					</div>
+					<div class="note_list">
+						<ul>
+							<li>여권만료일이 출발일로부터 6개월 미만인 경우는 출국이 제한될 수 있습니다.</li>
+							<li>정확한 여권정보와 생년월일을 입력해 주시기 바랍니다.</li>
+						</ul>
+					</div>
+					<!-- 탑승자1 : E -->
+
+					<!-- 탑승자1 체류지 정보 : S -->
+					<div class="passenger">
+						<div class="reg_info type2">
+							<span class="tit_box">탑승자1 체류지 정보</span>
+							<div class="opt_box">
+								<p class="opt">등록전</p>
+							</div>
+							<span class="chk_box">
+								<label class="checkbox" for="registration01"><input type="checkbox" id="registration01" name="registration01_chk" checked="" checkboxlike-done="true"><span></span>일괄 등록</label>
+							</span>
+						</div>						
+						<label for="stayCity02">체류주</label><input type="text" name="address" value="">
+						<!-- 2019-10-17 체류도시 변경 -->
+						<label for="stayCity01">체류도시</label><div class="schbox" modal-call="modal_city"><input type="text" name="address" value="" readonly="" onfocus="this.blur();"><button type="button" name="button" class="ico btn_search2">검색</button></div>
+						<!-- //2019-10-17 체류도시 변경 -->
+						<label for="zipCode">우편번호 <button type="button" name="button" class="ico btn_help" onclick="window.open('http://zip4.usps.com/zip4/welcome.jsp')">검색</button></label><input type="text" name="zipCode" placeholder="ZIP 코드를 입력하세요">
+						<label for="address">나머지주소</label><input type="text" name="address" placeholder="">											
+					</div>
+					<!-- 탑승자1 체류지 정보 : E -->
+				</div>
+
+				<div class="group_info input_info">
+					<!-- 탑승자2 : S -->
+					<div class="passenger">
+						<div class="reg_info type2">
+							<span class="tit_box">탑승자2</span>
+							<div class="opt_box">
+								<p class="opt">등록전</p>
+							</div>
+							<span class="chk_box">
+								<label class="checkbox" for="traveler02"><input type="checkbox" id="traveler02" name="traveler02_chk" modal-call="modal_reg_alert"><span></span>나중에 등록</label>
+							</span>
+						</div>
+						<div class="kor_name"><label for="korName">한글이름</label><span class="t_box">김신라</span></div><!-- 외국국적일 경우 삭제 -->
+						<label for="givenName">영문이름</label><span class="t_box">KIM SHILLA</span>
+						<!-- <label for="birthDay">생년월일</label><span class="t_box">1988.01.23</span> -->
+						<label for="national">국적</label><button type="button" name="button" class="btn_option" option-call="nationality">대한민국</button>
+						<label for="passtNo">여권번호 <button type="button" name="button" modal-call="1" class="ico btn_help">도움말</button></label><input type="text" name="passtNo" placeholder="M4500065">
+						<label for="birthDay">생년월일</label><input type="tel" name="passtEx" value="1988.01.23" placeholder="19881023('-'없이)">
+						<label for="passtEx">여권만료일</label><input type="text" name="passtEx" placeholder="19880123('-'없이)">
+						<label for="city">발행국</label><button type="button" name="button" class="btn_option" option-call="certificate">대한민국</button>
+					</div>
+					<div class="note_list">
+						<ul>
+							<li>여권만료일이 출발일로부터 6개월 미만인 경우는 출국이 제한될 수 있습니다.</li>
+							<li>정확한 여권정보와 생년월일을 입력해 주시기 바랍니다.</li>
+						</ul>
+					</div>
+					<!-- 탑승자2 : E -->
+
+					<!-- 탑승자2 체류지 정보 : S -->
+					<div class="passenger">
+						<div class="reg_info type2">
+							<span class="tit_box">탑승자2 체류지 정보</span>
+							<div class="opt_box">
+								<p class="opt">등록전</p>
+							</div>
+							<span class="chk_box">
+								<label class="checkbox" for="registration02"><input type="checkbox" id="registration02" name="registration02_chk" checked="" checkboxlike-done="true"><span></span>일괄 등록</label>
+							</span>
+						</div>
+						<label for="stayCity02">체류주</label><input type="text" name="address" placeholder="">
+						<!-- 2019-10-17 체류도시 변경 -->
+						<label for="stayCity02">체류도시</label><div class="schbox" modal-call="modal_city"><input type="text" name="address" value="" readonly="" onfocus="this.blur();"><button type="button" name="button" class="ico btn_search2">검색</button></div>
+						<!-- //2019-10-17 체류도시 변경 -->
+						<label for="zipCode">우편번호 <button type="button" name="button" class="ico btn_help" onclick="window.open('http://zip4.usps.com/zip4/welcome.jsp')">검색</button></label><input type="text" name="zipCode" placeholder="ZIP 코드를 입력하세요">
+						<label for="address">나머지주소</label><input type="text" name="address" placeholder="">					
+					</div>
+					<!-- 탑승자2 체류지 정보 : E -->
+				</div>
+			</div>
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">등록하기</button>
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+
+	<!-- 국적 선택 옵션 -->
+	<div class="option_select" option-receive="nationality">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#" class="on">대한민국</a></li>
+				<li><a href="#">일본</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 발행국 옵션 -->
+	<div class="option_select" option-receive="certificate">
+		<div class="pop_option">
+			<ul>
+				<li><a href="#" class="on">대한민국</a></li>
+				<li><a href="#">중국</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 모달 팝업 : S -->
+	<div class="modal" modal-receive="1">
+		<button type="button" class="ico btn_close2">close</button>
+		<div class="modal_content">
+			<h1>여권정보 입력안내</h1>
+			<div class="help_passport">
+				<p>
+					여권 입력시 꼭 확인해 주세요.<br>잘못된 여권 정보는 상품 인도를 하시지 못 할 수 있습니다.
+				</p>
+				<p  class="tmp"><img src="../../resource/img/img_passport.png" alt="여권 샘플"></p>
+				<ul>
+					<li>
+						<strong>1. 내국인 여권번호 유형</strong>
+						영문 1자리 + 숫자 8자리 <span class="stxt">예) M01234567</span><br>
+						영문 2자리 + 숫자 7자리 <span class="stxt">예) JR1234567</span><br>
+						숫자 7자리 <span class="stxt">예) 1234567</span><br>
+						관용여권 : S숫자 7자리 <span class="stxt">예) S 1234567</span>
+					</li>
+					<li>
+						<strong>2. 영문이름</strong>
+						‘-’를 제외하고 붙여서 기입하셔야합니다. 성 (LAST-NAME), 이름 (FIRST-NAME) 순으로 입력하시기 바랍니다.
+					</li>
+					<li>
+						<strong>3. 여권만료일</strong>
+						기간이 만료된 구 여권의 경우 상품인도를 하시지 못할 수 있으니 신규 발급받으신 여권으로 입력하셔야 합니다.
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 모달 팝업 : E -->
+
+	<!-- 나중에 등록 모달 팝업 : S -->
+	<div class="modal" modal-receive="modal_reg_alert">
+		<div class="modal_content">
+			<h1>안내사항</h1>
+			<p class="txt_alert">출발일 최소 72시간전까지 업무시간내에 정확한 여권정보를  입력해주세요. 여권정보가 다르거나 누락된 경우 항공편 탑승 및 현지입국이 거절 될 수 있습니다.</p>
+		</div>
+		<div class="modal_btn">
+			<button type="button" name="button" class="btn">확인</button>
+		</div>
+	</div>
+	<!-- 나중에 등록 모달 팝업 : E -->
+
+	<!-- 체류도시 모달 팝업 : S -->
+	<div class="modal" modal-receive="modal_city">
+		<button type="button" class="ico btn_close2">close</button>
+		<div class="modal_content">
+			<h1>체류도시 검색</h1>
+			<div class="sch_type">
+				<div class="schbox" modal-call="modal_city">
+					<input type="text" name="address" value="" placeholder="도시명 또는 공항명을 입력 후 검색해 주세요.">
+					<button type="button" name="button" class="ico btn_search2">검색</button>
+				</div>
+				<div class="sch_list_area">
+					<ul class="sch_city_list">
+						<li><a href="#none">ROM 로마, 피우미치노공항</a></li>
+						<li><a href="#none">DUB 더블린, 더블린국제공항</a></li>
+						<li><a href="#none">VIE 비엔나, 빈 국제공항</a></li>
+						<li><a href="#none">VIE 비엔나, 빈 국제공항 VIE 비엔나, 빈 국제공항 VIE 비엔나, 빈 국제공항</a></li>
+						<li><a href="#none">VIE 비엔나, 빈 국제공항</a></li>
+						<li><a href="#none">VIE 비엔나, 빈 국제공항</a></li>
+						<li><a href="#none">VIE 비엔나, 빈 국제공항</a></li>
+						<li><a href="#none">VIE 비엔나, 빈 국제공항</a></li>
+						<li><a href="#none">VIE 비엔나, 빈 국제공항</a></li>
+						<li><a href="#none">VIE 비엔나, 빈 국제공항</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 체류도시 모달 팝업 : E -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

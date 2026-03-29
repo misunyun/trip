@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+
+
+	<!-- 팝업 : S -->
+	<div class="popup show">
+		<!-- Modal content -->
+		<div class="head" data-native="status">	<!-- data-native 추가  2019-11-07 -->
+			<h1>쿠폰받기</h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont">
+			<div class="coupon_wrap">
+				<!-- 데이터없음 : S -->
+				<div class="no_data type4" style="display:none">
+					<em>다운로드 가능한 쿠폰이 없습니다.</em>
+				</div>
+				<!-- 데이터없음 : E -->
+
+				<div class="btn_area"><button type="button" name="button" class="btn_ico type2 download"><span>전체다운로드</span></button></div>
+				<div class="coupon_banner">
+					<ul class="coupon_list">
+						<!-- D : loop -->
+						<li>
+							<a href="#">
+								<div class="coupon_item">
+									<div class="inner">
+										<div class="txt">
+											<p class="add"><span class="seller">모두투어</span>숙박, 액티비티</p><!-- D : 셀러표시는 span class="seller" 추가 -->
+											<p class="name orange">모바일 전용 5,000원 할인쿠폰</p><!-- D : 쿠폰 등록시 컬러명 적용(색상 클래스 추가) -->
+											<!--
+											<p class="name red">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name yellow">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name pink">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name mint">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name green">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name blue">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name purple">모바일 전용 5,000원 할인쿠폰</p>
+											<p class="name black">모바일 전용 5,000원 할인쿠폰</p>
+											-->
+											<p class="date">3만원 이상 결제 시 사용가능.</p>
+										</div>
+										<div class="down_area"><i class="ico download">다운로드</i></div>
+									</div>
+								</div>
+							</a>
+						</li>
+						<!-- //D : loop -->
+						<li>
+							<a href="#">
+								<div class="coupon_item">
+									<div class="inner">
+										<div class="txt">
+											<p class="add">액티비티</p>
+											<p class="name orange">일본 교통패스 5% 할인쿠폰</p>
+											<p class="date">3만원 이상 결제 시 사용가능.</p>
+										</div>
+										<div class="down_area"><i class="ico download">다운로드</i></div>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>			
+		</div>
+		<div class="btn_box">
+			<button type="submit" name="button" class="btn primary">확인</button>
+		</div>
+
+	</div>
+	<!-- 팝업 : E -->
+</div>
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

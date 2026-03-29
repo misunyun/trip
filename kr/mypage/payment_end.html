@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/mypage.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			결제완료
+		</h2>
+	</header>
+	 <!-- 콘텐츠 : S -->
+	 <div class="content">
+		 <h1>결제가<br>완료되었습니다.</h1>
+		 <!-- 2019-09-02 필드분리 및 수정사항 적용 -->
+		 <table class="tbl_type2">
+ 			<colgroup>
+ 				<col style="width:29%;">
+ 				<col style="width:auto;">
+ 			</colgroup>
+ 			<tbody>
+ 				<tr>
+ 					<th scope="row">신라<br>예약번호</th>
+ 					<td>shilla12345</td>
+ 				</tr>
+				<tr>
+					<th scope="row">여행사<br>예약번호</th><!-- 2019-09-27 항공 예약번호로 명칭수정 -->
+ 					<td>KDPAWK</td>
+				</tr>
+				<!-- 액티비티
+				<tr>
+					<th scope="row">액티비티<br>예약번호</th>
+ 					<td>KDPAWK</td>
+				</tr>
+				-->
+				<tr>
+ 					<th scope="row">상품정보</th>
+ 					<td>인천 <i class="ico round2"></i> 파리(샤를드골)<br><span class="stxt">[대한항공] 2월 5일 (화) ~ 2월 9일 (토) / 성인 2명 / 일반석</span></td>
+ 				</tr>
+				<!-- 액티비티, 패키지 <tr>
+ 					<th scope="row">상품정보</th>
+ 					<td>
+						<div class="name">후쿠오카 출발 가능/북큐슈 일주 <span class="desc">쿠로가와아소 3일 프리미엄 료칸호텔/쇼핑1회</span></div>
+						<div class="prd_payinfo complete">
+							<ul>
+								<li class="option">
+									<div class="fleft">성인<span class="amount">1</span></div>
+									<div class="fright"><strong>8,888,888,888</strong>원</div>
+								</li>
+								<li class="option">
+									<div class="fleft">소아<span class="amount">1</span></div>
+									<div class="fright"><strong>8,888,888,888</strong>원</div>
+								</li>
+							</ul>
+						</div>
+					</td>
+ 				</tr> -->
+ 				<tr>
+ 					<th scope="row">결제일시</th>
+ 					<td>2019년 2월 12일 17:30</td>
+ 				</tr>
+ 				<tr>
+ 					<th scope="row">결제금액</th>
+ 					<td><b class="em">130,000원</b></td>
+ 				</tr>
+				<!-- 2019-09-30 적립예정 영역 수정 -->
+				<tr>
+ 					<th scope="row">S.Rewards<br>적립예정</th>
+ 					<td><b class="b_gap">13,000P(13,000원)</b><button type="button" name="button" class="btn_txt type4">면세쇼핑하기</button></td><!-- 2019-12-06 S.Rewards 표기 법 수정, btn_txt에 있던 b_gap 클래스 삭제하고 b태그에 추가 --><!-- 2019-10-29 텍스트 수정 -->
+ 				</tr>
+				<!-- //2019-09-30 적립예정 영역 수정 -->
+ 			</tbody>
+ 		</table>
+		<!-- //2019-09-02 필드분리 및 수정사항 적용 -->
+
+		<p class="noti">마이페이지&gt;결제내역 페이지에서 결제내역 확인이 가능하며 궁금하신 사항은 고객센터를 통해 문의해주시기 바랍니다.</p>
+
+		<div class="btn_box">
+			<button type="button" name="button" class="btn primary">결제 내역  확인</button>
+		</div>
+
+		<!-- 2019-11-14 J와 동일하게 마크업 수정(AD 라벨 클래스 추가, J와 동일하게 텍스트 2줄처리) -->
+		<!-- 2019-10-25 광고배너 J쪽과 동일하게 수정 -->
+		<div class="banner type3">
+			<a href="#none">
+				<img class="ajax_lazy" data-src="../../resource/img/tmp_banner01.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+				<span class="badge ad">AD</span>
+				<div class="txt">
+					<span class="sub">이탈리아 호텔 특가전</span>
+					<em class="txt1">후쿠오카로 떠나는</em>
+					<em class="txt2">3일 특급 온천 여행</em>
+					<span class="date">2019.09.10 까지</span>
+				</div>
+			</a>
+		</div>
+		<!-- //2019-10-25 광고배너 J쪽과 동일하게 수정 -->
+		<!-- //2019-11-14 J와 동일하게 마크업 수정(AD 라벨 클래스 추가, J와 동일하게 텍스트 2줄처리) -->
+
+		<h3>이런 상품은 어때요?</h3><!-- 2019-09-09 텍스트 수정 -->
+		<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+		<div class="goods_list tscroll">
+			<ul class="ul_size">
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/img_blank.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="badge_area">
+							<span class="badge type3">신라트립가</span>
+						</span>
+						<span class="cate">티켓/패스</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="sale_area">
+							<span class="per">20%</span><span class="cost">10,000,000원</span>
+						</span>
+						<span class="price"><strong>8,000,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">유심/와이파이</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="price"><strong>77,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">여행자편의</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="price"><strong>77,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">여행자편의</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="price"><strong>77,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="cate">여행자편의</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="price"><strong>77,000</strong>원~</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>	
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+    <!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+</body>
+</html>

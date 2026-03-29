@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap ios fixed">
+	 <header class="sticky_step1">
+		 <h2>
+			 <a href="#" class="ico btn_back">이전 페이지</a>
+			 옵션선택
+		 </h2>
+	 </header>
+	 <!-- 콘텐츠 : S -->
+	 <div class="content">
+		<div class="option_wrap">
+			<h3 class="sub">옵션선택</h3>
+			<!-- 옵션이 다 건이여도 처음 한개만 노출, 옵션 1에서 선택하고 추가 옵션이 있는 경우 옵션 2가 노출 -->
+			<button type="button" name="button" class="btn_option" option-call="option_step1">옵션 1</button><!-- 옵션 텍스트는 한개일 때 옵션선택, 옵션이 다 건일 때 옵션 1,2,3 --> 
+			<button type="button" name="button" class="btn_option" option-call="option_step2">옵션 2</button>
+			<button type="button" name="button" class="btn_option" option-call="option_step3">옵션 3</button>
+
+			<!-- 옵션1 옵션값 -->
+			<div class="option_select" option-receive="option_step1">
+				<div class="pop_option">
+					<ul>
+						<!-- <li class="none_click"><a href="#" class="on">선택 없음</a></li> -->
+						<li><!-- 재고가 없는 경우 li에 class="disabled" 추가 -->
+							<a href="#"><!-- 선택된 경우 class="on" -->
+								<div class="fleft">
+									<span class="option_name">로우시즌</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">77,000원</strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">미들시즌</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">85,000원</strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">하이시즌</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">95,000원</strong>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //옵션1 옵션값 -->
+			
+			<!-- 옵션2 옵션값 (옵션1을 선택 후 추가 선택해야 하는 옵션이 있을 경우 노출) -->
+			<div class="option_select" option-receive="option_step2">
+				<div class="pop_option">
+					<ul>
+						<!-- <li class="none_click"><a href="#" class="on">선택 없음</a></li> -->
+						<li><!-- 재고가 없는 경우 li에 class="disabled" 추가 -->
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">성인</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">8,000,000,000원</strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">아동</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">8,000,000,000원</strong>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //옵션2 옵션값 -->
+
+			<!-- 옵션3 옵션값 (옵션2를 선택 후 추가 선택해야 하는 옵션이 있을 경우 노출) -->
+			<div class="option_select plus" option-receive="option_step3">
+				<div class="pop_option">
+					<ul>
+						<li class="none_click"><a href="#" class="on">선택 없음</a></li>
+						<li>
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">환불불가</span>
+									<span class="option_stock">재고 9999</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">77,000원</strong>
+								</div>
+							</a>
+						</li>
+						<li class="disabled"><!-- 재고가 없는 경우 li에 class="disabled" 추가 -->
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">환불가능</span>
+									<span class="option_stock">재고 0</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">8,888,888,888원</strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">옵션3 옵션값11111</span>
+									<span class="option_stock">재고 9999</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">77,000원</strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">옵션3 옵션값22222</span>
+									<span class="option_stock">재고 9999</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">77,000원</strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">옵션3 옵션값33333</span>
+									<span class="option_stock">재고 9999</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">8,888,888,888원</strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">옵션3 옵션값44444</span>
+									<span class="option_stock">재고 9999</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">77,000원</strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">옵션3 옵션값55555</span>
+									<span class="option_stock">재고 9999</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">8,888,888,888원</strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">옵션3 옵션값66666</span>
+									<span class="option_stock">재고 9999</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">77,000원</strong>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="fleft">
+									<span class="option_name">옵션3 옵션값77777</span>
+									<span class="option_stock">재고 9999</span>
+								</div>
+								<div class="fright">
+									<strong class="option_price">8,888,888,888원</strong>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //옵션3 옵션값 -->
+
+			<!-- 2019-08-12 날짜 선택과 옵션 선택 위치 변경 --> 
+			<h3 class="sub">날짜선택</h3>
+			<button type="button" name="button" class="btn_date ">날짜선택</button><!-- D : 날짜 선택시 ex)2019.01.27로 표현 -->
+			<!-- //2019-08-12 날짜 선택과 옵션 선택 위치 변경 -->
+
+			<!-- 2020-01-16 시간선택 추가 -->
+			<h3 class="sub">시간선택</h3>
+			<button type="button" name="button" class="btn_option" option-call="option_time">시간선택</button>			
+
+			<!-- 시간선택 옵션값 -->
+			<div class="option_select" option-receive="option_time">
+				<div class="pop_option">
+					<ul>
+						<li><!-- 재고가 없는 경우 li에 class="disabled" 추가 -->
+							<a href="#"><span class="option_name">09:00</span></a><!-- 선택된 경우 class="on" -->								
+						</li>
+						<li>
+							<a href="#"><span class="option_name">11:00</span></a>
+						</li>
+						<li>
+							<a href="#"><span class="option_name">13:00</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //시간선택 옵션값 -->
+			<!-- //2020-01-16 시간선택 추가 -->
+
+			<!-- 최종 옵션값 -->
+			<!-- 2019-10-29 최종 옵션값 위치 수정 -->
+			<ul class="option_list" option-plus="option_step3">
+				<li>
+                    <button type="button" name="button" class="ico btn_del">close</button>
+                    <span class="tit">로우시즌 성인 환불불가<span class="date">2019.01.25 ~ 2019.01.26 (11:00)</span></span><!-- 2020-01-16 시간추가 --><!-- 2019-12-02 날짜 추가 -->
+                    <span class="ctrl">
+                        <button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+                        <input type="text" name="" value="1">
+                        <button type="button" name="button" class="ico btn_plus">추가</button>
+                    </span>
+                    <strong class="price"><strong>8,888,888,888</strong>원</strong><!-- 2019-07-23 금액부분에 strong태그 추가 -->
+                </li>
+				<!-- 아이템 갯수만큼 추가 -->
+				<!-- <li>
+                    <button type="button" name="button" class="ico btn_del">close</button>
+                    <span class="tit">로우시즌 성인</span>
+                    <span class="ctrl">
+                        <button type="button" name="button" disabled="" class="ico btn_minus">삭제</button>
+                        <input type="text" name="" value="1">
+                        <button type="button" name="button" class="ico btn_plus">추가</button>
+                    </span>
+                    <strong class="price"><strong>8,888,888,888</strong>원</strong>
+                </li> -->
+			</ul><!-- D : 2019-06-12 수정 (div 태그를 ul태그로 변경) -->
+			<!-- //2019-10-29 최종 옵션값 위치 수정 -->
+
+			<!-- D : 옵션 선택시 총 금액 노출 -->
+			<div class="total_price">
+				<!-- 2019-10-29 텍스트 수정 -->
+				<!-- 2019-10-02 캐시적립혜택 영역 추가 -->
+				<div class="sale_info">
+					<!-- 2019-12-06 도움말 버튼 추가, box_w 추가, S.Rewards 표기 법 수정 -->
+					<dl>
+						<dt class="box_w">S.Rewards 적립 혜택 <button type="button" name="button" class="ico btn_help menu2" modal-call="modal_benefit">도움말</button></dt>
+						<dd class="box_w">1,100P(1,200원)</dd>
+
+						<dt>S.Rewards</dt>
+						<dd>단품 3매 구매 시 4.5% 적립</dd>
+					</dl>
+					<!-- //2019-12-06 도움말 버튼 추가, box_w 추가, S.Rewards 표기 법 수정 -->
+				</div>
+				<!-- //2019-10-02 캐시적립혜택 영역 추가 -->
+				<!-- //2019-10-29 텍스트 수정 -->
+				<span class="tit">총 금액</span>
+				<span class="price"><strong>8,888,888,888</strong>원</span>
+			</div>
+			<!-- //D : 옵션 선택시 총 금액 노출 -->
+		</div>
+ 	</div>
+ 	<!-- 콘텐츠 : E -->
+	<div class="btn_wrap both">
+		<button type="button" name="button" class="btn primary2" modal-call="modal_moa">장바구니</button><!-- 2019-10-08 장바구니 모아랑 상품일 때만 모달팝업 추가 --><!-- D : 비활성화 시 disabled -->
+		<button type="button" name="button" class="btn primary">구매하기</button><!-- D : 비활성화 시 disabled -->
+	</div>
+	<!-- 2019-07-23 버튼이 한개 케이스 추가
+	<div class="btn_wrap">
+		<button type="button" name="button" class="btn primary">라랑팩 담기</button>
+	</div>
+	-->
+
+	<!-- 2019-10-08 장바구니 모아랑 상품일 때만 모달팝업 추가 -->
+	<div class="modal" modal-receive="modal_moa">
+		<div class="modal_content">
+			<h1>담기완료</h1>
+			<p class="txt_alert">상품이 장바구니에 담겼습니다.<br>장바구니로 이동하시겠습니까?</p>
+			<div class="moa_benefit">
+				<div class="moa_info">
+					<div class="txt_box">
+						<p class="cmt">두 카테고리 이상 구매 시, 기본적립액의 최대 20% 추가 적립</p><!-- 2019-12-20 텍스트 수정 -->
+					</div>
+					<div class="moa_stamp">
+						<ul>
+							<li>
+								<div class="ico_flight">
+									<div class="ico_moa flight on"><!-- 장바구니에 모아랑 상품 담길 시 on 클래스 추가 / 아닌 경우 off 클래스 추가 -->
+										<span class="coin front"></span>
+									</div>
+								</div>
+								<span class="txt">항공</span>
+							</li>
+							<li>
+								<div class="ico_hotel">
+									<span class="ico_moa hotel on">
+										<span class="coin front"></span>
+									</span>
+								</div>
+								<span class="txt">숙박</span>
+							</li>
+							<li>
+								<div class="ico_activity">
+									<span class="ico_moa activity off">
+										<span class="coin front"></span>
+									</span>
+								</div>
+								<span class="txt">액티비티</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="state_txt">
+					<p class="cmt">현재까지 S.Rewards <em class="em"><strong>1,000P</strong></em> 추가적립 가능</p><!-- 2019-12-20 문구수정 -->
+					<!-- 2019-12-06 구매한 모아랑 상품이 없을때 위에 있는 문구 삭제 후 노출
+					<p class="cmt">아직 구매한 모아랑 상품이 없습니다.</p>
+					 -->
+				</div>
+			</div>
+		</div>
+		<div class="modal_btn both"><!-- 2019-12-06 아니오/예 → 취소/확인으로 문구수정 -->
+			<button type="button" name="button" class="btn">취소</button>
+			<button type="button" name="button" class="btn">확인</button>
+		</div>
+	</div>
+	<!-- //2019-10-08 장바구니 모아랑 상품일 때만 모달팝업 추가 -->
+
+	<!-- 2019-12-06 S.Rewards 적립 혜택 모달팝업 추가 -->
+	<div class="modal" modal-receive="modal_benefit">
+		<button type="button" class="ico btn_close2">close</button>
+		<div class="modal_content">
+			<h1>S.Rewards 적립 혜택</h1>
+			<p class="txt_alert">해당 적립금은 쿠폰할인, 신라페이 즉시할인, S.Rewards 적립금이 포함된 최대 혜택가 기준입니다. 실제 결제 시, S.Rewards는 선택옵션에 따라 변경 될 수 있습니다.</p>
+		</div>
+	</div>
+	<!-- //2019-12-06 S.Rewards 적립 혜택 모달팝업 추가 -->
+</div>
+
+<script type="text/javascript" src="../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../resource/js/lalang.js"></script>
+</body>
+</html>

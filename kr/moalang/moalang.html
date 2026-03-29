@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="format-detection" content="telephone=no">
+	<title>SHILLATRIP</title>
+	<link type="text/css" href="../../resource/css/common.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/moalang.css" rel="stylesheet" />
+	<link type="text/css" href="../../resource/css/desktop.css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="wrap">
+	<!-- Header : S -->
+	<header class="sticky_step1">
+		<h2>
+			<a href="#" class="ico btn_back">이전 페이지</a>
+			모아랑 내역보기
+		</h2>
+	</header>
+	<!-- Header : E -->
+
+	 <!-- 콘텐츠 : S -->
+	 <div class="content">
+
+		<h3>나의 모아랑 구매내역</h3>
+		<!-- 2019-10-08 문구추가 -->
+		<div class="moa_my_info">
+			<p>김신라 님은<br><em class="em"><strong>2.6%</strong></em> 추가적립 <em class="em"><strong>1,000P</strong></em> 대상입니다</p>
+		</div>
+		<!-- //2019-10-08 문구추가 -->
+
+		<!-- 2019-10-08 모아랑 스탬프 수정 -->
+		<div class="moa_benefit">
+			<div class="moa_info">
+				<div class="txt_box">
+					<!-- <p class="no_cmt">아직 구매한 모아랑 상품이 없습니다.</p> -->
+					<p class="cmt">두 카테고리 이상 구매 시,<br>기본적립액의 최대 20% 추가 적립</p><!-- 2019-12-20 텍스트 수정 -->
+				</div>
+				<div class="moa_stamp">
+					<ul>
+						<li>
+							<div class="ico_moa flight on"><!-- 구매한 모아랑 상품이 있는 경우 on 클래스 추가 / 아닌경우 off 클래스 추가 -->
+								<span class="coin front"></span>
+							</div>
+							<span class="txt">항공</span>
+						</li>
+						<li>
+							<span class="ico_moa hotel on">
+								<span class="coin front"></span>
+							</span>
+							<span class="txt">숙박</span>
+						</li>
+						<li>
+							<span class="ico_moa activity off">
+								<span class="coin front"></span>
+							</span>
+							<span class="txt">액티비티</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<button type="button" name="button" class="btn primary border" modal-call="modal_moa_benefit">모아랑 혜택받기</button>
+		</div>
+		<!-- //2019-10-08 모아랑 스탬프 수정 -->
+
+		<div class="tab_wrap moa"><!-- 2019-06-27 'moa'클래스 추가' -->
+			<div class="tab_menu tscroll">
+				<ul class="ul_size">
+					<li><a href="#" class="on">현재 모아랑 내역</a></li>
+					<li><a href="#">지난 모아랑 내역</a></li>
+				</ul>
+			</div>
+
+			<!-- 현재 모아랑 내역 -->
+			<div class="tab_cont active">
+				<!-- 2019-06-27 구매상품 없을 경우 노출  -->
+				<div class="no_data type4 dual" style="display:none">
+					<em>구매하신 모아랑 상품이 없습니다.</em>
+					<p>모아랑 상품 구매하고 S.Rewards 추가적립 받으세요.</p>
+				</div>
+
+				<div class="moa_list">
+					<dl class="moa_total_pay">
+						<dt>총 결제금액</dt>
+						<dd><strong>800,000,000</strong>원</dd>
+
+						<dt>총 혜택</dt>
+						<dd class="em"><strong>12,690</strong>원</dd>
+					</dl>
+
+					<ul>
+						<li>
+							<span class="date">2019.03.30</span>
+							<a href="#">
+								<p class="product">인천 <i class="ico round2"></i> 프라하</p><!-- 2019-10-08 왕복 : ico round2 / 편도 : ico oneway -->
+								<dl class="moa_detail">
+									<dt>결제번호</dt>
+									<dd>shilla12345(KDPAWK)</dd>
+
+									<dt>출발일시</dt>
+									<dd>2019.05.05 07:30</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<p class="product">더 어거스틴 호텔</p>
+								<dl class="moa_detail">
+									<dt>결제번호</dt>
+									<dd>shilla12345(KDPAWK)</dd>
+
+									<dt>출발일시</dt>
+									<dd>2019.05.05</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<p class="product">더 어거스틴 호텔</p>
+								<dl class="moa_detail">
+									<dt>결제번호</dt>
+									<dd>shilla12345(KDPAWK)</dd>
+
+									<dt>출발일시</dt>
+									<dd>2019.05.05</dd>
+								</dl>
+							</a>
+						</li>
+						<li>
+							<span class="date">2019.03.30</span>
+							<a href="#">
+								<p class="product">인천 <i class="ico round2"></i> 프라하</p>
+								<dl class="moa_detail">
+									<dt>결제번호</dt>
+									<dd>shilla12345(KDPAWK)</dd>
+
+									<dt>출발일시</dt>
+									<dd>2019.05.05 07:30</dd>
+								</dl>
+							</a>
+							<a href="#">
+								<p class="product">더 어거스틴 호텔</p>
+								<dl class="moa_detail">
+									<dt>결제번호</dt>
+									<dd>shilla12345(KDPAWK)</dd>
+
+									<dt>출발일시</dt>
+									<dd>2019.05.05</dd>
+								</dl>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 지난 모아랑 내역 -->
+			<div class="tab_cont">
+				<!-- 2019-06-27 구매상품 없을 경우 노출  -->
+				<div class="no_data type4 dual" style="display:none">
+					<em>구매하신 모아랑 상품이 없습니다.</em>
+					<p>모아랑 상품 구매하고 S.Rewards 추가적립 받으세요.</p>
+				</div>
+
+				<!-- 지난 모아랑 내역  노출  -->
+				<div class="moa_past_list">
+					<button type="button" name="button" class="btn_option moa_opt" option-call="1">전체</button>
+					<div class="option_select" option-receive="1">
+						<div class="pop_option">
+							<ul>
+								<li><a href="#">전체</a></li>
+								<li><a href="#">적립</a></li>
+								<li><a href="#">미적립</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="accordion" data-js="accordion">
+						<button type="button" name="button" data-js="acc_anchor"><span class="tit">적립</span><span class="date">2019.05.11</span><span class="save">+136,000</span></button>
+						<div class="panel" data-js="acc_panel">
+							<ul class="moa_list">
+								<li>
+									<span class="date">2019.03.30</span><!--  D: 모아랑 상품인 경우 노출 -->
+									<a href="#">
+										<p class="product">인천 <i class="ico round2"></i> 프라하</p>
+										<dl class="moa_detail">
+											<dt>결제번호</dt>
+											<dd>shilla12345(KDPAWK)</dd>
+
+											<dt>출발일시</dt>
+											<dd>2019.05.05 07:30</dd>
+										</dl>
+									</a>
+									<a href="#">
+										<p class="product">더 어거스틴 호텔</p>
+										<dl class="moa_detail">
+											<dt>결제번호</dt>
+											<dd>shilla12345(KDPAWK)</dd>
+
+											<dt>출발일시</dt>
+											<dd>2019.05.05</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<span class="date">2019.03.30</span><!--  D: 모아랑 상품인 경우 노출 -->
+									<a href="#">
+										<p class="product">인천 <i class="ico round2"></i> 프라하</p>
+										<dl class="moa_detail">
+											<dt>결제번호</dt>
+											<dd>shilla12345(KDPAWK)</dd>
+
+											<dt>출발일시</dt>
+											<dd>2019.05.05 07:30</dd>
+										</dl>
+									</a>
+									<a href="#">
+										<p class="product">더 어거스틴 호텔</p>
+										<dl class="moa_detail">
+											<dt>결제번호</dt>
+											<dd>shilla12345(KDPAWK)</dd>
+
+											<dt>출발일시</dt>
+											<dd>2019.05.05</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<button type="button" name="button" data-js="acc_anchor"><span class="tit">적립</span><span class="date">2019.05.11</span><span class="save">+136,000</span></button>
+						<div class="panel" data-js="acc_panel">
+							<ul class="moa_list">
+								<li>
+									<span class="date">2019.03.30</span><!--  D: 모아랑 상품인 경우 노출 -->
+									<a href="#">
+										<p class="product">인천 <i class="ico round2"></i> 프라하</p>
+										<dl class="moa_detail">
+											<dt>결제번호</dt>
+											<dd>shilla12345(KDPAWK)</dd>
+
+											<dt>출발일시</dt>
+											<dd>2019.05.05 07:30</dd>
+										</dl>
+									</a>
+									<a href="#">
+										<p class="product">더 어거스틴 호텔</p>
+										<dl class="moa_detail">
+											<dt>결제번호</dt>
+											<dd>shilla12345(KDPAWK)</dd>
+
+											<dt>출발일시</dt>
+											<dd>2019.05.05</dd>
+										</dl>
+									</a>
+								</li>
+								<li>
+									<span class="date">2019.03.30</span><!--  D: 모아랑 상품인 경우 노출 -->
+									<a href="#">
+										<p class="product">인천 <i class="ico round2"></i> 프라하</p>
+										<dl class="moa_detail">
+											<dt>결제번호</dt>
+											<dd>shilla12345(KDPAWK)</dd>
+
+											<dt>출발일시</dt>
+											<dd>2019.05.05 07:30</dd>
+										</dl>
+									</a>
+									<a href="#">
+										<p class="product">더 어거스틴 호텔</p>
+										<dl class="moa_detail">
+											<dt>결제번호</dt>
+											<dd>shilla12345(KDPAWK)</dd>
+
+											<dt>출발일시</dt>
+											<dd>2019.05.05</dd>
+										</dl>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<h3>모아랑 추천상품</h3>
+		<!-- 2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+		<div class="goods_list tscroll">
+			<ul class="ul_size">
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="badge_area">
+							<!-- <span class="badge type3">신라트립가</span> -->
+							<span class="badge type2">모아랑</span>
+						</span>
+						<span class="cate">입장권/티켓</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="sale_area">
+							<span class="per">20%</span><span class="cost">10,000,000원</span>
+						</span>
+						<span class="price"><strong>8,000,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="badge_area">
+							<span class="badge type2">모아랑</span>
+						</span>
+						<span class="cate">유심/와이파이</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="price"><strong>77,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="badge_area">
+							<span class="badge type2">모아랑</span>
+						</span>
+						<span class="cate">여행자편의</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="price"><strong>77,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="badge_area">
+							<span class="badge type2">모아랑</span>
+						</span>
+						<span class="cate">여행자편의</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="price"><strong>77,000</strong>원~</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img class="ajax_lazy" data-src="../../resource/img/tmp_prd06.jpg" src="../../resource/img/img_blank.png" alt=""><!-- 2019-11-13 lazyload 적용 -->
+						<span class="badge_area">
+							<span class="badge type2">모아랑</span>
+						</span>
+						<span class="cate">여행자편의</span>
+						<span class="name">[오사카]유니버셜 스튜디오 입장권</span>
+						<span class="price"><strong>77,000</strong>원~</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- //2019-10-14 상품모듈 수정(할인율,원가,즉시적립추가) -->
+
+		<div class="btn_moalang delta_scroll"><!-- 구매내역 없을시 비노출 -->
+			<button type="button" name="button" class="btn" popup-call="pop_moa_benefit">한 눈에 알아보는 모아랑 혜택</button><!-- 2019-10-08 버튼영역 수정 -->
+		</div>
+ 	</div>
+	<!-- 콘텐츠 : E -->
+
+	<!-- 푸터 : S -->
+	<div class="footer">
+		<div class="inner">
+			<h1 class="logo">SHILLATRIP</h1>
+			<ul class="addr">
+				<li>(주)호텔신라<li>
+				<li><span class="item">대표이사 : 이부진</span><span class="item">사업자등록번호 : 203-81-43363</span><li>
+				<li>통신판매업신고 : 중구 00272호 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2038143363" target="_blank" class="link">신원정보확인</a></li>
+				<!-- <li>온라인CS그룹 : 1688-1110 / <a href="mailto:cc.shilla@partner.samsung.com">cc.shilla@partner.samsung.com</a><li> 사업자 정보 CS 전화번호 이메일 제거 요청 요건 - 개발적용 -->
+				<li>주소 : 서울특별시 중구 동호로 249 (우:04605)<li>
+				<li>호스팅 사업자 : 삼성SDS(주), 이노트리(주)<li>
+				<li><a href="http://m.shilladfs.com/estore/kr/ko/info/privacy" target="_blank" class="link">개인정보처리방침</a></li>
+				<li class="cmt">신라트립은 통신판매의 당사자가 아닌 통신판매중개자이며, 상품 거래 및 거래정보에 대한 책임을 지지 않습니다.</li><!-- 2020-01-30 문구추가 -->
+			</ul>		
+		</div>	
+	</div>
+	<!-- 푸터 : E -->
+
+	<!-- 2020-01-10 fnb 카테고리(ajax) -->
+	<div class="ajax_layer category" popup-receive="category">
+		<header class="sticky_step1" data-native="status">
+			<h2>
+				카테고리
+				<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+			</h2>
+		</header>
+		<!-- 콘텐츠 : S -->
+		<div class="content">
+			<!-- 2020-01-08 카테고리 추가 -->
+			<div class="category_wrap">
+				<ul class="category_list">
+					<li>
+						<a href="#">
+							<span class="tit">항공</span>
+							<span class="txt">편도, 왕복, 다구간 항공권 검색</span>
+							<span class="cate"><i class="ico_cate flight"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">숙박</span>
+							<span class="txt">실시간 가격비교 숙박 검색</span>
+							<span class="cate"><i class="ico_cate hotel"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">에어텔/패키지</span>
+							<span class="txt">추천 특가 에어텔, 패키지 검색</span>
+							<span class="cate"><i class="ico_cate package"></i></span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="tit">액티비티</span>
+							<span class="txt">쉽고 빠른 전세계 액티비티 검색</span>
+							<span class="cate"><i class="ico_cate activity"></i></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //2020-01-08 카테고리 추가 -->
+		</div>
+		<!-- 콘텐츠 : E -->
+	</div>
+	<!--// 2020-01-10 fnb 카테고리(ajax) -->
+
+	<nav class="fnb">
+        <a href="#" class="on"><i class="ico home"></i>홈</a><!-- 현재 페이지 'on' 클래스 추가 -->
+        <a href="#"><i class="ico cart"></i>장바구니</a>
+        <a href="#" class="toggle"><i class="ico review"></i>여행후기</a>
+		<a href="#"><i class="ico trip"></i>나의여행</a>
+		<a href="#" popup-call="category"><i class="ico cate"></i>카테고리</a><!-- 2020-01-10 수정 -->
+    </nav>
+
+    <!-- <div class="option_select " option-receive="fnb">
+        <div class="pop_option">
+            <ul class="fnb_opt">
+                <li><a href="#"><i class="ico flight"></i>항공</a></li>
+                <li><a href="#"><i class="ico hotel"></i>숙박</a></li>
+                <li><a href="#"><i class="ico pack"></i>패키지</a></li>
+                <li><a href="#"><i class="ico acti"></i>액티비티</a></li>
+            </ul>
+        </div>
+    </div> -->
+
+	<!-- 2019-10-08 모아랑 혜택 팝업 : S -->
+	<div class="popup" popup-receive="pop_moa_benefit">
+		<div class="head">
+			<h1></h1>
+			<button type="button" name="button" class="ico btn_close">팝업닫기</button>
+		</div>
+		<div class="pop_cont full">
+			<div class="pop_moalang">
+				<strong class="tit">살 때마다 쌓이는 모아랑 혜택!</strong>
+				<p class="txt">기본적립액의 최대 20% 추가 적립</p><!-- 2019-12-20 문구수정 -->
+				<div class="moa_benefit">
+					<div class="moa_info">
+						<div class="txt_box">
+							<!-- <p class="no_cmt">아직 구매한 모아랑 상품이 없습니다.</p> -->
+							<p class="cmt">두 카테고리 이상 구매 시,<br>기본적립액의 최대 20% 추가 적립</p><!-- 2019-12-20 문구수정 -->
+						</div>
+						<div class="moa_stamp">
+							<ul>
+								<li>
+									<div class="ico_moa flight on"><!-- 구매한 모아랑 상품이 있는 경우 on 클래스 추가 / 아닌경우 off 클래스 추가 -->
+										<span class="coin front"></span>
+									</div>
+									<span class="txt">항공</span>
+								</li>
+								<li>
+									<span class="ico_moa hotel on">
+										<span class="coin front"></span>
+									</span>
+									<span class="txt">숙박</span>
+								</li>
+								<li>
+									<span class="ico_moa activity off">
+										<span class="coin front"></span>
+									</span>
+									<span class="txt">액티비티</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="btn_detail"><button type="button" name="button" class="btn_txt type4">리워즈 혜택보기</button></div>
+				</div>
+				<div class="note_list">
+					<strong>유의사항</strong>
+					<!-- 2019-12-20 문구수정 -->
+					<ul>
+						<li><em class="txt_em">모아랑 혜택을 받은 이후, 해당 상품 중 1개라도 취소하는 경우, 추가적립 된 S.Rewards 전체가 회수 됩니다.</em></li>
+						<li>항공, 숙박, 액티비티 카테고리 별로 1개 이상 상품 구매시, 스탬프가 찍힙니다.</li>
+						<li>모아랑 혜택 스탬프가 2개 이상인 경우, 혜택 받기 버튼을 누르면 S.Rewards가 추가 적립 됩니다.</li>
+						<li>이미 모아랑 혜택을 받은 상품은 지난 모아랑 혜택 내역에서 확인 가능하며, 모아랑 혜택 대상에서 제외 됩니다.</li>
+						<li>구매 후 1년이 지난 상품은 모아랑 혜택 대상에서 제외 됩니다.</li>
+					</ul>
+					<!-- //2019-12-20 문구수정 -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 2019-10-08 모아랑 혜택 팝업 : E -->
+
+	<!-- 2019-10-08 모아랑 혜택받기 : S -->
+	<div class="modal" modal-receive="modal_moa_benefit">
+		<div class="modal_content">
+			<h1>모아랑 혜택받기</h1>
+			<p class="txt_alert">모아랑 혜택을 받은 이후, 해당 상품 중 1개라도 취소하는 경우, 추가적립액 S.Rewards 전체가 회수됩니다. 추가적립을 받으시겠습니까?</p><!-- 2019-12-20 문구수정 -->
+		</div>
+		<div class="modal_btn both">
+			<button type="button" name="button" class="btn">아니오</button>
+			<button type="button" name="button" class="btn">예</button>
+		</div>
+	</div>
+	<!-- 2019-10-08 모아랑 혜택받기 : E -->
+</div>
+
+<script type="text/javascript" src="../../resource/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../../resource/js/slick.min_v2.js"></script>
+<script type="text/javascript" src="../../resource/js/lazyload.js"></script><!-- 2019-11-13 lazyload.js 추가 -->
+<script type="text/javascript" src="../../resource/js/intersection-observer.js"></script><!-- 2019-11-13 intersection-observer.js 추가 -->
+<script type="text/javascript" src="../../resource/js/bluebird.min.js"></script>
+<script type="text/javascript" src="../../resource/js/lalang.js"></script>
+
+</body>
+</html>
